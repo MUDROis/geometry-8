@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Геометрия 8 класс — главная страница курса</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #dc2626;
+            --accent: #0ea5e9;
+            --success: #16a34a;
+            --warning: #f59e0b;
+            --violet: #7c3aed;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #1e293b;
+            --text-light: #64748b;
+            --radius: 16px;
+            --shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+        }
+        body { font-family: 'Segoe UI','Roboto',system-ui,sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; margin: 0; padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; }
+
+        header {
+            text-align: center; margin-bottom: 25px; padding: 35px 25px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white; border-radius: var(--radius); box-shadow: var(--shadow);
+        }
+        header h1 { margin: 0; font-size: 2.2em; }
+        header p { margin: 8px 0 0; opacity: 0.95; font-size: 1.05em; }
+
+        .progress-wrap { margin: 22px auto 0; max-width: 520px; }
+        .progress-label { font-size: 0.95em; margin-bottom: 8px; opacity: 0.95; }
+        .progress-bar { height: 12px; background: rgba(255,255,255,0.3); border-radius: 10px; overflow: hidden; }
+        .progress-fill { height: 100%; width: 23%; background: linear-gradient(90deg, #bbf7d0, #4ade80); border-radius: 10px; }
+
+        .quick-nav { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 0 0 25px; }
+        .quick-nav a {
+            text-decoration: none; color: var(--primary); background: white; border: 2px solid var(--primary);
+            padding: 8px 16px; border-radius: 20px; font-weight: 600; font-size: 0.95em; transition: all .2s;
+        }
+        .quick-nav a:hover { background: var(--primary); color: white; }
+
+        .howto {
+            background: #fffbeb; border: 2px solid var(--warning); border-radius: var(--radius);
+            padding: 18px 22px; margin-bottom: 25px; font-size: 0.98em;
+        }
+        .howto b { color: #92400e; }
+
+        details.chapter {
+            background: var(--card-bg); border-radius: var(--radius); box-shadow: var(--shadow);
+            margin-bottom: 18px; overflow: hidden;
+        }
+        details.chapter summary {
+            list-style: none; cursor: pointer; padding: 18px 22px;
+            display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+            background: linear-gradient(135deg, #eff6ff, #e0f2fe);
+            border-left: 6px solid var(--primary);
+        }
+        details.chapter summary::-webkit-details-marker { display: none; }
+        details.chapter summary::after {
+            content: '▼'; margin-left: auto; color: var(--primary); font-size: 0.9em; transition: transform .25s;
+        }
+        details.chapter[open] summary::after { transform: rotate(180deg); }
+        .ch-emoji { font-size: 1.5em; }
+        .ch-num { font-weight: 800; color: var(--primary); font-size: 1.05em; white-space: nowrap; }
+        .ch-title { font-weight: 700; font-size: 1.1em; }
+        .ch-pages { color: var(--text-light); font-size: 0.9em; }
+        .ch-badge {
+            margin-left: auto; margin-right: 14px; font-size: 0.8em; font-weight: 700;
+            padding: 4px 12px; border-radius: 16px; color: white; white-space: nowrap;
+        }
+        .ch-badge.full { background: var(--success); }
+        .ch-badge.part { background: var(--warning); color: #1e293b; }
+        .ch-badge.none { background: #94a3b8; }
+
+        .chapter-body { padding: 18px 22px 22px; }
+
+        .para {
+            border: 1px solid #e2e8f0; border-left: 5px solid #94a3b8; border-radius: 12px;
+            padding: 16px 18px; margin-bottom: 14px; background: #fcfdff;
+        }
+        .para.done { border-left-color: var(--success); background: #f6fef9; }
+        .para-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 6px; }
+        .para-head h3 { margin: 0; font-size: 1.05em; color: var(--text); }
+        .status { font-size: 0.78em; font-weight: 700; padding: 3px 10px; border-radius: 14px; white-space: nowrap; }
+        .status.ok { background: #dcfce7; color: #15803d; }
+        .status.wait { background: #f1f5f9; color: #64748b; }
+        .para-items { margin: 4px 0 12px; color: var(--text-light); font-size: 0.93em; }
+
+        .btn {
+            display: inline-block; padding: 9px 18px; border-radius: 10px; font-weight: 700;
+            font-size: 0.95em; text-decoration: none; transition: all .2s;
+        }
+        .btn.go {
+            color: white; background: linear-gradient(135deg, var(--success), #22c55e);
+            box-shadow: 0 3px 8px rgba(22,163,74,0.35);
+        }
+        .btn.go:hover { transform: translateY(-2px); box-shadow: 0 6px 14px rgba(22,163,74,0.45); }
+        .btn.soon {
+            color: #64748b; background: #f1f5f9; border: 2px dashed #cbd5e1; cursor: not-allowed;
+        }
+
+        .extra-card {
+            border: 2px solid var(--violet); border-radius: 12px; padding: 16px 18px;
+            background: #f5f3ff; display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+        }
+        .extra-card h3 { margin: 0; font-size: 1.02em; color: var(--violet); }
+
+        footer { text-align: center; color: var(--text-light); margin: 30px 0 10px; font-size: 0.9em; }
+
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            header h1 { font-size: 1.6em; }
+            details.chapter summary { padding: 14px 16px; }
+            .ch-badge { margin-left: 0; }
+            .chapter-body { padding: 14px 16px 18px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>📐 Геометрия • 8 класс</h1>
+        <p>Интерактивный курс по учебнику Л. С. Атанасяна • Главы VI–IX • уроки, задачи, визуализации</p>
+        <div class="progress-wrap">
+            <div class="progress-label">🚧 Готово 3 параграфа из 13 — курс пополняется каждую неделю!</div>
+            <div class="progress-bar"><div class="progress-fill"></div></div>
+        </div>
+    </header>
+
+    <nav class="quick-nav">
+        <a href="#glava-6">Глава VI • Четырёхугольники</a>
+        <a href="#glava-7">Глава VII • Площадь</a>
+        <a href="#glava-8">Глава VIII • Подобные треугольники</a>
+        <a href="#glava-9">Глава IX • Окружность</a>
+    </nav>
+
+    <div class="howto">
+        <b>Как пользоваться:</b> 1️⃣ открой нужную главу нажатием на её заголовок; 2️⃣ выбери параграф; 3️⃣ нажми зелёную кнопку <b>«Перейти к уроку»</b> — откроется интерактивный урок с теорией, рисунками и решениями. Параграфы с кнопкой «Скоро» ещё готовятся ⏳
+    </div>
+
+    <!-- ================= ГЛАВА VI ================= -->
+    <details class="chapter" id="glava-6" open>
+        <summary>
+            <span class="ch-emoji">▱</span>
+            <span class="ch-num">Глава VI.</span>
+            <span class="ch-title">Четырёхугольники</span>
+            <span class="ch-pages">стр. 121–138</span>
+            <span class="ch-badge full">3 урока из 3</span>
+        </summary>
+        <div class="chapter-body">
+
+            <div class="para done">
+                <div class="para-head">
+                    <h3>§ 1. Многоугольники</h3>
+                    <span class="status ok">✅ урок готов</span>
+                </div>
+                <p class="para-items">46. Выпуклый многоугольник • 47. Четырёхугольник • Задачи №462–470 • стр. 121–123</p>
+                <a class="btn go" href="1. Многоугольники.html">Перейти к уроку →</a>
+            </div>
+
+            <div class="para done">
+                <div class="para-head">
+                    <h3>§ 2. Параллелограмм и трапеция</h3>
+                    <span class="status ok">✅ урок готов</span>
+                </div>
+                <p class="para-items">48. Параллелограмм • 49. Признаки параллелограмма • 50. Трапеции • Задачи №471–501 • стр. 124–130</p>
+                <a class="btn go" href="2. Параллелограмм и трапеция.html">Перейти к уроку →</a>
+            </div>
+
+            <div class="para done">
+                <div class="para-head">
+                    <h3>§ 3. Прямоугольник, ромб, квадрат</h3>
+                    <span class="status ok">✅ урок готов</span>
+                </div>
+                <p class="para-items">51. Прямоугольник • 52. Ромб и квадрат • 53. Центральная симметрия • Задачи №502–540 • стр. 131–137</p>
+                <a class="btn go" href="3. Прямоугольник, ромб, квадрат.html">Перейти к уроку →</a>
+            </div>
+
+        </div>
+    </details>
+
+    <!-- ================= ГЛАВА VII ================= -->
+    <details class="chapter" id="glava-7">
+        <summary>
+            <span class="ch-emoji">🟩</span>
+            <span class="ch-num">Глава VII.</span>
+            <span class="ch-title">Площадь</span>
+            <span class="ch-pages">стр. 139–162</span>
+            <span class="ch-badge none">уроки скоро</span>
+        </summary>
+        <div class="chapter-body">
+
+            <div class="para">
+                <div class="para-head">
+                    <h3>§ 1. Площадь многоугольника</h3>
+                    <span class="status wait">⏳ скоро</span>
+                </div>
+                <p class="para-items">54. Понятие площади многоугольника • 55*. Площадь квадрата • 56. Площадь прямоугольника • Задачи • стр. 139–145</p>
+                <span class="btn soon">Перейти к уроку 🔒 скоро</span>
+            </div>
+
+            <div class="para">
+                <div class="para-head">
+                    <h3>§ 2. Площади параллелограмма, треугольника и трапеции</h3>
+                    <span class="status wait">⏳ скоро</span>
+                </div>
+                <p class="para-items">57. Площадь параллелограмма • 58. Площадь треугольника • 59. Площадь трапеции • Задачи • стр. 146–151</p>
+                <span class="btn soon">Перейти к уроку 🔒 скоро</span>
+            </div>
+
+            <div class="para">
+                <div class="para-head">
+                    <h3>§ 3. Теорема Пифагора</h3>
+                    <span class="status wait">⏳ скоро</span>
+                </div>
+                <p class="para-items">60. Теорема Пифагора • 61. Теорема, обратная теореме Пифагора • 62. Формула Герона • Задачи • стр. 152–159</p>
+                <span class="btn soon">Перейти к уроку 🔒 скоро</span>
+            </div>
+
+        </div>
+    </details>
+
+    <!-- ================= ГЛАВА VIII ================= -->
+    <details class="chapter" id="glava-8">
+        <summary>
+            <span class="ch-emoji">🔺</span>
+            <span class="ch-num">Глава VIII.</span>
+            <span class="ch-title">Подобные треугольники</span>
+            <span class="ch-pages">стр. 163–188</span>
+            <span class="ch-badge none">уроки скоро</span>
+        </summary>
+        <div class="chapter-body">
+
+            <div class="para">
+                <div class="para-head">
+                    <h3>§ 1. Определение подобных треугольников</h3>
+                    <span class="status wait">⏳ скоро</span>
+                </div>
+                <p class="para-items">63. Пропорциональные отрезки • 64. Определение подобных треугольников • 65. Отношение площадей подобных треугольников • Задачи • стр. 163–166</p>
+                <span class="btn soon">Перейти к уроку 🔒 скоро</span>
+            </div>
+
+            <div class="para">
+                <div class="para-head">
+                    <h3>§ 2. Признаки подобия треугольников</h3>
+                    <span class="status wait">⏳ скоро</span>
+                </div>
+                <p class="para-items">66. Первый признак • 67. Второй признак • 68. Третий признак подобия треугольников • Задачи • стр. 167–170</p>
+                <span class="btn soon">Перейти к уроку 🔒 скоро</span>
+            </div>
+
+            <div class="para">
+                <div class="para-head">
+                    <h3>§ 3. Применение подобия к доказательству теорем и решению задач</h3>
+                    <span class="status wait">⏳ скоро</span>
+                </div>
+                <p class="para-items">69. Средняя линия треугольника • 70. Четыре замечательные точки • 71. Пропорциональные отрезки в прямоугольном треугольнике • 72. Метод подобия в задачах на построение • 73. Подобие в измерительных работах на местности • Задачи • стр. 171–180</p>
+                <span class="btn soon">Перейти к уроку 🔒 скоро</span>
+            </div>
+
+            <div class="para">
+                <div class="para-head">
+                    <h3>§ 4. Соотношения между сторонами и углами прямоугольного треугольника</h3>
+                    <span class="status wait">⏳ скоро</span>
+                </div>
+                <p class="para-items">74. Синус, косинус и тангенс острого угла • 75. Значения синуса, косинуса и тангенса для углов 30°, 45°, 60° • Задачи • стр. 181–186</p>
+                <span class="btn soon">Перейти к уроку 🔒 скоро</span>
+            </div>
+
+        </div>
+    </details>
+
+    <!-- ================= ГЛАВА IX ================= -->
+    <details class="chapter" id="glava-9">
+        <summary>
+            <span class="ch-emoji">⭕</span>
+            <span class="ch-num">Глава IX.</span>
+            <span class="ch-title">Окружность</span>
+            <span class="ch-pages">стр. 189–213</span>
+            <span class="ch-badge none">уроки скоро</span>
+        </summary>
+        <div class="chapter-body">
+
+            <div class="para">
+                <div class="para-head">
+                    <h3>§ 1. Окружность и прямые</h3>
+                    <span class="status wait">⏳ скоро</span>
+                </div>
+                <p class="para-items">76. Взаимное расположение прямой и окружности • 77. Взаимное расположение двух окружностей • 78. Общая касательная двух окружностей • Практические задания • Задачи • стр. 189–198</p>
+                <span class="btn soon">Перейти к уроку 🔒 скоро</span>
+            </div>
+
+            <div class="para">
+                <div class="para-head">
+                    <h3>§ 2. Центральные и вписанные углы</h3>
+                    <span class="status wait">⏳ скоро</span>
+                </div>
+                <p class="para-items">79. Градусная мера дуги окружности • 80. Теорема о вписанном угле • 81. Углы, образованные хордами, касательными и секущими • Задачи • стр. 199–205</p>
+                <span class="btn soon">Перейти к уроку 🔒 скоро</span>
+            </div>
+
+            <div class="para">
+                <div class="para-head">
+                    <h3>§ 3. Вписанная и описанная окружности четырёхугольников</h3>
+                    <span class="status wait">⏳ скоро</span>
+                </div>
+                <p class="para-items">82. Вписанная окружность • 83. Описанная окружность • Задачи • стр. 206–210</p>
+                <span class="btn soon">Перейти к уроку 🔒 скоро</span>
+            </div>
+
+        </div>
+    </details>
+
+    <!-- ================= ДОПОЛНИТЕЛЬНО ================= -->
+    <div class="extra-card">
+        <h3>🏆 Задачи повышенной трудности</h3>
+        <span class="status wait">⏳ скоро</span>
+        <span class="ch-pages">стр. 214</span>
+        <span class="btn soon">Перейти 🔒 скоро</span>
+    </div>
+
+    <footer>
+        <p>📚 Геометрия 7–9, Л. С. Атанасян и др. • Интерактивные уроки курса открываются в отдельных файлах рядом с этой страницей</p>
+    </footer>
+
+</div>
+
+</body>
+</html>

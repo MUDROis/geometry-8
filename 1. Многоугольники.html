@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Многоугольники и четырёхугольники — Геометрия 8 класс</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #dc2626;
+            --accent: #0ea5e9;
+            --success: #16a34a;
+            --warning: #f59e0b;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #1e293b;
+            --text-light: #64748b;
+            --radius: 16px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Roboto', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container { max-width: 850px; margin: 0 auto; }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 30px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+        header h1 { margin: 0; font-size: 2.1em; }
+        header p { margin: 8px 0 0; opacity: 0.95; font-size: 1.05em; }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+        }
+
+        h2 {
+            color: var(--primary);
+            border-bottom: 3px solid var(--accent);
+            padding-bottom: 10px;
+            display: inline-block;
+            margin-top: 0;
+        }
+        h3 { color: var(--secondary); margin-top: 25px; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        th, td { border: 1px solid #e2e8f0; padding: 12px 14px; text-align: left; }
+        th { background: #f1f5f9; color: var(--primary); font-weight: 600; }
+
+        .rule-box {
+            background: #eff6ff;
+            border-left: 5px solid var(--primary);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .formula {
+            font-size: 1.25em;
+            font-weight: bold;
+            color: var(--secondary);
+            text-align: center;
+            background: #fef2f2;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border: 2px dashed var(--secondary);
+        }
+
+        .svg-container {
+            text-align: center;
+            margin: 25px 0;
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+        }
+        .svg-container svg { max-width: 100%; height: auto; }
+
+        details {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            margin: 15px 0;
+            overflow: hidden;
+        }
+        summary {
+            padding: 15px 20px;
+            cursor: pointer;
+            font-weight: bold;
+            color: var(--primary);
+            background: #eff6ff;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.05em;
+        }
+        summary::-webkit-details-marker { display: none; }
+        summary::before { content: '🔍'; font-size: 1.2em; }
+        details[open] summary::before { content: '💡'; }
+        details[open] summary { border-bottom: 1px solid #e2e8f0; }
+
+        .solution-content { padding: 20px; background: white; }
+        .solution-step {
+            margin-bottom: 12px;
+            padding-left: 15px;
+            border-left: 3px solid var(--success);
+        }
+
+        .level-badge {
+            display: inline-block;
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            color: white;
+            margin: 15px 0 10px;
+        }
+        .easy { background: var(--success); }
+        .medium { background: var(--warning); color: #1e293b; }
+        .hard { background: var(--secondary); }
+
+        .practice-box {
+            background: linear-gradient(135deg, #fffbeb, #fef3c7);
+            border: 2px solid var(--warning);
+        }
+
+        .teacher-note {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        .summary-box {
+            background: #eff6ff;
+            border: 2px solid var(--primary);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            header h1 { font-size: 1.5em; }
+            .card { padding: 20px; }
+            th, td { padding: 8px; font-size: 0.92em; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>📐 Многоугольники и четырёхугольники</h1>
+        <p>Геометрия 8 класс • Глава 5, §1, пункты 46–47 • Выпуклые многоугольники, сумма углов, четырёхугольник</p>
+    </header>
+
+    <!-- ================= БЛОК 1: ИЗУЧЕНИЕ ================= -->
+    <section class="card">
+        <h2>🧠 Блок 1. Изучение нового материала</h2>
+
+        <h3>🌍 Разминка: зачем нам это нужно?</h3>
+        <p>Посмотри вокруг: пчелиные соты — это <strong>шестиугольники</strong>, дорожный знак «Стоп» — <strong>восьмиугольник</strong>, оконная рама и экран телефона — <strong>четырёхугольники</strong>. Чтобы строить дома, укладывать плитку и создавать дизайн, нужно точно знать, чему равны углы фигур и сколько у них диагоналей. Сегодня мы выведем формулы, которые работают для <em>любого</em> многоугольника! 🐝🏗️</p>
+
+        <h3>📖 Ключевые термины</h3>
+        <table>
+            <tr><th>Термин</th><th>Определение</th></tr>
+            <tr><td><strong>Многоугольник</strong></td><td>Фигура, состоящая из отрезков, где соседние отрезки не лежат на одной прямой. Вершины, принадлежащие одной стороне, — <em>соседние</em>.</td></tr>
+            <tr><td><strong>Диагональ</strong></td><td>Отрезок, соединяющий две <em>несоседние</em> вершины многоугольника.</td></tr>
+            <tr><td><strong>Выпуклый многоугольник</strong></td><td>Многоугольник, лежащий по одну сторону от любой прямой, проходящей через две его соседние вершины. У него нет «вмятин».</td></tr>
+            <tr><td><strong>Внешний угол</strong></td><td>Угол, смежный с внутренним углом многоугольника (образуется при продолжении стороны).</td></tr>
+            <tr><td><strong>Четырёхугольник</strong></td><td>Многоугольник с четырьмя вершинами, четырьмя сторонами и двумя диагоналями.</td></tr>
+            <tr><td><strong>Противоположные вершины</strong></td><td>Вершины, не являющиеся соседними (у четырёхугольника ABCD: A и C, B и D).</td></tr>
+            <tr><td><strong>Противоположные стороны</strong></td><td>Несмежные стороны (у ABCD: AB и CD, BC и AD).</td></tr>
+        </table>
+
+        <div class="svg-container">
+            <h3>👁️ Выпуклый или невыпуклый?</h3>
+            <svg viewBox="0 0 460 195" width="460" height="195">
+                <polygon points="60,150 100,40 180,70 150,160" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+                <text x="70" y="185" font-family="sans-serif" font-size="16" fill="#2563eb" font-weight="bold">Выпуклый ✅</text>
+                <polygon points="280,150 310,40 350,95 390,40 430,150" fill="#fee2e2" stroke="#dc2626" stroke-width="3"/>
+                <text x="300" y="185" font-family="sans-serif" font-size="16" fill="#dc2626" font-weight="bold">Невыпуклый ❌</text>
+            </svg>
+            <p><em>В выпуклом многоугольнике все диагонали проходят внутри фигуры. В невыпуклом — хотя бы одна диагональ выходит наружу.</em></p>
+        </div>
+
+        <div class="rule-box">
+            <h3>🌟 Правило 1: Сумма внутренних углов</h3>
+            <p>Проведём из одной вершины выпуклого n-угольника все диагонали. Они разобьют фигуру на треугольники, а сумма углов каждого треугольника равна 180°. Треугольников получается ровно <strong>(n − 2)</strong>!</p>
+            <div class="formula">Сумма внутренних углов = (n − 2) · 180°</div>
+        </div>
+
+        <div class="svg-container">
+            <h3>🔺 Откуда берётся (n − 2)? Смотрим на рисунок!</h3>
+            <svg viewBox="0 0 460 210" width="460" height="210">
+                <!-- Пятиугольник -->
+                <polygon points="110,25 180,75 155,155 65,155 40,75" fill="#ffffff" stroke="#1e293b" stroke-width="2"/>
+                <line x1="110" y1="25" x2="155" y2="155" stroke="#dc2626" stroke-width="2" stroke-dasharray="5,4"/>
+                <line x1="110" y1="25" x2="65" y2="155" stroke="#dc2626" stroke-width="2" stroke-dasharray="5,4"/>
+                <text x="45" y="180" font-family="sans-serif" font-size="14" fill="#1e293b" font-weight="bold">5 вершин: 2 диагонали</text>
+                <text x="45" y="200" font-family="sans-serif" font-size="14" fill="#dc2626" font-weight="bold">→ 3 треугольника (5 − 2)</text>
+
+                <!-- Шестиугольник -->
+                <polygon points="320,25 385,60 385,130 320,165 255,130 255,60" fill="#ffffff" stroke="#1e293b" stroke-width="2"/>
+                <line x1="320" y1="25" x2="385" y2="130" stroke="#dc2626" stroke-width="2" stroke-dasharray="5,4"/>
+                <line x1="320" y1="25" x2="320" y2="165" stroke="#dc2626" stroke-width="2" stroke-dasharray="5,4"/>
+                <line x1="320" y1="25" x2="255" y2="130" stroke="#dc2626" stroke-width="2" stroke-dasharray="5,4"/>
+                <text x="255" y="180" font-family="sans-serif" font-size="14" fill="#1e293b" font-weight="bold">6 вершин: 3 диагонали</text>
+                <text x="255" y="200" font-family="sans-serif" font-size="14" fill="#dc2626" font-weight="bold">→ 4 треугольника (6 − 2)</text>
+            </svg>
+        </div>
+
+        <div class="svg-container">
+            <h3>➕ Считаем сумму углов шестиугольника</h3>
+            <svg viewBox="0 0 320 210" width="320" height="210">
+                <polygon points="160,20 240,60 240,140 160,180 80,140 80,60" fill="#ffffff" stroke="#1e293b" stroke-width="2"/>
+                <line x1="160" y1="20" x2="240" y2="140" stroke="#dc2626" stroke-width="2" stroke-dasharray="5,4"/>
+                <line x1="160" y1="20" x2="160" y2="180" stroke="#dc2626" stroke-width="2" stroke-dasharray="5,4"/>
+                <line x1="160" y1="20" x2="80" y2="140" stroke="#dc2626" stroke-width="2" stroke-dasharray="5,4"/>
+                <text x="172" y="75" font-family="sans-serif" font-size="14" fill="#dc2626" font-weight="bold">180°</text>
+                <text x="192" y="125" font-family="sans-serif" font-size="14" fill="#dc2626" font-weight="bold">180°</text>
+                <text x="135" y="155" font-family="sans-serif" font-size="14" fill="#dc2626" font-weight="bold">180°</text>
+                <text x="95" y="125" font-family="sans-serif" font-size="14" fill="#dc2626" font-weight="bold">180°</text>
+                <text x="60" y="205" font-family="sans-serif" font-size="15" fill="#1e293b" font-weight="bold">4 · 180° = 720° = (6 − 2) · 180°</text>
+            </svg>
+        </div>
+
+        <div class="rule-box" style="background: #f0fdf4; border-left-color: var(--success);">
+            <h3>💡 Правило 2: Внешние углы</h3>
+            <p>Если при каждой вершине выпуклого многоугольника взять по одному внешнему углу, то их сумма <strong>всегда равна 360°</strong> — она не зависит от числа сторон! 🤯</p>
+            <div class="formula" style="background: #f0fdf4; border-color: var(--success); color: var(--success);">Сумма внешних углов = 360°</div>
+        </div>
+
+        <div class="rule-box" style="background: #fffbeb; border-left-color: var(--warning);">
+            <h3>📏 Правило 3: Количество диагоналей</h3>
+            <p>Из каждой вершины можно провести <strong>(n − 3)</strong> диагонали (нельзя провести к себе и к двум соседям). Всего вершин n, значит «насчитаем» n·(n − 3), но каждая диагональ при этом учтена <strong>дважды</strong> (с обоих концов). Поэтому делим на 2:</p>
+            <div class="formula" style="background: #fffbeb; border-color: var(--warning); color: #92400e;">Количество диагоналей = n(n − 3) / 2</div>
+        </div>
+
+        <h2 style="margin-top: 40px;">⬛ Часть 2. Четырёхугольник</h2>
+
+        <p><strong>Четырёхугольник</strong> — самый «популярный» многоугольник в жизни: двери, окна, листы бумаги, участки земли. У него <strong>4 вершины, 4 стороны и 2 диагонали</strong>.</p>
+
+        <div class="svg-container">
+            <h3>Элементы четырёхугольника ABCD</h3>
+            <svg viewBox="0 0 420 300" width="420" height="300">
+                <polygon points="100,250 150,80 320,100 280,260" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+                <line x1="100" y1="250" x2="320" y2="100" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,4"/>
+                <line x1="150" y1="80" x2="280" y2="260" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,4"/>
+                <circle cx="100" cy="250" r="4" fill="#dc2626"/>
+                <circle cx="150" cy="80" r="4" fill="#dc2626"/>
+                <circle cx="320" cy="100" r="4" fill="#dc2626"/>
+                <circle cx="280" cy="260" r="4" fill="#dc2626"/>
+                <text x="78" y="272" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b">A</text>
+                <text x="152" y="68" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b">B</text>
+                <text x="330" y="100" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b">C</text>
+                <text x="288" y="282" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b">D</text>
+                <text x="100" y="165" font-family="sans-serif" font-size="14" fill="#2563eb">AB</text>
+                <text x="230" y="80" font-family="sans-serif" font-size="14" fill="#2563eb">BC</text>
+                <text x="300" y="185" font-family="sans-serif" font-size="14" fill="#2563eb">CD</text>
+                <text x="175" y="268" font-family="sans-serif" font-size="14" fill="#2563eb">AD</text>
+                <text x="225" y="155" font-family="sans-serif" font-size="13" fill="#b45309" font-style="italic">AC</text>
+                <text x="195" y="195" font-family="sans-serif" font-size="13" fill="#b45309" font-style="italic">BD</text>
+            </svg>
+            <p><strong>Стороны:</strong> AB, BC, CD, AD • <strong>Диагонали:</strong> AC и BD (соединяют противоположные вершины)</p>
+        </div>
+
+        <div class="svg-container">
+            <h3>Выпуклый и невыпуклый четырёхугольники</h3>
+            <svg viewBox="0 0 500 225" width="500" height="225">
+                <polygon points="60,180 100,40 220,60 190,190" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+                <text x="95" y="215" font-family="sans-serif" font-size="16" fill="#2563eb" font-weight="bold">Выпуклый ✅</text>
+                <polygon points="300,180 340,50 390,120 440,180" fill="#fee2e2" stroke="#dc2626" stroke-width="3"/>
+                <text x="320" y="215" font-family="sans-serif" font-size="16" fill="#dc2626" font-weight="bold">Невыпуклый ❌</text>
+                <text x="330" y="35" font-family="sans-serif" font-size="13" fill="#dc2626">«вмятина»: угол больше 180°</text>
+            </svg>
+        </div>
+
+        <div class="rule-box">
+            <h3>🌟 Главное свойство четырёхугольника</h3>
+            <p>Каждая диагональ выпуклого четырёхугольника делит его на <strong>два треугольника</strong>. Значит, сумма углов четырёхугольника равна двум суммам углов треугольника:</p>
+            <div class="formula">Сумма углов четырёхугольника = 2 · 180° = 360°</div>
+        </div>
+
+        <div class="svg-container">
+            <h3>Диагональ делит четырёхугольник на два треугольника</h3>
+            <svg viewBox="0 0 420 265" width="420" height="265">
+                <polygon points="80,220 120,50 320,70 290,230" fill="#f8fafc" stroke="#1e293b" stroke-width="2"/>
+                <line x1="80" y1="220" x2="320" y2="70" stroke="#dc2626" stroke-width="3" stroke-dasharray="7,5"/>
+                <text x="60" y="242" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b">A</text>
+                <text x="122" y="40" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b">B</text>
+                <text x="330" y="70" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b">C</text>
+                <text x="296" y="252" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b">D</text>
+                <text x="150" y="110" font-family="sans-serif" font-size="15" fill="#dc2626" font-weight="bold">△ABC → 180°</text>
+                <text x="175" y="180" font-family="sans-serif" font-size="15" fill="#dc2626" font-weight="bold">△ACD → 180°</text>
+                <text x="95" y="25" font-family="sans-serif" font-size="15" fill="#1e293b" font-weight="bold">∠A + ∠B + ∠C + ∠D = 180° + 180° = 360°</text>
+            </svg>
+        </div>
+    </section>
+
+    <!-- ================= БЛОК 2: ЗАКРЕПЛЕНИЕ ================= -->
+    <section class="card">
+        <h2>🛠 Блок 2. Закрепление (задачи из учебника)</h2>
+        <p>Сначала реши задачу самостоятельно в тетради, а потом открой решение и проверь каждый шаг! ✍️</p>
+
+        <span class="level-badge easy">Базовый уровень</span>
+        <h3>Задание 1 (№462)</h3>
+        <p>Начертите выпуклые пятиугольник и шестиугольник. Из какой-нибудь вершины проведите все диагонали. На сколько треугольников разделяют проведённые диагонали каждый многоугольник?</p>
+        <details>
+            <summary>Показать подробное решение</summary>
+            <div class="solution-content">
+                <div class="solution-step"><strong>Пятиугольник:</strong> из одной вершины можно провести <strong>2 диагонали</strong> (к двум несоседним вершинам). Они разбивают пятиугольник на <strong>3 треугольника</strong>.</div>
+                <div class="solution-step"><strong>Шестиугольник:</strong> из одной вершины можно провести <strong>3 диагонали</strong>. Они разбивают шестиугольник на <strong>4 треугольника</strong>.</div>
+                <div class="solution-step" style="border-left-color: var(--primary);"><strong>Вывод:</strong> диагонали из одной вершины делят n-угольник на (n − 2) треугольника. Именно поэтому сумма углов равна (n − 2) · 180°!</div>
+            </div>
+        </details>
+
+        <span class="level-badge easy">Базовый уровень</span>
+        <h3>Задание 2 (№463)</h3>
+        <p>Найдите сумму углов выпуклого: а) пятиугольника; б) шестиугольника; в) десятиугольника.</p>
+        <details>
+            <summary>Показать подробное решение</summary>
+            <div class="solution-content">
+                <p>Формула: <strong>S = (n − 2) · 180°</strong></p>
+                <div class="solution-step"><strong>а)</strong> n = 5: S = (5 − 2) · 180° = 3 · 180° = <strong>540°</strong></div>
+                <div class="solution-step"><strong>б)</strong> n = 6: S = (6 − 2) · 180° = 4 · 180° = <strong>720°</strong></div>
+                <div class="solution-step"><strong>в)</strong> n = 10: S = (10 − 2) · 180° = 8 · 180° = <strong>1440°</strong></div>
+            </div>
+        </details>
+
+        <span class="level-badge easy">Базовый уровень</span>
+        <h3>Задание 3 (№464)</h3>
+        <p>Найдите количество диагоналей: а) выпуклого пятиугольника; б) выпуклого двенадцатиугольника; в) выпуклого двадцатипятиугольника.</p>
+        <details>
+            <summary>Показать подробное решение</summary>
+            <div class="solution-content">
+                <p>Формула: <strong>N = n(n − 3) / 2</strong></p>
+                <div class="solution-step"><strong>а)</strong> n = 5: N = 5 · (5 − 3) / 2 = 5 · 2 / 2 = <strong>5</strong></div>
+                <div class="solution-step"><strong>б)</strong> n = 12: N = 12 · (12 − 3) / 2 = 12 · 9 / 2 = 108 / 2 = <strong>54</strong></div>
+                <div class="solution-step"><strong>в)</strong> n = 25: N = 25 · (25 − 3) / 2 = 25 · 22 / 2 = 550 / 2 = <strong>275</strong></div>
+            </div>
+        </details>
+
+        <span class="level-badge medium">Средний уровень</span>
+        <h3>Задание 4 (№465)</h3>
+        <p>Сколько сторон имеет выпуклый многоугольник, каждый угол которого равен: а) 90°; б) 60°; в) 120°; г) 108°?</p>
+        <details>
+            <summary>Показать подробное решение</summary>
+            <div class="solution-content">
+                <p><em>Идея: если все n углов равны, то каждый угол равен (n − 2) · 180° / n. Составляем уравнение.</em></p>
+                <div class="solution-step"><strong>а) 90°:</strong> (n − 2) · 180 = 90n → 180n − 360 = 90n → 90n = 360 → <strong>n = 4</strong> (прямоугольник или квадрат).</div>
+                <div class="solution-step"><strong>б) 60°:</strong> 180n − 360 = 60n → 120n = 360 → <strong>n = 3</strong> (равносторонний треугольник).</div>
+                <div class="solution-step"><strong>в) 120°:</strong> 180n − 360 = 120n → 60n = 360 → <strong>n = 6</strong> (правильный шестиугольник, как соты!).</div>
+                <div class="solution-step"><strong>г) 108°:</strong> 180n − 360 = 108n → 72n = 360 → <strong>n = 5</strong> (правильный пятиугольник).</div>
+            </div>
+        </details>
+
+        <span class="level-badge medium">Средний уровень</span>
+        <h3>Задание 5 (№466)</h3>
+        <p>Найдите стороны четырёхугольника, если его периметр равен 8 см, а одна сторона больше каждой из других сторон соответственно на 3 мм, 4 мм и 5 мм.</p>
+        <details>
+            <summary>Показать подробное решение</summary>
+            <div class="solution-content">
+                <div class="solution-step"><strong>Шаг 1: Приводим к одной единице измерения.</strong><br>8 см = 80 мм.</div>
+                <div class="solution-step"><strong>Шаг 2: Обозначаем.</strong> Пусть <strong>наибольшая</strong> сторона равна x мм. Тогда три другие меньше её на 3, 4 и 5 мм:<br>x − 3, x − 4, x − 5.</div>
+                <div class="solution-step"><strong>Шаг 3: Уравнение периметра.</strong><br>x + (x − 3) + (x − 4) + (x − 5) = 80<br>4x − 12 = 80<br>4x = 92<br>x = 23 (мм).</div>
+                <div class="solution-step"><strong>Шаг 4: Находим все стороны.</strong><br>23 мм; 23 − 3 = 20 мм; 23 − 4 = 19 мм; 23 − 5 = 18 мм.</div>
+                <div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> 2,3 см; 2 см; 1,9 см; 1,8 см.<br><em>Проверка: 23 + 20 + 19 + 18 = 80 мм = 8 см ✅</em></div>
+            </div>
+        </details>
+
+        <span class="level-badge medium">Средний уровень</span>
+        <h3>Задание 6 (№467)</h3>
+        <p>Найдите стороны четырёхугольника, если его периметр равен 66 см, первая сторона больше второй на 8 см и на столько же меньше третьей стороны, а четвёртая в 3 раза больше второй.</p>
+        <details>
+            <summary>Показать подробное решение</summary>
+            <div class="solution-content">
+                <div class="solution-step"><strong>Шаг 1: Обозначаем.</strong> Пусть вторая сторона = x см.<br>
+                    Первая = x + 8 (больше второй на 8).<br>
+                    Третья = (x + 8) + 8 = x + 16 (первая на 8 меньше третьей).<br>
+                    Четвёртая = 3x (в 3 раза больше второй).</div>
+                <div class="solution-step"><strong>Шаг 2: Уравнение периметра.</strong><br>(x + 8) + x + (x + 16) + 3x = 66<br>6x + 24 = 66<br>6x = 42<br>x = 7 (см).</div>
+                <div class="solution-step"><strong>Шаг 3: Находим стороны.</strong><br>Вторая: 7 см; первая: 7 + 8 = 15 см; третья: 7 + 16 = 23 см; четвёртая: 3 · 7 = 21 см.</div>
+                <div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> 15 см; 7 см; 23 см; 21 см.<br><em>Проверка: 15 + 7 + 23 + 21 = 66 см ✅</em></div>
+            </div>
+        </details>
+
+        <span class="level-badge hard">Продвинутый уровень</span>
+        <h3>Задание 7 (№468)</h3>
+        <p>Найдите углы выпуклого четырёхугольника, если они равны друг другу.</p>
+        <details>
+            <summary>Показать подробное решение</summary>
+            <div class="solution-content">
+                <div class="solution-step"><strong>Шаг 1:</strong> Сумма углов выпуклого четырёхугольника равна 360°.</div>
+                <div class="solution-step"><strong>Шаг 2:</strong> Все 4 угла равны, значит каждый равен 360° : 4 = <strong>90°</strong>.</div>
+                <div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> все углы по 90° (это прямоугольник или квадрат).</div>
+            </div>
+        </details>
+
+        <span class="level-badge hard">Продвинутый уровень</span>
+        <h3>Задание 8 (№469)</h3>
+        <p>Найдите углы A, B и C выпуклого четырёхугольника ABCD, если ∠A = ∠B = ∠C, а ∠D = 135°.</p>
+        <details>
+            <summary>Показать подробное решение</summary>
+            <div class="solution-content">
+                <div class="solution-step"><strong>Шаг 1:</strong> ∠A + ∠B + C + ∠D = 360°. Обозначим равные углы за x.</div>
+                <div class="solution-step"><strong>Шаг 2:</strong> x + x + x + 135° = 360° → 3x = 360° − 135° = 225° → x = 75°.</div>
+                <div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> ∠A = ∠B = ∠C = 75°.<br><em>Проверка: 75° · 3 + 135° = 225° + 135° = 360° ✅</em></div>
+            </div>
+        </details>
+
+        <span class="level-badge hard">Продвинутый уровень</span>
+        <h3>Задание 9 (№470)</h3>
+        <p>Найдите углы выпуклого четырёхугольника, если они пропорциональны числам 1, 2, 4, 5.</p>
+        <details>
+            <summary>Показать подробное решение</summary>
+            <div class="solution-content">
+                <div class="solution-step"><strong>Шаг 1:</strong> Сумма углов = 360°. Всего частей: 1 + 2 + 4 + 5 = 12.</div>
+                <div class="solution-step"><strong>Шаг 2:</strong> На одну часть приходится: 360° : 12 = 30°.</div>
+                <div class="solution-step"><strong>Шаг 3:</strong> Углы равны:<br>1 · 30° = <strong>30°</strong>; 2 · 30° = <strong>60°</strong>; 4 · 30° = <strong>120°</strong>; 5 · 30° = <strong>150°</strong>.</div>
+                <div class="solution-step" style="border-left-color: var(--primary);"><em>Проверка: 30° + 60° + 120° + 150° = 360° ✅</em></div>
+            </div>
+        </details>
+    </section>
+
+    <!-- ================= БЛОК 3: ПРАКТИЧЕСКОЕ ПРИМЕНЕНИЕ ================= -->
+    <section class="card practice-box">
+        <h2>🏗 Блок 3. Практическое применение</h2>
+
+        <h3>🎯 Продукт урока: «Архитектор тротуарной плитки»</h3>
+        <p>Ты проектируешь коллекцию плитки. Плитка первой формы — <strong>правильный восьмиугольник</strong> (как знак «Стоп»), плитка второй формы — <strong>квадрат</strong>, которым заполняют промежутки между восьмиугольниками.</p>
+        <p><strong>Задача:</strong> вычисли внутренний угол восьмиугольной плитки и проверь, что в точке стыка двух восьмиугольников и одного квадрата углы в сумме дают ровно 360° (тогда покрытие ляжет без щелей!).</p>
+
+        <details>
+            <summary>Показать расчёт архитектора</summary>
+            <div class="solution-content">
+                <div class="solution-step"><strong>1. Угол восьмиугольника:</strong> сумма углов = (8 − 2) · 180° = 6 · 180° = 1080°. Каждый угол = 1080° : 8 = <strong>135°</strong>.</div>
+                <div class="solution-step"><strong>2. Угол квадрата:</strong> 90°.</div>
+                <div class="solution-step"><strong>3. Проверка стыка:</strong> 135° + 135° + 90° = <strong>360°</strong> ✅ — покрытие собирается идеально, без щелей и нахлёстов!</div>
+                <div class="solution-step" style="border-left-color: var(--warning);"><em>Итог: именно поэтому такая комбинация плиток встречается в городах по всему миру! 🪨✨</em></div>
+            </div>
+        </details>
+    </section>
+
+    <!-- ================= ИТОГИ ================= -->
+    <section class="card summary-box">
+        <h2>📝 Главное, что нужно запомнить</h2>
+        <ul>
+            <li>Сумма внутренних углов выпуклого n-угольника: <strong>(n − 2) · 180°</strong>.</li>
+            <li>Сумма внешних углов выпуклого многоугольника: <strong>360°</strong> (не зависит от n).</li>
+            <li>Количество диагоналей n-угольника: <strong>n(n − 3) / 2</strong>.</li>
+            <li>У четырёхугольника 4 вершины, 4 стороны и 2 диагонали; сумма его углов равна <strong>360°</strong>.</li>
+            <li>Диагональ делит выпуклый четырёхугольник на два треугольника — этим удобно пользоваться в задачах.</li>
+            <li>В задачах на периметр сначала приводим все величины к <strong>одной единице измерения</strong>!</li>
+        </ul>
+    </section>
+
+    <!-- ================= МЕТОДИЧЕСКАЯ ПОДСКАЗКА ================= -->
+    <div class="teacher-note">
+        <h3>💡 Методическая подсказка (для учителя или родителя)</h3>
+        <ul style="margin-top: 10px; padding-left: 20px;">
+            <li><strong>Формула (n − 2):</strong> если ученик забывает вычесть двойку, попросите его начертить четырёхугольник и провести одну диагональ — он увидит 2 треугольника. Формула перестаёт быть «магией» и становится картинкой.</li>
+            <li><strong>Задачи на периметр (№466, №467):</strong> главная ловушка — разные единицы измерения и выбор «за x». В №466 удобно обозначать за x <em>наибольшую</em> сторону: тогда остальные записываются вычитанием и ученик не путается в «больше/меньше».</li>
+            <li><strong>Уравнения с углами (№465):</strong> для сильных учеников покажите оба пути: подбор (подставлять n = 3, 4, 5…) и уравнение. Подбор даёт интуицию, уравнение — скорость.</li>
+            <li><strong>Пропорции (№470):</strong> метод «частей» — самая наглядная опора: 12 частей = 360°, значит 1 часть = 30°. Слабым ученикам стоит нарисовать 12 клеточек и закрасить группы 1-2-4-5.</li>
+            <li><strong>Чертёж — обязательный шаг:</strong> в любой задаче про четырёхугольник сначала рисуем фигуру и подписываем известные данные. Это снижает количество ошибок вдвое.</li>
+        </ul>
+    </div>
+
+    <footer style="text-align: center; color: var(--text-light); margin-top: 30px; font-size: 0.9em; padding-bottom: 20px;">
+        <p>📚 Геометрия 8 класс (Атанасян) • Глава 5, §1, пункты 46–47 • Задачи №462–470</p>
+    </footer>
+</div>
+
+</body>
+</html>

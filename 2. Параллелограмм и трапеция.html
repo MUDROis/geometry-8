@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Параллелограмм и трапеция — Геометрия 8 класс</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #dc2626;
+            --accent: #0ea5e9;
+            --success: #16a34a;
+            --warning: #f59e0b;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #1e293b;
+            --text-light: #64748b;
+            --radius: 16px;
+            --shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+        }
+        body { font-family: 'Segoe UI','Roboto',system-ui,sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; margin: 0; padding: 20px; }
+        .container { max-width: 850px; margin: 0 auto; }
+        header { text-align: center; margin-bottom: 30px; padding: 30px; background: linear-gradient(135deg, var(--primary), var(--accent)); color: white; border-radius: var(--radius); box-shadow: var(--shadow); }
+        header h1 { margin: 0; font-size: 2.1em; }
+        header p { margin: 8px 0 0; opacity: 0.95; font-size: 1.05em; }
+        .card { background: var(--card-bg); border-radius: var(--radius); padding: 30px; margin-bottom: 25px; box-shadow: var(--shadow); }
+        h2 { color: var(--primary); border-bottom: 3px solid var(--accent); padding-bottom: 10px; display: inline-block; margin-top: 0; }
+        h3 { color: var(--secondary); margin-top: 25px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; border-radius: 8px; overflow: hidden; }
+        th, td { border: 1px solid #e2e8f0; padding: 12px 14px; text-align: left; }
+        th { background: #f1f5f9; color: var(--primary); font-weight: 600; }
+        .rule-box { background: #eff6ff; border-left: 5px solid var(--primary); padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0; }
+        .formula { font-size: 1.2em; font-weight: bold; color: var(--secondary); text-align: center; background: #fef2f2; padding: 15px; border-radius: 8px; margin: 15px 0; border: 2px dashed var(--secondary); }
+        .svg-container { text-align: center; margin: 25px 0; background: #f8fafc; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0; }
+        .svg-container svg { max-width: 100%; height: auto; }
+        details { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin: 15px 0; overflow: hidden; }
+        summary { padding: 15px 20px; cursor: pointer; font-weight: bold; color: var(--primary); background: #eff6ff; list-style: none; display: flex; align-items: center; gap: 10px; font-size: 1.05em; }
+        summary::-webkit-details-marker { display: none; }
+        summary::before { content: '🔍'; font-size: 1.2em; }
+        details[open] summary::before { content: '💡'; }
+        details[open] summary { border-bottom: 1px solid #e2e8f0; }
+        .solution-content { padding: 20px; background: white; }
+        .solution-step { margin-bottom: 12px; padding-left: 15px; border-left: 3px solid var(--success); }
+        .level-badge { display: inline-block; padding: 5px 14px; border-radius: 20px; font-size: 0.85em; font-weight: bold; color: white; margin: 15px 0 10px; }
+        .easy { background: var(--success); }
+        .medium { background: var(--warning); color: #1e293b; }
+        .hard { background: var(--secondary); }
+        .practice-box { background: linear-gradient(135deg, #fffbeb, #fef3c7); border: 2px solid var(--warning); }
+        .teacher-note { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 20px; margin-top: 30px; }
+        .summary-box { background: #eff6ff; border: 2px solid var(--primary); border-radius: 12px; padding: 20px; }
+        @media (max-width: 600px) { body { padding: 10px; } header h1 { font-size: 1.5em; } .card { padding: 20px; } th, td { padding: 8px; font-size: 0.92em; } }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>📐 Параллелограмм и трапеция</h1>
+        <p>Геометрия 8 класс • Глава 5, §2, пункты 48–50 • Свойства, признаки, средние линии</p>
+    </header>
+
+    <!-- ================= БЛОК 1: ИЗУЧЕНИЕ ================= -->
+    <section class="card">
+        <h2>🧠 Блок 1. Изучение нового материала</h2>
+
+        <h3>🌍 Разминка: где вокруг параллелограммы?</h3>
+        <p>Раскладная сушилка для белья, подъёмный кран-пантограф, механизм колёс тепловоза, раздвижные ворота — всё это <strong>параллелограммные механизмы</strong>! А форма трапеции — это кузов автомобиля, абажур лампы и дамская сумочка 😄 Сегодня разберёмся, почему эти фигуры так «любят» инженеры.</p>
+
+        <h2 style="margin-top:40px;">▱ Часть 1. Параллелограмм (пункт 48)</h2>
+
+        <div class="rule-box">
+            <h3>📖 Определение</h3>
+            <p><strong>Параллелограмм</strong> — это четырёхугольник, у которого <strong>противоположные стороны попарно параллельны</strong>.</p>
+            <p>В параллелограмме ABCD: AB ∥ CD и AD ∥ BC. Параллелограмм — <strong>выпуклый</strong> четырёхугольник.</p>
+        </div>
+
+        <div class="svg-container">
+            <h3>Параллелограмм ABCD</h3>
+            <svg viewBox="0 0 340 215" width="340" height="215">
+                <polygon points="50,170 230,170 290,70 110,70" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+                <line x1="140" y1="163" x2="140" y2="177" stroke="#dc2626" stroke-width="2"/>
+                <line x1="200" y1="63" x2="200" y2="77" stroke="#dc2626" stroke-width="2"/>
+                <line x1="74" y1="116" x2="86" y2="124" stroke="#16a34a" stroke-width="2"/>
+                <line x1="76" y1="113" x2="88" y2="121" stroke="#16a34a" stroke-width="2"/>
+                <line x1="254" y1="116" x2="266" y2="124" stroke="#16a34a" stroke-width="2"/>
+                <line x1="256" y1="113" x2="268" y2="121" stroke="#16a34a" stroke-width="2"/>
+                <text x="32" y="188" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b">A</text>
+                <text x="234" y="188" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b">B</text>
+                <text x="296" y="65" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b">C</text>
+                <text x="95" y="60" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b">D</text>
+                <text x="85" y="208" font-family="sans-serif" font-size="15" fill="#2563eb" font-weight="bold">AB ∥ CD, AD ∥ BC</text>
+            </svg>
+            <p><em>Одинарные метки — одна пара противоположных сторон, двойные — другая.</em></p>
+        </div>
+
+        <div class="rule-box" style="background:#f0fdf4; border-left-color: var(--success);">
+            <h3>🌟 Свойство 1: стороны и углы</h3>
+            <p>В параллелограмме <strong>противоположные стороны равны</strong> и <strong>противоположные углы равны</strong>:</p>
+            <div class="formula" style="background:#f0fdf4; border-color: var(--success); color: var(--success);">AB = CD, AD = BC, ∠A = ∠C, ∠B = ∠D</div>
+            <p>💡 <strong>Следствие:</strong> сумма углов, прилежащих к одной стороне, равна 180°: ∠A + ∠B = 180°.</p>
+        </div>
+
+        <div class="rule-box" style="background:#fffbeb; border-left-color: var(--warning);">
+            <h3>🌟 Свойство 2: диагонали</h3>
+            <p>Диагонали параллелограмма <strong>пересекаются и точкой пересечения делятся пополам</strong>:</p>
+            <div class="formula" style="background:#fffbeb; border-color: var(--warning); color:#92400e;">AO = OC, BO = OD</div>
+        </div>
+
+        <div class="svg-container">
+            <h3>Диагонали делятся пополам</h3>
+            <svg viewBox="0 0 340 215" width="340" height="215">
+                <polygon points="50,170 230,170 290,70 110,70" fill="#f8fafc" stroke="#1e293b" stroke-width="2"/>
+                <line x1="50" y1="170" x2="290" y2="70" stroke="#dc2626" stroke-width="2" stroke-dasharray="6,4"/>
+                <line x1="230" y1="170" x2="110" y2="70" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,4"/>
+                <circle cx="170" cy="120" r="5" fill="#dc2626"/>
+                <text x="178" y="115" font-family="sans-serif" font-size="16" font-weight="bold" fill="#dc2626">O</text>
+                <text x="32" y="188" font-family="sans-serif" font-size="16" font-weight="bold">A</text>
+                <text x="234" y="188" font-family="sans-serif" font-size="16" font-weight="bold">B</text>
+                <text x="296" y="65" font-family="sans-serif" font-size="16" font-weight="bold">C</text>
+                <text x="95" y="60" font-family="sans-serif" font-size="16" font-weight="bold">D</text>
+                <text x="95" y="208" font-family="sans-serif" font-size="15" fill="#1e293b" font-weight="bold">AO = OC и BO = OD</text>
+            </svg>
+        </div>
+
+        <h2 style="margin-top:40px;">🔑 Часть 2. Признаки параллелограмма (пункт 49)</h2>
+        <p><strong>Признак</strong> — это «примета», по которой мы можем доказать, что четырёхугольник является параллелограммом.</p>
+        <table>
+            <tr><th>№</th><th>Если... (условие)</th><th>...то это параллелограмм</th></tr>
+            <tr><td><strong>1</strong></td><td>Две стороны <strong>равны и параллельны</strong></td><td>✅ параллелограмм</td></tr>
+            <tr><td><strong>2</strong></td><td>Противоположные стороны <strong>попарно равны</strong></td><td>✅ параллелограмм</td></tr>
+            <tr><td><strong>3</strong></td><td>Диагонали пересекаются и <strong>делятся пополам</strong></td><td>✅ параллелограмм</td></tr>
+        </table>
+        <p>💡 <em>Запомни девиз: «равны и параллельны», «попарно равны», «пополам» — три ключа параллелограмма! 🔑</em></p>
+
+        <h2 style="margin-top:40px;">⏢ Часть 3. Трапеция (пункт 50)</h2>
+
+        <div class="rule-box">
+            <h3>📖 Определение</h3>
+            <p><strong>Трапеция</strong> — это четырёхугольник, у которого <strong>две стороны параллельны</strong> (основания), а <strong>две другие — не параллельны</strong> (боковые стороны).</p>
+        </div>
+
+        <div class="svg-container">
+            <h3>Виды трапеций</h3>
+            <svg viewBox="0 0 520 215" width="520" height="215">
+                <!-- Произвольная -->
+                <polygon points="30,150 160,150 130,70 80,70" fill="#f8fafc" stroke="#1e293b" stroke-width="2"/>
+                <line x1="30" y1="150" x2="160" y2="150" stroke="#2563eb" stroke-width="4"/>
+                <line x1="80" y1="70" x2="130" y2="70" stroke="#2563eb" stroke-width="4"/>
+                <text x="45" y="185" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1e293b">произвольная</text>
+                <!-- Равнобедренная -->
+                <polygon points="190,150 320,150 285,70 225,70" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+                <line x1="190" y1="150" x2="320" y2="150" stroke="#2563eb" stroke-width="4"/>
+                <line x1="225" y1="70" x2="285" y2="70" stroke="#2563eb" stroke-width="4"/>
+                <line x1="202" y1="106" x2="214" y2="114" stroke="#dc2626" stroke-width="2"/>
+                <line x1="296" y1="114" x2="308" y2="106" stroke="#dc2626" stroke-width="2"/>
+                <text x="200" y="185" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2563eb">равнобедренная</text>
+                <!-- Прямоугольная -->
+                <polygon points="370,150 490,150 440,70 370,70" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+                <line x1="370" y1="150" x2="490" y2="150" stroke="#2563eb" stroke-width="4"/>
+                <line x1="370" y1="70" x2="440" y2="70" stroke="#2563eb" stroke-width="4"/>
+                <path d="M382,150 L382,138 L370,138" fill="none" stroke="#dc2626" stroke-width="2"/>
+                <path d="M382,70 L382,82 L370,82" fill="none" stroke="#dc2626" stroke-width="2"/>
+                <text x="385" y="185" font-family="sans-serif" font-size="14" font-weight="bold" fill="#dc2626">прямоугольная</text>
+            </svg>
+            <p><strong>Основания</strong> — параллельные стороны (отмечены синим). <strong>Боковые стороны</strong> — непараллельные.<br>
+            <strong>Равнобедренная</strong> — боковые стороны равны (отмечены метками). <strong>Прямоугольная</strong> — с прямыми углами (отмечены квадратиками).</p>
+        </div>
+
+        <div class="rule-box" style="background:#f0fdf4; border-left-color: var(--success);">
+            <h3>🌟 Свойства равнобедренной трапеции</h3>
+            <p>а) <strong>Углы при каждом основании равны.</strong><br>
+            б) <strong>Диагонали равны.</strong></p>
+            <p><strong>Признаки:</strong> трапеция равнобедренная, если: а) углы при основании равны; б) диагонали равны.</p>
+        </div>
+
+        <div class="rule-box" style="background:#fffbeb; border-left-color: var(--warning);">
+            <h3>📏 Средние линии</h3>
+            <p><strong>Средняя линия треугольника</strong> — отрезок, соединяющий середины двух сторон. Она <strong>параллельна третьей стороне и равна её половине</strong>.</p>
+            <p><strong>Средняя линия трапеции</strong> — отрезок, соединяющий середины боковых сторон. Она <strong>параллельна основаниям и равна их полусумме</strong>:</p>
+            <div class="formula" style="background:#fffbeb; border-color: var(--warning); color:#92400e;">Средняя линия трапеции = (a + b) / 2</div>
+        </div>
+
+        <div class="svg-container">
+            <h3>Средняя линия трапеции</h3>
+            <svg viewBox="0 0 360 215" width="360" height="215">
+                <polygon points="40,170 320,170 260,60 100,60" fill="#f8fafc" stroke="#1e293b" stroke-width="2"/>
+                <line x1="70" y1="115" x2="290" y2="115" stroke="#dc2626" stroke-width="3" stroke-dasharray="7,5"/>
+                <circle cx="70" cy="115" r="4" fill="#dc2626"/>
+                <circle cx="290" cy="115" r="4" fill="#dc2626"/>
+                <text x="52" y="110" font-family="sans-serif" font-size="15" font-weight="bold" fill="#dc2626">M</text>
+                <text x="298" y="110" font-family="sans-serif" font-size="15" font-weight="bold" fill="#dc2626">N</text>
+                <text x="170" y="190" font-family="sans-serif" font-size="15" fill="#2563eb" font-weight="bold">a</text>
+                <text x="175" y="52" font-family="sans-serif" font-size="15" fill="#2563eb" font-weight="bold">b</text>
+                <text x="115" y="137" font-family="sans-serif" font-size="15" fill="#dc2626" font-weight="bold">MN = (a + b) / 2</text>
+            </svg>
+        </div>
+    </section>
+
+    <!-- ================= БЛОК 2: ЗАКРЕПЛЕНИЕ ================= -->
+    <section class="card">
+        <h2>🛠 Блок 2. Закрепление (задачи из учебника)</h2>
+        <p>Сначала реши задачу в тетради, потом открой решение и проверь каждый шаг! ✍️</p>
+
+        <span class="level-badge easy">Базовый уровень</span>
+        <h3>Задание 1 (№476)</h3>
+        <p>Найдите углы параллелограмма ABCD, если: а) ∠A = 84°; б) ∠A − ∠B = 55°; в) ∠A + ∠C = 142°; г) ∠A = 2∠B; д) ∠CAD = 16°, ∠ACD = 37°.</p>
+        <details>
+            <summary>Показать подробное решение</summary>
+            <div class="solution-content">
+                <p><em>Помним: ∠A = ∠C, ∠B = ∠D и ∠A + ∠B = 180° (углы при одной стороне).</em></p>
+                <div class="solution-step"><strong>а)</strong> ∠A = ∠C = 84°; ∠B = ∠D = 180° − 84° = <strong>96°</strong>.</div>
+                <div class="solution-step"><strong>б)</strong> Система: ∠A + ∠B = 180° и ∠A − ∠B = 55°. Складываем: 2∠A = 235° → ∠A = ∠C = <strong>117,5°</strong>; ∠B = ∠D = 180° − 117,5° = <strong>62,5°</strong>.</div>
+                <div class="solution-step"><strong>в)</strong> ∠A = ∠C, значит ∠A = ∠C = 142° : 2 = 71°. Тогда ∠B = ∠D = 180° − 71° = <strong>109°</strong>.</div>
+                <div class="solution-step"><strong>г)</strong> ∠A + ∠B = 180°, ∠A = 2∠B → 3∠B = 180° → ∠B = ∠D = <strong>60°</strong>, ∠A = ∠C = <strong>120°</strong>.</div>
+                <div class="solution-step"><strong>д)</strong> В треугольнике ACD: ∠D = 180° − 16° − 37° = 127°. Значит ∠B = ∠D = <strong>127°</strong>, а ∠A = ∠C = 180° − 127° = <strong>53°</strong>.</div>
+            </div>
+        </details>
+
+        <span class="level-badge easy">Базовый уровень</span>
+        <h3>Задание 2 (№472)</h3>
+        <p>Периметр параллелограмма равен 48 см. Найдите его стороны, если: а) одна сторона на 3 см больше другой; б) разность двух сторон равна 7 см; в) одна из сторон в 2 раза больше другой.</p>
+        <details>
+            <summary>Показать подробное решение</summary>
+            <div class="solution-content">
+                <p><em>Помним: противоположные стороны равны, поэтому P = 2(a + b), значит a + b = 48 : 2 = 24 см.</em></p>
+                <div class="solution-step"><strong>а)</strong> Пусть меньшая сторона x, тогда большая x + 3.<br>x + x + 3 = 24 → 2x = 21 → x = 10,5.<br><strong>Ответ:</strong> 10,5 см и 13,5 см.</div>
+                <div class="solution-step"><strong>б)</strong> x + (x + 7) = 24 → 2x = 17 → x = 8,5.<br><strong>Ответ:</strong> 8,5 см и 15,5 см.</div>
+                <div class="solution-step"><strong>в)</strong> x + 2x = 24 → 3x = 24 → x = 8.<br><strong>Ответ:</strong> 8 см и 16 см.</div>
+            </div>
+        </details>
+
+        <span class="level-badge medium">Средний уровень</span>
+        <h3>Задание 3 (№474)</h3>
+        <p>Биссектриса угла A параллелограмма ABCD пересекает сторону BC в точке K. Найдите периметр параллелограмма, если BK = 15 см, KC = 9 см.</p>
+        <details>
+            <summary>Показать подробное решение</summary>
+            <div class="solution-content">
+                <div class="solution-step"><strong>Шаг 1:</strong> AK — биссектриса, значит ∠BAK = ∠KAD.</div>
+                <div class="solution-step"><strong>Шаг 2:</strong> ∠KAD = ∠BKA как накрест лежащие при AD ∥ BC и секущей AK.</div>
+                <div class="solution-step"><strong>Шаг 3:</strong> Получаем ∠BAK = ∠BKA, значит треугольник ABK — <strong>равнобедренный</strong>, и AB = BK = 15 см.</div>
+                <div class="solution-step"><strong>Шаг 4:</strong> BC = BK + KC = 15 + 9 = 24 см.</div>
+                <div class="solution-step" style="border-left-color: var(--primary);"><strong>Шаг 5:</strong> P = 2 · (15 + 24) = <strong>78 см</strong>.<br><em>💡 Биссектриса параллелограмма всегда отсекает равнобедренный треугольник — запомни этот факт!</em></div>
+            </div>
+        </details>
+
+        <span class="level-badge medium">Средний уровень</span>
+        <h3>Задание 4 (№475)</h3>
+        <p>Найдите периметр параллелограмма, если биссектриса одного из его углов делит сторону на отрезки 7 см и 14 см.</p>
+        <details>
+            <summary>Показать подробное решение</summary>
+            <div class="solution-content">
+                <div class="solution-step"><strong>Идея:</strong> как в №474, биссектриса отсекает равнобедренный треугольник, поэтому боковая сторона равна отрезку, <em>прилежащему к вершине угла</em>.</div>
+                <div class="solution-step"><strong>Случай 1:</strong> прилежащий отрезок 7 см → сторона 7 см, другая сторона 7 + 14 = 21 см.<br>P = 2 · (7 + 21) = <strong>56 см</strong>.</div>
+                <div class="solution-step"><strong>Случай 2:</strong> прилежащий отрезок 14 см → сторона 14 см, другая 21 см.<br>P = 2 · (14 + 21) = <strong>70 см</strong>.</div>
+                <div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> 56 см или 70 см (два возможных параллелограмма).</div>
+            </div>
+        </details>
+
+        <span class="level-badge medium">Средний уровень</span>
+        <h3>Задание 5 (№477)</h3>
+        <p>В параллелограмме MNPQ проведён перпендикуляр NH к прямой MQ, причём точка H лежит на стороне MQ. Найдите стороны и углы параллелограмма, если MH = 3 см, HQ = 5 см, ∠MNH = 30°.</p>
+        <details>
+            <summary>Показать подробное решение</summary>
+            <div class="solution-content">
+                <div class="solution-step"><strong>Шаг 1:</strong> MQ = MH + HQ = 3 + 5 = 8 см. Значит NP = MQ = 8 см.</div>
+                <div class="solution-step"><strong>Шаг 2:</strong> В прямоугольном треугольнике MNH угол ∠MNH = 30°, катет MH лежит против этого угла. Катет против угла 30° равен половине гипотенузы: MN = 2 · MH = 6 см. Значит PQ = MN = 6 см.</div>
+                <div class="solution-step"><strong>Шаг 3:</strong> ∠M = 90° − 30° = 60°. Тогда ∠P = ∠M = 60°, а ∠N = ∠Q = 180° − 60° = 120°.</div>
+                <div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> стороны 6 см и 8 см; углы 60° и 120°.</div>
+            </div>
+        </details>
+
+        <span class="level-badge medium">Средний уровень</span>
+        <h3>Задание 6 (№473)</h3>
+        <p>Периметр параллелограмма ABCD равен 50 см, ∠C = 30°, а перпендикуляр BH к прямой CD равен 6,5 см. Найдите стороны параллелограмма.</p>
+        <details>
+            <summary>Показать подробное решение</summary>
+            <div class="solution-content">
+                <div class="solution-step"><strong>Шаг 1:</strong> Рассмотрим прямоугольный треугольник BHC: угол ∠C = 30°, катет BH = 6,5 см лежит против этого угла.</div>
+                <div class="solution-step"><strong>Шаг 2:</strong> Катет против угла 30° — половина гипотенузы, значит BC = 2 · 6,5 = 13 см.</div>
+                <div class="solution-step"><strong>Шаг 3:</strong> AB + BC = 50 : 2 = 25 см, откуда AB = 25 − 13 = 12 см.</div>
+                <div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> 12 см и 13 см.</div>
+            </div>
+        </details>
+
+        <span class="level-badge hard">Продвинутый уровень</span>
+        <h3>Задание 7 (№490)</h3>
+        <p>Найдите углы трапеции ABCD с основаниями AD и BC, если ∠A = 36°, ∠C = 117°.</p>
+        <details>
+            <summary>Показать подробное решение</summary>
+            <div class="solution-content">
+                <div class="solution-step"><strong>Идея:</strong> основания AD ∥ BC, поэтому углы при каждой боковой стороне в сумме дают 180° (как внутренние односторонние).</div>
+                <div class="solution-step">∠A + ∠B = 180° → ∠B = 180° − 36° = <strong>144°</strong>.</div>
+                <div class="solution-step">∠C + ∠D = 180° → ∠D = 180° − 117° = <strong>63°</strong>.</div>
+                <div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> 36°, 144°, 117°, 63°.</div>
+            </div>
+        </details>
+
+        <span class="level-badge hard">Продвинутый уровень</span>
+        <h3>Задание 8 (№493)</h3>
+        <p>Один из углов равнобедренной трапеции равен 68°. Найдите остальные углы трапеции.</p>
+        <details>
+            <summary>Показать подробное решение</summary>
+            <div class="solution-content">
+                <div class="solution-step"><strong>Шаг 1:</strong> В равнобедренной трапеции углы при каждом основании равны, значит второй угол при том же основании тоже 68°.</div>
+                <div class="solution-step"><strong>Шаг 2:</strong> Углы при боковой стороне в сумме 180°: 180° − 68° = 112° — углы при другом основании (оба по 112°).</div>
+                <div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> 68°, 68°, 112°, 112°.</div>
+            </div>
+        </details>
+
+        <span class="level-badge hard">Продвинутый уровень</span>
+        <h3>Задание 9 (№495) — ИСПРАВЛЕНО</h3>
+        <p>Основания прямоугольной трапеции равны a и b, один из углов прямой. Найдите: а) большую боковую сторону, если a = 4 см, b = 7 см, α = 60°; б) меньшую боковую сторону, если a = 10 см, b = 15 см, α = 45°.</p>
+        <details>
+            <summary>Показать подробное решение</summary>
+            <div class="solution-content">
+                <p><em>Идея: проведём высоту из вершины меньшего основания к большему. Она отрежет прямоугольный треугольник, у которого горизонтальный катет равен разности оснований (b − a). Боковые стороны трапеции — это высота и наклонная сторона (гипотенуза этого треугольника).</em></p>
+                <div class="solution-step"><strong>а)</strong> Разность оснований: 7 − 4 = 3 см. В прямоугольном треугольнике угол при основании 60°, значит второй острый угол: 180° − 90° − 60° = 30°. Катет, лежащий против угла 30°, равен половине гипотенузы. Против угла 30° лежит как раз горизонтальный катет 3 см. Значит гипотенуза (наклонная боковая сторона трапеции) = 2 · 3 = <strong>6 см</strong>. Вторая боковая сторона (высота) меньше гипотенузы, поэтому большая боковая сторона трапеции — наклонная, равная <strong>6 см</strong>.</div>
+                <div class="solution-step"><strong>б)</strong> Разность оснований: 15 − 10 = 5 см. В прямоугольном треугольнике угол при основании 45°, значит второй острый угол тоже 45° — треугольник равнобедренный. Его катеты равны: высота = 5 см. Наклонная сторона трапеции — гипотенуза этого треугольника, значит она больше 5 см. Поэтому меньшая боковая сторона трапеции — высота, равная <strong>5 см</strong>.</div>
+                <div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> а) 6 см; б) 5 см.</div>
+            </div>
+        </details>
+
+        <span class="level-badge hard">Продвинутый уровень</span>
+        <h3>Задание 10 (№487)</h3>
+        <p>Диагональ равнобедренной трапеции равна a. Найдите периметр четырёхугольника, вершинами которого являются середины сторон трапеции.</p>
+        <details>
+            <summary>Показать подробное решение</summary>
+            <div class="solution-content">
+                <div class="solution-step"><strong>Шаг 1:</strong> Каждая сторона «срединного» четырёхугольника — средняя линия треугольника, образованного двумя сторонами трапеции и её диагональю. Значит каждая сторона равна половине диагонали: a/2.</div>
+                <div class="solution-step"><strong>Шаг 2:</strong> У равнобедренной трапеции диагонали равны, поэтому все четыре стороны серединного четырёхугольника равны a/2 (это ромб!).</div>
+                <div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> P = 4 · a/2 = <strong>2a</strong>.</div>
+            </div>
+        </details>
+
+        <span class="level-badge hard">Продвинутый уровень</span>
+        <h3>Задание 11 (№497)</h3>
+        <p>Даны три точки A, B, C, не лежащие на одной прямой. Постройте параллелограмм так, чтобы три его вершины совпадали с данными точками. Сколько таких параллелограммов можно построить?</p>
+        <details>
+            <summary>Показать подробное решение</summary>
+            <div class="solution-content">
+                <div class="solution-step"><strong>Идея:</strong> четвёртую вершину D можно выбрать тремя способами — напротив каждой из данных точек: через каждую точку провести прямую, параллельную противоположному отрезку.</div>
+                <div class="solution-step">Получаем три варианта расположения четвёртой вершины.</div>
+                <div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> 3 параллелограмма.</div>
+            </div>
+        </details>
+
+        <h3>⚖️ Задачи на доказательство (идеи)</h3>
+        <details>
+            <summary>№471 — доказать, что ABCD — параллелограмм</summary>
+            <div class="solution-content">
+                <div class="solution-step"><strong>а)</strong> ∠BAC = ∠ACD — накрест лежащие при прямых AB, CD и секущей AC → AB ∥ CD. ∠BCA = ∠DAC — накрест лежащие при BC, AD и секущей AC → BC ∥ AD. Обе пары сторон параллельны → по определению это параллелограмм.</div>
+                <div class="solution-step"><strong>б)</strong> AB ∥ CD → ∠A + ∠D = 180°. Так как ∠A = ∠C, то ∠C + ∠D = 180° → AD ∥ BC (односторонние углы при секущей CD). Значит ABCD — параллелограмм.</div>
+            </div>
+        </details>
+        <details>
+            <summary>№478 — параллелограмм выпуклый</summary>
+            <div class="solution-content">
+                <div class="solution-step">Возьмём прямую AB. Отрезок CD не имеет с ней общих точек (AB ∥ CD), значит лежит по одну сторону от неё; тогда и стороны BC, AD лежат по ту же сторону. То же для любой другой стороны → параллелограмм лежит по одну сторону от прямой через любые две соседние вершины, то есть он выпуклый. ✅</div>
+            </div>
+        </details>
+        <details>
+            <summary>№484 и №489 — средние линии</summary>
+            <div class="solution-content">
+                <div class="solution-step"><strong>№484 (треугольник):</strong> через середину одной стороны проводим прямую, параллельную второй стороне — она проходит через середину третьей стороны. Далее строим параллелограмм и получаем: средняя линия параллельна стороне и равна её половине.</div>
+                <div class="solution-step"><strong>№489 (трапеция):</strong> соединяем середины боковых сторон; через диагональ трапеция делится на два треугольника, и средняя линия складывается из двух средних линий треугольников: (a/2 + b/2) = (a + b)/2, параллельна основаниям. ✅</div>
+            </div>
+        </details>
+        <details>
+            <summary>№491 и №492 — равнобедренная трапеция</summary>
+            <div class="solution-content">
+                <div class="solution-step"><strong>№491:</strong> а) проводим боковую сторону, параллельную другой, — получаем параллелограмм и равнобедренный треугольник → углы при основании равны; б) равные углы дают равные треугольники, образованные диагоналями → диагонали равны.</div>
+                <div class="solution-step"><strong>№492:</strong> обратные рассуждения: равные углы при основании → равные треугольники → боковые стороны равны; равные диагонали → аналогично. ✅</div>
+            </div>
+        </details>
+        <details>
+            <summary>Задачи на построение (№496, №499–501) — идеи</summary>
+            <div class="solution-content">
+                <div class="solution-step"><strong>№496а:</strong> строим угол, откладываем на его сторонах две данные стороны, затем через их концы проводим прямые, параллельные противоположным сторонам.</div>
+                <div class="solution-step"><strong>№496б:</strong> диагонали делятся пополам → строим угол между диагоналями и откладываем их половины от вершины.</div>
+                <div class="solution-step"><strong>№496в:</strong> сначала строим треугольник по трём сторонам (две стороны + диагональ), затем достраиваем до параллелограмма.</div>
+                <div class="solution-step"><strong>№499:</strong> по теореме Фалеса (№488): откладываем на луче n равных отрезков и проводим параллельные прямые — они делят AB на n равных частей.</div>
+                <div class="solution-step"><strong>№500–501:</strong> строим основание, затем угол/боковую сторону или диагональ (через треугольник), достраиваем трапецию.</div>
+            </div>
+        </details>
+    </section>
+
+    <!-- ================= БЛОК 3: ПРАКТИЧЕСКОЕ ПРИМЕНЕНИЕ ================= -->
+    <section class="card practice-box">
+        <h2>🏗 Блок 3. Практическое применение</h2>
+
+        <h3>🚂 Продукт урока: «Инженер параллелограммного механизма»</h3>
+        <p>Посмотри на сцепление колёс тепловоза (задача №481 из учебника!): стержень AB соединяет два колеса, радиусы O₁A и O₂B равны, а длина стержня AB равна расстоянию между центрами O₁O₂.</p>
+        <p><strong>Задача:</strong> объясни, почему стержень AB всегда движется параллельно линии центров O₁O₂ (иначе колёса «застрянут»!).</p>
+        <details>
+            <summary>Показать решение инженера</summary>
+            <div class="solution-content">
+                <div class="solution-step"><strong>Шаг 1:</strong> В четырёхугольнике O₁ABO₂ противоположные стороны попарно равны: O₁A = O₂B (радиусы колёс) и AB = O₁O₂ (по условию).</div>
+                <div class="solution-step"><strong>Шаг 2:</strong> По <strong>признаку 2</strong> параллелограмма (противоположные стороны попарно равны) O₁ABO₂ — параллелограмм.</div>
+                <div class="solution-step"><strong>Шаг 3:</strong> Значит AB ∥ O₁O₂ всегда — либо отрезки лежат на одной прямой. Механизм работает без заклинивания! 🚂✅</div>
+                <div class="solution-step" style="border-left-color: var(--warning);"><em>Итог: параллелограммный механизм используется в поездах, дворниках автомобилей и подъёмных кранах именно благодаря этому свойству!</em></div>
+            </div>
+        </details>
+    </section>
+
+    <!-- ================= ИТОГИ ================= -->
+    <section class="card summary-box">
+        <h2>📝 Главное, что нужно запомнить</h2>
+        <ul>
+            <li><strong>Параллелограмм</strong> — четырёхугольник с попарно параллельными противоположными сторонами.</li>
+            <li>Свойства: противоположные стороны и углы равны; диагонали делятся точкой пересечения пополам; углы при одной стороне в сумме 180°.</li>
+            <li>Три признака: «равны и параллельны», «попарно равны», «диагонали пополам».</li>
+            <li><strong>Трапеция</strong>: основания параллельны, боковые стороны — нет; бывает равнобедренной и прямоугольной.</li>
+            <li>Равнобедренная трапеция: углы при основании равны, диагонали равны (и обратные признаки).</li>
+            <li>Средняя линия треугольника = половина стороны; средняя линия трапеции = (a + b) / 2.</li>
+            <li>Биссектриса параллелограмма отсекает равнобедренный треугольник! 💡</li>
+        </ul>
+    </section>
+
+    <!-- ================= МЕТОДИЧЕСКАЯ ПОДСКАЗКА ================= -->
+    <div class="teacher-note">
+        <h3>💡 Методическая подсказка (для учителя или родителя)</h3>
+        <ul style="margin-top: 10px; padding-left: 20px;">
+            <li><strong>Свойство и признак:</strong> ученики путают эти понятия. Проговорите вслух: «свойство — что мы знаем о фигуре; признак — как доказать, что это она». Отличная игра: читать формулировки, а ученик хлопает в ладоши, если это признак.</li>
+            <li><strong>Биссектриса (№474–475):</strong> обязательно покажите равнобедренный треугольник на чертеже — это «секретное оружие» задач на периметр. В №475 не забудьте про два случая!</li>
+            <li><strong>Угол 30° (№473, №477):</strong> напомните правило из 7 класса: катет против угла 30° равен половине гипотенузы. Это ключ к обеим задачам.</li>
+            <li><strong>Трапеция (№495):</strong> главный приём — провести высоту и получить прямоугольный треугольник с катетом (b − a). Дальше работают только факты из 7 класса: катет против угла 30° — половина гипотенузы, а треугольник с углом 45° — равнобедренный. Тригонометрия здесь НЕ нужна!</li>
+            <li><strong>Доказательства:</strong> для слабых учеников начинайте с вопроса «какие треугольники равны и по какому признаку?» — почти все доказательства параграфа строятся на равенстве треугольников.</li>
+        </ul>
+    </div>
+
+    <footer style="text-align: center; color: var(--text-light); margin-top: 30px; font-size: 0.9em; padding-bottom: 20px;">
+        <p>📚 Геометрия 8 класс (Атанасян) • Глава 5, §2, пункты 48–50 • Задачи №471–501</p>
+    </footer>
+</div>
+
+</body>
+</html>
