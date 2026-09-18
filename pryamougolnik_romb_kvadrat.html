@@ -11,6 +11,7 @@
             --accent: #0ea5e9;
             --success: #16a34a;
             --warning: #f59e0b;
+            --violet: #7c3aed;
             --bg: #f8fafc;
             --card-bg: #ffffff;
             --text: #1e293b;
@@ -33,6 +34,8 @@
         .formula { font-size: 1.2em; font-weight: bold; color: var(--secondary); text-align: center; background: #fef2f2; padding: 15px; border-radius: 8px; margin: 15px 0; border: 2px dashed var(--secondary); }
         .svg-container { text-align: center; margin: 25px 0; background: #f8fafc; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0; }
         .svg-container svg { max-width: 100%; height: auto; }
+        .sol-svg { text-align: center; margin: 0 0 14px; }
+        .sol-svg svg { max-width: 100%; height: auto; background: #fcfdff; border: 1px dashed #cbd5e1; border-radius: 10px; padding: 6px; }
         details { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin: 15px 0; overflow: hidden; }
         summary { padding: 15px 20px; cursor: pointer; font-weight: bold; color: var(--primary); background: #eff6ff; list-style: none; display: flex; align-items: center; gap: 10px; font-size: 1.05em; }
         summary::-webkit-details-marker { display: none; }
@@ -65,7 +68,7 @@
         <h2>🧠 Блок 1. Изучение нового материала</h2>
 
         <h3>🌍 Разминка: семья четырёхугольников</h3>
-        <p>Дверь и экран телефона — <strong>прямоугольники</strong>, воздушный змей и узор на плитке — <strong>ромбы</strong>, шахматная доска и стикер — <strong>квадраты</strong>. Все они — «родственники» параллелограмма! Сегодня разберёмся, кто есть кто в этой семье и чем каждый из них особенный. 👨‍👩‍👧‍👦</p>
+        <p>Дверь и экран телефона — <strong>прямоугольники</strong>, воздушный змей и узор на плитке — <strong>ромбы</strong>, шахматная доска и стикер — <strong>квадраты</strong>. Все они — «родственники» параллелограмма! Сегодня разберёмся, кто есть кто в этой семье и чем каждый из них особенный. 👨‍👩‍‍👦</p>
 
         <h2 style="margin-top:40px;">▭ Часть 1. Прямоугольник (пункт 51)</h2>
 
@@ -73,6 +76,31 @@
             <h3>📖 Определение</h3>
             <p><strong>Прямоугольник</strong> — это параллелограмм, у которого <strong>все углы прямые</strong>.</p>
             <p>Значит, ему достаются все свойства параллелограмма: противоположные стороны равны, диагонали точкой пересечения делятся пополам.</p>
+        </div>
+
+        <div class="svg-container">
+            <h3>▭ Прямоугольник и его диагонали</h3>
+            <svg viewBox="0 0 300 220" width="300" height="220">
+                <polygon points="40,170 240,170 240,70 40,70" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+                <line x1="40" y1="170" x2="240" y2="70" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,4"/>
+                <line x1="240" y1="170" x2="40" y2="70" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,4"/>
+                <circle cx="140" cy="120" r="4" fill="#dc2626"/>
+                <path d="M52,170 L52,158 L40,158" fill="none" stroke="#dc2626" stroke-width="2"/>
+                <path d="M228,170 L228,158 L240,158" fill="none" stroke="#dc2626" stroke-width="2"/>
+                <path d="M228,70 L228,82 L240,82" fill="none" stroke="#dc2626" stroke-width="2"/>
+                <path d="M52,70 L52,82 L40,82" fill="none" stroke="#dc2626" stroke-width="2"/>
+                <line x1="87.3" y1="139.6" x2="92.7" y2="150.4" stroke="#16a34a" stroke-width="2"/>
+                <line x1="187.3" y1="89.6" x2="192.7" y2="100.4" stroke="#16a34a" stroke-width="2"/>
+                <line x1="187.3" y1="150.4" x2="192.7" y2="139.6" stroke="#16a34a" stroke-width="2"/>
+                <line x1="87.3" y1="100.4" x2="92.7" y2="89.6" stroke="#16a34a" stroke-width="2"/>
+                <text x="24" y="186" font-family="sans-serif" font-size="17" font-weight="bold" fill="#1e293b">A</text>
+                <text x="246" y="186" font-family="sans-serif" font-size="17" font-weight="bold" fill="#1e293b">B</text>
+                <text x="246" y="64" font-family="sans-serif" font-size="17" font-weight="bold" fill="#1e293b">C</text>
+                <text x="24" y="64" font-family="sans-serif" font-size="17" font-weight="bold" fill="#1e293b">D</text>
+                <text x="148" y="112" font-family="sans-serif" font-size="15" font-weight="bold" fill="#dc2626">O</text>
+                <text x="150" y="208" font-family="sans-serif" font-size="13" fill="#16a34a" font-weight="bold" text-anchor="middle">AO = OC = BO = OD, значит AC = BD</text>
+            </svg>
+            <p><strong>Что видно на рисунке:</strong> все четыре угла прямые (квадратики); диагонали равны и делятся пополам, поэтому все четыре отрезка AO, OC, BO, OD равны между собой (зелёные метки).</p>
         </div>
 
         <div class="rule-box" style="background:#f0fdf4; border-left-color: var(--success);">
@@ -93,6 +121,32 @@
             <p><strong>Ромб</strong> — это параллелограмм, у которого <strong>все стороны равны</strong>. Ему тоже достаются все свойства параллелограмма.</p>
         </div>
 
+        <div class="svg-container">
+            <h3>◆ Ромб: диагонали-«крест» и диагональ-биссектриса</h3>
+            <svg viewBox="0 0 300 220" width="300" height="220">
+                <polygon points="60,110 150,170 240,110 150,50" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+                <line x1="60" y1="110" x2="240" y2="110" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,4"/>
+                <line x1="150" y1="50" x2="150" y2="170" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,4"/>
+                <circle cx="150" cy="110" r="4" fill="#dc2626"/>
+                <path d="M150,98 L162,98 L162,110" fill="none" stroke="#dc2626" stroke-width="2"/>
+                <line x1="101.7" y1="145" x2="108.3" y2="135" stroke="#16a34a" stroke-width="2"/>
+                <line x1="191.7" y1="135" x2="198.3" y2="145" stroke="#16a34a" stroke-width="2"/>
+                <line x1="191.7" y1="85" x2="198.3" y2="75" stroke="#16a34a" stroke-width="2"/>
+                <line x1="101.7" y1="75" x2="108.3" y2="85" stroke="#16a34a" stroke-width="2"/>
+                <path d="M86,110 A26,26 0 0 0 81.6,95.6" fill="none" stroke="#dc2626" stroke-width="2"/>
+                <path d="M81.6,124.4 A26,26 0 0 0 86,110" fill="none" stroke="#dc2626" stroke-width="2"/>
+                <line x1="81.1" y1="103.6" x2="88.7" y2="101.3" stroke="#dc2626" stroke-width="2"/>
+                <line x1="81.1" y1="116.4" x2="88.7" y2="118.7" stroke="#dc2626" stroke-width="2"/>
+                <text x="40" y="116" font-family="sans-serif" font-size="17" font-weight="bold" fill="#1e293b">A</text>
+                <text x="146" y="192" font-family="sans-serif" font-size="17" font-weight="bold" fill="#1e293b">B</text>
+                <text x="248" y="116" font-family="sans-serif" font-size="17" font-weight="bold" fill="#1e293b">C</text>
+                <text x="146" y="42" font-family="sans-serif" font-size="17" font-weight="bold" fill="#1e293b">D</text>
+                <text x="158" y="102" font-family="sans-serif" font-size="15" font-weight="bold" fill="#dc2626">O</text>
+                <text x="150" y="212" font-family="sans-serif" font-size="13" fill="#16a34a" font-weight="bold" text-anchor="middle">стороны равны; AC ⊥ BD; ∠DAC = ∠BAC</text>
+            </svg>
+            <p><strong>Что видно на рисунке:</strong> все четыре стороны равны (зелёные метки); диагонали пересекаются под прямым углом (квадратик у точки O); диагональ AC делит угол A пополам — две красные дуги с одинаковыми метками равны.</p>
+        </div>
+
         <div class="rule-box" style="background:#f0fdf4; border-left-color: var(--success);">
             <h3>🌟 Особое свойство ромба</h3>
             <div class="formula" style="background:#f0fdf4; border-color: var(--success); color: var(--success);">Диагонали ромба перпендикулярны и делят его углы пополам</div>
@@ -111,6 +165,36 @@
             <p><strong>Квадрат</strong> — это прямоугольник, у которого <strong>все стороны равны</strong>. То есть квадрат — это одновременно и прямоугольник, и ромб! Поэтому он обладает всеми их свойствами.</p>
         </div>
 
+        <div class="svg-container">
+            <h3>◼ Квадрат: «всё сразу»</h3>
+            <svg viewBox="0 0 260 235" width="260" height="235">
+                <polygon points="60,190 180,190 180,70 60,70" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+                <line x1="60" y1="190" x2="180" y2="70" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,4"/>
+                <line x1="180" y1="190" x2="60" y2="70" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,4"/>
+                <circle cx="120" cy="130" r="4" fill="#dc2626"/>
+                <path d="M128.5,121.5 L120,113 L111.5,121.5" fill="none" stroke="#dc2626" stroke-width="2"/>
+                <path d="M72,190 L72,178 L60,178" fill="none" stroke="#dc2626" stroke-width="2"/>
+                <line x1="120" y1="184" x2="120" y2="196" stroke="#16a34a" stroke-width="2"/>
+                <line x1="174" y1="130" x2="186" y2="130" stroke="#16a34a" stroke-width="2"/>
+                <line x1="120" y1="64" x2="120" y2="76" stroke="#16a34a" stroke-width="2"/>
+                <line x1="54" y1="130" x2="66" y2="130" stroke="#16a34a" stroke-width="2"/>
+                <line x1="85.8" y1="155.8" x2="94.2" y2="164.2" stroke="#7c3aed" stroke-width="2"/>
+                <line x1="145.8" y1="95.8" x2="154.2" y2="104.2" stroke="#7c3aed" stroke-width="2"/>
+                <line x1="145.8" y1="164.2" x2="154.2" y2="155.8" stroke="#7c3aed" stroke-width="2"/>
+                <line x1="85.8" y1="104.2" x2="94.2" y2="95.8" stroke="#7c3aed" stroke-width="2"/>
+                <path d="M84,190 A24,24 0 0 0 77,173" fill="none" stroke="#dc2626" stroke-width="2"/>
+                <text x="92" y="182" font-family="sans-serif" font-size="13" fill="#dc2626" font-weight="bold">45°</text>
+                <text x="44" y="206" font-family="sans-serif" font-size="17" font-weight="bold" fill="#1e293b">A</text>
+                <text x="186" y="206" font-family="sans-serif" font-size="17" font-weight="bold" fill="#1e293b">B</text>
+                <text x="186" y="64" font-family="sans-serif" font-size="17" font-weight="bold" fill="#1e293b">C</text>
+                <text x="44" y="64" font-family="sans-serif" font-size="17" font-weight="bold" fill="#1e293b">D</text>
+                <text x="132" y="136" font-family="sans-serif" font-size="15" font-weight="bold" fill="#dc2626">O</text>
+                <text x="130" y="220" font-family="sans-serif" font-size="12" fill="#16a34a" font-weight="bold" text-anchor="middle">стороны равны; диагонали равны,</text>
+                <text x="130" y="233" font-family="sans-serif" font-size="12" fill="#16a34a" font-weight="bold" text-anchor="middle">перпендикулярны, делят углы пополам</text>
+            </svg>
+            <p><strong>Что видно на рисунке:</strong> стороны равны (зелёные метки); половины диагоналей равны (фиолетовые метки); диагонали перпендикулярны (квадратик у O); каждая диагональ делит угол пополам — получаются углы по 45° (красная дуга).</p>
+        </div>
+
         <div class="rule-box" style="background:#f0fdf4; border-left-color: var(--success);">
             <h3>🌟 Свойства квадрата</h3>
             <p>1. Все углы квадрата <strong>прямые</strong>.<br>
@@ -118,65 +202,27 @@
         </div>
 
         <div class="svg-container">
-            <h3>Три «родственника» параллелограмма</h3>
-            <svg viewBox="0 0 560 220" width="560" height="220">
-                <!-- Прямоугольник -->
-                <polygon points="40,150 180,150 180,60 40,60" fill="#f8fafc" stroke="#1e293b" stroke-width="2"/>
-                <line x1="40" y1="150" x2="180" y2="60" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,4"/>
-                <line x1="180" y1="150" x2="40" y2="60" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,4"/>
-                <path d="M52,150 L52,138 L40,138" fill="none" stroke="#dc2626" stroke-width="2"/>
-                <text x="55" y="180" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1e293b">прямоугольник</text>
-                <text x="52" y="198" font-family="sans-serif" font-size="12" fill="#2563eb">диагонали равны</text>
-                <!-- Ромб -->
-                <polygon points="210,105 280,40 350,105 280,170" fill="#f8fafc" stroke="#1e293b" stroke-width="2"/>
-                <line x1="210" y1="105" x2="350" y2="105" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,4"/>
-                <line x1="280" y1="40" x2="280" y2="170" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,4"/>
-                <path d="M280,93 L292,93 L292,105" fill="none" stroke="#dc2626" stroke-width="2"/>
-                <text x="252" y="195" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1e293b">ромб</text>
-                <text x="208" y="213" font-family="sans-serif" font-size="12" fill="#2563eb">диагонали перпендикулярны</text>
-                <!-- Квадрат: маркер прямого угла между диагоналями (векторы 45°) -->
-                <polygon points="400,160 520,160 520,40 400,40" fill="#f8fafc" stroke="#1e293b" stroke-width="2"/>
-                <line x1="400" y1="160" x2="520" y2="40" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,4"/>
-                <line x1="520" y1="160" x2="400" y2="40" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,4"/>
-                <path d="M468.5,91.5 L460,83 L451.5,91.5" fill="none" stroke="#dc2626" stroke-width="2"/>
-                <path d="M412,160 L412,148 L400,148" fill="none" stroke="#dc2626" stroke-width="2"/>
-                <circle cx="460" cy="100" r="4" fill="#dc2626"/>
-                <text x="432" y="180" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1e293b">квадрат</text>
-                <text x="408" y="198" font-family="sans-serif" font-size="12" fill="#2563eb">равны И перпендикулярны</text>
-            </svg>
-        </div>
-
-        <div class="svg-container">
-            <h3>👨‍👩‍👧‍👦 Семейное древо четырёхугольников</h3>
+            <h3>👨👩‍‍ Семейное древо четырёхугольников</h3>
             <svg viewBox="0 0 560 270" width="560" height="270">
-                <!-- Boxes -->
                 <rect x="200" y="10" width="160" height="40" rx="8" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="2"/>
                 <text x="280" y="35" font-family="sans-serif" font-size="15" font-weight="bold" fill="#0369a1" text-anchor="middle">Четырёхугольник</text>
-
                 <rect x="200" y="80" width="160" height="40" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
                 <text x="280" y="105" font-family="sans-serif" font-size="15" font-weight="bold" fill="#1d4ed8" text-anchor="middle">Параллелограмм</text>
-
                 <rect x="70" y="155" width="160" height="40" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
                 <text x="150" y="180" font-family="sans-serif" font-size="15" font-weight="bold" fill="#15803d" text-anchor="middle">Прямоугольник</text>
-
                 <rect x="330" y="155" width="160" height="40" rx="8" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
                 <text x="410" y="180" font-family="sans-serif" font-size="15" font-weight="bold" fill="#b91c1c" text-anchor="middle">Ромб</text>
-
                 <rect x="200" y="225" width="160" height="40" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
                 <text x="280" y="250" font-family="sans-serif" font-size="15" font-weight="bold" fill="#b45309" text-anchor="middle">Квадрат</text>
-
-                <!-- Connecting lines -->
                 <line x1="280" y1="50" x2="280" y2="80" stroke="#64748b" stroke-width="2"/>
                 <line x1="250" y1="120" x2="180" y2="155" stroke="#64748b" stroke-width="2"/>
                 <line x1="310" y1="120" x2="380" y2="155" stroke="#64748b" stroke-width="2"/>
                 <line x1="180" y1="195" x2="250" y2="225" stroke="#64748b" stroke-width="2"/>
                 <line x1="380" y1="195" x2="310" y2="225" stroke="#64748b" stroke-width="2"/>
-
-                <!-- Labels on lines -->
-                <text x="180" y="140" font-family="sans-serif" font-size="12" fill="#16a34a" font-weight="bold">все углы прямые</text>
-                <text x="330" y="140" font-family="sans-serif" font-size="12" fill="#dc2626" font-weight="bold">все стороны равны</text>
-                <text x="120" y="215" font-family="sans-serif" font-size="12" fill="#16a34a" font-weight="bold">все стороны равны</text>
-                <text x="390" y="215" font-family="sans-serif" font-size="12" fill="#dc2626" font-weight="bold">все углы прямые</text>
+                <text x="60" y="140" font-family="sans-serif" font-size="12" fill="#16a34a" font-weight="bold">все углы прямые</text>
+                <text x="395" y="140" font-family="sans-serif" font-size="12" fill="#dc2626" font-weight="bold">все стороны равны</text>
+                <text x="60" y="215" font-family="sans-serif" font-size="12" fill="#16a34a" font-weight="bold">все стороны равны</text>
+                <text x="395" y="215" font-family="sans-serif" font-size="12" fill="#dc2626" font-weight="bold">все углы прямые</text>
             </svg>
             <p><em>Квадрат — «ребёнок» прямоугольника и ромба сразу: берёт свойства от обоих!</em></p>
         </div>
@@ -199,7 +245,6 @@
         <div class="svg-container">
             <h3>Симметричные точки и центр симметрии</h3>
             <svg viewBox="0 0 560 200" width="560" height="200">
-                <!-- Left: symmetric points -->
                 <line x1="40" y1="90" x2="220" y2="90" stroke="#94a3b8" stroke-width="2"/>
                 <circle cx="60" cy="90" r="5" fill="#2563eb"/>
                 <circle cx="130" cy="90" r="5" fill="#dc2626"/>
@@ -210,13 +255,11 @@
                 <text x="124" y="75" font-family="sans-serif" font-size="16" font-weight="bold" fill="#dc2626">O</text>
                 <text x="194" y="75" font-family="sans-serif" font-size="16" font-weight="bold" fill="#2563eb">A₁</text>
                 <text x="75" y="130" font-family="sans-serif" font-size="14" fill="#1e293b" font-weight="bold">AO = OA₁</text>
-
-                <!-- Right: parallelogram with center -->
                 <polygon points="300,150 440,150 490,60 350,60" fill="#f8fafc" stroke="#1e293b" stroke-width="2"/>
                 <line x1="300" y1="150" x2="490" y2="60" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="5,4"/>
                 <line x1="440" y1="150" x2="350" y2="60" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="5,4"/>
                 <circle cx="395" cy="105" r="5" fill="#dc2626"/>
-                <text x="403" y="100" font-family="sans-serif" font-size="15" font-weight="bold" fill="#dc2626">O</text>
+                <text x="403" y="98" font-family="sans-serif" font-size="15" font-weight="bold" fill="#dc2626">O</text>
                 <text x="300" y="180" font-family="sans-serif" font-size="13" fill="#1e293b" font-weight="bold">центр — точка пересечения диагоналей</text>
             </svg>
         </div>
@@ -233,7 +276,7 @@
     <!-- ================= БЛОК 2: ЗАКРЕПЛЕНИЕ ================= -->
     <section class="card">
         <h2>🛠 Блок 2. Закрепление (задачи из учебника)</h2>
-        <p>Сначала реши задачу в тетради, потом открой решение и проверь каждый шаг! ✍️</p>
+        <p>Сначала реши задачу в тетради, потом открой решение и проверь каждый шаг по чертежу! ✍️</p>
 
         <span class="level-badge easy">Базовый уровень</span>
         <h3>Задание 1 (№506)</h3>
@@ -241,6 +284,21 @@
         <details>
             <summary>Показать подробное решение</summary>
             <div class="solution-content">
+                <div class="sol-svg">
+                    <svg viewBox="0 0 260 170" width="260" height="170">
+                        <polygon points="30,140 210,140 210,60 30,60" fill="#f8fafc" stroke="#1e293b" stroke-width="2"/>
+                        <line x1="30" y1="140" x2="210" y2="60" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,4"/>
+                        <line x1="210" y1="140" x2="30" y2="60" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,4"/>
+                        <circle cx="120" cy="100" r="4" fill="#dc2626"/>
+                        <path d="M50.1,131.1 A22,22 0 0 0 30,118" fill="none" stroke="#dc2626" stroke-width="2"/>
+                        <text x="54" y="114" font-family="sans-serif" font-size="13" fill="#dc2626" font-weight="bold">30°</text>
+                        <text x="16" y="154" font-family="sans-serif" font-size="15" font-weight="bold">A</text>
+                        <text x="216" y="154" font-family="sans-serif" font-size="15" font-weight="bold">B</text>
+                        <text x="216" y="56" font-family="sans-serif" font-size="15" font-weight="bold">C</text>
+                        <text x="16" y="56" font-family="sans-serif" font-size="15" font-weight="bold">D</text>
+                        <text x="128" y="94" font-family="sans-serif" font-size="14" font-weight="bold" fill="#dc2626">O</text>
+                    </svg>
+                </div>
                 <div class="solution-step"><strong>Шаг 1:</strong> Диагонали прямоугольника равны и делятся пополам: AO = BO = AC : 2 = 12 : 2 = 6 см.</div>
                 <div class="solution-step"><strong>Шаг 2:</strong> ∠BAD = 90°, значит ∠BAC = 90° − ∠CAD = 90° − 30° = 60°, то есть ∠OAB = 60°.</div>
                 <div class="solution-step"><strong>Шаг 3:</strong> Треугольник AOB равнобедренный (AO = BO), значит ∠OBA = ∠OAB = 60°, тогда и третий угол ∠AOB = 60°. Треугольник равносторонний: AB = AO = 6 см.</div>
@@ -254,6 +312,18 @@
         <details>
             <summary>Показать подробное решение</summary>
             <div class="solution-content">
+                <div class="sol-svg">
+                    <svg viewBox="0 0 220 220" width="220" height="220">
+                        <polygon points="50,110 100,196.6 150,110 100,23.4" fill="#f8fafc" stroke="#1e293b" stroke-width="2"/>
+                        <line x1="50" y1="110" x2="150" y2="110" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,4"/>
+                        <path d="M112,175.8 A24,24 0 0 0 88,175.8" fill="none" stroke="#dc2626" stroke-width="2"/>
+                        <text x="90" y="168" font-family="sans-serif" font-size="13" fill="#dc2626" font-weight="bold">60°</text>
+                        <text x="30" y="106" font-family="sans-serif" font-size="15" font-weight="bold">A</text>
+                        <text x="96" y="214" font-family="sans-serif" font-size="15" font-weight="bold">B</text>
+                        <text x="156" y="106" font-family="sans-serif" font-size="15" font-weight="bold">C</text>
+                        <text x="96" y="18" font-family="sans-serif" font-size="15" font-weight="bold">D</text>
+                    </svg>
+                </div>
                 <div class="solution-step"><strong>Шаг 1:</strong> В треугольнике ABC стороны AB = BC (стороны ромба), значит он равнобедренный.</div>
                 <div class="solution-step"><strong>Шаг 2:</strong> Угол при вершине B равен 60°, тогда углы при основании: (180° − 60°) : 2 = 60°. Все углы по 60° → треугольник равносторонний: AB = AC = 10,5 см.</div>
                 <div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> P = 4 · 10,5 = <strong>42 см</strong>.</div>
@@ -266,7 +336,22 @@
         <details>
             <summary>Показать подробное решение</summary>
             <div class="solution-content">
-                <div class="solution-step"><strong>а)</strong> Пусть диагональ BD равна стороне. Треугольник ABD: AB = AD = BD → равносторонний → ∠BAD = 60°. Значит ∠BCD = 60°, а ∠ABC = ∠ADC = 180° − 60° = 120°.</div>
+                <div class="sol-svg">
+                    <svg viewBox="0 0 250 170" width="250" height="170">
+                        <polygon points="40,140 140,140 190,53.4 90,53.4" fill="#f8fafc" stroke="#1e293b" stroke-width="2"/>
+                        <line x1="140" y1="140" x2="90" y2="53.4" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,4"/>
+                        <path d="M64,140 A24,24 0 0 0 52,119.2" fill="none" stroke="#dc2626" stroke-width="2"/>
+                        <text x="68" y="130" font-family="sans-serif" font-size="13" fill="#dc2626" font-weight="bold">60°</text>
+                        <line x1="90" y1="134" x2="90" y2="146" stroke="#16a34a" stroke-width="2"/>
+                        <line x1="59.8" y1="93.7" x2="70.2" y2="99.7" stroke="#16a34a" stroke-width="2"/>
+                        <line x1="109.8" y1="99.7" x2="120.2" y2="93.7" stroke="#16a34a" stroke-width="2"/>
+                        <text x="26" y="154" font-family="sans-serif" font-size="15" font-weight="bold">A</text>
+                        <text x="144" y="154" font-family="sans-serif" font-size="15" font-weight="bold">B</text>
+                        <text x="196" y="48" font-family="sans-serif" font-size="15" font-weight="bold">C</text>
+                        <text x="82" y="44" font-family="sans-serif" font-size="15" font-weight="bold">D</text>
+                    </svg>
+                </div>
+                <div class="solution-step"><strong>а)</strong> Пусть диагональ BD равна стороне (зелёные метки: AB = AD = BD). Треугольник ABD: AB = AD = BD → равносторонний → ∠BAD = 60°. Значит ∠BCD = 60°, а ∠ABC = ∠ADC = 180° − 60° = 120°.</div>
                 <div class="solution-step"><strong>б)</strong> Диагонали ромба делят его углы пополам: 60° : 2 = 30° и 120° : 2 = 60°.</div>
                 <div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> а) 60°, 120°, 60°, 120°; б) 30° и 60°.</div>
             </div>
@@ -278,6 +363,19 @@
         <details>
             <summary>Показать подробное решение</summary>
             <div class="solution-content">
+                <div class="sol-svg">
+                    <svg viewBox="0 0 240 180" width="240" height="180">
+                        <polygon points="40,150 120,150 176.6,93.4 96.6,93.4" fill="#f8fafc" stroke="#1e293b" stroke-width="2"/>
+                        <path d="M66,150 A26,26 0 0 0 58.4,131.6" fill="none" stroke="#dc2626" stroke-width="2"/>
+                        <text x="72" y="142" font-family="sans-serif" font-size="13" fill="#dc2626" font-weight="bold">45°</text>
+                        <path d="M135.6,134.4 A22,22 0 0 0 98,150" fill="none" stroke="#7c3aed" stroke-width="2"/>
+                        <text x="100" y="126" font-family="sans-serif" font-size="13" fill="#7c3aed" font-weight="bold">135°</text>
+                        <text x="26" y="164" font-family="sans-serif" font-size="15" font-weight="bold">A</text>
+                        <text x="116" y="168" font-family="sans-serif" font-size="15" font-weight="bold">B</text>
+                        <text x="182" y="88" font-family="sans-serif" font-size="15" font-weight="bold">C</text>
+                        <text x="90" y="84" font-family="sans-serif" font-size="15" font-weight="bold">D</text>
+                    </svg>
+                </div>
                 <div class="solution-step"><strong>Шаг 1:</strong> Углы ромба: 45° и смежный с ним 180° − 45° = 135°.</div>
                 <div class="solution-step"><strong>Шаг 2:</strong> Диагонали делят углы пополам: 45° : 2 = 22,5° и 135° : 2 = 67,5°.</div>
                 <div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> 22,5° и 67,5°.</div>
@@ -290,7 +388,23 @@
         <details>
             <summary>Показать подробное решение</summary>
             <div class="solution-content">
-                <p><em>Идея: биссектриса прямого угла A образует со сторонами угол 45°, поэтому отсекаемый треугольник — равнобедренный прямоугольный.</em></p>
+                <div class="sol-svg">
+                    <svg viewBox="0 0 250 200" width="250" height="200">
+                        <polygon points="70,40 170,40 170,170 70,170" fill="#f8fafc" stroke="#1e293b" stroke-width="2"/>
+                        <line x1="70" y1="40" x2="170" y2="140" stroke="#dc2626" stroke-width="2" stroke-dasharray="6,4"/>
+                        <path d="M158,40 L158,52 L170,52" fill="none" stroke="#dc2626" stroke-width="2"/>
+                        <path d="M87,57 A24,24 0 0 0 94,40" fill="none" stroke="#dc2626" stroke-width="2"/>
+                        <text x="98" y="62" font-family="sans-serif" font-size="13" fill="#dc2626" font-weight="bold">45°</text>
+                        <line x1="120" y1="34" x2="120" y2="46" stroke="#16a34a" stroke-width="2"/>
+                        <line x1="164" y1="90" x2="176" y2="90" stroke="#16a34a" stroke-width="2"/>
+                        <text x="56" y="34" font-family="sans-serif" font-size="15" font-weight="bold">A</text>
+                        <text x="176" y="34" font-family="sans-serif" font-size="15" font-weight="bold">B</text>
+                        <text x="176" y="184" font-family="sans-serif" font-size="15" font-weight="bold">C</text>
+                        <text x="56" y="184" font-family="sans-serif" font-size="15" font-weight="bold">D</text>
+                        <text x="178" y="144" font-family="sans-serif" font-size="15" font-weight="bold" fill="#dc2626">K</text>
+                    </svg>
+                </div>
+                <p><em>Идея: биссектриса прямого угла A образует со сторонами угол 45°, поэтому отсекаемый треугольник ABK — равнобедренный прямоугольный: BK = AB (зелёные метки).</em></p>
                 <div class="solution-step"><strong>а)</strong> Биссектриса пересекает BC в точке K. В треугольнике ABK: ∠BAK = 45°, ∠B = 90° → ∠AKB = 45° → BK = AB.<br>
                 BC = 45,6 + 7,85 = 53,45 см.<br>
                 Случай 1: BK = 45,6 → AB = 45,6 → P = 2 · (45,6 + 53,45) = <strong>198,1 см</strong>.<br>
@@ -309,6 +423,21 @@
         <details>
             <summary>Показать подробное решение</summary>
             <div class="solution-content">
+                <div class="sol-svg">
+                    <svg viewBox="0 0 240 200" width="240" height="200">
+                        <polygon points="40,170 200,170 40,10" fill="#f8fafc" stroke="#1e293b" stroke-width="2"/>
+                        <polygon points="40,170 120,170 120,90 40,90" fill="#fef3c7" stroke="#f59e0b" stroke-width="2.5"/>
+                        <path d="M52,170 L52,158 L40,158" fill="none" stroke="#dc2626" stroke-width="2"/>
+                        <path d="M183,153 A24,24 0 0 0 176,170" fill="none" stroke="#dc2626" stroke-width="2"/>
+                        <text x="150" y="166" font-family="sans-serif" font-size="13" fill="#dc2626" font-weight="bold">45°</text>
+                        <text x="204" y="182" font-family="sans-serif" font-size="15" font-weight="bold">A</text>
+                        <text x="26" y="14" font-family="sans-serif" font-size="15" font-weight="bold">B</text>
+                        <text x="24" y="184" font-family="sans-serif" font-size="15" font-weight="bold">C</text>
+                        <text x="114" y="186" font-family="sans-serif" font-size="15" font-weight="bold" fill="#b45309">D</text>
+                        <text x="126" y="84" font-family="sans-serif" font-size="15" font-weight="bold" fill="#b45309">E</text>
+                        <text x="22" y="84" font-family="sans-serif" font-size="15" font-weight="bold" fill="#b45309">F</text>
+                    </svg>
+                </div>
                 <div class="solution-step"><strong>Шаг 1:</strong> Треугольник равнобедренный прямоугольный, значит ∠A = 45°.</div>
                 <div class="solution-step"><strong>Шаг 2:</strong> Сторона DE квадрата параллельна катету CB, поэтому DE ⊥ AC. В треугольнике ADE: ∠ADE = 90°, ∠A = 45° → ∠AED = 45° → AD = DE (стороне квадрата).</div>
                 <div class="solution-step"><strong>Шаг 3:</strong> Тогда AC = AD + DC = сторона + сторона = 2 · стороны = 12 см → сторона = 6 см.</div>
@@ -322,6 +451,22 @@
         <details>
             <summary>Показать подробное решение</summary>
             <div class="solution-content">
+                <div class="sol-svg">
+                    <svg viewBox="0 0 460 150" width="460" height="150">
+                        <polygon points="60,20 110,60 60,120 10,60" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+                        <line x1="60" y1="20" x2="60" y2="120" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="5,4"/>
+                        <line x1="10" y1="60" x2="110" y2="60" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="5,4"/>
+                        <text x="10" y="142" font-family="sans-serif" font-size="13" fill="#dc2626" font-weight="bold">а) нет: не делятся пополам</text>
+                        <polygon points="170,60 220,25 270,60 220,95" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+                        <line x1="170" y1="60" x2="270" y2="60" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="5,4"/>
+                        <line x1="220" y1="25" x2="220" y2="95" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="5,4"/>
+                        <text x="190" y="142" font-family="sans-serif" font-size="13" fill="#dc2626" font-weight="bold">б) нет: это ромб</text>
+                        <polygon points="330,20 410,20 410,100 330,100" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
+                        <line x1="330" y1="20" x2="410" y2="100" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="5,4"/>
+                        <line x1="410" y1="20" x2="330" y2="100" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="5,4"/>
+                        <text x="330" y="142" font-family="sans-serif" font-size="13" fill="#16a34a" font-weight="bold">в) да: квадрат</text>
+                    </svg>
+                </div>
                 <div class="solution-step"><strong>а) Нет.</strong> Диагонали могут быть равны и перпендикулярны, но не делиться пополам — тогда четырёхугольник даже не параллелограмм (например, подходящий «воздушный змей»).</div>
                 <div class="solution-step"><strong>б) Нет.</strong> Общая середина → параллелограмм; перпендикулярные диагонали → ромб. Но ромб не обязан быть квадратом (углы могут быть не прямые).</div>
                 <div class="solution-step"><strong>в) Да.</strong> Общая середина → параллелограмм; равные диагонали → прямоугольник; перпендикулярные → ромб. Прямоугольник + ромб = квадрат! ✅</div>
@@ -334,8 +479,24 @@
         <details>
             <summary>Показать подробное решение</summary>
             <div class="solution-content">
+                <div class="sol-svg">
+                    <svg viewBox="0 0 260 250" width="260" height="250">
+                        <polygon points="110,140 190,140 190,60 110,60" fill="#f8fafc" stroke="#1e293b" stroke-width="2"/>
+                        <line x1="110" y1="140" x2="190" y2="60" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,4"/>
+                        <line x1="190" y1="140" x2="190" y2="220" stroke="#94a3b8" stroke-width="1.5"/>
+                        <line x1="110" y1="60" x2="30" y2="60" stroke="#94a3b8" stroke-width="1.5"/>
+                        <line x1="30" y1="60" x2="190" y2="220" stroke="#dc2626" stroke-width="2"/>
+                        <path d="M118.5,131.5 L127,140 L118.5,148.5" fill="none" stroke="#dc2626" stroke-width="2"/>
+                        <text x="94" y="146" font-family="sans-serif" font-size="15" font-weight="bold">A</text>
+                        <text x="196" y="146" font-family="sans-serif" font-size="15" font-weight="bold">B</text>
+                        <text x="196" y="56" font-family="sans-serif" font-size="15" font-weight="bold">C</text>
+                        <text x="94" y="56" font-family="sans-serif" font-size="15" font-weight="bold">D</text>
+                        <text x="196" y="232" font-family="sans-serif" font-size="15" font-weight="bold" fill="#dc2626">M</text>
+                        <text x="18" y="56" font-family="sans-serif" font-size="15" font-weight="bold" fill="#dc2626">N</text>
+                    </svg>
+                </div>
                 <div class="solution-step"><strong>Шаг 1:</strong> Диагональ квадрата делит его углы пополам: ∠ACB = ∠ACD = 45°.</div>
-                <div class="solution-step"><strong>Шаг 2:</strong> В треугольнике ACM: ∠MAC = 90° (MN ⊥ AC), ∠ACM = 45° → ∠AMC = 45°. Треугольник равнобедренный: AM = AC = 18,4 см.</div>
+                <div class="solution-step"><strong>Шаг 2:</strong> В треугольнике ACM: ∠MAC = 90° (MN ⊥ AC, квадратик у точки A), ∠ACM = 45° → ∠AMC = 45°. Треугольник равнобедренный: AM = AC = 18,4 см.</div>
                 <div class="solution-step"><strong>Шаг 3:</strong> Аналогично в треугольнике ACN: AN = AC = 18,4 см.</div>
                 <div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> MN = AM + AN = 18,4 · 2 = <strong>36,8 см</strong>.</div>
             </div>
@@ -347,8 +508,25 @@
         <details>
             <summary>Показать подробное решение</summary>
             <div class="solution-content">
-                <div class="solution-step"><strong>Шаг 1:</strong> ∠BCA = ∠CAD (накрест лежащие при BC ∥ AD). По условию ∠BAC = ∠CAD → ∠BAC = ∠BCA → треугольник ABC равнобедренный: BC = AB.</div>
-                <div class="solution-step"><strong>Шаг 2:</strong> В треугольнике ACD: ∠ACD = 90°, ∠D = 60° → ∠CAD = 30°. Катет CD лежит против угла 30°, значит CD = AD : 2.</div>
+                <div class="sol-svg">
+                    <svg viewBox="0 0 250 190" width="250" height="190">
+                        <polygon points="40,160 80,90.7 160,90.7 200,160" fill="#f8fafc" stroke="#1e293b" stroke-width="2"/>
+                        <line x1="40" y1="160" x2="160" y2="90.7" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,4"/>
+                        <path d="M149.6,96.7 L155.6,107.1 L166,101.1" fill="none" stroke="#dc2626" stroke-width="2"/>
+                        <path d="M189,140.9 A22,22 0 0 0 178,160" fill="none" stroke="#dc2626" stroke-width="2"/>
+                        <text x="150" y="150" font-family="sans-serif" font-size="13" fill="#dc2626" font-weight="bold">60°</text>
+                        <path d="M64,160 A24,24 0 0 0 60.8,148" fill="none" stroke="#7c3aed" stroke-width="2"/>
+                        <path d="M60.8,148 A24,24 0 0 0 52,139.2" fill="none" stroke="#7c3aed" stroke-width="2"/>
+                        <line x1="59.3" y1="154.8" x2="67.1" y2="152.8" stroke="#7c3aed" stroke-width="2"/>
+                        <line x1="54.1" y1="145.9" x2="59.8" y2="140.2" stroke="#7c3aed" stroke-width="2"/>
+                        <text x="26" y="174" font-family="sans-serif" font-size="15" font-weight="bold">A</text>
+                        <text x="66" y="84" font-family="sans-serif" font-size="15" font-weight="bold">B</text>
+                        <text x="164" y="84" font-family="sans-serif" font-size="15" font-weight="bold">C</text>
+                        <text x="204" y="174" font-family="sans-serif" font-size="15" font-weight="bold">D</text>
+                    </svg>
+                </div>
+                <div class="solution-step"><strong>Шаг 1:</strong> ∠BCA = ∠CAD (накрест лежащие при BC ∥ AD). По условию ∠BAC = ∠CAD (фиолетовые дуги) → ∠BAC = ∠BCA → треугольник ABC равнобедренный: BC = AB.</div>
+                <div class="solution-step"><strong>Шаг 2:</strong> В треугольнике ACD: ∠ACD = 90° (квадратик у C), ∠D = 60° → ∠CAD = 30°. Катет CD лежит против угла 30°, значит CD = AD : 2.</div>
                 <div class="solution-step"><strong>Шаг 3:</strong> ∠BAD = ∠BAC + ∠CAD = 30° + 30° = 60° = ∠D → углы при основании AD равны → трапеция равнобедренная → AB = CD = AD : 2. Тогда и BC = AD : 2.</div>
                 <div class="solution-step"><strong>Шаг 4:</strong> Периметр: AD : 2 + AD : 2 + AD : 2 + AD = 2,5 · AD = 20 → AD = 8 см.</div>
                 <div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> AD = <strong>8 см</strong>. <em>Проверка: 4 + 4 + 4 + 8 = 20 ✅</em></div>
@@ -361,9 +539,26 @@
         <details>
             <summary>Показать подробное решение</summary>
             <div class="solution-content">
+                <div class="sol-svg">
+                    <svg viewBox="0 0 280 190" width="280" height="190">
+                        <polygon points="40,160 180,160 230,85.2 90,85.2" fill="#f8fafc" stroke="#1e293b" stroke-width="2"/>
+                        <line x1="40" y1="160" x2="180" y2="85.2" stroke="#dc2626" stroke-width="2" stroke-dasharray="6,4"/>
+                        <path d="M62,160 A22,22 0 0 0 59.4,149.6" fill="none" stroke="#7c3aed" stroke-width="2"/>
+                        <path d="M59.4,149.6 A22,22 0 0 0 52.2,141.7" fill="none" stroke="#7c3aed" stroke-width="2"/>
+                        <line x1="57.5" y1="155.7" x2="65.2" y2="153.7" stroke="#7c3aed" stroke-width="2"/>
+                        <line x1="53.4" y1="148" x2="59.3" y2="142.6" stroke="#7c3aed" stroke-width="2"/>
+                        <line x1="60" y1="119.3" x2="70" y2="125.9" stroke="#16a34a" stroke-width="2"/>
+                        <line x1="135" y1="79.2" x2="135" y2="91.2" stroke="#16a34a" stroke-width="2"/>
+                        <text x="26" y="174" font-family="sans-serif" font-size="15" font-weight="bold">A</text>
+                        <text x="182" y="174" font-family="sans-serif" font-size="15" font-weight="bold">B</text>
+                        <text x="236" y="80" font-family="sans-serif" font-size="15" font-weight="bold">C</text>
+                        <text x="80" y="75" font-family="sans-serif" font-size="15" font-weight="bold">D</text>
+                        <text x="176" y="75" font-family="sans-serif" font-size="15" font-weight="bold" fill="#dc2626">K</text>
+                    </svg>
+                </div>
                 <div class="solution-step"><strong>Шаг 1:</strong> AB + BC = 46 : 2 = 23 см → BC = 23 − 14 = 9 см.</div>
                 <div class="solution-step"><strong>Шаг 2:</strong> Биссектриса угла A отсекает равнобедренный треугольник со стороной, равной AB = 14 см. Но BC = 9 &lt; 14, значит на стороне BC биссектриса «не помещается» — она пересекает сторону CD.</div>
-                <div class="solution-step"><strong>Шаг 3:</strong> Пусть K — точка на CD. ∠KAB = ∠KAD (биссектриса), ∠KAB = ∠DKA (накрест лежащие при DC ∥ AB) → ∠DAK = ∠DKA → DK = DA = 9 см.</div>
+                <div class="solution-step"><strong>Шаг 3:</strong> Пусть K — точка на CD. ∠KAB = ∠KAD (биссектриса, фиолетовые дуги), ∠KAB = ∠DKA (накрест лежащие при DC ∥ AB) → ∠DAK = ∠DKA → DK = DA = 9 см (зелёные метки).</div>
                 <div class="solution-step"><strong>Шаг 4:</strong> KC = DC − DK = 14 − 9 = 5 см.</div>
                 <div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> биссектриса пересекает сторону CD; отрезки <strong>9 см и 5 см</strong>.</div>
             </div>
@@ -375,6 +570,22 @@
         <details>
             <summary>Показать подробное решение</summary>
             <div class="solution-content">
+                <div class="sol-svg">
+                    <svg viewBox="0 0 320 180" width="320" height="180">
+                        <polygon points="40,160 240,160 274.4,110.9 74.4,110.9" fill="#f8fafc" stroke="#1e293b" stroke-width="2"/>
+                        <line x1="40" y1="160" x2="134.4" y2="110.9" stroke="#dc2626" stroke-width="2" stroke-dasharray="6,4"/>
+                        <line x1="240" y1="160" x2="214.4" y2="110.9" stroke="#dc2626" stroke-width="2" stroke-dasharray="6,4"/>
+                        <text x="98" y="104" font-family="sans-serif" font-size="13" fill="#16a34a" font-weight="bold">3</text>
+                        <text x="170" y="104" font-family="sans-serif" font-size="13" fill="#f59e0b" font-weight="bold">4</text>
+                        <text x="240" y="104" font-family="sans-serif" font-size="13" fill="#16a34a" font-weight="bold">3</text>
+                        <text x="26" y="174" font-family="sans-serif" font-size="15" font-weight="bold">A</text>
+                        <text x="242" y="174" font-family="sans-serif" font-size="15" font-weight="bold">B</text>
+                        <text x="280" y="106" font-family="sans-serif" font-size="15" font-weight="bold">C</text>
+                        <text x="62" y="102" font-family="sans-serif" font-size="15" font-weight="bold">D</text>
+                        <text x="120" y="140" font-family="sans-serif" font-size="14" font-weight="bold" fill="#dc2626">K</text>
+                        <text x="206" y="140" font-family="sans-serif" font-size="14" font-weight="bold" fill="#dc2626">K′</text>
+                    </svg>
+                </div>
                 <div class="solution-step"><strong>Шаг 1:</strong> Биссектриса угла A пересекает сторону DC в точке K: как всегда, треугольник ADK равнобедренный → DK = AD = 3 см.</div>
                 <div class="solution-step"><strong>Шаг 2:</strong> Биссектриса угла B пересекает DC в точке K': треугольник BCK' равнобедренный → CK' = BC = 3 см.</div>
                 <div class="solution-step"><strong>Шаг 3:</strong> Средний отрезок: KK' = DC − DK − K'C = 10 − 3 − 3 = 4 см.</div>
@@ -388,6 +599,21 @@
         <details>
             <summary>Показать подробное решение</summary>
             <div class="solution-content">
+                <div class="sol-svg">
+                    <svg viewBox="0 0 300 150" width="300" height="150">
+                        <line x1="20" y1="35" x2="280" y2="35" stroke="#2563eb" stroke-width="2.5"/>
+                        <line x1="20" y1="115" x2="280" y2="115" stroke="#2563eb" stroke-width="2.5"/>
+                        <line x1="20" y1="75" x2="280" y2="75" stroke="#16a34a" stroke-width="2" stroke-dasharray="7,5"/>
+                        <circle cx="150" cy="75" r="5" fill="#dc2626"/>
+                        <circle cx="90" cy="35" r="4" fill="#7c3aed"/>
+                        <circle cx="210" cy="115" r="4" fill="#7c3aed"/>
+                        <line x1="90" y1="35" x2="210" y2="115" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="4,4"/>
+                        <text x="284" y="39" font-family="sans-serif" font-size="14" fill="#2563eb" font-weight="bold">l₁</text>
+                        <text x="284" y="119" font-family="sans-serif" font-size="14" fill="#2563eb" font-weight="bold">l₂</text>
+                        <text x="156" y="68" font-family="sans-serif" font-size="14" fill="#dc2626" font-weight="bold">O</text>
+                        <text x="150" y="140" font-family="sans-serif" font-size="12" fill="#16a34a" font-weight="bold" text-anchor="middle">средняя линия — все её точки центры</text>
+                    </svg>
+                </div>
                 <div class="solution-step"><strong>Идея:</strong> симметрия относительно точки O должна перевести фигуру (пару прямых) в себя. Прямые параллельны и не совпадают, поэтому каждая прямая не может перейти в себя (центр лежал бы на обеих). Значит прямые меняются местами.</div>
                 <div class="solution-step">Это происходит для любой точки O, лежащей на «средней линии» — прямой, параллельной обеим и равноудалённой от них.</div>
                 <div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> бесконечно много (все точки средней линии).</div>
@@ -447,6 +673,16 @@
         <details>
             <summary>Показать решение дизайнера</summary>
             <div class="solution-content">
+                <div class="sol-svg">
+                    <svg viewBox="0 0 260 170" width="260" height="170">
+                        <polygon points="60,140 200,140 240,60 100,60" fill="#f8fafc" stroke="#1e293b" stroke-width="2"/>
+                        <line x1="60" y1="140" x2="240" y2="60" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="5,4"/>
+                        <line x1="200" y1="140" x2="100" y2="60" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="5,4"/>
+                        <circle cx="150" cy="100" r="34" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+                        <circle cx="150" cy="100" r="4" fill="#dc2626"/>
+                        <text x="158" y="94" font-family="sans-serif" font-size="14" font-weight="bold" fill="#dc2626">O</text>
+                    </svg>
+                </div>
                 <div class="solution-step"><strong>Шаг 1:</strong> Параллелограмм симметричен относительно точки O пересечения диагоналей (это его центр симметрии).</div>
                 <div class="solution-step"><strong>Шаг 2:</strong> Окружность симметрична относительно своего центра — а по построению он совпадает с точкой O.</div>
                 <div class="solution-step"><strong>Шаг 3:</strong> Симметрия относительно O переводит параллелограмм в себя и окружность в себя → весь логотип переходит в себя. Значит O — центр симметрии логотипа. ✅</div>
@@ -473,9 +709,9 @@
         <h3>💡 Методическая подсказка (для учителя или родителя)</h3>
         <ul style="margin-top: 10px; padding-left: 20px;">
             <li><strong>Иерархия фигур:</strong> ученики путают свойства прямоугольника и ромба. Используйте «семейное древо» и игру «назови родственника»: например, «кто ребёнок прямоугольника и ромба?» Ответ должен быть мгновенным — квадрат.</li>
+            <li><strong>Работа с новыми рисунками:</strong> попросите ученика «прочитать» чертёж вслух: какие метки равны, где прямой угол, что показывает дуга. Умение читать чертёж — половина решения.</li>
             <li><strong>Биссектрисы (№504, №521, №522):</strong> во всех этих задачах работает один и тот же факт: биссектриса отсекает равнобедренный треугольник. В №504 обязательно разберите оба случая, а в №521 обсудите, почему биссектриса «не помещается» на стороне BC.</li>
             <li><strong>Углы 30° и 45° (№506, №514, №532, №534):</strong> напомните два факта из 7 класса: катет против угла 30° равен половине гипотенузы; равнобедренный прямоугольный треугольник имеет углы 45°.</li>
-            <li><strong>Центральная симметрия:</strong> дайте ученикам вырезанный параллелограмм и булавку в точке пересечения диагоналей — поверните на 180°. Фигура совпадёт сама с собой: так свойство становится ощущением, а не формулой.</li>
             <li><strong>Сильным ученикам:</strong> задачи №527, №535, №536 и №540 — готовые мини-исследования. Предложите оформить их как проект с чертежом и полным доказательством.</li>
         </ul>
     </div>

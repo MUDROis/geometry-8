@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Повторение главы VI и дополнительные задачи — Геометрия 8 класс</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #dc2626;
+            --accent: #0ea5e9;
+            --success: #16a34a;
+            --warning: #f59e0b;
+            --violet: #7c3aed;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #1e293b;
+            --text-light: #64748b;
+            --radius: 16px;
+            --shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+        }
+        body { font-family: 'Segoe UI','Roboto',system-ui,sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; margin: 0; padding: 20px; }
+        .container { max-width: 850px; margin: 0 auto; }
+        header { text-align: center; margin-bottom: 30px; padding: 30px; background: linear-gradient(135deg, var(--violet), var(--primary)); color: white; border-radius: var(--radius); box-shadow: var(--shadow); }
+        header h1 { margin: 0; font-size: 2.1em; }
+        header p { margin: 8px 0 0; opacity: 0.95; font-size: 1.05em; }
+        .card { background: var(--card-bg); border-radius: var(--radius); padding: 30px; margin-bottom: 25px; box-shadow: var(--shadow); }
+        h2 { color: var(--primary); border-bottom: 3px solid var(--accent); padding-bottom: 10px; display: inline-block; margin-top: 0; }
+        h3 { color: var(--secondary); margin-top: 25px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; border-radius: 8px; overflow: hidden; }
+        th, td { border: 1px solid #e2e8f0; padding: 12px 14px; text-align: left; }
+        th { background: #f1f5f9; color: var(--primary); font-weight: 600; }
+        .rule-box { background: #eff6ff; border-left: 5px solid var(--primary); padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0; }
+        .qa-card { background: #faf7ff; border: 1px solid #e9d5ff; border-left: 5px solid var(--violet); border-radius: 10px; padding: 14px 16px; margin: 0 0 14px; }
+        .qa-q { margin: 0 0 10px; font-weight: 600; }
+        .qa-q b { color: var(--violet); }
+        .svg-container { text-align: center; margin: 25px 0; background: #f8fafc; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0; }
+        .svg-container svg { max-width: 100%; height: auto; }
+        .sol-svg { text-align: center; margin: 0 0 14px; }
+        .sol-svg svg { max-width: 100%; height: auto; background: #fcfdff; border: 1px dashed #cbd5e1; border-radius: 10px; padding: 6px; }
+        details { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin: 15px 0; overflow: hidden; }
+        .qa-card details { margin: 0; }
+        summary { padding: 15px 20px; cursor: pointer; font-weight: bold; color: var(--primary); background: #eff6ff; list-style: none; display: flex; align-items: center; gap: 10px; font-size: 1.05em; }
+        .qa-card summary { padding: 10px 16px; font-size: 0.95em; color: var(--violet); background: #f3e8ff; }
+        summary::-webkit-details-marker { display: none; }
+        summary::before { content: '🔍'; font-size: 1.2em; }
+        details[open] summary::before { content: '💡'; }
+        details[open] summary { border-bottom: 1px solid #e2e8f0; }
+        .solution-content { padding: 20px; background: white; }
+        .qa-card .solution-content { padding: 12px 16px; }
+        .solution-step { margin-bottom: 12px; padding-left: 15px; border-left: 3px solid var(--success); }
+        .level-badge { display: inline-block; padding: 5px 14px; border-radius: 20px; font-size: 0.85em; font-weight: bold; color: white; margin: 15px 0 10px; }
+        .easy { background: var(--success); }
+        .medium { background: var(--warning); color: #1e293b; }
+        .hard { background: var(--secondary); }
+        .star { background: var(--violet); }
+        .practice-box { background: linear-gradient(135deg, #fffbeb, #fef3c7); border: 2px solid var(--warning); }
+        .teacher-note { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 20px; margin-top: 30px; }
+        .summary-box { background: #eff6ff; border: 2px solid var(--primary); border-radius: 12px; padding: 20px; }
+        @media (max-width: 600px) { body { padding: 10px; } header h1 { font-size: 1.5em; } .card { padding: 20px; } th, td { padding: 8px; font-size: 0.92em; } }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>🎯 Повторение главы VI + дополнительные задачи</h1>
+        <p>Геометрия 8 класс • Четырёхугольники • Вопросы 1–22 и задачи №520–540</p>
+    </header>
+
+    <!-- ================= БЛОК 1: ТЕОРИЯ ================= -->
+    <section class="card">
+        <h2>🧠 Блок 1. Теоретический блиц (вопросы 1–22)</h2>
+        <p>Как работать: прочитай вопрос → подумай и запиши ответ в тетради → нажми кнопку «Показать ответ» и проверь себя. Ошибся — не беда, это подсказка, что повторить! 🎯</p>
+
+        <h3>▱ Многоугольники и четырёхугольники (вопросы 1–5)</h3>
+
+        <div class="qa-card">
+            <p class="qa-q"><b>1.</b> Какой многоугольник называется выпуклым? Объясните, какие углы называются углами выпуклого многоугольника.</p>
+            <details>
+                <summary>Показать ответ</summary>
+                <div class="solution-content">Многоугольник называется <strong>выпуклым</strong>, если он лежит по одну сторону от любой прямой, проходящей через две его соседние вершины. Углами выпуклого многоугольника называются его внутренние углы (каждый меньше 180°).</div>
+            </details>
+        </div>
+
+        <div class="qa-card">
+            <p class="qa-q"><b>2.</b> Выведите формулу для вычисления суммы углов выпуклого n-угольника.</p>
+            <details>
+                <summary>Показать ответ</summary>
+                <div class="solution-content">Из одной вершины проводим все диагонали: они разбивают n-угольник на (n − 2) треугольников. Сумма углов каждого треугольника 180°, значит сумма углов многоугольника = <strong>(n − 2) · 180°</strong>.</div>
+            </details>
+        </div>
+
+        <div class="qa-card">
+            <p class="qa-q"><b>3.</b> Докажите, что сумма внешних углов выпуклого многоугольника, взятых по одному при каждой вершине, равна 360°.</p>
+            <details>
+                <summary>Показать ответ</summary>
+                <div class="solution-content">Внешний угол при вершине равен 180° − внутренний. Сумма внешних углов: n·180° − (n − 2)·180° = <strong>360°</strong>.</div>
+            </details>
+        </div>
+
+        <div class="qa-card">
+            <p class="qa-q"><b>4.</b> Начертите четырёхугольник и покажите его диагонали, противоположные стороны и противоположные вершины.</p>
+            <details>
+                <summary>Показать ответ</summary>
+                <div class="solution-content">В четырёхугольнике ABCD: <strong>диагонали</strong> — AC и BD; <strong>противоположные стороны</strong> — AB и CD, BC и AD; <strong>противоположные вершины</strong> — A и C, B и D. Проверь по своему чертежу: диагонали соединяют несоседние вершины.</div>
+            </details>
+        </div>
+
+        <div class="qa-card">
+            <p class="qa-q"><b>5.</b> Чему равна сумма углов выпуклого четырёхугольника?</p>
+            <details>
+                <summary>Показать ответ</summary>
+                <div class="solution-content">(4 − 2)·180° = <strong>360°</strong>.</div>
+            </details>
+        </div>
+
+        <h3>▱ Параллелограмм (вопросы 6–9)</h3>
+
+        <div class="qa-card">
+            <p class="qa-q"><b>6.</b> Дайте определение параллелограмма. Является ли параллелограмм выпуклым четырёхугольником?</p>
+            <details>
+                <summary>Показать ответ</summary>
+                <div class="solution-content"><strong>Параллелограмм</strong> — четырёхугольник, у которого противоположные стороны попарно параллельны. Да, он выпуклый: каждая сторона не имеет общих точек с прямой через противоположную сторону, поэтому фигура лежит по одну сторону от любой прямой через соседние вершины.</div>
+            </details>
+        </div>
+
+        <div class="qa-card">
+            <p class="qa-q"><b>7.</b> Докажите, что в параллелограмме противоположные стороны равны и противоположные углы равны.</p>
+            <details>
+                <summary>Показать ответ</summary>
+                <div class="solution-content">Диагональ AC делит параллелограмм на треугольники ABC и CDA; они равны по стороне и двум прилежащим углам (накрест лежащие углы при параллельных прямых) → AB = CD, AD = BC, ∠B = D. Тогда A = ∠C как суммы равных углов.</div>
+            </details>
+        </div>
+
+        <div class="qa-card">
+            <p class="qa-q"><b>8.</b> Докажите, что диагонали параллелограмма точкой пересечения делятся пополам.</p>
+            <details>
+                <summary>Показать ответ</summary>
+                <div class="solution-content">Треугольники AOB и COD равны (AB = CD и накрест лежащие углы при секущих AC и BD) → AO = OC и BO = OD.</div>
+            </details>
+        </div>
+
+        <div class="qa-card">
+            <p class="qa-q"><b>9.</b> Сформулируйте и докажите утверждения о признаках параллелограмма.</p>
+            <details>
+                <summary>Показать ответ</summary>
+                <div class="solution-content">Признаки: 1) если две стороны равны и параллельны; 2) если противоположные стороны попарно равны; 3) если диагонали пересекаются и делятся пополам. Все три доказательства проводятся через равные треугольники (пункт 49 учебника).</div>
+            </details>
+        </div>
+
+        <h3>⏢ Трапеция (вопросы 10–11)</h3>
+
+        <div class="qa-card">
+            <p class="qa-q"><b>10.</b> Какой четырёхугольник называется трапецией? Как называются стороны трапеции?</p>
+            <details>
+                <summary>Показать ответ</summary>
+                <div class="solution-content"><strong>Трапеция</strong> — четырёхугольник, у которого две стороны параллельны, а две другие не параллельны. Параллельные стороны — <strong>основания</strong>, остальные — <strong>боковые стороны</strong>.</div>
+            </details>
+        </div>
+
+        <div class="qa-card">
+            <p class="qa-q"><b>11.</b> Какая трапеция называется равнобедренной; прямоугольной?</p>
+            <details>
+                <summary>Показать ответ</summary>
+                <div class="solution-content"><strong>Равнобедренная</strong> — боковые стороны равны; <strong>прямоугольная</strong> — один из углов прямой (тогда прямых угла два).</div>
+            </details>
+        </div>
+
+        <h3>⬛ Прямоугольник, ромб, квадрат (вопросы 12–19)</h3>
+
+        <div class="qa-card">
+            <p class="qa-q"><b>12.</b> Какой четырёхугольник называется прямоугольником?</p>
+            <details>
+                <summary>Показать ответ</summary>
+                <div class="solution-content"><strong>Прямоугольник</strong> — параллелограмм, у которого все углы прямые.</div>
+            </details>
+        </div>
+
+        <div class="qa-card">
+            <p class="qa-q"><b>13.</b> Докажите, что диагонали прямоугольника равны.</p>
+            <details>
+                <summary>Показать ответ</summary>
+                <div class="solution-content">Прямоугольные треугольники ACD и DBA равны по двум катетам (CD = BA, AD — общая) → их гипотенузы равны: AC = BD.</div>
+            </details>
+        </div>
+
+        <div class="qa-card">
+            <p class="qa-q"><b>14.</b> Докажите, что если в параллелограмме диагонали равны, то этот параллелограмм является прямоугольником.</p>
+            <details>
+                <summary>Показать ответ</summary>
+                <div class="solution-content">Треугольники ABD и DCA равны по трём сторонам (AB = DC, BD = CA, AD — общая) → ∠A = ∠D. В параллелограмме ∠A + D = 180°, значит ∠A = ∠D = 90°, и все углы прямые → это прямоугольник.</div>
+            </details>
+        </div>
+
+        <div class="qa-card">
+            <p class="qa-q"><b>15.</b> Какой четырёхугольник называется ромбом?</p>
+            <details>
+                <summary>Показать ответ</summary>
+                <div class="solution-content"><strong>Ромб</strong> — параллелограмм, у которого все стороны равны.</div>
+            </details>
+        </div>
+
+        <div class="qa-card">
+            <p class="qa-q"><b>16.</b> Докажите, что диагонали ромба взаимно перпендикулярны и делят его углы пополам.</p>
+            <details>
+                <summary>Показать ответ</summary>
+                <div class="solution-content">Треугольник BAD равнобедренный (AB = AD); отрезок AO — медиана к основанию BD (диагонали делятся пополам), значит AO — также высота и биссектриса: AC ⊥ BD и ∠BAC = ∠DAC.</div>
+            </details>
+        </div>
+
+        <div class="qa-card">
+            <p class="qa-q"><b>17.</b> Какой четырёхугольник называется квадратом? Перечислите основные свойства квадрата.</p>
+            <details>
+                <summary>Показать ответ</summary>
+                <div class="solution-content"><strong>Квадрат</strong> — прямоугольник, у которого все стороны равны. Свойства: все углы прямые; диагонали равны, взаимно перпендикулярны, точкой пересечения делятся пополам и делят углы квадрата пополам.</div>
+            </details>
+        </div>
+
+        <div class="qa-card">
+            <p class="qa-q"><b>18.</b> Сформулируйте и докажите утверждение о признаке квадрата.</p>
+            <details>
+                <summary>Показать ответ</summary>
+                <div class="solution-content">Признак: <strong>ромб с одним прямым углом — квадрат</strong>. Доказательство: в ромбе противоположные углы равны, смежные в сумме 180° → из одного прямого угла получаем все четыре прямых, а стороны уже равны → это квадрат.</div>
+            </details>
+        </div>
+
+        <div class="qa-card">
+            <p class="qa-q"><b>19.</b> Сформулируйте и докажите утверждения о признаках ромба.</p>
+            <details>
+                <summary>Показать ответ</summary>
+                <div class="solution-content">Параллелограмм является ромбом, если: а) его диагонали взаимно перпендикулярны; б) диагональ делит его угол пополам. Доказательства: а) из равенства прямоугольных треугольников AOB и AOD следует AB = AD; б) накрест лежащие углы дают равнобедренный треугольник → смежные стороны равны.</div>
+            </details>
+        </div>
+
+        <h3>🔄 Симметрия (вопросы 20–22)</h3>
+
+        <div class="qa-card">
+            <p class="qa-q"><b>20.</b> Какие две точки называются симметричными относительно данной точки?</p>
+            <details>
+                <summary>Показать ответ</summary>
+                <div class="solution-content">Точки A и A₁ симметричны относительно точки O, если O — <strong>середина отрезка AA₁</strong>. Точка O считается симметричной самой себе.</div>
+            </details>
+        </div>
+
+        <div class="qa-card">
+            <p class="qa-q"><b>21.</b> Какая фигура называется симметричной относительно данной точки?</p>
+            <details>
+                <summary>Показать ответ</summary>
+                <div class="solution-content">Фигура симметрична относительно точки O, если для каждой её точки симметричная ей точка относительно O тоже принадлежит фигуре. Точка O — <strong>центр симметрии</strong> фигуры.</div>
+            </details>
+        </div>
+
+        <div class="qa-card">
+            <p class="qa-q"><b>22.</b> Приведите примеры фигур, обладающих: а) осевой симметрией; б) центральной симметрией; в) и осевой, и центральной симметрией.</p>
+            <details>
+                <summary>Показать ответ</summary>
+                <div class="solution-content">а) Равнобедренный треугольник, прямоугольник, ромб; б) параллелограмм, окружность; в) квадрат, прямоугольник, окружность.</div>
+            </details>
+        </div>
+    </section>
+
+    <!-- ================= БЛОК 2: ДОПОЛНИТЕЛЬНЫЕ ЗАДАЧИ ================= -->
+    <section class="card">
+        <h2>🛠 Блок 2. Дополнительные задачи (№520–540)</h2>
+        <p>Задачи сгруппированы по темам. Сначала попробуй сам, потом сверься с решением и чертежом! ✍️</p>
+
+        <span class="level-badge medium">Тема: углы четырёхугольника</span>
+        <h3>Задание 1 (№520)</h3>
+        <p>Докажите, что если не все углы выпуклого четырёхугольника равны друг другу, то хотя бы один из них тупой.</p>
+        <details>
+            <summary>Показать доказательство</summary>
+            <div class="solution-content">
+                <div class="solution-step"><strong>Шаг 1:</strong> Предположим обратное: тупых углов нет, то есть каждый угол ≤ 90°.</div>
+                <div class="solution-step"><strong>Шаг 2:</strong> Сумма углов выпуклого четырёхугольника равна 360°. Если хотя бы один угол меньше 90°, сумма будет меньше 360° — противоречие.</div>
+                <div class="solution-step"><strong>Шаг 3:</strong> Значит, все углы ровно по 90° — но тогда все они равны, что противоречит условию.</div>
+                <div class="solution-step" style="border-left-color: var(--primary);"><strong>Вывод:</strong> предположение неверно — хотя бы один угол тупой. ✅</div>
+            </div>
+        </details>
+
+        <h3>Задание 2 (№525)</h3>
+        <p>Докажите, что выпуклый четырёхугольник является параллелограммом, если сумма углов, прилежащих к каждой из двух смежных сторон, равна 180°.</p>
+        <details>
+            <summary>Показать доказательство</summary>
+            <div class="solution-content">
+                <div class="solution-step"><strong>Шаг 1:</strong> Пусть ∠A + ∠B = 180° (углы при стороне AB) и ∠B + ∠C = 180° (углы при стороне BC).</div>
+                <div class="solution-step"><strong>Шаг 2:</strong> ∠A + B = 180° — односторонние углы при прямых AD и BC с секущей AB → AD ∥ BC.</div>
+                <div class="solution-step"><strong>Шаг 3:</strong> ∠B + C = 180° — односторонние углы при прямых AB и CD с секущей BC → AB ∥ CD.</div>
+                <div class="solution-step" style="border-left-color: var(--primary);"><strong>Вывод:</strong> противоположные стороны попарно параллельны → ABCD — параллелограмм. ✅</div>
+            </div>
+        </details>
+
+        <h3>Задание 3 (№526)</h3>
+        <p>Докажите, что выпуклый четырёхугольник является параллелограммом, если его противоположные углы попарно равны.</p>
+        <details>
+            <summary>Показать доказательство</summary>
+            <div class="solution-content">
+                <div class="solution-step"><strong>Шаг 1:</strong> ∠A = ∠C и ∠B = ∠D; сумма всех углов 360° → 2(∠A + ∠B) = 360° → ∠A + ∠B = 180°.</div>
+                <div class="solution-step"><strong>Шаг 2:</strong> Тогда AD ∥ BC (односторонние углы при секущей AB). Аналогично ∠B + ∠C = 180° → AB ∥ CD.</div>
+                <div class="solution-step" style="border-left-color: var(--primary);"><strong>Вывод:</strong> ABCD — параллелограмм. ✅</div>
+            </div>
+        </details>
+
+        <span class="level-badge medium">Тема: биссектрисы</span>
+        <h3>Задание 4 (№521)</h3>
+        <p>Периметр параллелограмма ABCD равен 46 см, AB = 14 см. Какую сторону параллелограмма пересекает биссектриса угла A? Найдите отрезки, которые образуются при этом пересечении.</p>
+        <details>
+            <summary>Показать подробное решение</summary>
+            <div class="solution-content">
+                <div class="solution-step"><strong>Шаг 1:</strong> BC = 46 : 2 − 14 = 9 см.</div>
+                <div class="solution-step"><strong>Шаг 2:</strong> Биссектриса угла A отсекает равнобедренный треугольник со стороной, равной AB = 14 см. Так как 14 &gt; 9, на стороне BC биссектриса «не помещается» — она пересекает сторону CD.</div>
+                <div class="solution-step"><strong>Шаг 3:</strong> Треугольник ADK равнобедренный: DK = AD = 9 см; тогда KC = 14 − 9 = 5 см.</div>
+                <div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> сторону CD; отрезки 9 см и 5 см.</div>
+            </div>
+        </details>
+
+        <h3>Задание 5 (№522)</h3>
+        <p>Стороны параллелограмма равны 10 см и 3 см. Биссектрисы двух углов, прилежащих к большей стороне, делят противоположную сторону на три отрезка. Найдите эти отрезки.</p>
+        <details>
+            <summary>Показать подробное решение</summary>
+            <div class="solution-content">
+                <div class="solution-step"><strong>Шаг 1:</strong> Биссектриса угла A отсекает DK = AD = 3 см; биссектриса угла B отсекает CK′ = BC = 3 см.</div>
+                <div class="solution-step"><strong>Шаг 2:</strong> Средний отрезок: 10 − 3 − 3 = 4 см.</div>
+                <div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> 3 см, 4 см, 3 см.</div>
+            </div>
+        </details>
+
+        <h3>Задание 6 (№524)</h3>
+        <p>В параллелограмме, смежные стороны которого не равны, проведены биссектрисы углов. Докажите, что при их пересечении образуется прямоугольник.</p>
+        <details>
+            <summary>Показать доказательство с чертежом</summary>
+            <div class="solution-content">
+                <div class="sol-svg">
+                    <svg viewBox="0 0 320 200" width="320" height="200">
+                        <polygon points="40,160 220,160 270,70 90,70" fill="#f8fafc" stroke="#1e293b" stroke-width="2"/>
+                        <line x1="40" y1="160" x2="173.7" y2="81.4" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="6,4"/>
+                        <line x1="220" y1="160" x2="173.7" y2="81.4" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="6,4"/>
+                        <line x1="270" y1="70" x2="136.3" y2="148.7" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="6,4"/>
+                        <line x1="90" y1="70" x2="136.3" y2="148.7" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="6,4"/>
+                        <polygon points="173.7,81.4 193.5,115 136.3,148.7 116.5,115" fill="#f0fdf4" stroke="#16a34a" stroke-width="2.5"/>
+                        <path d="M165.9,86 L170.5,93.7 L178.3,89.1" fill="none" stroke="#16a34a" stroke-width="2"/>
+                        <text x="26" y="176" font-family="sans-serif" font-size="15" font-weight="bold">A</text>
+                        <text x="224" y="176" font-family="sans-serif" font-size="15" font-weight="bold">B</text>
+                        <text x="276" y="66" font-family="sans-serif" font-size="15" font-weight="bold">C</text>
+                        <text x="76" y="62" font-family="sans-serif" font-size="15" font-weight="bold">D</text>
+                    </svg>
+                </div>
+                <div class="solution-step"><strong>Шаг 1:</strong> Биссектрисы соседних углов A и B пересекаются в точке P. В треугольнике APB: ∠PAB + ∠PBA = ½(∠A + ∠B) = ½ · 180° = 90° → ∠APB = 90°.</div>
+                <div class="solution-step"><strong>Шаг 2:</strong> Точно так же каждый из четырёх углов внутреннего четырёхугольника равен 90°.</div>
+                <div class="solution-step" style="border-left-color: var(--primary);"><strong>Вывод:</strong> четырёхугольник с четырьмя прямыми углами — прямоугольник (задача 503). ✅</div>
+            </div>
+        </details>
+
+        <span class="level-badge hard">Тема: середины, медианы, средние линии</span>
+        <h3>Задание 7 (№523)</h3>
+        <p>Через произвольную точку основания равнобедренного треугольника проведены прямые, параллельные боковым сторонам треугольника. Докажите, что периметр получившегося четырёхугольника равен сумме боковых сторон данного треугольника.</p>
+        <details>
+            <summary>Показать доказательство с чертежом</summary>
+            <div class="solution-content">
+                <div class="sol-svg">
+                    <svg viewBox="0 0 300 200" width="300" height="200">
+                        <polygon points="40,160 140,40 240,160" fill="#f8fafc" stroke="#1e293b" stroke-width="2"/>
+                        <line x1="160" y1="160" x2="100" y2="88" stroke="#f59e0b" stroke-width="2.5"/>
+                        <line x1="160" y1="160" x2="200" y2="112" stroke="#f59e0b" stroke-width="2.5"/>
+                        <line x1="65.4" y1="120.2" x2="74.6" y2="127.8" stroke="#16a34a" stroke-width="2"/>
+                        <line x1="125.4" y1="127.8" x2="134.6" y2="120.2" stroke="#16a34a" stroke-width="2"/>
+                        <line x1="173.5" y1="134.5" x2="182.7" y2="142.1" stroke="#7c3aed" stroke-width="2"/>
+                        <line x1="177.3" y1="129.9" x2="186.5" y2="137.5" stroke="#7c3aed" stroke-width="2"/>
+                        <line x1="213.5" y1="142.1" x2="222.7" y2="134.5" stroke="#7c3aed" stroke-width="2"/>
+                        <line x1="217.3" y1="137.5" x2="226.5" y2="129.9" stroke="#7c3aed" stroke-width="2"/>
+                        <text x="26" y="176" font-family="sans-serif" font-size="15" font-weight="bold">A</text>
+                        <text x="134" y="32" font-family="sans-serif" font-size="15" font-weight="bold">B</text>
+                        <text x="246" y="176" font-family="sans-serif" font-size="15" font-weight="bold">C</text>
+                        <text x="154" y="180" font-family="sans-serif" font-size="15" font-weight="bold" fill="#b45309">D</text>
+                        <text x="84" y="82" font-family="sans-serif" font-size="15" font-weight="bold" fill="#b45309">F</text>
+                        <text x="206" y="108" font-family="sans-serif" font-size="15" font-weight="bold" fill="#b45309">E</text>
+                    </svg>
+                </div>
+                <div class="solution-step"><strong>Шаг 1:</strong> Точка D на основании AC; DF ∥ BC (F на AB), DE ∥ AB (E на BC). Четырёхугольник FBED — параллелограмм (FB ∥ ED, BE ∥ DF).</div>
+                <div class="solution-step"><strong>Шаг 2:</strong> ∠FDA = ∠BCA (соответственные при DF ∥ CB) = ∠BAC (углы при основании) → треугольник AFD равнобедренный: FA = FD (зелёные метки).</div>
+                <div class="solution-step"><strong>Шаг 3:</strong> Аналогично ∠EDC = ∠BAC = ∠BCA → треугольник DEC равнобедренный: ED = EC (фиолетовые метки).</div>
+                <div class="solution-step"><strong>Шаг 4:</strong> Периметр FBED = FB + BE + ED + DF = FB + BE + EC + FA = (FA + FB) + (BE + EC) = AB + BC.</div>
+                <div class="solution-step" style="border-left-color: var(--primary);"><strong>Вывод:</strong> периметр четырёхугольника равен сумме боковых сторон. ✅</div>
+            </div>
+        </details>
+
+        <h3>Задание 8 (№527)</h3>
+        <p>Точка K — середина медианы AM треугольника ABC. Прямая BK пересекает сторону AC в точке D. Докажите, что AD = ⅓·AC.</p>
+        <details>
+            <summary>Показать доказательство с чертежом</summary>
+            <div class="solution-content">
+                <div class="sol-svg">
+                    <svg viewBox="0 0 300 200" width="300" height="200">
+                        <polygon points="60,30 240,170 60,170" fill="#f8fafc" stroke="#1e293b" stroke-width="2"/>
+                        <line x1="60" y1="30" x2="150" y2="170" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="6,4"/>
+                        <line x1="240" y1="170" x2="60" y2="76.7" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="6,4"/>
+                        <line x1="150" y1="170" x2="60" y2="123.3" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="6,4"/>
+                        <line x1="60" y1="30" x2="60" y2="76.7" stroke="#16a34a" stroke-width="4"/>
+                        <line x1="60" y1="76.7" x2="60" y2="123.3" stroke="#f59e0b" stroke-width="4"/>
+                        <line x1="60" y1="123.3" x2="60" y2="170" stroke="#dc2626" stroke-width="4"/>
+                        <circle cx="105" cy="100" r="4" fill="#dc2626"/>
+                        <text x="48" y="24" font-family="sans-serif" font-size="15" font-weight="bold">A</text>
+                        <text x="246" y="178" font-family="sans-serif" font-size="15" font-weight="bold">B</text>
+                        <text x="44" y="188" font-family="sans-serif" font-size="15" font-weight="bold">C</text>
+                        <text x="146" y="188" font-family="sans-serif" font-size="15" font-weight="bold">M</text>
+                        <text x="112" y="96" font-family="sans-serif" font-size="15" font-weight="bold" fill="#dc2626">K</text>
+                        <text x="36" y="72" font-family="sans-serif" font-size="15" font-weight="bold" fill="#dc2626">D</text>
+                        <text x="36" y="128" font-family="sans-serif" font-size="15" font-weight="bold" fill="#7c3aed">E</text>
+                    </svg>
+                </div>
+                <div class="solution-step"><strong>Шаг 1:</strong> Проведём ME ∥ BD (E на AC). В треугольнике BCD: M — середина BC, ME ∥ BD → E — середина DC.</div>
+                <div class="solution-step"><strong>Шаг 2:</strong> В треугольнике AME: K — середина AM, KD ∥ ME → D — середина AE.</div>
+                <div class="solution-step"><strong>Шаг 3:</strong> Тогда AD = DE = EC (цветные отрезки на AC), значит AC = 3·AD.</div>
+                <div class="solution-step" style="border-left-color: var(--primary);"><strong>Вывод:</strong> AD = ⅓·AC. ✅</div>
+            </div>
+        </details>
+
+        <h3>Задание 9 (№528)</h3>
+        <p>Точки M и N — середины сторон AD и BC параллелограмма ABCD. Докажите, что прямые AN и MC делят диагональ BD на три равные части.</p>
+        <details>
+            <summary>Показать доказательство с чертежом</summary>
+            <div class="solution-content">
+                <div class="sol-svg">
+                    <svg viewBox="0 0 320 200" width="320" height="200">
+                        <polygon points="40,150 200,150 250,60 90,60" fill="#f8fafc" stroke="#1e293b" stroke-width="2"/>
+                        <line x1="200" y1="150" x2="90" y2="60" stroke="#1e293b" stroke-width="1.5" stroke-dasharray="6,4"/>
+                        <line x1="40" y1="150" x2="225" y2="105" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="6,4"/>
+                        <line x1="65" y1="105" x2="250" y2="60" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="6,4"/>
+                        <line x1="185.5" y1="130.4" x2="177.9" y2="139.6" stroke="#16a34a" stroke-width="2"/>
+                        <line x1="148.8" y1="100.4" x2="141.2" y2="109.6" stroke="#16a34a" stroke-width="2"/>
+                        <line x1="112.1" y1="70.4" x2="104.5" y2="79.6" stroke="#16a34a" stroke-width="2"/>
+                        <circle cx="163.3" cy="120" r="4" fill="#dc2626"/>
+                        <circle cx="126.7" cy="90" r="4" fill="#dc2626"/>
+                        <text x="26" y="166" font-family="sans-serif" font-size="15" font-weight="bold">A</text>
+                        <text x="204" y="166" font-family="sans-serif" font-size="15" font-weight="bold">B</text>
+                        <text x="256" y="56" font-family="sans-serif" font-size="15" font-weight="bold">C</text>
+                        <text x="76" y="52" font-family="sans-serif" font-size="15" font-weight="bold">D</text>
+                        <text x="42" y="100" font-family="sans-serif" font-size="15" font-weight="bold">M</text>
+                        <text x="232" y="122" font-family="sans-serif" font-size="15" font-weight="bold">N</text>
+                        <text x="170" y="112" font-family="sans-serif" font-size="15" font-weight="bold" fill="#dc2626">P</text>
+                        <text x="94" y="80" font-family="sans-serif" font-size="15" font-weight="bold" fill="#dc2626">Q</text>
+                    </svg>
+                </div>
+                <div class="solution-step"><strong>Шаг 1:</strong> AM ∥ NC и AM = ½AD = ½BC = NC → AMCN — параллелограмм → AN ∥ MC.</div>
+                <div class="solution-step"><strong>Шаг 2:</strong> Пусть P = AN ∩ BD, Q = MC ∩ BD. В треугольнике CBQ: N — середина CB, NP ∥ CQ → P — середина BQ → BP = PQ.</div>
+                <div class="solution-step"><strong>Шаг 3:</strong> В треугольнике ADP: M — середина AD, MQ ∥ AP → Q — середина DP → PQ = QD.</div>
+                <div class="solution-step" style="border-left-color: var(--primary);"><strong>Вывод:</strong> BP = PQ = QD — диагональ поделена на три равные части (зелёные метки). ✅</div>
+            </div>
+        </details>
+
+        <h3>Задание 10 (№531)</h3>
+        <p>Докажите, что середина отрезка, соединяющего вершину треугольника с любой точкой противоположной стороны, лежит на отрезке с концами в серединах двух других сторон.</p>
+        <details>
+            <summary>Показать доказательство</summary>
+            <div class="solution-content">
+                <div class="solution-step"><strong>Шаг 1:</strong> Треугольник ABC, точка D на BC, M — середина AD; P и Q — середины AB и AC; PQ — средняя линия → PQ ∥ BC.</div>
+                <div class="solution-step"><strong>Шаг 2:</strong> В треугольнике ABD: P — середина AB, M — середина AD → PM — средняя линия → PM ∥ BD, то есть PM ∥ BC.</div>
+                <div class="solution-step"><strong>Шаг 3:</strong> Через точку P проходит лишь одна прямая, параллельная BC, — это PQ. Значит M лежит на прямой PQ, а так как D внутри BC, то M — внутри отрезка PQ.</div>
+                <div class="solution-step" style="border-left-color: var(--primary);"><strong>Вывод:</strong> M лежит на отрезке PQ. ✅</div>
+            </div>
+        </details>
+
+        <span class="level-badge hard">Тема: ромб и квадрат</span>
+        <h3>Задание 11 (№529)</h3>
+        <p>Из вершины B ромба ABCD проведены перпендикуляры BK и BM к прямым AD и DC. Докажите, что луч BD является биссектрисой угла KBM.</p>
+        <details>
+            <summary>Показать доказательство</summary>
+            <div class="solution-content">
+                <div class="solution-step"><strong>Шаг 1:</strong> Диагональ BD делит угол ADC ромба пополам: ∠BDK = ∠BDM (K на прямой AD, M на прямой DC).</div>
+                <div class="solution-step"><strong>Шаг 2:</strong> Прямоугольные треугольники BKD и BMD равны по гипотенузе BD и острому углу (∠BDK = ∠BDM).</div>
+                <div class="solution-step" style="border-left-color: var(--primary);"><strong>Вывод:</strong> ∠KBD = ∠MBD, то есть луч BD — биссектриса угла KBM. ✅</div>
+            </div>
+        </details>
+
+        <h3>Задание 12 (№530)</h3>
+        <p>Докажите, что точка пересечения диагоналей ромба равноудалена от его сторон.</p>
+        <details>
+            <summary>Показать доказательство</summary>
+            <div class="solution-content">
+                <div class="solution-step"><strong>Шаг 1:</strong> Диагонали ромба — биссектрисы его углов. Точка O лежит на биссектрисе угла A → равноудалена от сторон AB и AD.</div>
+                <div class="solution-step"><strong>Шаг 2:</strong> O лежит на биссектрисе угла B → равноудалена от сторон AB и BC. Соединяя такие равенства для всех углов, получаем: расстояния от O до всех четырёх сторон равны.</div>
+                <div class="solution-step" style="border-left-color: var(--primary);"><strong>Вывод:</strong> O равноудалена от сторон ромба. ✅</div>
+            </div>
+        </details>
+
+        <h3>Задание 13 (№532)</h3>
+        <p>Диагональ AC квадрата ABCD равна 18,4 см. Прямая, проходящая через точку A и перпендикулярная к прямой AC, пересекает прямые BC и CD соответственно в точках M и N. Найдите MN.</p>
+        <details>
+            <summary>Показать подробное решение</summary>
+            <div class="solution-content">
+                <div class="solution-step"><strong>Шаг 1:</strong> ∠ACM = ∠ACN = 45° (диагональ делит углы квадрата пополам).</div>
+                <div class="solution-step"><strong>Шаг 2:</strong> Треугольники ACM и ACN прямоугольные (∠MAC = ∠NAC = 90°) с острым углом 45° → равнобедренные: AM = AN = AC = 18,4 см.</div>
+                <div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> MN = AM + AN = 36,8 см.</div>
+            </div>
+        </details>
+
+        <h3>Задание 14 (№533)</h3>
+        <p>На диагонали AC квадрата ABCD взята точка M такая, что AM = AB. Через точку M проведена прямая, перпендикулярная к прямой AC и пересекающая BC в точке H. Докажите, что BH = HM = MC.</p>
+        <details>
+            <summary>Показать доказательство с чертежом</summary>
+            <div class="solution-content">
+                <div class="sol-svg">
+                    <svg viewBox="0 0 240 220" width="240" height="220">
+                        <polygon points="50,50 150,50 150,150 50,150" fill="#f8fafc" stroke="#1e293b" stroke-width="2"/>
+                        <line x1="50" y1="50" x2="150" y2="150" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="6,4"/>
+                        <line x1="120.7" y1="120.7" x2="150" y2="91.4" stroke="#dc2626" stroke-width="2"/>
+                        <path d="M127.8,127.8 L134.9,120.7 L127.8,113.6" fill="none" stroke="#dc2626" stroke-width="2"/>
+                        <line x1="144" y1="70.7" x2="156" y2="70.7" stroke="#16a34a" stroke-width="2"/>
+                        <line x1="131.2" y1="101.9" x2="139.6" y2="110.3" stroke="#16a34a" stroke-width="2"/>
+                        <line x1="131.2" y1="139.6" x2="139.6" y2="131.2" stroke="#16a34a" stroke-width="2"/>
+                        <circle cx="120.7" cy="120.7" r="4" fill="#dc2626"/>
+                        <text x="36" y="44" font-family="sans-serif" font-size="15" font-weight="bold">A</text>
+                        <text x="156" y="44" font-family="sans-serif" font-size="15" font-weight="bold">B</text>
+                        <text x="156" y="166" font-family="sans-serif" font-size="15" font-weight="bold">C</text>
+                        <text x="36" y="166" font-family="sans-serif" font-size="15" font-weight="bold">D</text>
+                        <text x="102" y="134" font-family="sans-serif" font-size="15" font-weight="bold" fill="#dc2626">M</text>
+                        <text x="156" y="96" font-family="sans-serif" font-size="15" font-weight="bold" fill="#dc2626">H</text>
+                    </svg>
+                </div>
+                <div class="solution-step"><strong>Шаг 1:</strong> Треугольники ABH и AMH прямоугольные (∠ABH = 90°, ∠AMH = 90°), AH — общая гипотенуза, AB = AM по условию → равны по катету и гипотенузе → BH = HM.</div>
+                <div class="solution-step"><strong>Шаг 2:</strong> В треугольнике HMC: ∠HMC = 90°, ∠MCH = ∠ACB = 45° → ∠MHC = 45° → треугольник равнобедренный: HM = MC.</div>
+                <div class="solution-step" style="border-left-color: var(--primary);"><strong>Вывод:</strong> BH = HM = MC (зелёные метки). ✅</div>
+            </div>
+        </details>
+
+        <span class="level-badge star">Тема: трапеции (задачи со звёздочкой)</span>
+        <h3>Задание 15 (№534)</h3>
+        <p>В трапеции ABCD с большим основанием AD диагональ AC перпендикулярна к боковой стороне CD, ∠BAC = ∠CAD. Найдите AD, если периметр трапеции равен 20 см, а ∠D = 60°.</p>
+        <details>
+            <summary>Показать подробное решение</summary>
+            <div class="solution-content">
+                <div class="solution-step"><strong>Шаг 1:</strong> ∠BCA = ∠CAD (накрест лежащие) = ∠BAC → BC = AB.</div>
+                <div class="solution-step"><strong>Шаг 2:</strong> В треугольнике ACD: ∠ACD = 90°, ∠D = 60° → ∠CAD = 30° → CD = AD : 2.</div>
+                <div class="solution-step"><strong>Шаг 3:</strong> ∠BAD = 60° = ∠D → трапеция равнобедренная → AB = CD = AD : 2, и BC = AD : 2.</div>
+                <div class="solution-step"><strong>Шаг 4:</strong> Периметр: 4 · (AD : 2) + AD = 2,5·AD = 20 → AD = 8 см.</div>
+                <div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> AD = 8 см. Проверка: 4 + 4 + 4 + 8 = 20 ✅</div>
+            </div>
+        </details>
+
+        <h3>Задание 16 (№535*)</h3>
+        <p>Сумма углов при одном из оснований трапеции равна 90°. Докажите, что отрезок, соединяющий середины оснований трапеции, равен их полуразности.</p>
+        <details>
+            <summary>Показать доказательство с чертежом</summary>
+            <div class="solution-content">
+                <div class="sol-svg">
+                    <svg viewBox="0 0 300 210" width="300" height="210">
+                        <polygon points="40,170 70,118 150,118 240,170" fill="#f8fafc" stroke="#1e293b" stroke-width="2"/>
+                        <line x1="110" y1="118" x2="80" y2="170" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="6,4"/>
+                        <line x1="110" y1="118" x2="200" y2="170" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="6,4"/>
+                        <line x1="110" y1="118" x2="140" y2="170" stroke="#16a34a" stroke-width="2.5"/>
+                        <path d="M106,124.9 L112.9,128.9 L116.9,122" fill="none" stroke="#16a34a" stroke-width="2"/>
+                        <path d="M60,170 A20,20 0 0 0 50,152.7" fill="none" stroke="#7c3aed" stroke-width="2"/>
+                        <path d="M222.7,160 A20,20 0 0 0 220,170" fill="none" stroke="#7c3aed" stroke-width="2"/>
+                        <text x="26" y="186" font-family="sans-serif" font-size="15" font-weight="bold">A</text>
+                        <text x="58" y="110" font-family="sans-serif" font-size="15" font-weight="bold">B</text>
+                        <text x="154" y="110" font-family="sans-serif" font-size="15" font-weight="bold">C</text>
+                        <text x="246" y="186" font-family="sans-serif" font-size="15" font-weight="bold">D</text>
+                        <text x="98" y="108" font-family="sans-serif" font-size="15" font-weight="bold" fill="#dc2626">M</text>
+                        <text x="134" y="190" font-family="sans-serif" font-size="15" font-weight="bold" fill="#16a34a">N</text>
+                        <text x="72" y="190" font-family="sans-serif" font-size="15" font-weight="bold" fill="#dc2626">P</text>
+                        <text x="194" y="190" font-family="sans-serif" font-size="15" font-weight="bold" fill="#dc2626">Q</text>
+                    </svg>
+                </div>
+                <div class="solution-step"><strong>Шаг 1:</strong> M — середина BC, N — середина AD. Проведём MP ∥ AB и MQ ∥ CD (P, Q на AD). Тогда AP = BM = ½BC и QD = MC = ½BC.</div>
+                <div class="solution-step"><strong>Шаг 2:</strong> PQ = AD − AP − QD = AD − BC. При этом PN = AN − AP = ½AD − ½BC = ½PQ → N — середина PQ.</div>
+                <div class="solution-step"><strong>Шаг 3:</strong> ∠MPQ = ∠A и ∠MQP = ∠D (соответственные), а ∠A + D = 90° → ∠PMQ = 90° (квадратик у M).</div>
+                <div class="solution-step"><strong>Шаг 4:</strong> MN — медиана прямоугольного треугольника PMQ к гипотенузе PQ → MN = ½PQ = ½(AD − BC).</div>
+                <div class="solution-step" style="border-left-color: var(--primary);"><strong>Вывод:</strong> отрезок середин оснований равен полуразности оснований. ✅</div>
+            </div>
+        </details>
+
+        <span class="level-badge star">Тема: симметрия и конструкции</span>
+        <h3>Задание 17 (№536*)</h3>
+        <p>На двух сторонах треугольника вне его построены квадраты. Докажите, что отрезок, соединяющий концы сторон квадратов, выходящих из одной вершины треугольника, в 2 раза больше медианы треугольника, выходящей из той же вершины.</p>
+        <details>
+            <summary>Показать доказательство с чертежом</summary>
+            <div class="solution-content">
+                <div class="sol-svg">
+                    <svg viewBox="0 0 320 280" width="320" height="280">
+                        <polygon points="160,120 80,180 220,180" fill="#f8fafc" stroke="#1e293b" stroke-width="2"/>
+                        <polygon points="160,120 80,180 20,100 100,40" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+                        <polygon points="160,120 220,180 280,120 220,60" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+                        <line x1="100" y1="40" x2="220" y2="60" stroke="#dc2626" stroke-width="2.5" stroke-dasharray="7,5"/>
+                        <line x1="160" y1="120" x2="140" y2="240" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="6,4"/>
+                        <line x1="80" y1="180" x2="140" y2="240" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4"/>
+                        <line x1="220" y1="180" x2="140" y2="240" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4"/>
+                        <line x1="159" y1="55.9" x2="161" y2="44.1" stroke="#16a34a" stroke-width="2"/>
+                        <line x1="144.1" y1="179" x2="155.9" y2="181" stroke="#16a34a" stroke-width="2"/>
+                        <circle cx="150" cy="180" r="4" fill="#dc2626"/>
+                        <text x="156" y="100" font-family="sans-serif" font-size="15" font-weight="bold">A</text>
+                        <text x="64" y="196" font-family="sans-serif" font-size="15" font-weight="bold">B</text>
+                        <text x="224" y="196" font-family="sans-serif" font-size="15" font-weight="bold">C</text>
+                        <text x="86" y="34" font-family="sans-serif" font-size="15" font-weight="bold" fill="#2563eb">P</text>
+                        <text x="224" y="52" font-family="sans-serif" font-size="15" font-weight="bold" fill="#2563eb">Q</text>
+                        <text x="156" y="198" font-family="sans-serif" font-size="15" font-weight="bold" fill="#dc2626">M</text>
+                        <text x="104" y="254" font-family="sans-serif" font-size="15" font-weight="bold" fill="#b45309">K</text>
+                    </svg>
+                </div>
+                <div class="solution-step"><strong>Шаг 1:</strong> Удвоим медиану AM: отложим MK = AM. Диагонали AK и BC четырёхугольника ABKC делятся пополам → ABKC — параллелограмм → BK = AC и ∠ABK = 180° − ∠BAC.</div>
+                <div class="solution-step"><strong>Шаг 2:</strong> В треугольнике PAQ: AP = AB (сторона квадрата), AQ = AC = BK, а ∠PAQ = 360° − 90° − 90° − ∠BAC = 180° − ∠BAC = ∠ABK.</div>
+                <div class="solution-step"><strong>Шаг 3:</strong> Треугольники PAQ и ABK равны по двум сторонам и углу между ними → PQ = AK = 2·AM (зелёные метки).</div>
+                <div class="solution-step" style="border-left-color: var(--primary);"><strong>Вывод:</strong> PQ = 2·AM. ✅</div>
+            </div>
+        </details>
+
+        <h3>Задание 18 (№537, №538)</h3>
+        <p>Докажите: а) прямые, содержащие диагонали ромба, являются его осями симметрии; б) точка пересечения диагоналей параллелограмма является его центром симметрии.</p>
+        <details>
+            <summary>Показать доказательства</summary>
+            <div class="solution-content">
+                <div class="solution-step"><strong>а)</strong> Осевая симметрия относительно прямой AC: точки A и C остаются на месте, а B и D меняются местами (BD ⊥ AC и O — середина BD). Значит стороны ромба переходят в стороны → ромб отображается на себя.</div>
+                <div class="solution-step"><strong>б)</strong> Центральная симметрия относительно O: A ↔ C, B ↔ D (O — середина диагоналей), поэтому каждая сторона переходит в противоположную → параллелограмм отображается на себя.</div>
+            </div>
+        </details>
+
+        <h3>Задание 19 (№539)</h3>
+        <p>Сколько центров симметрии имеет пара параллельных прямых?</p>
+        <details>
+            <summary>Показать подробное решение</summary>
+            <div class="solution-content">
+                <div class="solution-step"><strong>Шаг 1:</strong> Симметрия относительно центра O должна перевести пару прямых в себя. Каждая прямая не может перейти в себя (иначе O лежала бы на обеих прямых, а они не пересекаются) → прямые меняются местами.</div>
+                <div class="solution-step"><strong>Шаг 2:</strong> Это выполняется для любой точки O «средней линии» — прямой, параллельной обеим и равноудалённой от них.</div>
+                <div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> бесконечно много.</div>
+            </div>
+        </details>
+
+        <h3>Задание 20 (№540*)</h3>
+        <p>Докажите, что если фигура имеет две взаимно перпендикулярные оси симметрии, то точка их пересечения является центром симметрии фигуры.</p>
+        <details>
+            <summary>Показать доказательство</summary>
+            <div class="solution-content">
+                <div class="solution-step"><strong>Шаг 1:</strong> Пусть a и b — взаимно перпендикулярные оси симметрии фигуры, O — точка их пересечения.</div>
+                <div class="solution-step"><strong>Шаг 2:</strong> Композиция двух осевых симметрий относительно пересекающихся осей — поворот вокруг точки пересечения на удвоенный угол между осями. Угол между a и b равен 90° → композиция есть поворот на 180°, то есть центральная симметрия относительно O.</div>
+                <div class="solution-step"><strong>Шаг 3:</strong> Фигура отображается на себя при каждой из симметрий, значит и при их композиции → O — центр симметрии фигуры.</div>
+                <div class="solution-step" style="border-left-color: var(--primary);"><strong>Вывод:</strong> доказано. ✅</div>
+            </div>
+        </details>
+    </section>
+
+    <!-- ================= БЛОК 3: ПРАКТИКА ================= -->
+    <section class="card practice-box">
+        <h2>🏗 Блок 3. Продукт повторения: справочный лист главы</h2>
+        <p>Не подглядывая, восстанови пропуски в таблице — это и будет твой личный справочный лист для контрольной. Потом открой эталон и проверь себя. ✍️</p>
+        <table>
+            <tr><th>Фигура</th><th>Определение</th><th>Особое свойство диагоналей</th></tr>
+            <tr><td>Параллелограмм</td><td>противоположные стороны …</td><td>делятся точкой пересечения …</td></tr>
+            <tr><td>Прямоугольник</td><td>параллелограмм, все углы …</td><td>диагонали …</td></tr>
+            <tr><td>Ромб</td><td>параллелограмм, все стороны …</td><td>… и делят углы пополам</td></tr>
+            <tr><td>Квадрат</td><td>прямоугольник с … сторонами</td><td>равны, …, делят углы пополам</td></tr>
+            <tr><td>Трапеция</td><td>две стороны параллельны, две …</td><td>средняя линия = …</td></tr>
+        </table>
+        <details>
+            <summary>Открыть эталон для самопроверки</summary>
+            <div class="solution-content">
+                <div class="solution-step"><strong>Параллелограмм:</strong> противоположные стороны попарно параллельны; диагонали делятся точкой пересечения пополам.</div>
+                <div class="solution-step"><strong>Прямоугольник:</strong> все углы прямые; диагонали равны.</div>
+                <div class="solution-step"><strong>Ромб:</strong> все стороны равны; диагонали перпендикулярны и делят углы пополам.</div>
+                <div class="solution-step"><strong>Квадрат:</strong> с равными сторонами; диагонали равны, перпендикулярны, делят углы пополам.</div>
+                <div class="solution-step"><strong>Трапеция:</strong> две другие не параллельны; средняя линия равна полусумме оснований.</div>
+                <div class="solution-step" style="border-left-color: var(--warning);"><em>Оцени себя: 5 строк без ошибок — глава усвоена! 3–4 — повтори Блок 1. Меньше 3 — вернись к урокам §1–§3.</em></div>
+            </div>
+        </details>
+    </section>
+
+    <!-- ================= ИТОГИ ================= -->
+    <section class="card summary-box">
+        <h2>📝 Главное после повторения</h2>
+        <ul>
+            <li>Сумма углов n-угольника: (n − 2)·180°; внешних углов: 360°; диагоналей: n(n − 3)/2.</li>
+            <li>Параллелограмм: свойства и три признака — через равные треугольники.</li>
+            <li>Прямоугольник ↔ равные диагонали; ромб ↔ перпендикулярные диагонали-биссектрисы; квадрат = прямоугольник + ромб.</li>
+            <li>Биссектриса угла параллелограмма отсекает равнобедренный треугольник — ключ к №521–524.</li>
+            <li>Приёмы «удвоить медиану» и «провести среднюю линию» — ключ к №527, 528, 531, 536.</li>
+            <li>Центральная симметрия: O — середина AA₁; у пары параллельных прямых центров бесконечно много.</li>
+        </ul>
+    </section>
+
+    <!-- ================= МЕТОДИКА ================= -->
+    <div class="teacher-note">
+        <h3>💡 Методическая подсказка (для учителя или родителя)</h3>
+        <ul style="margin-top: 10px; padding-left: 20px;">
+            <li><strong>Формат блица:</strong> вопросы теперь видны сразу — дайте ученику 10–15 минут записать ответы в тетради и только потом разрешите открывать кнопки. Так включается активное припоминание, а не узнавание.</li>
+            <li><strong>Парная проверка:</strong> после блица ученики обмениваются тетрадями и сверяют ответы друг друга с открытыми карточками — обсуждение ошибок даёт больше, чем молчаливая сверка.</li>
+            <li><strong>Доказательства:</strong> просите не пересказывать текст, а отвечать на вопрос «какие треугольники равны и по какому признаку?» — это каркас почти всех доказательств главы.</li>
+            <li><strong>Задачи со звёздочкой (535*, 536*, 540*):</strong> давайте как мини-исследования сильным ученикам с подсказкой-чертежом; обсуждайте идею, а не оформление.</li>
+            <li><strong>Самооценка:</strong> справочный лист в Блоке 3 — готовый инструмент для выхода из урока: ученик сам видит, какую тему главы подтянуть.</li>
+        </ul>
+    </div>
+
+    <footer style="text-align: center; color: var(--text-light); margin-top: 30px; font-size: 0.9em; padding-bottom: 20px;">
+        <p>📚 Геометрия 8 класс (Атанасян) • Повторение главы VI • Вопросы 1–22, задачи №520–540</p>
+    </footer>
+</div>
+
+</body>
+</html>
