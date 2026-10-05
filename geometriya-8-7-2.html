@@ -298,7 +298,7 @@ details[open] summary { border-bottom: 1px solid #e2e8f0; }
 
 <span class="level-badge medium">Средний уровень</span>
 <h3>Задание 6 (№560)</h3>
-<p>Пусть a и b — смежные стороны параллелограмма, S — его площадь, а h₁ и h₂ — его высоты. Найдите: а) h₁, если a = 18 см, b = 30 см, h₁ < h₂; б) h₁, если a = 10 см, b = 15 см, h₁ = 6 см, h₁ > h₂.</p>
+<p>Пусть a и b — смежные стороны параллелограмма, S — его площадь, а h₁ и h₂ — его высоты. Найдите: а) h₂, если a = 18 см, b = 30 см, h₁ = 6 см, h₂ > h₁; б) h₁, если a = 10 см, b = 15 см, h₂ = 6 см, h₂ > h₁; в) h₁ и h₂, если S = 54 см², a = 4,5 см, b = 6 см.</p>
 <details>
 <summary>Показать подробное решение</summary>
 <div class="solution-content">
@@ -315,9 +315,10 @@ details[open] summary { border-bottom: 1px solid #e2e8f0; }
 <text x="180" y="105" font-family="sans-serif" font-size="14" font-weight="bold" fill="#16a34a">h₁</text>
 </svg>
 </div>
-<div class="solution-step"><strong>Идея:</strong> площадь параллелограмма можно выразить двумя способами: S = a · h₂ = b · h₁ (где h₁ — высота к стороне b, h₂ — высота к стороне a).</div>
-<div class="solution-step"><strong>а)</strong> S = a · h₂ = b · h₁. Но нам нужно найти h₁, а даны a, b и условие h₁ < h₂. Площадь S = a · b · sin(угла между ними). Без угла задачу решить нельзя — вероятно, в условии опечатка. Пропускаем.</div>
-<div class="solution-step"><strong>б)</strong> S = a · h₁ = 10 · 6 = 60 см². Тогда h₂ = S : b = 60 : 15 = 4 см. Проверка: h₁ = 6 > h₂ = 4 ✅. Ответ: <strong>h₁ = 6 см, h₂ = 4 см</strong>.</div>
+<div class="solution-step"><strong>Идея:</strong> площадь параллелограмма можно выразить двумя способами: S = a · h₂ = b · h₁ (h₁ — высота к стороне b, h₂ — высота к стороне a). Меньшей стороне отвечает большая высота.</div>
+                <div class="solution-step"><strong>а)</strong> h₁ — высота к стороне b = 30 см: S = b · h₁ = 30 · 6 = 180 см². Тогда h₂ = S : a = 180 : 18 = <strong>10 см</strong>. Проверка: h₂ = 10 > h₁ = 6 ✅.</div>
+                <div class="solution-step"><strong>б)</strong> h₂ — высота к стороне a = 10 см: S = a · h₂ = 10 · 6 = 60 см². Тогда h₁ = S : b = 60 : 15 = <strong>4 см</strong>. Проверка: h₁ = 4 < h₂ = 6 ✅.</div>
+                <div class="solution-step"><strong>в)</strong> h₁ = S : b = 54 : 6 = <strong>9 см</strong>, h₂ = S : a = 54 : 4,5 = <strong>12 см</strong>. Проверка: a = 4,5 &lt; b = 6, значит h₂ &gt; h₁ (12 &gt; 9) ✅.</div>
 </div>
 </details>
 
