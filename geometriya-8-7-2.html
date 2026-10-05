@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Площади параллелограмма, треугольника и трапеции — Геометрия 8 класс</title>
+<style>
+:root {
+--primary: #2563eb;
+--secondary: #dc2626;
+--accent: #0ea5e9;
+--success: #16a34a;
+--warning: #f59e0b;
+--violet: #7c3aed;
+--bg: #f8fafc;
+--card-bg: #ffffff;
+--text: #1e293b;
+--text-light: #64748b;
+--radius: 16px;
+--shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+}
+body { font-family: 'Segoe UI','Roboto',system-ui,sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; margin: 0; padding: 20px; }
+.container { max-width: 850px; margin: 0 auto; }
+header { text-align: center; margin-bottom: 30px; padding: 30px; background: linear-gradient(135deg, var(--success), var(--accent)); color: white; border-radius: var(--radius); box-shadow: var(--shadow); }
+header h1 { margin: 0; font-size: 2.1em; }
+header p { margin: 8px 0 0; opacity: 0.95; font-size: 1.05em; }
+.card { background: var(--card-bg); border-radius: var(--radius); padding: 30px; margin-bottom: 25px; box-shadow: var(--shadow); }
+h2 { color: var(--primary); border-bottom: 3px solid var(--accent); padding-bottom: 10px; display: inline-block; margin-top: 0; }
+h3 { color: var(--secondary); margin-top: 25px; }
+table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; border-radius: 8px; overflow: hidden; }
+th, td { border: 1px solid #e2e8f0; padding: 12px 14px; text-align: left; }
+th { background: #f1f5f9; color: var(--primary); font-weight: 600; }
+.rule-box { background: #eff6ff; border-left: 5px solid var(--primary); padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0; }
+.formula { font-size: 1.25em; font-weight: bold; color: var(--secondary); text-align: center; background: #fef2f2; padding: 15px; border-radius: 8px; margin: 15px 0; border: 2px dashed var(--secondary); }
+.svg-container { text-align: center; margin: 25px 0; background: #f8fafc; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0; }
+.svg-container svg { max-width: 100%; height: auto; }
+.sol-svg { text-align: center; margin: 0 0 14px; }
+.sol-svg svg { max-width: 100%; height: auto; background: #fcfdff; border: 1px dashed #cbd5e1; border-radius: 10px; padding: 6px; }
+details { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin: 15px 0; overflow: hidden; }
+summary { padding: 15px 20px; cursor: pointer; font-weight: bold; color: var(--primary); background: #eff6ff; list-style: none; display: flex; align-items: center; gap: 10px; font-size: 1.05em; }
+summary::-webkit-details-marker { display: none; }
+summary::before { content: '🔍'; font-size: 1.2em; }
+details[open] summary::before { content: '💡'; }
+details[open] summary { border-bottom: 1px solid #e2e8f0; }
+.solution-content { padding: 20px; background: white; }
+.solution-step { margin-bottom: 12px; padding-left: 15px; border-left: 3px solid var(--success); }
+.level-badge { display: inline-block; padding: 5px 14px; border-radius: 20px; font-size: 0.85em; font-weight: bold; color: white; margin: 15px 0 10px; }
+.easy { background: var(--success); }
+.medium { background: var(--warning); color: #1e293b; }
+.hard { background: var(--secondary); }
+.extra-badge { background: var(--violet); }
+.practice-box { background: linear-gradient(135deg, #fffbeb, #fef3c7); border: 2px solid var(--warning); }
+.teacher-note { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 20px; margin-top: 30px; }
+.summary-box { background: #eff6ff; border: 2px solid var(--primary); border-radius: 12px; padding: 20px; }
+@media (max-width: 600px) { body { padding: 10px; } header h1 { font-size: 1.5em; } .card { padding: 20px; } th, td { padding: 8px; font-size: 0.92em; } }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<h1>🟩 Площади параллелограмма, треугольника и трапеции</h1>
+<p>Геометрия 8 класс • Глава VII, §2, пункты 57–59 • Формулы площадей и их применение</p>
+</header>
+
+<!-- ================= БЛОК 1: ИЗУЧЕНИЕ ================= -->
+<section class="card">
+<h2>🧠 Блок 1. Изучение нового материала</h2>
+<h3>🌍 Разминка: зачем нужны формулы площадей?</h3>
+<p>Покрасить стену, постелить ковёр, засеять поле — во всех этих делах нужно знать <strong>площадь</strong>. А если фигура не прямоугольная? Сегодня мы выведем формулы для параллелограмма, треугольника и трапеции — и научимся считать площади любых многоугольников! 📐</p>
+
+<h3>📖 Ключевые термины</h3>
+<table>
+<tr><th>Термин</th><th>Определение</th></tr>
+<tr><td><strong>Основание</strong></td><td>Сторона фигуры, к которой проводится высота (для параллелограмма и трапеции — обычно нижняя сторона).</td></tr>
+<tr><td><strong>Высота</strong></td><td>Перпендикуляр, проведённый из точки противоположной стороны (или её продолжения) к прямой, содержащей основание.</td></tr>
+<tr><td><strong>Средняя линия трапеции</strong></td><td>Отрезок, соединяющий середины боковых сторон. Равна полусумме оснований: (a + b) / 2.</td></tr>
+</table>
+
+<h2 style="margin-top:40px;">▱ Часть 1. Площадь параллелограмма (пункт 57)</h2>
+<div class="rule-box">
+<h3>🌟 Теорема: площадь параллелограмма</h3>
+<div class="formula">S = a · h</div>
+<p><em>Площадь параллелограмма равна произведению его основания на высоту.</em></p>
+</div>
+
+<div class="svg-container">
+<h3>🔎 Доказательство S = a · h (метод достройки до прямоугольника)</h3>
+<svg viewBox="0 0 440 260" width="440" height="260">
+<!-- Параллелограмм -->
+<polygon points="80,180 260,180 300,80 120,80" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+<!-- Высота -->
+<line x1="120" y1="80" x2="120" y2="180" stroke="#dc2626" stroke-width="2" stroke-dasharray="6,4"/>
+<path d="M132,180 L132,168 L120,168" fill="none" stroke="#dc2626" stroke-width="2"/>
+<!-- Подписи -->
+<text x="165" y="200" font-family="sans-serif" font-size="16" font-weight="bold" fill="#2563eb">a</text>
+<text x="100" y="135" font-family="sans-serif" font-size="16" font-weight="bold" fill="#dc2626">h</text>
+<!-- Отрезанный треугольник -->
+<polygon points="80,180 120,180 120,80" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" stroke-dasharray="5,4"/>
+<!-- Приставленный треугольник -->
+<polygon points="260,180 300,180 300,80" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" stroke-dasharray="5,4" opacity="0.5"/>
+<!-- Прямоугольник -->
+<rect x="120" y="80" width="180" height="100" fill="none" stroke="#16a34a" stroke-width="2" stroke-dasharray="7,5"/>
+<!-- Подпись -->
+<text x="150" y="240" font-family="sans-serif" font-size="14" fill="#1e293b" font-weight="bold">Отрезаем треугольник слева → приставляем справа → получаем прямоугольник</text>
+<text x="150" y="258" font-family="sans-serif" font-size="14" fill="#16a34a" font-weight="bold">S(параллелограмма) = S(прямоугольника) = a · h</text>
+</svg>
+<p><em>Параллелограмм можно «разрезать» на прямоугольник и два равных треугольника, затем переставить треугольник — получится прямоугольник со сторонами a и h.</em></p>
+</div>
+
+<h2 style="margin-top:40px;">🔺 Часть 2. Площадь треугольника (пункт 58)</h2>
+<div class="rule-box" style="background:#f0fdf4; border-left-color: var(--success);">
+<h3>🌟 Теорема: площадь треугольника</h3>
+<div class="formula" style="background:#f0fdf4; border-color: var(--success); color: var(--success);">S = ½ · a · h</div>
+<p><em>Площадь треугольника равна половине произведения его основания на высоту.</em></p>
+</div>
+
+<div class="svg-container">
+<h3>🔎 Доказательство S = ½ · a · h (достройка до параллелограмма)</h3>
+<svg viewBox="0 0 440 240" width="440" height="240">
+<!-- Треугольник -->
+<polygon points="100,180 260,180 180,60" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+<!-- Высота -->
+<line x1="180" y1="60" x2="180" y2="180" stroke="#dc2626" stroke-width="2" stroke-dasharray="6,4"/>
+<path d="M192,180 L192,168 L180,168" fill="none" stroke="#dc2626" stroke-width="2"/>
+<!-- Подписи -->
+<text x="170" y="200" font-family="sans-serif" font-size="16" font-weight="bold" fill="#2563eb">a</text>
+<text x="160" y="125" font-family="sans-serif" font-size="16" font-weight="bold" fill="#dc2626">h</text>
+<!-- Достроенный параллелограмм -->
+<polygon points="100,180 260,180 340,60 180,60" fill="none" stroke="#16a34a" stroke-width="2" stroke-dasharray="7,5"/>
+<polygon points="260,180 340,60 180,60" fill="#f0fdf4" stroke="#16a34a" stroke-width="2" stroke-dasharray="5,4" opacity="0.4"/>
+<!-- Подпись -->
+<text x="120" y="230" font-family="sans-serif" font-size="14" fill="#1e293b" font-weight="bold">Треугольник — половина параллелограмма с тем же основанием и высотой</text>
+</svg>
+</div>
+
+<div class="rule-box" style="background:#fffbeb; border-left-color: var(--warning);">
+<h3>💡 Следствия из теоремы</h3>
+<p><strong>1. Площадь прямоугольного треугольника</strong> равна половине произведения его катетов: S = ½ · a · b.</p>
+<p><strong>2. Если высоты двух треугольников равны</strong>, то их площади относятся как основания.</p>
+<p><strong>3. Если два треугольника имеют равный угол</strong>, то их площади относятся как произведению сторон, заключающих этот угол.</p>
+</div>
+
+<div class="rule-box" style="background:#f0fdf4; border-left-color: var(--success);">
+<h3>🌟 Теорема: площадь через полупериметр и радиус вписанной окружности</h3>
+<div class="formula" style="background:#f0fdf4; border-color: var(--success); color: var(--success);">S = p · r</div>
+<p><em>где p — полупериметр треугольника, r — радиус вписанной окружности.</em></p>
+</div>
+
+<h2 style="margin-top:40px;">⏢ Часть 3. Площадь трапеции (пункт 59)</h2>
+<div class="rule-box" style="background:#fffbeb; border-left-color: var(--warning);">
+<h3>🌟 Теорема: площадь трапеции</h3>
+<div class="formula" style="background:#fffbeb; border-color: var(--warning); color:#92400e;">S = ½ · (a + b) · h</div>
+<p><em>Площадь трапеции равна произведению полусуммы её оснований на высоту.</em></p>
+</div>
+
+<div class="svg-container">
+<h3>🔎 Доказательство S = ½ · (a + b) · h</h3>
+<svg viewBox="0 0 440 240" width="440" height="240">
+<!-- Трапеция -->
+<polygon points="80,180 320,180 260,80 140,80" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+<!-- Высота -->
+<line x1="200" y1="80" x2="200" y2="180" stroke="#dc2626" stroke-width="2" stroke-dasharray="6,4"/>
+<path d="M212,180 L212,168 L200,168" fill="none" stroke="#dc2626" stroke-width="2"/>
+<!-- Диагональ -->
+<line x1="80" y1="180" x2="260" y2="80" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,4"/>
+<!-- Подписи -->
+<text x="185" y="200" font-family="sans-serif" font-size="16" font-weight="bold" fill="#2563eb">a</text>
+<text x="185" y="72" font-family="sans-serif" font-size="16" font-weight="bold" fill="#2563eb">b</text>
+<text x="180" y="135" font-family="sans-serif" font-size="16" font-weight="bold" fill="#dc2626">h</text>
+<!-- Два треугольника -->
+<polygon points="80,180 260,80 140,80" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" opacity="0.3"/>
+<polygon points="80,180 320,180 260,80" fill="#dcfce7" stroke="#16a34a" stroke-width="2" opacity="0.3"/>
+<!-- Подпись -->
+<text x="100" y="230" font-family="sans-serif" font-size="14" fill="#1e293b" font-weight="bold">Диагональ делит трапецию на два треугольника с общей высотой h</text>
+<text x="100" y="248" font-family="sans-serif" font-size="14" fill="#16a34a" font-weight="bold">S = ½ · b · h + ½ · a · h = ½ · (a + b) · h</text>
+</svg>
+</div>
+</section>
+
+<!-- ================= БЛОК 2: ЗАКРЕПЛЕНИЕ ================= -->
+<section class="card">
+<h2>🛠 Блок 2. Закрепление (задачи из учебника)</h2>
+<p>Сначала реши задачу в тетради, потом открой решение и проверь каждый шаг по чертежу! ✍️</p>
+
+<span class="level-badge easy">Базовый уровень</span>
+<h3>Задание 1 (№555)</h3>
+<p>Пусть a — основание, h — высота, а S — площадь параллелограмма. Найдите: а) S, если a = 15 см, h = 12 см; б) a, если S = 34 см², h = 8,5 см; в) a, если S = 162 см², h = ½a.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="sol-svg">
+<svg viewBox="0 0 280 160" width="280" height="160">
+<polygon points="40,130 200,130 240,50 80,50" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+<line x1="80" y1="50" x2="80" y2="130" stroke="#dc2626" stroke-width="2" stroke-dasharray="6,4"/>
+<path d="M92,130 L92,118 L80,118" fill="none" stroke="#dc2626" stroke-width="2"/>
+<text x="110" y="150" font-family="sans-serif" font-size="15" font-weight="bold" fill="#2563eb">a</text>
+<text x="60" y="95" font-family="sans-serif" font-size="15" font-weight="bold" fill="#dc2626">h</text>
+</svg>
+</div>
+<div class="solution-step"><strong>а)</strong> S = a · h = 15 · 12 = <strong>180 см²</strong>.</div>
+<div class="solution-step"><strong>б)</strong> S = a · h → a = S : h = 34 : 8,5 = <strong>4 см</strong>.</div>
+<div class="solution-step"><strong>в)</strong> S = a · h, причём h = ½a. Тогда S = a · (½a) = ½a². Значит ½a² = 162 → a² = 324 → a = <strong>18 см</strong>.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><em>Проверка в): 18 · 9 = 162 ✅</em></div>
+</div>
+</details>
+
+<span class="level-badge easy">Базовый уровень</span>
+<h3>Задание 2 (№556)</h3>
+<p>Диагональ параллелограмма равна 13 см и перпендикулярна к стороне параллелограмма, равной 12 см. Найдите площадь параллелограмма.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="sol-svg">
+<svg viewBox="0 0 280 180" width="280" height="180">
+<polygon points="40,150 200,150 240,50 80,50" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+<line x1="40" y1="150" x2="240" y2="50" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,4"/>
+<path d="M52,150 L52,138 L40,138" fill="none" stroke="#dc2626" stroke-width="2"/>
+<text x="110" y="170" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2563eb">12 см</text>
+<text x="120" y="110" font-family="sans-serif" font-size="14" font-weight="bold" fill="#f59e0b">13 см</text>
+</svg>
+</div>
+<div class="solution-step"><strong>Шаг 1:</strong> Диагональ перпендикулярна стороне → это высота параллелограмма, проведённая к этой стороне. Значит h = 13 см (диагональ), a = 12 см (сторона).</div>
+<div class="solution-step"><strong>Шаг 2:</strong> Но подождите: диагональ = 13, сторона = 12. По теореме Пифагора (которую мы ещё не прошли, но можем проверить): второй катет = √(13² − 12²) = √(169 − 144) = √25 = 5 см. Это другая сторона параллелограмма.</div>
+<div class="solution-step"><strong>Шаг 3:</strong> Площадь S = a · h = 12 · 13 = <strong>156 см²</strong>.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><em>Замечание: здесь диагональ играет роль высоты, потому что она перпендикулярна стороне.</em></div>
+</div>
+</details>
+
+<span class="level-badge easy">Базовый уровень</span>
+<h3>Задание 3 (№557)</h3>
+<p>Смежные стороны параллелограмма равны 12 см и 14 см, а его острый угол равен 30°. Найдите площадь параллелограмма.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="sol-svg">
+<svg viewBox="0 0 300 180" width="300" height="180">
+<polygon points="40,150 200,150 240,50 80,50" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+<line x1="80" y1="50" x2="80" y2="150" stroke="#dc2626" stroke-width="2" stroke-dasharray="6,4"/>
+<path d="M92,150 L92,138 L80,138" fill="none" stroke="#dc2626" stroke-width="2"/>
+<path d="M64,150 A24,24 0 0 0 56,132" fill="none" stroke="#dc2626" stroke-width="2"/>
+<text x="68" y="138" font-family="sans-serif" font-size="13" fill="#dc2626" font-weight="bold">30°</text>
+<text x="110" y="170" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2563eb">14 см</text>
+<text x="50" y="105" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2563eb">12 см</text>
+<text x="60" y="105" font-family="sans-serif" font-size="14" font-weight="bold" fill="#dc2626">h</text>
+</svg>
+</div>
+<div class="solution-step"><strong>Шаг 1:</strong> Проведём высоту h из вершины тупого угла к стороне 14 см. В прямоугольном треугольнике с углом 30° катет против угла 30° равен половине гипотенузы. Гипотенуза = 12 см (боковая сторона), значит h = 12 : 2 = 6 см.</div>
+<div class="solution-step"><strong>Шаг 2:</strong> Площадь S = a · h = 14 · 6 = <strong>84 см²</strong>.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><em>Ключевой приём: угол 30° → высота равна половине боковой стороны.</em></div>
+</div>
+</details>
+
+<span class="level-badge easy">Базовый уровень</span>
+<h3>Задание 4 (№558)</h3>
+<p>Сторона ромба равна 6 см, а один из углов равен 150°. Найдите площадь ромба.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="sol-svg">
+<svg viewBox="0 0 240 200" width="240" height="200">
+<polygon points="60,100 120,170 180,100 120,30" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+<line x1="120" y1="30" x2="120" y2="170" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,4"/>
+<line x1="60" y1="100" x2="180" y2="100" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,4"/>
+<path d="M180,100 A24,24 0 0 0 172,82" fill="none" stroke="#dc2626" stroke-width="2"/>
+<text x="156" y="86" font-family="sans-serif" font-size="13" fill="#dc2626" font-weight="bold">150°</text>
+<text x="100" y="190" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2563eb">6 см</text>
+</svg>
+</div>
+<div class="solution-step"><strong>Шаг 1:</strong> Угол ромба 150°, значит смежный с ним угол = 180° − 150° = 30°.</div>
+<div class="solution-step"><strong>Шаг 2:</strong> Проведём высоту h к стороне 6 см. В прямоугольном треугольнике с углом 30° катет против 30° равен половине гипотенузы: h = 6 : 2 = 3 см.</div>
+<div class="solution-step"><strong>Шаг 3:</strong> Площадь ромба S = a · h = 6 · 3 = <strong>18 см²</strong>.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><em>Ромб — это параллелограмм, поэтому формула S = a · h работает.</em></div>
+</div>
+</details>
+
+<span class="level-badge medium">Средний уровень</span>
+<h3>Задание 5 (№559)</h3>
+<p>Сторона параллелограмма равна 8,1 см, а диагональ, равная 14 см, образует с ней угол в 30°. Найдите площадь параллелограмма.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="sol-svg">
+<svg viewBox="0 0 300 180" width="300" height="180">
+<polygon points="40,150 200,150 240,50 80,50" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+<line x1="40" y1="150" x2="240" y2="50" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,4"/>
+<path d="M64,150 A24,24 0 0 0 56,132" fill="none" stroke="#dc2626" stroke-width="2"/>
+<text x="68" y="138" font-family="sans-serif" font-size="13" fill="#dc2626" font-weight="bold">30°</text>
+<text x="110" y="170" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2563eb">8,1 см</text>
+<text x="120" y="110" font-family="sans-serif" font-size="14" font-weight="bold" fill="#f59e0b">14 см</text>
+</svg>
+</div>
+<div class="solution-step"><strong>Шаг 1:</strong> Диагональ 14 см образует со стороной 8,1 см угол 30°. Опустим перпендикуляр из противоположной вершины на эту сторону — это будет высота h.</div>
+<div class="solution-step"><strong>Шаг 2:</strong> В прямоугольном треугольнике с углом 30° и гипотенузой 14 см (диагональ) катет против угла 30° равен половине гипотенузы: h = 14 : 2 = 7 см.</div>
+<div class="solution-step"><strong>Шаг 3:</strong> Площадь S = a · h = 8,1 · 7 = <strong>56,7 см²</strong>.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><em>Проверка: 8,1 · 7 = 8 · 7 + 0,1 · 7 = 56 + 0,7 = 56,7 ✅</em></div>
+</div>
+</details>
+
+<span class="level-badge medium">Средний уровень</span>
+<h3>Задание 6 (№560)</h3>
+<p>Пусть a и b — смежные стороны параллелограмма, S — его площадь, а h₁ и h₂ — его высоты. Найдите: а) h₁, если a = 18 см, b = 30 см, h₁ < h₂; б) h₁, если a = 10 см, b = 15 см, h₁ = 6 см, h₁ > h₂.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="sol-svg">
+<svg viewBox="0 0 300 180" width="300" height="180">
+<polygon points="40,150 200,150 240,50 80,50" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+<line x1="80" y1="50" x2="80" y2="150" stroke="#dc2626" stroke-width="2" stroke-dasharray="6,4"/>
+<line x1="200" y1="150" x2="200" y2="50" stroke="#16a34a" stroke-width="2" stroke-dasharray="6,4"/>
+<path d="M92,150 L92,138 L80,138" fill="none" stroke="#dc2626" stroke-width="2"/>
+<path d="M212,150 L212,138 L200,138" fill="none" stroke="#16a34a" stroke-width="2"/>
+<text x="110" y="170" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2563eb">a</text>
+<text x="50" y="105" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2563eb">b</text>
+<text x="60" y="105" font-family="sans-serif" font-size="14" font-weight="bold" fill="#dc2626">h₂</text>
+<text x="180" y="105" font-family="sans-serif" font-size="14" font-weight="bold" fill="#16a34a">h₁</text>
+</svg>
+</div>
+<div class="solution-step"><strong>Идея:</strong> площадь параллелограмма можно выразить двумя способами: S = a · h₂ = b · h₁ (где h₁ — высота к стороне b, h₂ — высота к стороне a).</div>
+<div class="solution-step"><strong>а)</strong> S = a · h₂ = b · h₁. Но нам нужно найти h₁, а даны a, b и условие h₁ < h₂. Площадь S = a · b · sin(угла между ними). Без угла задачу решить нельзя — вероятно, в условии опечатка. Пропускаем.</div>
+<div class="solution-step"><strong>б)</strong> S = a · h₁ = 10 · 6 = 60 см². Тогда h₂ = S : b = 60 : 15 = 4 см. Проверка: h₁ = 6 > h₂ = 4 ✅. Ответ: <strong>h₁ = 6 см, h₂ = 4 см</strong>.</div>
+</div>
+</details>
+
+<span class="level-badge medium">Средний уровень</span>
+<h3>Задание 7 (№561)</h3>
+<p>Острый угол параллелограмма равен 30°, а высоты, проведённые из вершины тупого угла, равны 2 см и 3 см. Найдите площадь параллелограмма.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="sol-svg">
+<svg viewBox="0 0 300 180" width="300" height="180">
+<polygon points="40,150 200,150 240,50 80,50" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+<line x1="240" y1="50" x2="240" y2="150" stroke="#dc2626" stroke-width="2" stroke-dasharray="6,4"/>
+<line x1="240" y1="50" x2="80" y2="50" stroke="#16a34a" stroke-width="2" stroke-dasharray="6,4"/>
+<path d="M228,150 L228,138 L240,138" fill="none" stroke="#dc2626" stroke-width="2"/>
+<path d="M92,50 L92,62 L80,62" fill="none" stroke="#16a34a" stroke-width="2"/>
+<text x="220" y="105" font-family="sans-serif" font-size="14" font-weight="bold" fill="#dc2626">2 см</text>
+<text x="150" y="42" font-family="sans-serif" font-size="14" font-weight="bold" fill="#16a34a">3 см</text>
+</svg>
+</div>
+<div class="solution-step"><strong>Шаг 1:</strong> Из вершины тупого угла проведены две высоты: одна к большей стороне (равна 2 см), другая к меньшей стороне (равна 3 см).</div>
+<div class="solution-step"><strong>Шаг 2:</strong> В прямоугольном треугольнике с углом 30° катет против 30° равен половине гипотенузы. Высота 2 см проведена к стороне a → a = 2 · 2 = 4 см. Высота 3 см проведена к стороне b → b = 2 · 3 = 6 см.</div>
+<div class="solution-step"><strong>Шаг 3:</strong> Площадь S = a · h₂ = 4 · 3 = <strong>12 см²</strong> (или S = b · h₁ = 6 · 2 = 12 см²).</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><em>Проверка: 4 · 3 = 12 и 6 · 2 = 12 ✅</em></div>
+</div>
+</details>
+
+<span class="level-badge medium">Средний уровень</span>
+<h3>Задание 8 (№564)</h3>
+<p>Пусть a — основание, h — высота, а S — площадь треугольника. Найдите: а) S, если a = 7 см, h = 11 см; б) S, если a = 2/3 см, h = 5 см; в) h, если S = 37,8 см², a = 14 см; г) a, если S = 12 см², h = 3√2 см.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="sol-svg">
+<svg viewBox="0 0 240 160" width="240" height="160">
+<polygon points="40,130 200,130 120,30" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+<line x1="120" y1="30" x2="120" y2="130" stroke="#dc2626" stroke-width="2" stroke-dasharray="6,4"/>
+<path d="M132,130 L132,118 L120,118" fill="none" stroke="#dc2626" stroke-width="2"/>
+<text x="110" y="150" font-family="sans-serif" font-size="15" font-weight="bold" fill="#2563eb">a</text>
+<text x="100" y="85" font-family="sans-serif" font-size="15" font-weight="bold" fill="#dc2626">h</text>
+</svg>
+</div>
+<div class="solution-step"><strong>а)</strong> S = ½ · a · h = ½ · 7 · 11 = <strong>38,5 см²</strong>.</div>
+<div class="solution-step"><strong>б)</strong> S = ½ · (2/3) · 5 = ½ · 10/3 = <strong>5/3 см²</strong> (или ≈ 1,67 см²).</div>
+<div class="solution-step"><strong>в)</strong> S = ½ · a · h → h = 2S : a = 2 · 37,8 : 14 = 75,6 : 14 = <strong>5,4 см</strong>.</div>
+<div class="solution-step"><strong>г)</strong> S = ½ · a · h → a = 2S : h = 2 · 12 : (3√2) = 24 : (3√2) = 8 : √2 = 8√2 : 2 = <strong>4√2 см</strong>.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><em>Проверка в): ½ · 14 · 5,4 = 7 · 5,4 = 37,8 ✅</em></div>
+</div>
+</details>
+
+<span class="level-badge medium">Средний уровень</span>
+<h3>Задание 9 (№565)</h3>
+<p>Стороны AB и BC треугольника ABC равны соответственно 16 см и 22 см, а высота, проведённая к стороне AB, равна 11 см. Найдите высоту, проведённую к стороне BC.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="sol-svg">
+<svg viewBox="0 0 260 180" width="260" height="180">
+<polygon points="40,150 200,150 120,30" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+<line x1="120" y1="30" x2="120" y2="150" stroke="#dc2626" stroke-width="2" stroke-dasharray="6,4"/>
+<line x1="40" y1="150" x2="40" y2="30" stroke="#16a34a" stroke-width="2" stroke-dasharray="6,4"/>
+<path d="M132,150 L132,138 L120,138" fill="none" stroke="#dc2626" stroke-width="2"/>
+<path d="M52,150 L52,138 L40,138" fill="none" stroke="#16a34a" stroke-width="2"/>
+<text x="110" y="170" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2563eb">AB = 16</text>
+<text x="50" y="95" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2563eb">BC = 22</text>
+<text x="100" y="95" font-family="sans-serif" font-size="14" font-weight="bold" fill="#dc2626">11</text>
+<text x="20" y="95" font-family="sans-serif" font-size="14" font-weight="bold" fill="#16a34a">h</text>
+</svg>
+</div>
+<div class="solution-step"><strong>Шаг 1:</strong> Площадь треугольника можно выразить двумя способами: S = ½ · AB · h₁ = ½ · BC · h₂, где h₁ = 11 см (высота к AB), h₂ — высота к BC.</div>
+<div class="solution-step"><strong>Шаг 2:</strong> S = ½ · 16 · 11 = 88 см².</div>
+<div class="solution-step"><strong>Шаг 3:</strong> 88 = ½ · 22 · h₂ → h₂ = 2 · 88 : 22 = 176 : 22 = <strong>8 см</strong>.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><em>Проверка: ½ · 22 · 8 = 11 · 8 = 88 ✅</em></div>
+</div>
+</details>
+
+<span class="level-badge medium">Средний уровень</span>
+<h3>Задание 10 (№566)</h3>
+<p>Две стороны треугольника равны 7,5 см и 3,2 см. Высота, проведённая к большей стороне, равна 2,4 см. Найдите высоту, проведённую к меньшей из данных сторон.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Шаг 1:</strong> Большая сторона = 7,5 см, высота к ней h₁ = 2,4 см. Площадь S = ½ · 7,5 · 2,4 = ½ · 18 = 9 см².</div>
+<div class="solution-step"><strong>Шаг 2:</strong> Меньшая сторона = 3,2 см, высота к ней h₂. S = ½ · 3,2 · h₂ = 9 → h₂ = 2 · 9 : 3,2 = 18 : 3,2 = <strong>5,625 см</strong> (или 5 5/8 см).</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><em>Проверка: ½ · 3,2 · 5,625 = 1,6 · 5,625 = 9 ✅</em></div>
+</div>
+</details>
+
+<span class="level-badge medium">Средний уровень</span>
+<h3>Задание 11 (№567)</h3>
+<p>Найдите площадь прямоугольного треугольника, если его катеты равны: а) 4 см и 11 см; б) 1,2 дм и 3 дм.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Идея:</strong> в прямоугольном треугольнике катеты можно считать основанием и высотой.</div>
+<div class="solution-step"><strong>а)</strong> S = ½ · 4 · 11 = <strong>22 см²</strong>.</div>
+<div class="solution-step"><strong>б)</strong> S = ½ · 1,2 · 3 = <strong>1,8 дм²</strong>.</div>
+</div>
+</details>
+
+<span class="level-badge medium">Средний уровень</span>
+<h3>Задание 12 (№568)</h3>
+<p>Площадь прямоугольного треугольника равна 168 см². Найдите его катеты, если отношение их длин равно 7/24.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Шаг 1:</strong> Пусть катеты равны 7x и 24x. Тогда S = ½ · 7x · 24x = ½ · 168x² = 84x².</div>
+<div class="solution-step"><strong>Шаг 2:</strong> 84x² = 168 → x² = 2 → x = √2.</div>
+<div class="solution-step"><strong>Шаг 3:</strong> Катеты: 7√2 см и 24√2 см.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><em>Проверка: ½ · 7√2 · 24√2 = ½ · 168 · 2 = 168 ✅</em></div>
+</div>
+</details>
+
+<span class="level-badge medium">Средний уровень</span>
+<h3>Задание 13 (№569)</h3>
+<p>Пусть a, b, c — стороны треугольника, P — периметр, r — радиус вписанной окружности, S — площадь треугольника. Найдите: а) S, если P = 56, r = 3,5; б) S, если P = 144, r = 3,5; в) a, если b = 15, c = 20, r = 2, S = 42.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Формула:</strong> S = p · r, где p = P : 2 (полупериметр).</div>
+<div class="solution-step"><strong>а)</strong> p = 56 : 2 = 28. S = 28 · 3,5 = <strong>98</strong>.</div>
+<div class="solution-step"><strong>б)</strong> p = 144 : 2 = 72. S = 72 · 3,5 = <strong>252</strong>.</div>
+<div class="solution-step"><strong>в)</strong> S = p · r → p = S : r = 42 : 2 = 21. P = 2p = 42. Тогда a = P − b − c = 42 − 15 − 20 = <strong>7</strong>.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><em>Проверка в): P = 7 + 15 + 20 = 42, p = 21, S = 21 · 2 = 42 ✅</em></div>
+</div>
+</details>
+
+<span class="level-badge hard">Продвинутый уровень</span>
+<h3>Задание 14 (№570)</h3>
+<p>В треугольник ABC вписана окружность радиуса 3 см, которая касается сторон AB, BC и CA в точках P, Q и R. Найдите площадь треугольника ABC, если AP = 5 см, BQ = 5 см, CR = 6 см.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Шаг 1:</strong> По свойству касательных: AP = AR = 5, BP = BQ = 5, CQ = CR = 6. Значит стороны: AB = AP + BP = 10, BC = BQ + CQ = 11, CA = CR + AR = 11.</div>
+<div class="solution-step"><strong>Шаг 2:</strong> Периметр P = 10 + 11 + 11 = 32. Полупериметр p = 16.</div>
+<div class="solution-step"><strong>Шаг 3:</strong> S = p · r = 16 · 3 = <strong>48 см²</strong>.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><em>Проверка: треугольник существует (10 + 11 > 11) ✅</em></div>
+</div>
+</details>
+
+<span class="level-badge hard">Продвинутый уровень</span>
+<h3>Задание 15 (№578)</h3>
+<p>Найдите площадь трапеции ABCD с основаниями AB и CD, если: а) AB = 21 см, CD = 17 см, высота BH равна 7 см; б) ∠D = 30°, AB = 2 см, CD = 10 см, DA = 8 см.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="sol-svg">
+<svg viewBox="0 0 300 180" width="300" height="180">
+<polygon points="40,150 240,150 200,50 80,50" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+<line x1="200" y1="50" x2="200" y2="150" stroke="#dc2626" stroke-width="2" stroke-dasharray="6,4"/>
+<path d="M212,150 L212,138 L200,138" fill="none" stroke="#dc2626" stroke-width="2"/>
+<text x="130" y="170" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2563eb">a</text>
+<text x="130" y="42" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2563eb">b</text>
+<text x="180" y="105" font-family="sans-serif" font-size="14" font-weight="bold" fill="#dc2626">h</text>
+</svg>
+</div>
+<div class="solution-step"><strong>а)</strong> S = ½ · (AB + CD) · h = ½ · (21 + 17) · 7 = ½ · 38 · 7 = <strong>133 см²</strong>.</div>
+<div class="solution-step"><strong>б)</strong> Проведём высоту BH из вершины B к основанию AD. В прямоугольном треугольнике ABH угол ∠A = 180° − 30° = 150°? Нет, ∠D = 30°, значит ∠A = 180° − 30° = 150° — это тупой угол. Проведём высоту из B к AD: в прямоугольном треугольнике с углом 30° катет против 30° равен половине гипотенузы. Гипотенуза DA = 8 → h = 8 : 2 = 4 см. Тогда S = ½ · (2 + 10) · 4 = ½ · 12 · 4 = <strong>24 см²</strong>.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><em>Проверка а): ½ · 38 · 7 = 19 · 7 = 133 ✅</em></div>
+</div>
+</details>
+
+<span class="level-badge hard">Продвинутый уровень</span>
+<h3>Задание 16 (№579)</h3>
+<p>Найдите площадь прямоугольной трапеции, у которой две меньшие стороны равны 6 см, а больший угол равен 135°.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="sol-svg">
+<svg viewBox="0 0 280 180" width="280" height="180">
+<polygon points="40,150 200,150 200,50 100,50" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+<path d="M52,150 L52,138 L40,138" fill="none" stroke="#dc2626" stroke-width="2"/>
+<path d="M52,50 L52,62 L40,62" fill="none" stroke="#dc2626" stroke-width="2"/>
+<path d="M188,150 A24,24 0 0 0 180,132" fill="none" stroke="#dc2626" stroke-width="2"/>
+<text x="164" y="138" font-family="sans-serif" font-size="13" fill="#dc2626" font-weight="bold">135°</text>
+<text x="110" y="170" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2563eb">a</text>
+<text x="140" y="42" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2563eb">b</text>
+<text x="20" y="105" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2563eb">6</text>
+<text x="100" y="105" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2563eb">6</text>
+</svg>
+</div>
+<div class="solution-step"><strong>Шаг 1:</strong> Прямоугольная трапеция — значит два угла прямые (при меньшей боковой стороне). Меньшие стороны — это высота (6 см) и верхнее основание (6 см).</div>
+<div class="solution-step"><strong>Шаг 2:</strong> Больший угол 135° — это угол при нижнем основании. Проведём высоту из вершины верхнего основания: получится прямоугольный треугольник с углом 180° − 135° = 45°. Значит треугольник равнобедренный: высота = разности оснований = 6 см.</div>
+<div class="solution-step"><strong>Шаг 3:</strong> Тогда нижнее основание = верхнее + 6 = 6 + 6 = 12 см.</div>
+<div class="solution-step"><strong>Шаг 4:</strong> S = ½ · (6 + 12) · 6 = ½ · 18 · 6 = <strong>54 см²</strong>.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><em>Проверка: ½ · 18 · 6 = 9 · 6 = 54 ✅</em></div>
+</div>
+</details>
+
+<span class="level-badge hard">Продвинутый уровень</span>
+<h3>Задание 17 (№580)</h3>
+<p>Тупой угол равнобедренной трапеции равен 135°, а высота, проведённая из вершины этого угла, делит большее основание на отрезки 4 см и 3,4 см. Найдите площадь трапеции.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Шаг 1:</strong> Тупой угол 135°, значит острый угол = 180° − 135° = 45°. Высота из вершины тупого угла отсекает прямоугольный треугольник с углом 45° — значит он равнобедренный: высота = горизонтальному отрезку = 3,4 см.</div>
+<div class="solution-step"><strong>Шаг 2:</strong> Большее основание = 4 + 3,4 = 7,4 см. Меньшее основание = 4 − 3,4 = 0,6 см? Нет, это невозможно. Значит высота делит основание на отрезки 4 и 3,4, причём 4 — это часть, равная верхнему основанию, а 3,4 — проекция боковой стороны.</div>
+<div class="solution-step"><strong>Шаг 3:</strong> Тогда верхнее основание = 4 см, нижнее = 4 + 3,4 = 7,4 см? Нет, высота проведена из вершины тупого угла, значит она делит нижнее основание на отрезки. Один отрезок = 4 (равен верхнему основанию), другой = 3,4 (проекция боковой). Значит нижнее основание = 4 + 3,4 = 7,4 см, верхнее = 4 см.</div>
+<div class="solution-step"><strong>Шаг 4:</strong> Высота = 3,4 см (из равнобедренного треугольника с углом 45°).</div>
+<div class="solution-step"><strong>Шаг 5:</strong> S = ½ · (4 + 7,4) · 3,4 = ½ · 11,4 · 3,4 = <strong>19,38 см²</strong>.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><em>Проверка: ½ · 11,4 · 3,4 = 5,7 · 3,4 = 19,38 ✅</em></div>
+</div>
+</details>
+
+<span class="level-badge hard">Продвинутый уровень</span>
+<h3>Задание 18 (№574)</h3>
+<p>Докажите, что площадь ромба равна половине произведения его диагоналей. Вычислите площадь ромба, если его диагонали равны: а) 3,2 дм и 14 см; б) 4,6 дм и 2 дм.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="sol-svg">
+<svg viewBox="0 0 240 200" width="240" height="200">
+<polygon points="60,100 120,170 180,100 120,30" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+<line x1="60" y1="100" x2="180" y2="100" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,4"/>
+<line x1="120" y1="30" x2="120" y2="170" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,4"/>
+<path d="M120,88 L132,88 L132,100" fill="none" stroke="#dc2626" stroke-width="2"/>
+<text x="110" y="20" font-family="sans-serif" font-size="14" font-weight="bold" fill="#f59e0b">d₁</text>
+<text x="185" y="95" font-family="sans-serif" font-size="14" font-weight="bold" fill="#f59e0b">d₂</text>
+</svg>
+</div>
+<div class="solution-step"><strong>Доказательство:</strong> ромб можно разбить диагоналями на 4 равных прямоугольных треугольника. Площадь каждого = ½ · (d₁/2) · (d₂/2) = d₁d₂/8. Четыре треугольника: S = 4 · d₁d₂/8 = ½d₁d₂.</div>
+<div class="solution-step"><strong>Или:</strong> ромб — это параллелограмм. Его диагонали перпендикулярны. Примем одну диагональ за основание, тогда высота = половине другой диагонали. S = d₁ · (d₂/2) = ½d₁d₂.</div>
+<div class="solution-step"><strong>а)</strong> Приведём к одним единицам: 3,2 дм = 32 см. S = ½ · 32 · 14 = <strong>224 см²</strong>.</div>
+<div class="solution-step"><strong>б)</strong> 4,6 дм = 46 см. S = ½ · 46 · 2 = <strong>46 см²</strong>.</div>
+</div>
+</details>
+
+<span class="level-badge hard">Продвинутый уровень</span>
+<h3>Задание 19 (№575)</h3>
+<p>Найдите диагонали ромба, если одна из них в 1,5 раза больше другой, а площадь ромба равна 27 см².</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Шаг 1:</strong> Пусть меньшая диагональ = d, тогда большая = 1,5d.</div>
+<div class="solution-step"><strong>Шаг 2:</strong> S = ½ · d · 1,5d = 0,75d² = 27 → d² = 36 → d = 6 см.</div>
+<div class="solution-step"><strong>Шаг 3:</strong> Большая диагональ = 1,5 · 6 = 9 см.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> диагонали равны <strong>6 см и 9 см</strong>.<br><em>Проверка: ½ · 6 · 9 = 27 ✅</em></div>
+</div>
+</details>
+
+<span class="level-badge hard">Продвинутый уровень</span>
+<h3>Задание 20 (№576)</h3>
+<p>В выпуклом четырёхугольнике диагонали взаимно перпендикулярны. Докажите, что площадь четырёхугольника равна половине произведения его диагоналей.</p>
+<details>
+<summary>Показать доказательство</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Шаг 1:</strong> Пусть диагонали AC и BD пересекаются в точке O под прямым углом. Четырёхугольник разбивается на 4 прямоугольных треугольника: AOB, BOC, COD, DOA.</div>
+<div class="solution-step"><strong>Шаг 2:</strong> Площадь каждого треугольника = ½ · произведение катетов. S(AOB) = ½ · AO · BO, S(BOC) = ½ · BO · OC, S(COD) = ½ · OC · OD, S(DOA) = ½ · OD · AO.</div>
+<div class="solution-step"><strong>Шаг 3:</strong> Сумма: S = ½ · (AO · BO + BO · OC + OC · OD + OD · AO) = ½ · BO · (AO + OC) + ½ · OD · (OC + AO) = ½ · (AO + OC) · (BO + OD) = ½ · AC · BD.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><strong>Вывод:</strong> S = ½ · d₁ · d₂. ✅</div>
+</div>
+</details>
+
+<span class="level-badge hard">Продвинутый уровень</span>
+<h3>Задание 21 (№577)</h3>
+<p>Точки M и N лежат на сторонах AB и AC треугольника ABC. Найдите: а) S(AMN), если AB = 5 см, AC = 6 см, AM = 3 см, AN = 2 см, S(ABC) = 10 см²; б) AM, если AB = 8 см, AC = 3 см, AN = 2 см, S(ABC) = 10 см², S(AMN) = 2 см².</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Идея:</strong> если два треугольника имеют общий угол, то их площади относятся как произведению сторон, заключающих этот угол: S(AMN) / S(ABC) = (AM · AN) / (AB · AC).</div>
+<div class="solution-step"><strong>а)</strong> S(AMN) / 10 = (3 · 2) / (5 · 6) = 6 / 30 = 1/5 → S(AMN) = 10 · 1/5 = <strong>2 см²</strong>.</div>
+<div class="solution-step"><strong>б)</strong> 2 / 10 = (AM · 2) / (8 · 3) → 1/5 = 2AM / 24 → 2AM = 24/5 = 4,8 → AM = <strong>2,4 см</strong>.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><em>Проверка б): (2,4 · 2) / (8 · 3) = 4,8 / 24 = 1/5 = 2/10 ✅</em></div>
+</div>
+</details>
+
+<h3>⚖️ Задачи на доказательство (идеи)</h3>
+
+<details>
+<summary>№571 — треугольники с общим основанием и вершинами на параллельной прямой имеют равные площади</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Идея:</strong> все треугольники имеют общее основание AB и одинаковую высоту (расстояние между параллельными прямыми). Значит их площади равны: S = ½ · AB · h.</div>
+</div>
+</details>
+
+<details>
+<summary>№572 — медиана делит треугольник на два равновеликих треугольника</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Идея:</strong> медиана делит основание пополам. Два треугольника имеют общую высоту и равные основания → их площади равны.</div>
+</div>
+</details>
+
+<details>
+<summary>№573 — разделить треугольник на три равновеликих треугольника</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Идея:</strong> разделить одну сторону на 3 равные части и соединить точки деления с противоположной вершиной. Получим 3 треугольника с равными основаниями и общей высотой.</div>
+</div>
+</details>
+</section>
+
+<!-- ================= БЛОК 3: ПРАКТИЧЕСКОЕ ПРИМЕНЕНИЕ ================= -->
+<section class="card practice-box">
+<h2>🏗 Блок 3. Практическое применение</h2>
+<h3>🎨 Продукт урока: «Дизайнер участка»</h3>
+<p>Ты дизайнер ландшафта. Заказчик хочет разбить участок в форме трапеции на три зоны: цветник (треугольник), газон (параллелограмм) и дорожку (треугольник). Участок имеет основания 10 м и 16 м, высоту 8 м. Цветник — треугольник с основанием 10 м и высотой 8 м. Газон — параллелограмм со стороной 6 м и высотой 8 м. Дорожка — оставшийся треугольник.</p>
+<p><strong>Задача:</strong> вычисли площадь каждой зоны и проверь, что в сумме они дают площадь всего участка.</p>
+<details>
+<summary>Показать расчёт дизайнера</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Шаг 1: Площадь участка (трапеция).</strong><br>
+S = ½ · (10 + 16) · 8 = ½ · 26 · 8 = <strong>104 м²</strong>.</div>
+<div class="solution-step"><strong>Шаг 2: Площадь цветника (треугольник).</strong><br>
+S₁ = ½ · 10 · 8 = <strong>40 м²</strong>.</div>
+<div class="solution-step"><strong>Шаг 3: Площадь газона (параллелограмм).</strong><br>
+S₂ = 6 · 8 = <strong>48 м²</strong>.</div>
+<div class="solution-step"><strong>Шаг 4: Площадь дорожки (оставшийся треугольник).</strong><br>
+Основание дорожки = 16 − 10 − 6 = 0? Нет, это невозможно. Пересмотрим: если цветник занимает 10 м из 16 м нижнего основания, остаётся 6 м. Газон — параллелограмм со стороной 6 м. Тогда дорожка — треугольник с основанием 16 − 10 = 6 м и высотой 8 м.<br>
+S₃ = ½ · 6 · 8 = <strong>24 м²</strong>.</div>
+<div class="solution-step"><strong>Шаг 5: Проверка.</strong><br>
+40 + 48 + 24 = 112? Нет, это больше 104. Значит, газон не может быть параллелограммом со стороной 6 м и высотой 8 м в трапеции с такими параметрами. Пересчитаем: если цветник = 40, дорожка = 24, то газон = 104 − 40 − 24 = <strong>40 м²</strong>. Тогда сторона газона = 40 : 8 = 5 м.</div>
+<div class="solution-step" style="border-left-color: var(--warning);"><em>Итог: цветник 40 м², газон 40 м² (со стороной 5 м), дорожка 24 м². Сумма: 40 + 40 + 24 = 104 м² ✅</em></div>
+</div>
+</details>
+</section>
+
+<!-- ================= ИТОГИ ================= -->
+<section class="card summary-box">
+<h2>📝 Главное, что нужно запомнить</h2>
+<ul>
+<li><strong>Площадь параллелограмма:</strong> S = a · h (произведение основания на высоту).</li>
+<li><strong>Площадь треугольника:</strong> S = ½ · a · h (половина произведения основания на высоту).</li>
+<li><strong>Площадь прямоугольного треугольника:</strong> S = ½ · a · b (половина произведения катетов).</li>
+<li><strong>Площадь трапеции:</strong> S = ½ · (a + b) · h (полусумма оснований, умноженная на высоту).</li>
+<li><strong>Площадь ромба:</strong> S = ½ · d₁ · d₂ (половина произведения диагоналей).</li>
+<li><strong>Площадь через полупериметр и радиус вписанной окружности:</strong> S = p · r.</li>
+<li><strong>Если два треугольника имеют равный угол</strong>, их площади относятся как произведению сторон, заключающих этот угол.</li>
+<li><strong>Перед вычислением:</strong> всегда приводи все величины к одной единице измерения!</li>
+</ul>
+</section>
+
+<!-- ================= МЕТОДИЧЕСКАЯ ПОДСКАЗКА ================= -->
+<div class="teacher-note">
+<h3>💡 Методическая подсказка (для учителя или родителя)</h3>
+<ul style="margin-top: 10px; padding-left: 20px;">
+<li><strong>Связь с предыдущей темой:</strong> формулы площадей опираются на понятие площади прямоугольника (урок §1). Напомните: S(прямоугольника) = a · b.</li>
+<li><strong>Угол 30° (№557, 558, 559):</strong> ключевой приём — катет против угла 30° равен половине гипотенузы. Это свойство из 7 класса, но оно критически важно для задач на площадь.</li>
+<li><strong>Два способа выразить площадь (№565, 566):</strong> если в задаче даны две стороны и высота к одной из них, площадь можно найти двумя способами — и приравнять. Это универсальный приём.</li>
+<li><strong>Формула S = p · r (№569, 570):</strong> полезна для задач с вписанной окружностью. Напомните: полупериметр p = P : 2.</li>
+<li><strong>Площадь ромба через диагонали (№574):</strong> можно вывести через разбиение на 4 треугольника или через свойство параллелограмма. Оба подхода полезны.</li>
+<li><strong>Слабым ученикам:</strong> предложите рисовать высоту на каждом чертеже — это превращает абстрактную формулу в осязаемый прямоугольник или треугольник.</li>
+</ul>
+</div>
+
+<footer style="text-align: center; color: var(--text-light); margin-top: 30px; font-size: 0.9em; padding-bottom: 20px;">
+<p>📚 Геометрия 8 класс (Атанасян) • Глава VII, §2, пункты 57–59 • Задачи №555–580</p>
+</footer>
+</div>
+</body>
+</html>

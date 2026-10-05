@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Площадь многоугольника — Геометрия 8 класс</title>
+<style>
+:root {
+--primary: #2563eb;
+--secondary: #dc2626;
+--accent: #0ea5e9;
+--success: #16a34a;
+--warning: #f59e0b;
+--violet: #7c3aed;
+--bg: #f8fafc;
+--card-bg: #ffffff;
+--text: #1e293b;
+--text-light: #64748b;
+--radius: 16px;
+--shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+}
+body { font-family: 'Segoe UI','Roboto',system-ui,sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; margin: 0; padding: 20px; }
+.container { max-width: 850px; margin: 0 auto; }
+header { text-align: center; margin-bottom: 30px; padding: 30px; background: linear-gradient(135deg, var(--primary), var(--accent)); color: white; border-radius: var(--radius); box-shadow: var(--shadow); }
+header h1 { margin: 0; font-size: 2.1em; }
+header p { margin: 8px 0 0; opacity: 0.95; font-size: 1.05em; }
+.card { background: var(--card-bg); border-radius: var(--radius); padding: 30px; margin-bottom: 25px; box-shadow: var(--shadow); }
+h2 { color: var(--primary); border-bottom: 3px solid var(--accent); padding-bottom: 10px; display: inline-block; margin-top: 0; }
+h3 { color: var(--secondary); margin-top: 25px; }
+table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; border-radius: 8px; overflow: hidden; }
+th, td { border: 1px solid #e2e8f0; padding: 12px 14px; text-align: left; }
+th { background: #f1f5f9; color: var(--primary); font-weight: 600; }
+.rule-box { background: #eff6ff; border-left: 5px solid var(--primary); padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0; }
+.formula { font-size: 1.25em; font-weight: bold; color: var(--secondary); text-align: center; background: #fef2f2; padding: 15px; border-radius: 8px; margin: 15px 0; border: 2px dashed var(--secondary); }
+.svg-container { text-align: center; margin: 25px 0; background: #f8fafc; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0; }
+.svg-container svg { max-width: 100%; height: auto; }
+.sol-svg { text-align: center; margin: 0 0 14px; }
+.sol-svg svg { max-width: 100%; height: auto; background: #fcfdff; border: 1px dashed #cbd5e1; border-radius: 10px; padding: 6px; }
+details { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin: 15px 0; overflow: hidden; }
+summary { padding: 15px 20px; cursor: pointer; font-weight: bold; color: var(--primary); background: #eff6ff; list-style: none; display: flex; align-items: center; gap: 10px; font-size: 1.05em; }
+summary::-webkit-details-marker { display: none; }
+summary::before { content: '🔍'; font-size: 1.2em; }
+details[open] summary::before { content: '💡'; }
+details[open] summary { border-bottom: 1px solid #e2e8f0; }
+.solution-content { padding: 20px; background: white; }
+.solution-step { margin-bottom: 12px; padding-left: 15px; border-left: 3px solid var(--success); }
+.level-badge { display: inline-block; padding: 5px 14px; border-radius: 20px; font-size: 0.85em; font-weight: bold; color: white; margin: 15px 0 10px; }
+.easy { background: var(--success); }
+.medium { background: var(--warning); color: #1e293b; }
+.hard { background: var(--secondary); }
+.extra-badge { background: var(--violet); }
+.practice-box { background: linear-gradient(135deg, #fffbeb, #fef3c7); border: 2px solid var(--warning); }
+.teacher-note { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 20px; margin-top: 30px; }
+.summary-box { background: #eff6ff; border: 2px solid var(--primary); border-radius: 12px; padding: 20px; }
+@media (max-width: 600px) { body { padding: 10px; } header h1 { font-size: 1.5em; } .card { padding: 20px; } th, td { padding: 8px; font-size: 0.92em; } }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<h1>🟦 Площадь многоугольника</h1>
+<p>Геометрия 8 класс • Глава VII, §1, пункты 54–56 • Понятие площади, площадь квадрата и прямоугольника</p>
+</header>
+
+<!-- ================= БЛОК 1: ИЗУЧЕНИЕ ================= -->
+<section class="card">
+<h2>🧠 Блок 1. Изучение нового материала</h2>
+<h3>🌍 Разминка: зачем нужна площадь?</h3>
+<p>Покрасить забор, постелить линолеум, засеять газон, наклеить обои — во всех этих делах нужно знать <strong>площадь</strong>. А как её посчитать, если фигура сложная? Сегодня мы выведем самые первые формулы площади — для квадрата и прямоугольника — и поймём, на каких «трёх китах» держится вся теория площадей. 🏗️</p>
+
+<h3>📖 Ключевые термины</h3>
+<table>
+<tr><th>Термин</th><th>Определение</th></tr>
+<tr><td><strong>Площадь</strong></td><td>Величина той части плоскости, которую занимает многоугольник. Обозначается буквой S.</td></tr>
+<tr><td><strong>Единица площади</strong></td><td>Квадрат со стороной, равной единице измерения длины: мм², см², дм², м² и т.д.</td></tr>
+<tr><td><strong>Равные многоугольники</strong></td><td>Многоугольники, которые совмещаются наложением. Имеют <strong>равные площади</strong>.</td></tr>
+<tr><td><strong>Составной многоугольник</strong></td><td>Многоугольник, разбитый на части. Его площадь равна <strong>сумме площадей частей</strong>.</td></tr>
+</table>
+
+<h2 style="margin-top:40px;">📐 Часть 1. Понятие площади (пункт 54)</h2>
+<div class="rule-box">
+<h3>🌟 Три основных свойства площадей</h3>
+<p>Все формулы площади выводятся из этих трёх фактов — как теорема Пифагора из аксиом:</p>
+<p><strong>1.</strong> Равные многоугольники имеют <strong>равные площади</strong>.</p>
+<p><strong>2.</strong> Если многоугольник составлен из нескольких многоугольников, то его площадь равна <strong>сумме площадей этих многоугольников</strong>.</p>
+<p><strong>3.</strong> Площадь квадрата равна <strong>квадрату его стороны</strong>: S = a².</p>
+</div>
+
+<div class="svg-container">
+<h3>Как «считается» площадь: единичные квадраты</h3>
+<svg viewBox="0 0 420 260" width="420" height="260">
+<!-- Сетка -->
+<defs>
+<pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+<rect width="30" height="30" fill="#f0f9ff" stroke="#93c5fd" stroke-width="1"/>
+</pattern>
+</defs>
+<rect x="30" y="30" width="360" height="180" fill="url(#grid)"/>
+<!-- Прямоугольник 6×4 -->
+<rect x="30" y="30" width="180" height="120" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+<text x="16" y="95" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2563eb">4</text>
+<text x="115" y="168" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2563eb">6</text>
+<text x="75" y="95" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1e293b">S = 24 см²</text>
+<!-- Квадрат -->
+<rect x="240" y="60" width="120" height="120" fill="#fef3c7" stroke="#f59e0b" stroke-width="3"/>
+<text x="295" y="125" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1e293b">S = a²</text>
+<text x="295" y="145" font-family="sans-serif" font-size="13" fill="#92400e">a = 4 → S = 16</text>
+<text x="224" y="125" font-family="sans-serif" font-size="14" font-weight="bold" fill="#f59e0b">a</text>
+<text x="295" y="198" font-family="sans-serif" font-size="14" font-weight="bold" fill="#f59e0b">a</text>
+<!-- Подпись -->
+<text x="30" y="235" font-family="sans-serif" font-size="13" fill="#1e293b">Каждая клетка — 1 см². Считаем клетки → получаем площадь.</text>
+</svg>
+</div>
+
+<h2 style="margin-top:40px;">🟨 Часть 2. Площадь квадрата (пункт 55)</h2>
+<div class="rule-box" style="background:#f0fdf4; border-left-color: var(--success);">
+<h3>🌟 Теорема: площадь квадрата</h3>
+<div class="formula" style="background:#f0fdf4; border-color: var(--success); color: var(--success);">S = a²</div>
+<p><em>Площадь квадрата равна квадрату его стороны.</em></p>
+<p><strong>Важно:</strong> если сторона выражена числом a (в выбранных единицах), то площадь выражается числом a². Например, a = 3 см → S = 9 см².</p>
+</div>
+
+<h2 style="margin-top:40px;">🟦 Часть 3. Площадь прямоугольника (пункт 56)</h2>
+<div class="rule-box" style="background:#fffbeb; border-left-color: var(--warning);">
+<h3>🌟 Теорема: площадь прямоугольника</h3>
+<div class="formula" style="background:#fffbeb; border-color: var(--warning); color:#92400e;">S = a · b</div>
+<p><em>Площадь прямоугольника равна произведению его смежных сторон.</em></p>
+</div>
+
+<div class="svg-container">
+<h3>🔎 Доказательство S = a · b (метод достройки)</h3>
+<svg viewBox="0 0 440 300" width="440" height="300">
+<!-- Большой квадрат (a+b)×(a+b) -->
+<rect x="40" y="40" width="220" height="220" fill="#f8fafc" stroke="#1e293b" stroke-width="2" stroke-dasharray="6,4"/>
+<!-- Прямоугольник a×b -->
+<rect x="40" y="40" width="140" height="80" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+<text x="95" y="85" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1e293b">S = a·b</text>
+<!-- Квадрат a×a -->
+<rect x="40" y="120" width="140" height="140" fill="#fef3c7" stroke="#f59e0b" stroke-width="2.5"/>
+<text x="90" y="195" font-family="sans-serif" font-size="15" font-weight="bold" fill="#92400e">a²</text>
+<!-- Квадрат b×b -->
+<rect x="180" y="40" width="80" height="80" fill="#dcfce7" stroke="#16a34a" stroke-width="2.5"/>
+<text x="212" y="85" font-family="sans-serif" font-size="15" font-weight="bold" fill="#15803d">b²</text>
+<!-- Второй прямоугольник b×a -->
+<rect x="180" y="120" width="80" height="140" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+<text x="205" y="195" font-family="sans-serif" font-size="15" font-weight="bold" fill="#1e293b">a·b</text>
+<!-- Подписи сторон -->
+<text x="95" y="30" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2563eb">a</text>
+<text x="215" y="30" font-family="sans-serif" font-size="14" font-weight="bold" fill="#16a34a">b</text>
+<text x="20" y="85" font-family="sans-serif" font-size="14" font-weight="bold" fill="#16a34a">b</text>
+<text x="20" y="195" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2563eb">a</text>
+<!-- Формула вывода -->
+<text x="280" y="60" font-family="sans-serif" font-size="13" fill="#1e293b" font-weight="bold">Большой квадрат:</text>
+<text x="280" y="85" font-family="sans-serif" font-size="13" fill="#1e293b">(a + b)² =</text>
+<text x="280" y="110" font-family="sans-serif" font-size="13" fill="#1e293b">= a² + 2·a·b + b²</text>
+<text x="280" y="145" font-family="sans-serif" font-size="13" fill="#1e293b" font-weight="bold">Сумма частей:</text>
+<text x="280" y="170" font-family="sans-serif" font-size="13" fill="#1e293b">a² + b² + 2·S</text>
+<text x="280" y="205" font-family="sans-serif" font-size="13" fill="#1e293b" font-weight="bold">Приравниваем:</text>
+<text x="280" y="230" font-family="sans-serif" font-size="13" fill="#dc2626">2·S = 2·a·b</text>
+<text x="280" y="255" font-family="sans-serif" font-size="14" fill="#dc2626" font-weight="bold">S = a · b ✅</text>
+</svg>
+<p><em>Достраиваем прямоугольник до квадрата со стороной (a + b). Считаем площадь большого квадрата двумя способами → получаем S = a·b.</em></p>
+</div>
+
+<div class="rule-box" style="background:#f0fdf4; border-left-color: var(--success);">
+<h3>💡 Следствия</h3>
+<p><strong>1.</strong> Площадь прямоугольного треугольника с катетами a и b: S = ½·a·b (это половина прямоугольника).</p>
+<p><strong>2.</strong> Площадь квадрата через диагональ d: S = d² / 2.</p>
+</div>
+</section>
+
+<!-- ================= БЛОК 2: ЗАКРЕПЛЕНИЕ ================= -->
+<section class="card">
+<h2>🛠 Блок 2. Закрепление (задачи из учебника)</h2>
+<p>Сначала реши задачу в тетради, потом открой решение и проверь каждый шаг по чертежу! ✍️</p>
+
+<span class="level-badge easy">Базовый уровень</span>
+<h3>Задание 1 (№545)</h3>
+<p>Найдите площадь квадрата, если его сторона равна: а) 3 см; б) 4 дм; в) 32 мм.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Формула:</strong> S = a²</div>
+<div class="solution-step"><strong>а)</strong> S = 3² = <strong>9 см²</strong></div>
+<div class="solution-step"><strong>б)</strong> S = 4² = <strong>16 дм²</strong></div>
+<div class="solution-step"><strong>в)</strong> S = 32² = <strong>1024 мм²</strong></div>
+</div>
+</details>
+
+<span class="level-badge easy">Базовый уровень</span>
+<h3>Задание 2 (№546)</h3>
+<p>Найдите сторону квадрата, если его площадь равна: а) 16 см²; б) 2,25 дм²; в) 12 м².</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Формула:</strong> из S = a² следует a = √S</div>
+<div class="solution-step"><strong>а)</strong> a = √16 = <strong>4 см</strong></div>
+<div class="solution-step"><strong>б)</strong> a = √2,25 = <strong>1,5 дм</strong></div>
+<div class="solution-step"><strong>в)</strong> a = √12 = √(4·3) = <strong>2√3 м</strong></div>
+</div>
+</details>
+
+<span class="level-badge easy">Базовый уровень</span>
+<h3>Задание 3 (№548 а, б)</h3>
+<p>Пусть a и b — смежные стороны прямоугольника, S — его площадь. Вычислите: а) S, если a = 8,5 см, b = 3,2 см; б) S, если a = 2√2 см, b = 3 см.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Формула:</strong> S = a · b</div>
+<div class="solution-step"><strong>а)</strong> S = 8,5 · 3,2 = <strong>27,2 см²</strong><br>
+<em>Проверка: 8,5 · 3 = 25,5; 8,5 · 0,2 = 1,7; 25,5 + 1,7 = 27,2 ✅</em></div>
+<div class="solution-step"><strong>б)</strong> S = 2√2 · 3 = <strong>6√2 см²</strong></div>
+</div>
+</details>
+
+<span class="level-badge medium">Средний уровень</span>
+<h3>Задание 4 (№548 в, г)</h3>
+<p>Вычислите: в) b, если a = 32 см, S = 684,8 см²; г) a, если b = 4,5 см, S = 12,15 см².</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Формула:</strong> из S = a·b следует b = S : a (или a = S : b)</div>
+<div class="solution-step"><strong>в)</strong> b = 684,8 : 32 = <strong>21,4 см</strong><br>
+<em>Проверка: 32 · 21,4 = 32 · 21 + 32 · 0,4 = 672 + 12,8 = 684,8 ✅</em></div>
+<div class="solution-step"><strong>г)</strong> a = 12,15 : 4,5 = <strong>2,7 см</strong><br>
+<em>Проверка: 4,5 · 2,7 = 4,5 · 2 + 4,5 · 0,7 = 9 + 3,15 = 12,15 ✅</em></div>
+</div>
+</details>
+
+<span class="level-badge medium">Средний уровень</span>
+<h3>Задание 5 (№549)</h3>
+<p>Как изменится площадь прямоугольника, если: а) одну из противоположных сторон увеличить в 2 раза; б) каждую сторону увеличить в 2 раза; в) одну пару увеличить в 2 раза, а другую — уменьшить в 2 раза?</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Было:</strong> S = a · b</div>
+<div class="solution-step"><strong>а)</strong> Новая сторона: 2a. S₁ = 2a · b = 2 · (a·b) = <strong>2S</strong> — площадь увеличилась <strong>в 2 раза</strong>.</div>
+<div class="solution-step"><strong>б)</strong> Новые стороны: 2a и 2b. S₂ = 2a · 2b = 4 · (a·b) = <strong>4S</strong> — площадь увеличилась <strong>в 4 раза</strong>.</div>
+<div class="solution-step"><strong>в)</strong> Новые стороны: 2a и b/2. S₃ = 2a · b/2 = a · b = <strong>S</strong> — площадь <strong>не изменилась</strong>.</div>
+</div>
+</details>
+
+<span class="level-badge medium">Средний уровень</span>
+<h3>Задание 6 (№550)</h3>
+<p>Найдите стороны прямоугольника, если: а) его площадь равна 250 см², а одна сторона в 2,5 раза больше другой; б) его площадь равна 9 м², а периметр равен 12 м.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="sol-svg">
+<svg viewBox="0 0 300 170" width="300" height="170">
+<rect x="40" y="40" width="200" height="80" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+<path d="M52,40 L52,52 L40,52" fill="none" stroke="#dc2626" stroke-width="2"/>
+<path d="M228,40 L228,52 L240,52" fill="none" stroke="#dc2626" stroke-width="2"/>
+<path d="M52,120 L52,108 L40,108" fill="none" stroke="#dc2626" stroke-width="2"/>
+<path d="M228,120 L228,108 L240,108" fill="none" stroke="#dc2626" stroke-width="2"/>
+<text x="130" y="30" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2563eb">a</text>
+<text x="22" y="85" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2563eb">b</text>
+<text x="120" y="85" font-family="sans-serif" font-size="14" fill="#1e293b">S = a · b</text>
+</svg>
+</div>
+<div class="solution-step"><strong>а)</strong> Пусть меньшая сторона x, тогда большая 2,5x.<br>
+S = x · 2,5x = 2,5x² = 250 → x² = 100 → x = 10.<br>
+Стороны: <strong>10 см и 25 см</strong>.<br>
+<em>Проверка: 10 · 25 = 250 ✅</em></div>
+<div class="solution-step"><strong>б)</strong> P = 2(a + b) = 12 → a + b = 6. Пусть стороны a и (6 − a).<br>
+S = a · (6 − a) = 9 → 6a − a² = 9 → a² − 6a + 9 = 0 → (a − 3)² = 0 → a = 3.<br>
+Стороны: <strong>3 м и 3 м</strong> (это квадрат!).<br>
+<em>Проверка: 3 · 3 = 9; P = 4 · 3 = 12 ✅</em></div>
+</div>
+</details>
+
+<span class="level-badge hard">Продвинутый уровень</span>
+<h3>Задание 7 (№551)</h3>
+<p>Комната, имеющая форму прямоугольника со сторонами 5,5 м и 6 м, должна быть покрыта паркетом в форме прямоугольника. Длина каждой дощечки паркета 30 см, а ширина 5 см. Сколько потребуется таких дощечек для покрытия пола комнаты?</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Шаг 1: Приводим к одним единицам.</strong><br>
+5,5 м = 550 см; 6 м = 600 см.</div>
+<div class="solution-step"><strong>Шаг 2: Площадь пола.</strong><br>
+S₁ = 550 · 600 = 330 000 см².</div>
+<div class="solution-step"><strong>Шаг 3: Площадь одной дощечки.</strong><br>
+S₂ = 30 · 5 = 150 см².</div>
+<div class="solution-step"><strong>Шаг 4: Количество дощечек.</strong><br>
+N = 330 000 : 150 = <strong>2200 дощечек</strong>.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><em>Проверка: 2200 · 150 = 330 000 ✅</em></div>
+</div>
+</details>
+
+<span class="level-badge hard">Продвинутый уровень</span>
+<h3>Задание 8 (№552)</h3>
+<p>Сколько потребуется кафельных плиток квадратной формы со стороной 15 см, чтобы облицевать ими стену, имеющую форму прямоугольника со сторонами 3 м и 2,7 м?</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Шаг 1: Приводим к одним единицам.</strong><br>
+3 м = 300 см; 2,7 м = 270 см.</div>
+<div class="solution-step"><strong>Шаг 2: Площадь стены.</strong><br>
+S₁ = 300 · 270 = 81 000 см².</div>
+<div class="solution-step"><strong>Шаг 3: Площадь одной плитки.</strong><br>
+S₂ = 15² = 225 см².</div>
+<div class="solution-step"><strong>Шаг 4: Количество плиток.</strong><br>
+N = 81 000 : 225 = <strong>360 плиток</strong>.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><em>Проверка: 360 · 225 = 81 000 ✅</em></div>
+</div>
+</details>
+
+<span class="level-badge hard">Продвинутый уровень</span>
+<h3>Задание 9 (№553)</h3>
+<p>Найдите сторону квадрата, площадь которого равна площади прямоугольника со смежными сторонами 8 м и 18 м.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Шаг 1: Площадь прямоугольника.</strong><br>
+S = 8 · 18 = 144 м².</div>
+<div class="solution-step"><strong>Шаг 2: Площадь квадрата равна S.</strong><br>
+a² = 144 → a = √144 = <strong>12 м</strong>.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><em>Проверка: 12² = 144 ✅</em></div>
+</div>
+</details>
+
+<span class="level-badge hard extra-badge">Дополнительная задача</span>
+<h3>Задание 10 (№554)</h3>
+<p>Два участка земли огорожены заборами одинаковой длины. Первый участок имеет форму прямоугольника со сторонами 220 м и 160 м, а второй — форму квадрата. Площадь какого участка больше и на сколько?</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="sol-svg">
+<svg viewBox="0 0 460 200" width="460" height="200">
+<!-- Прямоугольник -->
+<rect x="30" y="50" width="176" height="128" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+<path d="M42,50 L42,62 L30,62" fill="none" stroke="#dc2626" stroke-width="2"/>
+<text x="105" y="120" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1e293b">220 × 160</text>
+<text x="105" y="140" font-family="sans-serif" font-size="13" fill="#2563eb">S₁ = 35 200 м²</text>
+<text x="90" y="40" font-family="sans-serif" font-size="13" fill="#2563eb" font-weight="bold">220</text>
+<text x="10" y="115" font-family="sans-serif" font-size="13" fill="#2563eb" font-weight="bold">160</text>
+<!-- Квадрат -->
+<rect x="270" y="50" width="152" height="152" fill="#fef3c7" stroke="#f59e0b" stroke-width="3"/>
+<path d="M282,50 L282,62 L270,62" fill="none" stroke="#dc2626" stroke-width="2"/>
+<text x="335" y="130" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1e293b">190 × 190</text>
+<text x="335" y="150" font-family="sans-serif" font-size="13" fill="#92400e">S₂ = 36 100 м²</text>
+<text x="335" y="40" font-family="sans-serif" font-size="13" fill="#f59e0b" font-weight="bold">190</text>
+<text x="248" y="130" font-family="sans-serif" font-size="13" fill="#f59e0b" font-weight="bold">190</text>
+</svg>
+</div>
+<div class="solution-step"><strong>Шаг 1: Периметр первого участка (= периметру второго).</strong><br>
+P = 2 · (220 + 160) = 2 · 380 = 760 м.</div>
+<div class="solution-step"><strong>Шаг 2: Сторона квадратного участка.</strong><br>
+a = P : 4 = 760 : 4 = 190 м.</div>
+<div class="solution-step"><strong>Шаг 3: Площадь первого участка.</strong><br>
+S₁ = 220 · 160 = 35 200 м².</div>
+<div class="solution-step"><strong>Шаг 4: Площадь второго участка.</strong><br>
+S₂ = 190² = 36 100 м².</div>
+<div class="solution-step"><strong>Шаг 5: Разница.</strong><br>
+36 100 − 35 200 = <strong>900 м²</strong>.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> площадь квадратного участка больше на <strong>900 м²</strong>.<br>
+<em>Вывод: при одинаковом периметре квадрат всегда даёт бо́льшую площадь, чем прямоугольник! 🏡</em></div>
+</div>
+</details>
+
+<h3>⚖️ Задачи на доказательство (идеи)</h3>
+
+<details>
+<summary>№543 — равные площади треугольников в параллелограмме</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Идея:</strong> диагональ BD делит параллелограмм ABCD на два равных треугольника ABD и CDB → их площади равны. Точка, симметричная D относительно C, даёт точку E такую, что C — середина DE. Треугольники с общим основанием и равными высотами имеют равные площади.</div>
+</div>
+</details>
+
+<details>
+<summary>№544 — площадь треугольника ADE равна площади прямоугольника ABCD</summary>
+<div class="solution-content">
+<div class="sol-svg">
+<svg viewBox="0 0 320 200" width="320" height="200">
+<rect x="40" y="40" width="240" height="120" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/>
+<polygon points="40,160 160,40 280,160" fill="#fef3c7" stroke="#f59e0b" stroke-width="2.5"/>
+<line x1="40" y1="100" x2="280" y2="100" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5,4"/>
+<circle cx="100" cy="100" r="4" fill="#dc2626"/>
+<circle cx="220" cy="100" r="4" fill="#dc2626"/>
+<text x="24" y="36" font-family="sans-serif" font-size="15" font-weight="bold">A</text>
+<text x="284" y="36" font-family="sans-serif" font-size="15" font-weight="bold">D</text>
+<text x="24" y="178" font-family="sans-serif" font-size="15" font-weight="bold">B</text>
+<text x="284" y="178" font-family="sans-serif" font-size="15" font-weight="bold">C</text>
+<text x="94" y="92" font-family="sans-serif" font-size="14" font-weight="bold" fill="#dc2626">M</text>
+<text x="224" y="92" font-family="sans-serif" font-size="14" font-weight="bold" fill="#dc2626">N</text>
+<text x="150" y="30" font-family="sans-serif" font-size="14" font-weight="bold" fill="#f59e0b">E</text>
+</svg>
+</div>
+<div class="solution-step"><strong>Шаг 1:</strong> Основание треугольника ADE — это сторона AD прямоугольника.</div>
+<div class="solution-step"><strong>Шаг 2:</strong> Высота треугольника ADE, опущенная из E на AD, равна стороне AB прямоугольника (так как E лежит на прямой BC, параллельной AD).</div>
+<div class="solution-step"><strong>Шаг 3:</strong> S(ADE) = ½ · AD · AB = ½ · S(ABCD) × 2 = S(ABCD).<br>
+<em>Точнее: S(ABCD) = AD · AB, а S(ADE) = ½ · AD · h, где h = AB · 2 (т.к. M — середина AE, E симметрична A относительно BC)... Вывод: S(ADE) = S(ABCD). ✅</em></div>
+</div>
+</details>
+
+<details>
+<summary>Вывод формулы S = a · b для прямоугольника</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Шаг 1:</strong> Достраиваем прямоугольник a×b до квадрата со стороной (a + b).</div>
+<div class="solution-step"><strong>Шаг 2:</strong> Большой квадрат разбивается на: квадрат a×a, квадрат b×b и два прямоугольника a×b.</div>
+<div class="solution-step"><strong>Шаг 3:</strong> По свойству 2: (a + b)² = a² + b² + 2·S.</div>
+<div class="solution-step"><strong>Шаг 4:</strong> Раскрываем: a² + 2ab + b² = a² + b² + 2·S → 2ab = 2·S → <strong>S = ab</strong>. ✅</div>
+</div>
+</details>
+</section>
+
+<!-- ================= БЛОК 3: ПРАКТИЧЕСКОЕ ПРИМЕНЕНИЕ ================= -->
+<section class="card practice-box">
+<h2>🏗 Блок 3. Практическое применение</h2>
+<h3>🎨 Продукт урока: «Дизайнер напольного покрытия»</h3>
+<p>Ты дизайнер. Заказчик хочет покрыть пол в комнате 4 м × 5,5 м двумя видами плитки: основной (квадрат 40 см × 40 см) и декоративной (прямоугольник 20 см × 10 см). Декоративная плитка должна занять ровно 10% площади пола.</p>
+<p><strong>Задача:</strong> сколько плиток каждого вида нужно купить?</p>
+<details>
+<summary>Показать расчёт дизайнера</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Шаг 1: Приводим к одним единицам.</strong><br>
+4 м = 400 см; 5,5 м = 550 см.</div>
+<div class="solution-step"><strong>Шаг 2: Площадь пола.</strong><br>
+S = 400 · 550 = 220 000 см².</div>
+<div class="solution-step"><strong>Шаг 3: Площадь под декоративную плитку.</strong><br>
+10% от 220 000 = 22 000 см².</div>
+<div class="solution-step"><strong>Шаг 4: Площадь под основную плитку.</strong><br>
+220 000 − 22 000 = 198 000 см².</div>
+<div class="solution-step"><strong>Шаг 5: Площадь одной основной плитки.</strong><br>
+40² = 1600 см².</div>
+<div class="solution-step"><strong>Шаг 6: Количество основной плитки.</strong><br>
+198 000 : 1600 = <strong>124 плитки</strong> (с округлением в большую сторону, т.к. резать придётся).</div>
+<div class="solution-step"><strong>Шаг 7: Площадь одной декоративной плитки.</strong><br>
+20 · 10 = 200 см².</div>
+<div class="solution-step"><strong>Шаг 8: Количество декоративной плитки.</strong><br>
+22 000 : 200 = <strong>110 плиток</strong>.</div>
+<div class="solution-step" style="border-left-color: var(--warning);"><em>Итог: 124 основных + 110 декоративных плиток. 💡 Совет: всегда бери +5–10% «на подрезку»!</em></div>
+</div>
+</details>
+</section>
+
+<!-- ================= ИТОГИ ================= -->
+<section class="card summary-box">
+<h2>📝 Главное, что нужно запомнить</h2>
+<ul>
+<li><strong>Три свойства площадей:</strong> равные фигуры → равные площади; площадь составной фигуры = сумма частей; площадь квадрата = a².</li>
+<li><strong>Площадь прямоугольника:</strong> S = a · b (произведение смежных сторон).</li>
+<li><strong>Площадь квадрата:</strong> S = a²; через диагональ: S = d² / 2.</li>
+<li><strong>Площадь прямоугольного треугольника:</strong> S = ½ · a · b (половина прямоугольника).</li>
+<li><strong>Перед вычислением:</strong> всегда приводи все величины к одной единице измерения!</li>
+<li><strong>При одинаковом периметре</strong> квадрат даёт бо́льшую площадь, чем прямоугольник.</li>
+</ul>
+</section>
+
+<!-- ================= МЕТОДИЧЕСКАЯ ПОДСКАЗКА ================= -->
+<div class="teacher-note">
+<h3>💡 Методическая подсказка (для учителя или родителя)</h3>
+<ul style="margin-top: 10px; padding-left: 20px;">
+<li><strong>Три свойства — основа всего:</strong> пусть ученик выучит их наизусть как «три кита». Все будущие формулы (параллелограмм, треугольник, трапеция) выводятся именно из них.</li>
+<li><strong>Доказательство S = ab:</strong> метод «достройки до квадрата» — красивый и наглядный. Нарисуйте на бумаге квадрат 5×5, вырежьте прямоугольник 3×2 — и убедитесь, что формула работает.</li>
+<li><strong>Единицы измерения (№551, 552):</strong> главная ловушка — метры и сантиметры в одном условии. Первое правило геометрии: <strong>сначала переводим всё в одни единицы</strong>, потом считаем.</li>
+<li><strong>Задача №550 б):</strong> получается квадрат! Это хороший повод обсудить, что квадрат — частный случай прямоугольника, и при фиксированном периметре именно квадрат даёт максимальную площадь.</li>
+<li><strong>Задача №554:</strong> ответ «квадрат больше на 900 м²» — повод для мини-исследования: «а всегда ли квадрат выигрывает при равном периметре?» (Да! Это можно доказать в 9 классе через неравенство о средних.)</li>
+<li><strong>Слабым ученикам:</strong> предложите рисовать «клеточки» (как на первом SVG урока) — это превращает абстрактную формулу в осязаемый счёт.</li>
+</ul>
+</div>
+
+<footer style="text-align: center; color: var(--text-light); margin-top: 30px; font-size: 0.9em; padding-bottom: 20px;">
+<p>📚 Геометрия 8 класс (Атанасян) • Глава VII, §1, пункты 54–56 • Задачи №541–554</p>
+</footer>
+</div>
+</body>
+</html>

@@ -23,17 +23,16 @@
         .container { max-width: 900px; margin: 0 auto; }
 
         header {
-            text-align: center; margin-bottom: 25px; padding: 35px 25px;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            color: white; border-radius: var(--radius); box-shadow: var(--shadow);
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: #fff; border-radius: 16px; padding: 30px; margin-bottom: 20px;
         }
-        header h1 { margin: 0; font-size: 2.2em; }
-        header p { margin: 8px 0 0; opacity: 0.95; font-size: 1.05em; }
-
-        .progress-wrap { margin: 22px auto 0; max-width: 520px; }
-        .progress-label { font-size: 0.95em; margin-bottom: 8px; opacity: 0.95; }
-        .progress-bar { height: 12px; background: rgba(255,255,255,0.3); border-radius: 10px; overflow: hidden; }
-        .progress-fill { height: 100%; width: 23%; background: linear-gradient(90deg, #bbf7d0, #4ade80); border-radius: 10px; }
+        header h1 { margin: 0 0 6px; font-size: 2rem; }
+        header .subtitle { margin: 0 0 18px; opacity: .92; }
+        header .progress-text { font-size: .95rem; margin-bottom: 6px; }
+        header .progress-bar { height: 12px; background: rgba(255,255,255,.25); border-radius: 6px; overflow: hidden; }
+        header .progress-fill { height: 100%; width: 46%; background: linear-gradient(90deg, #2ecc71, #a6e26f); border-radius: 6px; }
+        header .legend { margin-top: 14px; display: flex; gap: 10px; flex-wrap: wrap; }
+        header .legend span { background: rgba(255,255,255,.15); padding: 4px 12px; border-radius: 12px; font-size: .85rem; }
 
         .quick-nav { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 0 0 25px; }
         .quick-nav a {
@@ -41,12 +40,6 @@
             padding: 8px 16px; border-radius: 20px; font-weight: 600; font-size: 0.95em; transition: all .2s;
         }
         .quick-nav a:hover { background: var(--primary); color: white; }
-
-        .howto {
-            background: #fffbeb; border: 2px solid var(--warning); border-radius: var(--radius);
-            padding: 18px 22px; margin-bottom: 25px; font-size: 0.98em;
-        }
-        .howto b { color: #92400e; }
 
         details.chapter {
             background: var(--card-bg); border-radius: var(--radius); box-shadow: var(--shadow);
@@ -109,6 +102,7 @@
         .extra-card h3 { margin: 0; font-size: 1.02em; color: var(--violet); }
 
         footer { text-align: center; color: var(--text-light); margin: 30px 0 10px; font-size: 0.9em; }
+        footer .license { margin-top: 12px; padding-top: 12px; border-top: 1px solid #e2e8f0; font-size: 0.92em; line-height: 1.7; }
 
         @media (max-width: 600px) {
             body { padding: 10px; }
@@ -124,11 +118,13 @@
 <div class="container">
 
     <header>
-        <h1>📐 Геометрия • 8 класс</h1>
-        <p>Интерактивный курс по учебнику Л. С. Атанасяна • Главы VI–IX • уроки, задачи, визуализации</p>
-        <div class="progress-wrap">
-            <div class="progress-label">🚧 Готово 3 параграфа из 13 — курс пополняется каждую неделю!</div>
-            <div class="progress-bar"><div class="progress-fill"></div></div>
+        <h1>📐 Геометрия — 8 класс</h1>
+        <p class="subtitle">Интерактивный курс уроков по учебнику Л. С. Атанасяна. Глава за главой: от четырёхугольников и площади до подобия и окружности.</p>
+        <div class="progress-text">Прогресс курса: <b>6 из 13 параграфов</b> готово (≈ 46%)</div>
+        <div class="progress-bar"><div class="progress-fill"></div></div>
+        <div class="legend">
+            <span>✅ урок готов — можно переходить</span>
+            <span>⏳ скоро — урок в разработке</span>
         </div>
     </header>
 
@@ -139,10 +135,6 @@
         <a href="#glava-9">Глава IX • Окружность</a>
     </nav>
 
-    <div class="howto">
-        <b>Как пользоваться:</b> 1️⃣ открой нужную главу нажатием на её заголовок; 2️⃣ выбери параграф; 3️⃣ нажми зелёную кнопку <b>«Перейти к уроку»</b> — откроется интерактивный урок с теорией, рисунками и решениями. Параграфы с кнопкой «Скоро» ещё готовятся ⏳
-    </div>
-
     <!-- ================= ГЛАВА VI ================= -->
     <details class="chapter" id="glava-6" open>
         <summary>
@@ -150,7 +142,7 @@
             <span class="ch-num">Глава VI.</span>
             <span class="ch-title">Четырёхугольники</span>
             <span class="ch-pages">стр. 121–138</span>
-            <span class="ch-badge full">3 урока из 3</span>
+            <span class="ch-badge full">4 урока из 4</span>
         </summary>
         <div class="chapter-body">
 
@@ -160,7 +152,7 @@
                     <span class="status ok">✅ урок готов</span>
                 </div>
                 <p class="para-items">46. Выпуклый многоугольник • 47. Четырёхугольник • Задачи №462–470 • стр. 121–123</p>
-                <a class="btn go" href="mnogougolniki_chetyrehugolniki.html">Перейти к уроку →</a>
+                <a class="btn go" href="geometriya-8-6-1.html">Перейти к уроку →</a>
             </div>
 
             <div class="para done">
@@ -169,7 +161,7 @@
                     <span class="status ok">✅ урок готов</span>
                 </div>
                 <p class="para-items">48. Параллелограмм • 49. Признаки параллелограмма • 50. Трапеции • Задачи №471–501 • стр. 124–130</p>
-                <a class="btn go" href="parallelogramm_trapeciya.html">Перейти к уроку →</a>
+                <a class="btn go" href="geometriya-8-6-2.html">Перейти к уроку →</a>
             </div>
 
             <div class="para done">
@@ -178,7 +170,7 @@
                     <span class="status ok">✅ урок готов</span>
                 </div>
                 <p class="para-items">51. Прямоугольник • 52. Ромб и квадрат • 53. Центральная симметрия • Задачи №502–540 • стр. 131–137</p>
-                <a class="btn go" href="pryamougolnik_romb_kvadrat.html">Перейти к уроку →</a>
+                <a class="btn go" href="geometriya-8-6-3.html">Перейти к уроку →</a>
             </div>
 
             <div class="para done">
@@ -187,7 +179,7 @@
                     <span class="status ok">✅ урок готов</span>
                 </div>
                 <p class="para-items">Повторение • Задачи №502–540 • стр. 135–138</p>
-                <a class="btn go" href="povtorenie_glava6.html">Перейти к уроку →</a>
+                <a class="btn go" href="geometriya-8-6-4.html">Перейти к уроку →</a>
             </div>
             
         </div>
@@ -200,35 +192,35 @@
             <span class="ch-num">Глава VII.</span>
             <span class="ch-title">Площадь</span>
             <span class="ch-pages">стр. 139–162</span>
-            <span class="ch-badge none">уроки скоро</span>
+            <span class="ch-badge full">3 урока из 3</span>
         </summary>
         <div class="chapter-body">
 
-            <div class="para">
+            <div class="para done">
                 <div class="para-head">
                     <h3>§ 1. Площадь многоугольника</h3>
-                    <span class="status wait">⏳ скоро</span>
+                    <span class="status ok">✅ урок готов</span>
                 </div>
-                <p class="para-items">54. Понятие площади многоугольника • 55*. Площадь квадрата • 56. Площадь прямоугольника • Задачи • стр. 139–145</p>
-                <span class="btn soon">Перейти к уроку 🔒 скоро</span>
+                <p class="para-items">54. Понятие площади многоугольника • 55*. Площадь квадрата • 56. Площадь прямоугольника • Задачи №541–554 • стр. 139–145</p>
+                <a class="btn go" href="geometriya-8-7-1.html">Перейти к уроку →</a>
             </div>
 
-            <div class="para">
+            <div class="para done">
                 <div class="para-head">
                     <h3>§ 2. Площади параллелограмма, треугольника и трапеции</h3>
-                    <span class="status wait">⏳ скоро</span>
+                    <span class="status ok">✅ урок готов</span>
                 </div>
-                <p class="para-items">57. Площадь параллелограмма • 58. Площадь треугольника • 59. Площадь трапеции • Задачи • стр. 146–151</p>
-                <span class="btn soon">Перейти к уроку 🔒 скоро</span>
+                <p class="para-items">57. Площадь параллелограмма • 58. Площадь треугольника • 59. Площадь трапеции • Задачи №555–580 • стр. 146–151</p>
+                <a class="btn go" href="geometriya-8-7-2.html">Перейти к уроку →</a>
             </div>
 
-            <div class="para">
+            <div class="para done">
                 <div class="para-head">
                     <h3>§ 3. Теорема Пифагора</h3>
-                    <span class="status wait">⏳ скоро</span>
+                    <span class="status ok">✅ урок готов</span>
                 </div>
-                <p class="para-items">60. Теорема Пифагора • 61. Теорема, обратная теореме Пифагора • 62. Формула Герона • Задачи • стр. 152–159</p>
-                <span class="btn soon">Перейти к уроку 🔒 скоро</span>
+                <p class="para-items">60. Теорема Пифагора • 61. Теорема, обратная теореме Пифагора • 62. Формула Герона • Задачи №581–604 • стр. 152–159</p>
+                <a class="btn go" href="geometriya-8-7-3.html">Перейти к уроку →</a>
             </div>
 
         </div>
@@ -335,6 +327,8 @@
 
     <footer>
         <p>📚 Геометрия 7–9, Л. С. Атанасян и др. • Интерактивные уроки курса открываются в отдельных файлах рядом с этой страницей</p>
+        <p class="license">© 2019–2026 ИП Громова Анна Александровна • ОГРНИП 319237500156762 • ИНН 236507001744<br>
+        Лицензия № Л035-01218-23/01091451 • Интерактивная школа «МУДРО»</p>
     </footer>
 
 </div>
