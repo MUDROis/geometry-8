@@ -202,39 +202,40 @@ details[open] summary { border-bottom: 1px solid #e2e8f0; }
 
 <div class="svg-container">
 <h3>🔎 Доказательство S = ½ · (a + b) · h</h3>
-<svg viewBox="0 0 360 240" width="360" height="240">
+<svg viewBox="0 0 340 240" width="340" height="240">
 <!-- Трапеция ABCD (основания AD и BC) -->
-<polygon points="40,180 120,90 240,90 220,180" fill="#dbeafe"/>
+<polygon points="40,180 120,90 230,90 260,180" fill="#dbeafe"/>
 <!-- Разбиение диагональю BD на два треугольника -->
-<polygon points="40,180 120,90 220,180" fill="#fef3c7" opacity="0.5"/>
-<polygon points="120,90 240,90 220,180" fill="#dcfce7" opacity="0.5"/>
+<polygon points="40,180 120,90 260,180" fill="#fef3c7" opacity="0.5"/>
+<polygon points="120,90 230,90 260,180" fill="#dcfce7" opacity="0.5"/>
 <!-- Контур трапеции -->
-<polygon points="40,180 120,90 240,90 220,180" fill="none" stroke="#2563eb" stroke-width="3"/>
+<polygon points="40,180 120,90 230,90 260,180" fill="none" stroke="#2563eb" stroke-width="3"/>
 <!-- Диагональ BD -->
-<line x1="120" y1="90" x2="220" y2="180" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,4"/>
+<line x1="120" y1="90" x2="260" y2="180" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,4"/>
 <!-- Высота BH к основанию AD -->
 <line x1="120" y1="90" x2="120" y2="180" stroke="#dc2626" stroke-width="2" stroke-dasharray="6,4"/>
 <path d="M132,180 L132,168 L120,168" fill="none" stroke="#dc2626" stroke-width="2"/>
-<!-- Высота CH₁ к продолжению основания AD -->
-<line x1="240" y1="90" x2="240" y2="180" stroke="#dc2626" stroke-width="2" stroke-dasharray="6,4"/>
-<path d="M228,180 L228,168 L240,168" fill="none" stroke="#dc2626" stroke-width="2"/>
-<!-- Продолжение AD за точку D -->
-<line x1="220" y1="180" x2="252" y2="180" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4"/>
+<!-- Продолжение BC вправо -->
+<line x1="230" y1="90" x2="272" y2="90" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4"/>
+<!-- Высота DH₁ к продолжению BC -->
+<line x1="260" y1="180" x2="260" y2="90" stroke="#dc2626" stroke-width="2" stroke-dasharray="6,4"/>
+<path d="M248,90 L248,102 L260,102" fill="none" stroke="#dc2626" stroke-width="2"/>
 <!-- Вершины -->
 <text x="28" y="200" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1e293b">A</text>
-<text x="106" y="84" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1e293b">B</text>
-<text x="248" y="84" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1e293b">C</text>
-<text x="214" y="200" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1e293b">D</text>
-<text x="112" y="200" font-family="sans-serif" font-size="16" font-weight="bold" fill="#dc2626">H</text>
-<text x="244" y="198" font-family="sans-serif" font-size="15" font-weight="bold" fill="#dc2626">H₁</text>
+<text x="104" y="84" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1e293b">B</text>
+<text x="236" y="84" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1e293b">C</text>
+<text x="252" y="200" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1e293b">D</text>
+<text x="106" y="200" font-family="sans-serif" font-size="16" font-weight="bold" fill="#dc2626">H</text>
+<text x="266" y="84" font-family="sans-serif" font-size="15" font-weight="bold" fill="#dc2626">H₁</text>
 <!-- Подписи сторон -->
-<text x="166" y="200" font-family="sans-serif" font-size="16" font-weight="bold" fill="#2563eb">a</text>
+<text x="148" y="200" font-family="sans-serif" font-size="16" font-weight="bold" fill="#2563eb">a</text>
 <text x="176" y="82" font-family="sans-serif" font-size="16" font-weight="bold" fill="#2563eb">b</text>
-<text x="102" y="140" font-family="sans-serif" font-size="16" font-weight="bold" fill="#dc2626">h</text>
+<text x="100" y="140" font-family="sans-serif" font-size="16" font-weight="bold" fill="#dc2626">h</text>
+<text x="268" y="140" font-family="sans-serif" font-size="16" font-weight="bold" fill="#dc2626">h</text>
 <!-- Формула -->
 <text x="30" y="228" font-family="sans-serif" font-size="14" fill="#16a34a" font-weight="bold">S = ½ · a · h + ½ · b · h = ½ · (a + b) · h</text>
 </svg>
-<p><em>Диагональ BD разбивает трапецию на два треугольника: ABD (основание AD = a, высота BH = h) и BCD (основание BC = b, та же высота h). Складывая их площади, получаем S = ½ · (a + b) · h.</em></p>
+<p><em>Диагональ BD разбивает трапецию на два треугольника: ABD (основание AD = a, высота BH = h) и BCD (основание BC = b, высота DH₁ = h, проведённая к продолжению BC). Обе высоты равны h, так как AD ∥ BC, поэтому S = ½ · (a + b) · h.</em></p>
 </div>
 </section>
 
