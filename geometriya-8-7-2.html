@@ -146,6 +146,53 @@ details[open] summary { border-bottom: 1px solid #e2e8f0; }
 <p><em>где p — полупериметр треугольника, r — радиус вписанной окружности.</em></p>
 </div>
 
+<div class="svg-container">
+<h3>🔎 Вывод формулы S = p · r (вписанная окружность)</h3>
+<svg viewBox="0 0 340 270" width="340" height="270">
+<!-- Треугольник ABC -->
+<polygon points="60,200 280,200 180,50" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+<!-- Вписанная окружность -->
+<circle cx="175.91" cy="144.29" r="55.71" fill="none" stroke="#0ea5e9" stroke-width="2"/>
+<!-- Биссектрисы OA, OB, OC -->
+<line x1="60" y1="200" x2="175.91" y2="144.29" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,4"/>
+<line x1="280" y1="200" x2="175.91" y2="144.29" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,4"/>
+<line x1="180" y1="50" x2="175.91" y2="144.29" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,4"/>
+<!-- Радиусы OK, OL, OM -->
+<line x1="175.91" y1="144.29" x2="175.91" y2="200" stroke="#dc2626" stroke-width="2"/>
+<line x1="175.91" y1="144.29" x2="222.26" y2="113.39" stroke="#dc2626" stroke-width="2"/>
+<line x1="175.91" y1="144.29" x2="132.41" y2="109.49" stroke="#dc2626" stroke-width="2"/>
+<!-- Прямые углы в точках касания K, L, M -->
+<path d="M185.91,200 L185.91,190 L175.91,190" fill="none" stroke="#dc2626" stroke-width="2"/>
+<path d="M216.71,105.07 L208.39,110.62 L213.94,118.94" fill="none" stroke="#dc2626" stroke-width="2"/>
+<path d="M138.65,101.68 L146.46,107.93 L140.21,115.74" fill="none" stroke="#dc2626" stroke-width="2"/>
+<!-- Дуги равных углов: при A — одна, при B — две, при C — три -->
+<path d="M94.00,200.00 A34,34 0 0 0 81.24,173.45" fill="none" stroke="#2563eb" stroke-width="2"/>
+<path d="M250.00,200.00 A30,30 0 0 1 263.36,175.04" fill="none" stroke="#f59e0b" stroke-width="2"/>
+<path d="M238.00,200.00 A42,42 0 0 1 256.70,165.05" fill="none" stroke="#f59e0b" stroke-width="2"/>
+<path d="M170.00,62.49 A16,16 0 0 0 188.88,63.31" fill="none" stroke="#7c3aed" stroke-width="2"/>
+<path d="M163.76,70.30 A26,26 0 0 0 194.42,71.63" fill="none" stroke="#7c3aed" stroke-width="2"/>
+<path d="M157.51,78.11 A36,36 0 0 0 199.97,79.95" fill="none" stroke="#7c3aed" stroke-width="2"/>
+<!-- Точки -->
+<circle cx="175.91" cy="144.29" r="3" fill="#1e293b"/>
+<circle cx="175.91" cy="200" r="2.5" fill="#dc2626"/>
+<circle cx="222.26" cy="113.39" r="2.5" fill="#dc2626"/>
+<circle cx="132.41" cy="109.49" r="2.5" fill="#dc2626"/>
+<!-- Вершины -->
+<text x="46" y="216" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1e293b">A</text>
+<text x="286" y="216" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1e293b">B</text>
+<text x="176" y="42" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1e293b">C</text>
+<!-- Точки касания -->
+<text x="170" y="220" font-family="sans-serif" font-size="15" font-weight="bold" fill="#dc2626">K</text>
+<text x="228" y="110" font-family="sans-serif" font-size="15" font-weight="bold" fill="#dc2626">L</text>
+<text x="116" y="108" font-family="sans-serif" font-size="15" font-weight="bold" fill="#dc2626">M</text>
+<!-- Центр окружности -->
+<text x="182" y="152" font-family="sans-serif" font-size="15" font-weight="bold" fill="#1e293b">O</text>
+<!-- Формула -->
+<text x="30" y="250" font-family="sans-serif" font-size="14" fill="#16a34a" font-weight="bold">S = ½ · (AB + BC + CA) · r = p · r</text>
+</svg>
+<p><em>Центр вписанной окружности — точка пересечения биссектрис OA, OB, OC. Радиусы OK, OL, OM перпендикулярны сторонам, поэтому каждый из треугольников AOB, BOC, COA имеет высоту r. Тогда S = ½·AB·r + ½·BC·r + ½·CA·r = ½·(AB + BC + CA)·r = p · r, где p — полупериметр.</em></p>
+</div>
+
 <h2 style="margin-top:40px;">⏢ Часть 3. Площадь трапеции (пункт 59)</h2>
 <div class="rule-box" style="background:#fffbeb; border-left-color: var(--warning);">
 <h3>🌟 Теорема: площадь трапеции</h3>
@@ -155,25 +202,39 @@ details[open] summary { border-bottom: 1px solid #e2e8f0; }
 
 <div class="svg-container">
 <h3>🔎 Доказательство S = ½ · (a + b) · h</h3>
-<svg viewBox="0 0 440 240" width="440" height="240">
-<!-- Трапеция -->
-<polygon points="80,180 320,180 260,80 140,80" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
-<!-- Высота -->
-<line x1="200" y1="80" x2="200" y2="180" stroke="#dc2626" stroke-width="2" stroke-dasharray="6,4"/>
-<path d="M212,180 L212,168 L200,168" fill="none" stroke="#dc2626" stroke-width="2"/>
-<!-- Диагональ -->
-<line x1="80" y1="180" x2="260" y2="80" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,4"/>
-<!-- Подписи -->
-<text x="185" y="200" font-family="sans-serif" font-size="16" font-weight="bold" fill="#2563eb">a</text>
-<text x="185" y="72" font-family="sans-serif" font-size="16" font-weight="bold" fill="#2563eb">b</text>
-<text x="180" y="135" font-family="sans-serif" font-size="16" font-weight="bold" fill="#dc2626">h</text>
-<!-- Два треугольника -->
-<polygon points="80,180 260,80 140,80" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" opacity="0.3"/>
-<polygon points="80,180 320,180 260,80" fill="#dcfce7" stroke="#16a34a" stroke-width="2" opacity="0.3"/>
-<!-- Подпись -->
-<text x="100" y="230" font-family="sans-serif" font-size="14" fill="#1e293b" font-weight="bold">Диагональ делит трапецию на два треугольника с общей высотой h</text>
-<text x="100" y="248" font-family="sans-serif" font-size="14" fill="#16a34a" font-weight="bold">S = ½ · b · h + ½ · a · h = ½ · (a + b) · h</text>
+<svg viewBox="0 0 360 240" width="360" height="240">
+<!-- Трапеция ABCD (основания AD и BC) -->
+<polygon points="40,180 120,90 240,90 220,180" fill="#dbeafe"/>
+<!-- Разбиение диагональю BD на два треугольника -->
+<polygon points="40,180 120,90 220,180" fill="#fef3c7" opacity="0.5"/>
+<polygon points="120,90 240,90 220,180" fill="#dcfce7" opacity="0.5"/>
+<!-- Контур трапеции -->
+<polygon points="40,180 120,90 240,90 220,180" fill="none" stroke="#2563eb" stroke-width="3"/>
+<!-- Диагональ BD -->
+<line x1="120" y1="90" x2="220" y2="180" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,4"/>
+<!-- Высота BH к основанию AD -->
+<line x1="120" y1="90" x2="120" y2="180" stroke="#dc2626" stroke-width="2" stroke-dasharray="6,4"/>
+<path d="M132,180 L132,168 L120,168" fill="none" stroke="#dc2626" stroke-width="2"/>
+<!-- Высота CH₁ к продолжению основания AD -->
+<line x1="240" y1="90" x2="240" y2="180" stroke="#dc2626" stroke-width="2" stroke-dasharray="6,4"/>
+<path d="M228,180 L228,168 L240,168" fill="none" stroke="#dc2626" stroke-width="2"/>
+<!-- Продолжение AD за точку D -->
+<line x1="220" y1="180" x2="252" y2="180" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4"/>
+<!-- Вершины -->
+<text x="28" y="200" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1e293b">A</text>
+<text x="106" y="84" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1e293b">B</text>
+<text x="248" y="84" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1e293b">C</text>
+<text x="214" y="200" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1e293b">D</text>
+<text x="112" y="200" font-family="sans-serif" font-size="16" font-weight="bold" fill="#dc2626">H</text>
+<text x="244" y="198" font-family="sans-serif" font-size="15" font-weight="bold" fill="#dc2626">H₁</text>
+<!-- Подписи сторон -->
+<text x="166" y="200" font-family="sans-serif" font-size="16" font-weight="bold" fill="#2563eb">a</text>
+<text x="176" y="82" font-family="sans-serif" font-size="16" font-weight="bold" fill="#2563eb">b</text>
+<text x="102" y="140" font-family="sans-serif" font-size="16" font-weight="bold" fill="#dc2626">h</text>
+<!-- Формула -->
+<text x="30" y="228" font-family="sans-serif" font-size="14" fill="#16a34a" font-weight="bold">S = ½ · a · h + ½ · b · h = ½ · (a + b) · h</text>
 </svg>
+<p><em>Диагональ BD разбивает трапецию на два треугольника: ABD (основание AD = a, высота BH = h) и BCD (основание BC = b, та же высота h). Складывая их площади, получаем S = ½ · (a + b) · h.</em></p>
 </div>
 </section>
 
