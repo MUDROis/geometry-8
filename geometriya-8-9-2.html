@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Центральные и вписанные углы — Геометрия 8 класс</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #dc2626;
+            --accent: #0ea5e9;
+            --success: #16a34a;
+            --warning: #f59e0b;
+            --violet: #7c3aed;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #1e293b;
+            --text-light: #64748b;
+            --radius: 16px;
+            --shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+        }
+        body { font-family: 'Segoe UI','Roboto',system-ui,sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; margin: 0; padding: 20px; }
+        .container { max-width: 850px; margin: 0 auto; }
+        header { text-align: center; margin-bottom: 30px; padding: 30px; background: linear-gradient(135deg, var(--violet), var(--accent)); color: white; border-radius: var(--radius); box-shadow: var(--shadow); }
+        header h1 { margin: 0; font-size: 2.1em; }
+        header p { margin: 8px 0 0; opacity: 0.95; font-size: 1.05em; }
+        .card { background: var(--card-bg); border-radius: var(--radius); padding: 30px; margin-bottom: 25px; box-shadow: var(--shadow); }
+        h2 { color: var(--primary); border-bottom: 3px solid var(--accent); padding-bottom: 10px; display: inline-block; margin-top: 0; }
+        h3 { color: var(--secondary); margin-top: 25px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; border-radius: 8px; overflow: hidden; }
+        th, td { border: 1px solid #e2e8f0; padding: 12px 14px; text-align: left; }
+        th { background: #f1f5f9; color: var(--primary); font-weight: 600; }
+        .rule-box { background: #eff6ff; border-left: 5px solid var(--primary); padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0; }
+        .formula { font-size: 1.25em; font-weight: bold; color: var(--secondary); text-align: center; background: #fef2f2; padding: 15px; border-radius: 8px; margin: 15px 0; border: 2px dashed var(--secondary); }
+        .svg-container { text-align: center; margin: 25px 0; background: #f8fafc; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0; }
+        .svg-container svg { max-width: 100%; height: auto; }
+        .sol-svg { text-align: center; margin: 0 0 14px; }
+        .sol-svg svg { max-width: 100%; height: auto; background: #fcfdff; border: 1px dashed #cbd5e1; border-radius: 10px; padding: 6px; }
+        details { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin: 15px 0; overflow: hidden; }
+        summary { padding: 15px 20px; cursor: pointer; font-weight: bold; color: var(--primary); background: #eff6ff; list-style: none; display: flex; align-items: center; gap: 10px; font-size: 1.05em; }
+        summary::-webkit-details-marker { display: none; }
+        summary::before { content: '🔍'; font-size: 1.2em; }
+        details[open] summary::before { content: '💡'; }
+        details[open] summary { border-bottom: 1px solid #e2e8f0; }
+        .solution-content { padding: 20px; background: white; }
+        .solution-step { margin-bottom: 12px; padding-left: 15px; border-left: 3px solid var(--success); }
+        .level-badge { display: inline-block; padding: 5px 14px; border-radius: 20px; font-size: 0.85em; font-weight: bold; color: white; margin: 15px 0 10px; }
+        .easy { background: var(--success); }
+        .medium { background: var(--warning); color: #1e293b; }
+        .hard { background: var(--secondary); }
+        .extra-badge { background: var(--violet); }
+        .practice-box { background: linear-gradient(135deg, #fffbeb, #fef3c7); border: 2px solid var(--warning); }
+        .teacher-note { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 20px; margin-top: 30px; }
+        .summary-box { background: #eff6ff; border: 2px solid var(--primary); border-radius: 12px; padding: 20px; }
+        @media (max-width: 600px) { body { padding: 10px; } header h1 { font-size: 1.5em; } .card { padding: 20px; } th, td { padding: 8px; font-size: 0.92em; } }
+    </style>
+</head>
+<body>
+<div class="container">
+<header>
+    <h1>⭕ Центральные и вписанные углы</h1>
+    <p>Геометрия 8 класс • Глава IX, §2, пункты 79–81 • Градусная мера дуги, теорема о вписанном угле, углы при хордах и касательных</p>
+</header>
+
+<section class="card">
+<h2>🧠 Блок 1. Изучение нового материала</h2>
+<h3>🌍 Разминка: углы в круге</h3>
+<p>Представь циферблат часов. Угол между стрелками — это центральный угол. А если ты стоишь на краю циферблата и смотришь на две точки — это вписанный угол. Сегодня докажем, что вписанный угол всегда в два раза меньше центрального! ⭕📐</p>
+
+<h3>📖 Ключевые термины</h3>
+<table>
+<tr><th>Термин</th><th>Определение</th></tr>
+<tr><td><strong>Центральный угол</strong></td><td>Угол с вершиной в центре окружности.</td></tr>
+<tr><td><strong>Вписанный угол</strong></td><td>Угол с вершиной на окружности, стороны которого пересекают окружность.</td></tr>
+<tr><td><strong>Дуга окружности</strong></td><td>Часть окружности между двумя точками.</td></tr>
+<tr><td><strong>Градусная мера дуги</strong></td><td>Число градусов, которые составляют дуга. Равна центральному углу, опирающемуся на эту дугу.</td></tr>
+</table>
+
+<h2 style="margin-top:40px;">📐 Часть 1. Градусная мера дуги окружности (пункт 79)</h2>
+<div class="rule-box">
+<h3>🌟 Основные факты</h3>
+<p><strong>1.</strong> Полная окружность содержит <strong>360°</strong>.</p>
+<p><strong>2.</strong> Градусная мера дуги равна градусной мере центрального угла, опирающегося на эту дугу.</p>
+<p><strong>3.</strong> Если дуга составляет половину окружности (полуокружность), её мера равна <strong>180°</strong>.</p>
+</div>
+
+<h2 style="margin-top:40px;">📐 Часть 2. Теорема о вписанном угле (пункт 80)</h2>
+<div class="rule-box" style="background:#f0fdf4; border-left-color: var(--success);">
+<h3>🌟 Теорема о вписанном угле</h3>
+<div class="formula" style="background:#f0fdf4; border-color: var(--success); color: var(--success);">Вписанный угол = ½ × центрального угла</div>
+<p><em>Вписанный угол равен половине центрального угла, опирающегося на ту же дугу.</em></p>
+</div>
+
+<div class="svg-container">
+<h3>Вписанный и центральный углы на одной дуге</h3>
+<svg viewBox="0 0 400 250" width="400" height="250">
+<circle cx="200" cy="125" r="100" fill="none" stroke="#2563eb" stroke-width="3"/>
+<!-- Центральный угол -->
+<line x1="200" y1="125" x2="300" y2="125" stroke="#dc2626" stroke-width="2.5"/>
+<line x1="200" y1="125" x2="270" y2="45" stroke="#dc2626" stroke-width="2.5"/>
+<path d="M 230 125 A 30 30 0 0 1 221 104" fill="none" stroke="#dc2626" stroke-width="2"/>
+<text x="245" y="115" font-family="sans-serif" font-size="14" fill="#dc2626" font-weight="bold">α</text>
+<!-- Вписанный угол -->
+<line x1="300" y1="125" x2="130" y2="190" stroke="#16a34a" stroke-width="2.5"/>
+<line x1="270" y1="45" x2="130" y2="190" stroke="#16a34a" stroke-width="2.5"/>
+<circle cx="130" cy="190" r="4" fill="#16a34a"/>
+<text x="120" y="210" font-family="sans-serif" font-size="14" fill="#16a34a" font-weight="bold">β</text>
+<!-- Центр -->
+<circle cx="200" cy="125" r="3" fill="#2563eb"/>
+<text x="185" y="120" font-family="sans-serif" font-size="12" fill="#2563eb">O</text>
+<!-- Подпись -->
+<text x="200" y="245" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1e293b">β = ½α — вписанный угол в два раза меньше центрального</text>
+</svg>
+</div>
+
+<div class="rule-box">
+<h3>💡 Следствия из теоремы о вписанном угле</h3>
+<p><strong>1.</strong> Вписанные углы, опирающиеся на одну и ту же дугу, <strong>равны</strong>.</p>
+<p><strong>2.</strong> Вписанный угол, опирающийся на полуокружность, равен <strong>90°</strong> (прямой угол).</p>
+<p><strong>3.</strong> Угол между хордой и касательной равен половине дуги, заключённой в этом угле.</p>
+</div>
+
+<h2 style="margin-top:40px;">📐 Часть 3. Углы, образованные хордами, касательными и секущими (пункт 81)</h2>
+<div class="rule-box" style="background:#fffbeb; border-left-color: var(--warning);">
+<h3>🌟 Углы при хордах и касательных</h3>
+<p><strong>1.</strong> Угол между хордой и касательной = ½ дуги, заключённой в этом угле.</p>
+<p><strong>2.</strong> Угол между двумя пересекающимися хордами = ½ суммы дуг, заключённых между сторонами угла.</p>
+<p><strong>3.</strong> Угол между двумя секущими, пересекающимися вне окружности = ½ разности дуг.</p>
+<p><strong>4.</strong> Угол между секущей и касательной = ½ разности дуг.</p>
+</div>
+
+<div class="svg-container">
+<h3>Угол между хордой и касательной</h3>
+<svg viewBox="0 0 350 220" width="350" height="220">
+<circle cx="175" cy="110" r="80" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+<!-- Хорда -->
+<line x1="245" y1="60" x2="245" y2="160" stroke="#16a34a" stroke-width="2.5"/>
+<!-- Касательная -->
+<line x1="245" y1="60" x2="320" y2="20" stroke="#dc2626" stroke-width="2.5"/>
+<!-- Угол -->
+<path d="M 245 45 A 15 15 0 0 0 258 55" fill="none" stroke="#7c3aed" stroke-width="2"/>
+<text x="255" y="40" font-family="sans-serif" font-size="13" fill="#7c3aed" font-weight="bold">γ</text>
+<!-- Дуга -->
+<path d="M 245 160 A 80 80 0 0 1 245 60" fill="none" stroke="#f59e0b" stroke-width="3" stroke-dasharray="5,3"/>
+<text x="200" y="115" font-family="sans-serif" font-size="13" fill="#f59e0b" font-weight="bold">дуга</text>
+<text x="175" y="210" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1e293b">γ = ½ дуги</text>
+</svg>
+</div>
+</section>
+
+<section class="card">
+<h2>🛠 Блок 2. Закрепление (задачи из учебника)</h2>
+<p>Сначала реши задачу в тетради, потом открой решение и проверь каждый шаг по чертежу! ✍️</p>
+
+<span class="level-badge easy">Базовый уровень</span>
+<h3>Задание 1 (№760)</h3>
+<p>Центральный угол окружности равен 80°. Чему равен вписанный угол, опирающийся на ту же дугу?</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="solution-step">По теореме о вписанном угле: вписанный угол = ½ центрального угла.</div>
+<div class="solution-step">Ответ: 80° : 2 = <strong>40°</strong>.</div>
+</div>
+</details>
+
+<span class="level-badge easy">Базовый уровень</span>
+<h3>Задание 2 (№761)</h3>
+<p>Вписанный угол равен 35°. Чему равен центральный угол, опирающийся на ту же дугу?</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="solution-step">Центральный угол = 2 × вписанный угол = 2 × 35° = <strong>70°</strong>.</div>
+</div>
+</details>
+
+<span class="level-badge medium">Средний уровень</span>
+<h3>Задание 3 (№763)</h3>
+<p>Вписанный угол опирается на дугу, составляющую ¼ окружности. Найдите вписанный угол.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="solution-step">Дуга = ¼ × 360° = 90°.</div>
+<div class="solution-step">Вписанный угол = ½ × 90° = <strong>45°</strong>.</div>
+</div>
+</details>
+
+<span class="level-badge medium">Средний уровень</span>
+<h3>Задание 4 (№764)</h3>
+<p>Вписанный угол опирается на полуокружность. Чему равен этот угол?</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="solution-step">Полуокружность = 180°.</div>
+<div class="solution-step">Вписанный угол = ½ × 180° = <strong>90°</strong> (прямой угол).</div>
+</div>
+</details>
+
+<span class="level-badge medium">Средний уровень</span>
+<h3>Задание 5 (№765)</h3>
+<p>Два вписанных угла опираются на одну и ту же дугу. Первый угол равен 42°. Найдите второй угол.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="solution-step">Вписанные углы, опирающиеся на одну дугу, равны.</div>
+<div class="solution-step">Ответ: <strong>42°</strong>.</div>
+</div>
+</details>
+
+<span class="level-badge hard">Продвинутый уровень</span>
+<h3>Задание 6 (№770)</h3>
+<p>Хорда стягивает дугу в 100°. Найдите угол между этой хордой и касательной, проведённой через один из концов хорды.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="solution-step">Угол между хордой и касательной = ½ дуги, заключённой в этом угле.</div>
+<div class="solution-step">Ответ: 100° : 2 = <strong>50°</strong>.</div>
+</div>
+</details>
+
+<span class="level-badge hard">Продвинутый уровень</span>
+<h3>Задание 7 (№772)</h3>
+<p>Две хорды пересекаются внутри окружности. Дуги, заключённые между сторонами угла, равны 80° и 120°. Найдите угол между хордами.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="solution-step">Угол между пересекающимися хордами = ½ (сумма дуг) = ½ (80° + 120°) = ½ × 200° = <strong>100°</strong>.</div>
+</div>
+</details>
+</section>
+
+<section class="card practice-box">
+<h2>🏗 Блок 3. Практическое применение</h2>
+<h3>🎨 Продукт урока: «Архитектор арки»</h3>
+<p>Ты проектируешь полукруглую арку для входа в здание. Ширина арки (хорда) 6 м. Нужно определить, какова высота арки (расстояние от середины хорды до верхней точки дуги).</p>
+<p><strong>Задача:</strong> найди высоту полукруглой арки шириной 6 м.</p>
+<details>
+<summary>Показать расчёт архитектора</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Шаг 1:</strong> Полукруглая арка — это полуокружность. Хорда = диаметр = 6 м.</div>
+<div class="solution-step"><strong>Шаг 2:</strong> Радиус R = 6 : 2 = 3 м.</div>
+<div class="solution-step"><strong>Шаг 3:</strong> Высота арки = радиус = <strong>3 м</strong>.</div>
+<div class="solution-step" style="border-left-color: var(--warning);"><em>Высота полукруглой арки всегда равна её радиусу! 🏛</em></div>
+</div>
+</details>
+</section>
+
+<section class="card summary-box">
+<h2>📝 Главное, что нужно запомнить</h2>
+<ul>
+<li><strong>Вписанный угол = ½ центрального угла</strong> на той же дуге.</li>
+<li><strong>Вписанные углы на одной дуге равны</strong> — это важнейшее следствие.</li>
+<li><strong>Угол на полуокружности = 90°</strong> (прямой угол).</li>
+<li><strong>Угол между хордой и касательной</strong> = ½ дуги, заключённой в этом угле.</li>
+<li><strong>Угол между пересекающимися хордами</strong> = ½ суммы дуг.</li>
+</ul>
+</section>
+
+<div class="teacher-note">
+<h3>💡 Методическая подсказка (для учителя или родителя)</h3>
+<ul style="margin-top: 10px; padding-left: 20px;">
+<li><strong>Доказательство теоремы о вписанном угле:</strong> используйте три случая (центр внутри угла, центр на стороне угла, центр вне угла). Случай «центр на стороне» — базовый, остальные сводятся к нему.</li>
+<li><strong>Наглядность:</strong> используйте циркуль и транспортир. Пусть ученик сам начертит центральный и вписанный углы и убедится в соотношении 1:2.</li>
+<li><strong>Задача про арку:</strong> покажите, что полукруглая арка — это реальный архитектурный элемент. Можно обсудить, почему именно полукруг так часто используется в архитектуре (равномерное распределение нагрузки).</li>
+<li><strong>Следствия теоремы:</strong> равенство вписанных углов на одной дуге — ключ к решению многих задач. Уделите этому особое внимание.</li>
+</ul>
+</div>
+
+<footer style="text-align: center; color: var(--text-light); margin-top: 30px; font-size: 0.9em; padding-bottom: 20px;">
+<p>📚 Геометрия 8 класс (Атанасян) • Глава IX, §2, пункты 79–81 • Задачи №760–772</p>
+</footer>
+</div>
+</body>
+</html>

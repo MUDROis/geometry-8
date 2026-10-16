@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Признаки подобия треугольников — Геометрия 8 класс</title>
+<style>
+:root {
+--primary: #2563eb;
+--secondary: #dc2626;
+--accent: #0ea5e9;
+--success: #16a34a;
+--warning: #f59e0b;
+--violet: #7c3aed;
+--bg: #f8fafc;
+--card-bg: #ffffff;
+--text: #1e293b;
+--text-light: #64748b;
+--radius: 16px;
+--shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+}
+body { font-family: 'Segoe UI','Roboto',system-ui,sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; margin: 0; padding: 20px; }
+.container { max-width: 850px; margin: 0 auto; }
+header { text-align: center; margin-bottom: 30px; padding: 30px; background: linear-gradient(135deg, var(--violet), var(--primary)); color: white; border-radius: var(--radius); box-shadow: var(--shadow); }
+header h1 { margin: 0; font-size: 2.1em; }
+header p { margin: 8px 0 0; opacity: 0.95; font-size: 1.05em; }
+.card { background: var(--card-bg); border-radius: var(--radius); padding: 30px; margin-bottom: 25px; box-shadow: var(--shadow); }
+h2 { color: var(--primary); border-bottom: 3px solid var(--accent); padding-bottom: 10px; display: inline-block; margin-top: 0; }
+h3 { color: var(--secondary); margin-top: 25px; }
+table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; border-radius: 8px; overflow: hidden; }
+th, td { border: 1px solid #e2e8f0; padding: 12px 14px; text-align: left; }
+th { background: #f1f5f9; color: var(--primary); font-weight: 600; }
+.rule-box { background: #eff6ff; border-left: 5px solid var(--primary); padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0; }
+.formula { font-size: 1.25em; font-weight: bold; color: var(--secondary); text-align: center; background: #fef2f2; padding: 15px; border-radius: 8px; margin: 15px 0; border: 2px dashed var(--secondary); }
+.svg-container { text-align: center; margin: 25px 0; background: #f8fafc; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0; }
+.svg-container svg { max-width: 100%; height: auto; }
+.sol-svg { text-align: center; margin: 0 0 14px; }
+.sol-svg svg { max-width: 100%; height: auto; background: #fcfdff; border: 1px dashed #cbd5e1; border-radius: 10px; padding: 6px; }
+details { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin: 15px 0; overflow: hidden; }
+summary { padding: 15px 20px; cursor: pointer; font-weight: bold; color: var(--primary); background: #eff6ff; list-style: none; display: flex; align-items: center; gap: 10px; font-size: 1.05em; }
+summary::-webkit-details-marker { display: none; }
+summary::before { content: '🔍'; font-size: 1.2em; }
+details[open] summary::before { content: '💡'; }
+details[open] summary { border-bottom: 1px solid #e2e8f0; }
+.solution-content { padding: 20px; background: white; }
+.solution-step { margin-bottom: 12px; padding-left: 15px; border-left: 3px solid var(--success); }
+.level-badge { display: inline-block; padding: 5px 14px; border-radius: 20px; font-size: 0.85em; font-weight: bold; color: white; margin: 15px 0 10px; }
+.easy { background: var(--success); }
+.medium { background: var(--warning); color: #1e293b; }
+.hard { background: var(--secondary); }
+.extra-badge { background: var(--violet); }
+.practice-box { background: linear-gradient(135deg, #fffbeb, #fef3c7); border: 2px solid var(--warning); }
+.teacher-note { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 20px; margin-top: 30px; }
+.summary-box { background: #eff6ff; border: 2px solid var(--primary); border-radius: 12px; padding: 20px; }
+@media (max-width: 600px) { body { padding: 10px; } header h1 { font-size: 1.5em; } .card { padding: 20px; } th, td { padding: 8px; font-size: 0.92em; } }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<h1>🔺 Признаки подобия треугольников</h1>
+<p>Геометрия 8 класс • Глава VIII, §2, пункты 66–68 • Три признака подобия и их применения</p>
+</header>
+
+<!-- ================= БЛОК 1: ИЗУЧЕНИЕ ================= -->
+<section class="card">
+<h2>🧠 Блок 1. Изучение нового материала</h2>
+<h3>🌍 Разминка: как проверить подобие без измерений всех сторон?</h3>
+<p>В прошлом уроке мы узнали, что два треугольника подобны, если у них равны все три угла и пропорциональны все три стороны. Но проверять шесть равенств — долго! А что, если достаточно двух углов? Или двух сторон и угла между ними? Сегодня докажем три «коротких пути» к подобию — они работают как признаки равенства треугольников, только для подобия! 🗺️</p>
+
+<h3>📖 Ключевые термины</h3>
+<table>
+<tr><th>Термин</th><th>Определение</th></tr>
+<tr><td><strong>Подобные треугольники</strong></td><td>Треугольники, у которых соответственные углы равны, а соответственные стороны пропорциональны.</td></tr>
+<tr><td><strong>Сходственные стороны</strong></td><td>Стороны, лежащие напротив равных углов.</td></tr>
+<tr><td><strong>Коэффициент подобия k</strong></td><td>Отношение сходственных сторон подобных треугольников.</td></tr>
+<tr><td><strong>Признак подобия</strong></td><td>Достаточное условие, по которому можно утверждать, что треугольники подобны (не проверяя все шесть равенств).</td></tr>
+</table>
+
+<h2 style="margin-top:40px;">🔺 Признак 1: по двум углам (пункт 66)</h2>
+<div class="rule-box">
+<h3>🌟 Первый признак подобия</h3>
+<div class="formula">Если два угла одного треугольника соответственно равны двум углам другого, то такие треугольники подобны.</div>
+</div>
+
+<div class="svg-container">
+<h3>🔎 Доказательство первого признака</h3>
+<svg viewBox="0 0 480 280" width="480" height="280">
+<!-- Треугольник ABC -->
+<polygon points="40,240 200,240 120,80" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/>
+<!-- Вспомогательный треугольник AB₂C₂ (внутри ABC) -->
+<polygon points="40,240 120,240 80,160" fill="#fef3c7" stroke="#f59e0b" stroke-width="2.5"/>
+<line x1="80" y1="160" x2="120" y2="240" stroke="#f59e0b" stroke-width="2.5"/>
+<!-- Параллельность B₂C₂ ∥ BC -->
+<line x1="80" y1="160" x2="120" y2="240" stroke="#dc2626" stroke-width="2" stroke-dasharray="5,4"/>
+<!-- Дуги равных углов -->
+<!-- Угол A: стороны AB (вправо) и AC (вверх-вправо) -->
+<path d="M66,240 A26,26 0 0 0 52.6,217.2" fill="none" stroke="#dc2626" stroke-width="2"/>
+<path d="M53,240 A13,13 0 0 0 46.3,228.6" fill="none" stroke="#dc2626" stroke-width="2"/>
+<!-- Угол B: стороны BA (влево) и BC (вверх-влево) -->
+<path d="M174,240 A26,26 0 0 0 187.4,217.2" fill="none" stroke="#16a34a" stroke-width="2"/>
+<path d="M107,240 A26,26 0 0 0 93.6,217.2" fill="none" stroke="#16a34a" stroke-width="2"/>
+<!-- Подписи -->
+<text x="24" y="258" font-family="sans-serif" font-size="16" font-weight="bold">A</text>
+<text x="204" y="258" font-family="sans-serif" font-size="16" font-weight="bold">B</text>
+<text x="114" y="72" font-family="sans-serif" font-size="16" font-weight="bold">C</text>
+<text x="112" y="258" font-family="sans-serif" font-size="14" font-weight="bold" fill="#f59e0b">B₂</text>
+<text x="64" y="158" font-family="sans-serif" font-size="14" font-weight="bold" fill="#f59e0b">C₂</text>
+<!-- Пояснение справа -->
+<text x="240" y="50" font-family="sans-serif" font-size="13" fill="#1e293b" font-weight="bold">Дано: ∠A = ∠A₁, ∠B = ∠B₁</text>
+<text x="240" y="80" font-family="sans-serif" font-size="13" fill="#1e293b" font-weight="bold">Построение:</text>
+<text x="240" y="100" font-family="sans-serif" font-size="13" fill="#1e293b">Отложим AB₂ = A₁B₁ на AB</text>
+<text x="240" y="120" font-family="sans-serif" font-size="13" fill="#1e293b">Проведём B₂C₂ ∥ BC</text>
+<text x="240" y="150" font-family="sans-serif" font-size="13" fill="#1e293b" font-weight="bold">△AB₂C₂ = △A₁B₁C₁</text>
+<text x="240" y="170" font-family="sans-serif" font-size="13" fill="#1e293b">(по стороне и двум углам)</text>
+<text x="240" y="200" font-family="sans-serif" font-size="13" fill="#1e293b" font-weight="bold">△AB₂C₂ ~ △ABC</text>
+<text x="240" y="220" font-family="sans-serif" font-size="13" fill="#1e293b">(по свойству параллельных)</text>
+<text x="240" y="250" font-family="sans-serif" font-size="14" fill="#dc2626" font-weight="bold">Значит △A₁B₁C₁ ~ △ABC ✅</text>
+</svg>
+<p><em>Строим внутри △ABC треугольник, равный △A₁B₁C₁. Параллельная прямая даёт пропорциональность сторон → подобие.</em></p>
+</div>
+
+<h2 style="margin-top:40px;">🔺 Признак 2: по двум сторонам и углу между ними (пункт 67)</h2>
+<div class="rule-box" style="background:#f0fdf4; border-left-color: var(--success);">
+<h3>🌟 Второй признак подобия</h3>
+<div class="formula" style="background:#f0fdf4; border-color: var(--success); color: var(--success);">Если две стороны одного треугольника пропорциональны двум сторонам другого, и углы между этими сторонами равны, то такие треугольники подобны.</div>
+<p>Формулой: если AB/A₁B₁ = AC/A₁C₁ и ∠A = ∠A₁, то △ABC ~ △A₁B₁C₁.</p>
+</div>
+
+<div class="svg-container">
+<h3>🔎 Идея доказательства второго признака</h3>
+<svg viewBox="0 0 480 260" width="480" height="260">
+<!-- Треугольник ABC -->
+<polygon points="40,220 200,220 120,60" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/>
+<!-- Вспомогательный треугольник AB₂C₂ -->
+<polygon points="40,220 100,220 70,160" fill="#fef3c7" stroke="#f59e0b" stroke-width="2.5"/>
+<line x1="70" y1="160" x2="100" y2="220" stroke="#dc2626" stroke-width="2" stroke-dasharray="5,4"/>
+<!-- Дуги равных углов -->
+<path d="M66,220 A26,26 0 0 0 52.6,197.2" fill="none" stroke="#dc2626" stroke-width="2"/>
+<path d="M53,220 A13,13 0 0 0 46.3,208.6" fill="none" stroke="#dc2626" stroke-width="2"/>
+<!-- Подписи -->
+<text x="24" y="238" font-family="sans-serif" font-size="16" font-weight="bold">A</text>
+<text x="204" y="238" font-family="sans-serif" font-size="16" font-weight="bold">B</text>
+<text x="114" y="52" font-family="sans-serif" font-size="16" font-weight="bold">C</text>
+<text x="96" y="238" font-family="sans-serif" font-size="14" font-weight="bold" fill="#f59e0b">B₂</text>
+<text x="54" y="158" font-family="sans-serif" font-size="14" font-weight="bold" fill="#f59e0b">C₂</text>
+<!-- Пояснение -->
+<text x="240" y="50" font-family="sans-serif" font-size="13" fill="#1e293b" font-weight="bold">Дано: AB/A₁B₁ = AC/A₁C₁</text>
+<text x="240" y="72" font-family="sans-serif" font-size="13" fill="#1e293b">и ∠A = ∠A₁</text>
+<text x="240" y="102" font-family="sans-serif" font-size="13" fill="#1e293b" font-weight="bold">Построение:</text>
+<text x="240" y="122" font-family="sans-serif" font-size="13" fill="#1e293b">Отложим AB₂ = A₁B₁, AC₂ = A₁C₁</text>
+<text x="240" y="152" font-family="sans-serif" font-size="13" fill="#1e293b" font-weight="bold">△AB₂C₂ = △A₁B₁C₁</text>
+<text x="240" y="172" font-family="sans-serif" font-size="13" fill="#1e293b">(по двум сторонам и углу)</text>
+<text x="240" y="202" font-family="sans-serif" font-size="13" fill="#1e293b" font-weight="bold">B₂C₂ ∥ BC</text>
+<text x="240" y="222" font-family="sans-serif" font-size="13" fill="#1e293b">(по обратному утверждению теоремы Фалеса)</text>
+<text x="240" y="248" font-family="sans-serif" font-size="14" fill="#dc2626" font-weight="bold">Значит △A₁B₁C₁ ~ △ABC ✅</text>
+</svg>
+</div>
+
+<h2 style="margin-top:40px;">🔺 Признак 3: по трём сторонам (пункт 68)</h2>
+<div class="rule-box" style="background:#fffbeb; border-left-color: var(--warning);">
+<h3>🌟 Третий признак подобия</h3>
+<div class="formula" style="background:#fffbeb; border-color: var(--warning); color:#92400e;">Если три стороны одного треугольника пропорциональны трём сторонам другого, то такие треугольники подобны.</div>
+<p>Формулой: если AB/A₁B₁ = BC/B₁C₁ = CA/C₁A₁, то △ABC ~ △A₁B₁C₁.</p>
+</div>
+
+<div class="svg-container">
+<h3>🔎 Идея доказательства третьего признака</h3>
+<svg viewBox="0 0 480 260" width="480" height="260">
+<!-- Треугольник ABC -->
+<polygon points="40,220 220,220 130,60" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/>
+<!-- Вспомогательный треугольник AB₂C₂ -->
+<polygon points="40,220 100,220 70,160" fill="#fef3c7" stroke="#f59e0b" stroke-width="2.5"/>
+<line x1="70" y1="160" x2="100" y2="220" stroke="#dc2626" stroke-width="2" stroke-dasharray="5,4"/>
+<!-- Подписи -->
+<text x="24" y="238" font-family="sans-serif" font-size="16" font-weight="bold">A</text>
+<text x="224" y="238" font-family="sans-serif" font-size="16" font-weight="bold">B</text>
+<text x="124" y="52" font-family="sans-serif" font-size="16" font-weight="bold">C</text>
+<text x="96" y="238" font-family="sans-serif" font-size="14" font-weight="bold" fill="#f59e0b">B₂</text>
+<text x="54" y="158" font-family="sans-serif" font-size="14" font-weight="bold" fill="#f59e0b">C₂</text>
+<!-- Пояснение -->
+<text x="260" y="50" font-family="sans-serif" font-size="13" fill="#1e293b" font-weight="bold">Дано: AB/A₁B₁ = BC/B₁C₁ = CA/C₁A₁</text>
+<text x="260" y="80" font-family="sans-serif" font-size="13" fill="#1e293b" font-weight="bold">Построение:</text>
+<text x="260" y="100" font-family="sans-serif" font-size="13" fill="#1e293b">Отложим AB₂ = A₁B₁, AC₂ = A₁C₁</text>
+<text x="260" y="130" font-family="sans-serif" font-size="13" fill="#1e293b" font-weight="bold">△AB₂C₂ = △A₁B₁C₁ (по 3 сторонам)</text>
+<text x="260" y="160" font-family="sans-serif" font-size="13" fill="#1e293b">Тогда AB₂/AB = AC₂/AC = k</text>
+<text x="260" y="180" font-family="sans-serif" font-size="13" fill="#1e293b">и по условию B₂C₂/BC = k тоже</text>
+<text x="260" y="210" font-family="sans-serif" font-size="13" fill="#1e293b" font-weight="bold">Значит B₂C₂ ∥ BC</text>
+<text x="260" y="230" font-family="sans-serif" font-size="13" fill="#1e293b">(по признаку параллельности)</text>
+<text x="260" y="254" font-family="sans-serif" font-size="14" fill="#dc2626" font-weight="bold">Значит △A₁B₁C₁ ~ △ABC ✅</text>
+</svg>
+</div>
+
+<div class="rule-box" style="background:#f0fdf4; border-left-color: var(--success);">
+<h3>💡 Сравнение признаков подобия и равенства</h3>
+<table>
+<tr><th>Подобие</th><th>Равенство (напоминание)</th></tr>
+<tr><td>1 признак: 2 угла</td><td>1 признак: сторона и 2 угла</td></tr>
+<tr><td>2 признак: 2 стороны + угол между</td><td>2 признак: 2 стороны + угол между</td></tr>
+<tr><td>3 признак: 3 стороны</td><td>3 признак: 3 стороны</td></tr>
+</table>
+<p><em>Заметили? Признаки похожи, но для подобия «мягче»: не нужно равенства сторон, достаточно пропорциональности!</em></p>
+</div>
+</section>
+
+<!-- ================= БЛОК 2: ЗАКРЕПЛЕНИЕ ================= -->
+<section class="card">
+<h2>🛠 Блок 2. Закрепление (задачи из учебника)</h2>
+<p>Сначала реши задачу в тетради, потом открой решение и проверь каждый шаг по чертежу! ✍️</p>
+
+<span class="level-badge easy">Базовый уровень</span>
+<h3>Задание 1 (№657)</h3>
+<p>По данным рисунка найдите x и y.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="sol-svg">
+<svg viewBox="0 0 320 200" width="320" height="200">
+<polygon points="40,170 200,170 120,40" fill="#f8fafc" stroke="#1e293b" stroke-width="2"/>
+<line x1="80" y1="105" x2="160" y2="105" stroke="#dc2626" stroke-width="2" stroke-dasharray="6,4"/>
+<path d="M66,170 A26,26 0 0 0 52.6,147.2" fill="none" stroke="#dc2626" stroke-width="2"/>
+<path d="M93,105 A26,26 0 0 0 79.6,82.2" fill="none" stroke="#dc2626" stroke-width="2"/>
+<path d="M174,170 A26,26 0 0 0 187.4,147.2" fill="none" stroke="#16a34a" stroke-width="2"/>
+<path d="M147,105 A26,26 0 0 0 160.4,82.2" fill="none" stroke="#16a34a" stroke-width="2"/>
+<text x="110" y="188" font-family="sans-serif" font-size="13" fill="#2563eb" font-weight="bold">8</text>
+<text x="60" y="140" font-family="sans-serif" font-size="13" fill="#2563eb" font-weight="bold">6</text>
+<text x="130" y="125" font-family="sans-serif" font-size="13" fill="#dc2626" font-weight="bold">x</text>
+<text x="170" y="140" font-family="sans-serif" font-size="13" fill="#2563eb" font-weight="bold">y</text>
+<text x="24" y="188" font-family="sans-serif" font-size="15" font-weight="bold">A</text>
+<text x="204" y="188" font-family="sans-serif" font-size="15" font-weight="bold">B</text>
+<text x="114" y="34" font-family="sans-serif" font-size="15" font-weight="bold">C</text>
+<text x="64" y="100" font-family="sans-serif" font-size="14" font-weight="bold" fill="#dc2626">D</text>
+<text x="164" y="100" font-family="sans-serif" font-size="14" font-weight="bold" fill="#dc2626">E</text>
+</svg>
+</div>
+<div class="solution-step"><strong>Шаг 1:</strong> На рисунке DE ∥ AB (по меткам параллельности), значит △CDE ~ △CAB по первому признаку (∠C — общий, ∠CDE = ∠CAB как соответственные при параллельных).</div>
+<div class="solution-step"><strong>Шаг 2:</strong> Коэффициент подобия: k = CD/CA = 6/(6 + 8) = 6/14 = 3/7.</div>
+<div class="solution-step"><strong>Шаг 3:</strong> x = DE = AB · k. AB = 14 (по рисунку), значит x = 14 · 3/7 = <strong>6</strong>.</div>
+<div class="solution-step"><strong>Шаг 4:</strong> y = CE = CB · k. CB = 7 (по рисунку), значит y = 7 · 3/7 = <strong>3</strong>.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> x = 6, y = 3.</div>
+</div>
+</details>
+
+<span class="level-badge easy">Базовый уровень</span>
+<h3>Задание 2 (№666)</h3>
+<p>На одной из сторон данного угла A отложены отрезки AB = 5 см и AC = 16 см. На другой стороне того же угла отложены отрезки AD = 8 см и AF = 10 см. Подобны ли треугольники ACD и AFB?</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Шаг 1:</strong> В треугольниках ACD и AFB угол A — общий.</div>
+<div class="solution-step"><strong>Шаг 2:</strong> Проверяем пропорциональность сторон, прилежащих к углу A:<br>
+AC/AF = 16/10 = 8/5;<br>
+AD/AB = 8/5.</div>
+<div class="solution-step"><strong>Шаг 3:</strong> Отношения равны: AC/AF = AD/AB = 8/5, и углы между этими сторонами равны (∠A общий).</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> треугольники ACD и AFB подобны по второму признаку подобия. ✅</div>
+</div>
+</details>
+
+<span class="level-badge easy">Базовый уровень</span>
+<h3>Задание 3 (№667)</h3>
+<p>Подобны ли треугольники ABC и A₁B₁C₁, если: а) AB = 3 см, BC = 5 см, CA = 7 см, A₁B₁ = 4,5 см, B₁C₁ = 7,5 см, C₁A₁ = 10,5 см; б) AB = 1,7 см, BC = 3 см, CA = 4,2 см, A₁B₁ = 34 мм, B₁C₁ = 60 мм, C₁A₁ = 84 мм?</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>а)</strong> Проверяем пропорциональность сторон:<br>
+AB/A₁B₁ = 3/4,5 = 2/3;<br>
+BC/B₁C₁ = 5/7,5 = 2/3;<br>
+CA/C₁A₁ = 7/10,5 = 2/3.<br>
+Все три отношения равны → треугольники подобны по третьему признаку. ✅</div>
+<div class="solution-step"><strong>б)</strong> Приводим к одним единицам: 34 мм = 3,4 см; 60 мм = 6 см; 84 мм = 8,4 см.<br>
+AB/A₁B₁ = 1,7/3,4 = 1/2;<br>
+BC/B₁C₁ = 3/6 = 1/2;<br>
+CA/C₁A₁ = 4,2/8,4 = 1/2.<br>
+Все три отношения равны → треугольники подобны. ✅</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> а) подобны (k = 2/3); б) подобны (k = 1/2).</div>
+</div>
+</details>
+
+<span class="level-badge easy">Базовый уровень</span>
+<h3>Задание 4 (№668)</h3>
+<p>Докажите, что любые два равносторонних треугольника подобны.</p>
+<details>
+<summary>Показать доказательство</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Шаг 1:</strong> В равностороннем треугольнике все углы равны 60°. Значит у любых двух равносторонних треугольников три угла соответственно равны: ∠A = ∠A₁ = 60°, ∠B = ∠B₁ = 60°, ∠C = ∠C₁ = 60°.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><strong>Вывод:</strong> по первому признаку подобия (по двум углам — а тут даже по трём!) любые два равносторонних треугольника подобны. ✅</div>
+</div>
+</details>
+
+<span class="level-badge medium">Средний уровень</span>
+<h3>Задание 5 (№659)</h3>
+<p>Диагонали трапеции ABCD с основаниями AB и CD пересекаются в точке O. Найдите: а) AB, если OB = 4 см, OD = 10 см, DC = 25 см; б) AO и OD, если AB = a, DC = b.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="sol-svg">
+<svg viewBox="0 0 320 200" width="320" height="200">
+<polygon points="40,160 280,160 200,60 120,60" fill="#f8fafc" stroke="#1e293b" stroke-width="2"/>
+<line x1="40" y1="160" x2="200" y2="60" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="6,4"/>
+<line x1="280" y1="160" x2="120" y2="60" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="6,4"/>
+<line x1="40" y1="160" x2="280" y2="160" stroke="#2563eb" stroke-width="3"/>
+<line x1="120" y1="60" x2="200" y2="60" stroke="#2563eb" stroke-width="3"/>
+<circle cx="160" cy="110" r="4" fill="#dc2626"/>
+<path d="M66,160 A26,26 0 0 0 52.6,137.2" fill="none" stroke="#7c3aed" stroke-width="2"/>
+<path d="M254,160 A26,26 0 0 0 267.4,137.2" fill="none" stroke="#7c3aed" stroke-width="2"/>
+<path d="M133,60 A26,26 0 0 0 146.4,82.8" fill="none" stroke="#7c3aed" stroke-width="2"/>
+<path d="M187,60 A26,26 0 0 0 173.6,82.8" fill="none" stroke="#7c3aed" stroke-width="2"/>
+<text x="150" y="180" font-family="sans-serif" font-size="14" fill="#2563eb" font-weight="bold">AB</text>
+<text x="150" y="52" font-family="sans-serif" font-size="14" fill="#2563eb" font-weight="bold">DC</text>
+<text x="24" y="178" font-family="sans-serif" font-size="15" font-weight="bold">A</text>
+<text x="284" y="178" font-family="sans-serif" font-size="15" font-weight="bold">B</text>
+<text x="204" y="52" font-family="sans-serif" font-size="15" font-weight="bold">C</text>
+<text x="104" y="52" font-family="sans-serif" font-size="15" font-weight="bold">D</text>
+<text x="168" y="106" font-family="sans-serif" font-size="15" font-weight="bold" fill="#dc2626">O</text>
+</svg>
+</div>
+<div class="solution-step"><strong>Шаг 1:</strong> △AOB ~ △COD по первому признаку: ∠AOB = ∠COD (вертикальные), ∠OAB = ∠OCD (накрест лежащие при AB ∥ CD).</div>
+<div class="solution-step"><strong>Шаг 2 (а):</strong> Коэффициент подобия k = OB/OD = 4/10 = 2/5. Тогда AB/DC = 2/5 → AB = DC · 2/5 = 25 · 2/5 = <strong>10 см</strong>.</div>
+<div class="solution-step"><strong>Шаг 3 (б):</strong> k = AB/DC = a/b. Тогда AO/OC = BO/OD = a/b. Пусть AO = ax, OC = bx; BO = ay, OD = by. Отношение AO : OD = ax : by = a : b · (x/y). Но x/y = AO/OC = a/b... Используем свойство: AO/OC = a/b и AO + OC = AC. Тогда AO = AC · a/(a+b). Аналогично OD = BD · b/(a+b).</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> а) AB = 10 см; б) AO = AC · a/(a+b), OD = BD · b/(a+b).</div>
+</div>
+</details>
+
+<span class="level-badge medium">Средний уровень</span>
+<h3>Задание 6 (№660)</h3>
+<p>Подобны ли равнобедренные треугольники, если они имеют: а) по равному острому углу; б) по равному тупому углу; в) по прямому углу?</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>а)</strong> Пусть острый угол при основании равен α. Тогда второй угол при основании тоже α, а угол при вершине 180° − 2α. У обоих треугольников три угла соответственно равны → <strong>подобны</strong> по первому признаку. ✅</div>
+<div class="solution-step"><strong>б)</strong> Тупой угол в равнобедренном треугольнике может быть только при вершине. Значит углы при основании равны (180° − тупой)/2 — они одинаковы у обоих треугольников → <strong>подобны</strong>. ✅</div>
+<div class="solution-step"><strong>в)</strong> Прямой угол может быть только при вершине (иначе два прямых угла — сумма превысит 180°). Значит углы при основании по 45° → <strong>подобны</strong>. ✅</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> во всех трёх случаях — подобны.</div>
+</div>
+</details>
+
+<span class="level-badge medium">Средний уровень</span>
+<h3>Задание 7 (№661)</h3>
+<p>Основания трапеции равны 15 см и 8 см. Боковые стороны, равные 3,6 см и 3,9 см, продолжены до пересечения в точке M. Найдите расстояния от точки M до концов меньшего основания.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="sol-svg">
+<svg viewBox="0 0 320 240" width="320" height="240">
+<polygon points="40,200 280,200 200,100 120,100" fill="#f8fafc" stroke="#1e293b" stroke-width="2"/>
+<line x1="40" y1="200" x2="160" y2="40" stroke="#dc2626" stroke-width="2"/>
+<line x1="280" y1="200" x2="160" y2="40" stroke="#dc2626" stroke-width="2"/>
+<circle cx="160" cy="40" r="4" fill="#dc2626"/>
+<text x="24" y="218" font-family="sans-serif" font-size="15" font-weight="bold">A</text>
+<text x="284" y="218" font-family="sans-serif" font-size="15" font-weight="bold">B</text>
+<text x="204" y="96" font-family="sans-serif" font-size="15" font-weight="bold">C</text>
+<text x="104" y="96" font-family="sans-serif" font-size="15" font-weight="bold">D</text>
+<text x="166" y="34" font-family="sans-serif" font-size="15" font-weight="bold" fill="#dc2626">M</text>
+<text x="150" y="220" font-family="sans-serif" font-size="14" fill="#2563eb" font-weight="bold">15</text>
+<text x="150" y="92" font-family="sans-serif" font-size="14" fill="#2563eb" font-weight="bold">8</text>
+</svg>
+</div>
+<div class="solution-step"><strong>Шаг 1:</strong> △MAB ~ △MDC по первому признаку (∠M — общий, ∠MAB = ∠MDC как соответственные при DC ∥ AB).</div>
+<div class="solution-step"><strong>Шаг 2:</strong> Коэффициент подобия: k = DC/AB = 8/15.</div>
+<div class="solution-step"><strong>Шаг 3:</strong> Пусть MD = x, MC = y. Тогда MA = MD + DA = x + 3,6 (или 3,9 — нужно понять, какая боковая сторона к какому основанию); MB = MC + CB.</div>
+<div class="solution-step"><strong>Шаг 4:</strong> Из подобия: MD/MA = MC/MB = DC/AB = 8/15. Пусть боковые стороны: AD = 3,6, BC = 3,9 (или наоборот — проверим оба случая).</div>
+<div class="solution-step"><strong>Шаг 5:</strong> x/(x + 3,6) = 8/15 → 15x = 8x + 28,8 → 7x = 28,8 → x = 4,11... Не целое. Проверим другой вариант: AD = 3,9, BC = 3,6. Тогда x/(x + 3,9) = 8/15 → 15x = 8x + 31,2 → 7x = 31,2 → x = 31,2/7 ≈ 4,46. Тоже не целое.</div>
+<div class="solution-step"><strong>Шаг 6:</strong> Перечитываем условие: «расстояния от M до концов меньшего основания» — это MD и MC. Из подобия: MD/MC = AD/BC. Но AD и BC — боковые стороны, их отношение = 3,6/3,9 = 12/13 (или 13/12).</div>
+<div class="solution-step"><strong>Шаг 7:</strong> Пусть MD = 12t, MC = 13t. Тогда MA = 12t + AD, MB = 13t + BC. Из подобия: MA/MD = 15/8 → (12t + AD)/(12t) = 15/8 → 1 + AD/(12t) = 15/8 → AD/(12t) = 7/8 → AD = 10,5t.</div>
+<div class="solution-step"><strong>Шаг 8:</strong> Аналогично: MB/MC = 15/8 → (13t + BC)/(13t) = 15/8 → BC = 9,1t.</div>
+<div class="solution-step"><strong>Шаг 9:</strong> Но AD + BC = 3,6 + 3,9 = 7,5 (по условию — это боковые стороны, а не их сумма). Значит AD и BC — это конкретные боковые стороны. Проверим: если AD = 3,6 = 10,5t → t = 3,6/10,5 = 12/35. Тогда BC = 9,1 · 12/35 = 109,2/35 ≈ 3,12 — не совпадает с 3,9.</div>
+<div class="solution-step"><strong>Шаг 10 (правильный путь):</strong> Пусть AD = 3,6, BC = 3,9. Тогда из подобия: MA/MD = AB/DC = 15/8 → MA = 15·MD/8. Но MA = MD + DA = MD + 3,6. Значит MD + 3,6 = 15·MD/8 → 3,6 = 15·MD/8 − MD = 7·MD/8 → MD = 3,6 · 8/7 = 28,8/7 ≈ 4,11 см.</div>
+<div class="solution-step"><strong>Шаг 11:</strong> Аналогично: MB/MC = 15/8, MB = MC + 3,9 → MC + 3,9 = 15·MC/8 → 3,9 = 7·MC/8 → MC = 3,9 · 8/7 = 31,2/7 ≈ 4,46 см.</div>
+<div class="solution-step"><strong>Шаг 12 (альтернатива):</strong> Если AD = 3,9, BC = 3,6: MD = 3,9 · 8/7 = 31,2/7; MC = 3,6 · 8/7 = 28,8/7.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> расстояния от M до концов меньшего основания равны <strong>28,8/7 см ≈ 4,11 см</strong> и <strong>31,2/7 см ≈ 4,46 см</strong> (в зависимости от того, какая боковая сторона к какому основанию прилегает).</div>
+</div>
+</details>
+
+<span class="level-badge medium">Средний уровень</span>
+<h3>Задание 8 (№663)</h3>
+<p>Стороны угла A пересечены параллельными прямыми AB₁ и CD. Докажите, что отрезки OA и AC пропорциональны отрезкам OB и BD.</p>
+<details>
+<summary>Показать доказательство</summary>
+<div class="solution-content">
+<div class="sol-svg">
+<svg viewBox="0 0 320 220" width="320" height="220">
+<line x1="40" y1="200" x2="160" y2="40" stroke="#1e293b" stroke-width="2"/>
+<line x1="40" y1="200" x2="280" y2="200" stroke="#1e293b" stroke-width="2"/>
+<line x1="100" y1="120" x2="220" y2="120" stroke="#dc2626" stroke-width="2.5"/>
+<line x1="160" y1="40" x2="280" y2="40" stroke="#dc2626" stroke-width="2.5"/>
+<circle cx="40" cy="200" r="4" fill="#dc2626"/>
+<circle cx="100" cy="120" r="4" fill="#dc2626"/>
+<circle cx="160" cy="40" r="4" fill="#dc2626"/>
+<circle cx="220" cy="120" r="4" fill="#dc2626"/>
+<circle cx="280" cy="40" r="4" fill="#dc2626"/>
+<text x="24" y="218" font-family="sans-serif" font-size="15" font-weight="bold">A</text>
+<text x="84" y="114" font-family="sans-serif" font-size="15" font-weight="bold">B</text>
+<text x="154" y="34" font-family="sans-serif" font-size="15" font-weight="bold">C</text>
+<text x="224" y="114" font-family="sans-serif" font-size="15" font-weight="bold">B₁</text>
+<text x="284" y="34" font-family="sans-serif" font-size="15" font-weight="bold">C₁</text>
+<text x="48" y="164" font-family="sans-serif" font-size="13" fill="#2563eb" font-weight="bold">OA</text>
+<text x="124" y="84" font-family="sans-serif" font-size="13" fill="#2563eb" font-weight="bold">AC</text>
+<text x="140" y="218" font-family="sans-serif" font-size="13" fill="#2563eb" font-weight="bold">OB</text>
+<text x="240" y="138" font-family="sans-serif" font-size="13" fill="#2563eb" font-weight="bold">BB₁</text>
+</svg>
+</div>
+<div class="solution-step"><strong>Шаг 1:</strong> △OAB ~ △OCD по первому признаку (∠O — общий, ∠OAB = ∠OCD как соответственные при AB₁ ∥ CD).</div>
+<div class="solution-step"><strong>Шаг 2:</strong> Из подобия: OA/OC = OB/OD.</div>
+<div class="solution-step"><strong>Шаг 3:</strong> OC = OA + AC, OD = OB + BD. Подставим: OA/(OA + AC) = OB/(OB + BD).</div>
+<div class="solution-step"><strong>Шаг 4:</strong> Преобразуем: OA · (OB + BD) = OB · (OA + AC) → OA·OB + OA·BD = OB·OA + OB·AC → OA·BD = OB·AC → OA/OB = AC/BD.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><strong>Вывод:</strong> отрезки OA и AC пропорциональны отрезкам OB и BD. ✅</div>
+</div>
+</details>
+
+<span class="level-badge medium">Средний уровень</span>
+<h3>Задание 9 (№664)</h3>
+<p>Стороны угла A пересечены параллельными прямыми BC и DE, причём точки B и D лежат на одной стороне угла, а C и E — на другой. Найдите: а) AC, если CE = 10 см, AD = 22 см, BD = 8 см; б) BD и DE, если AB = 10 см, AC = 8 см, BC = 4 см, CE = 4 см.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="sol-svg">
+<svg viewBox="0 0 320 220" width="320" height="220">
+<line x1="40" y1="200" x2="160" y2="40" stroke="#1e293b" stroke-width="2"/>
+<line x1="40" y1="200" x2="280" y2="200" stroke="#1e293b" stroke-width="2"/>
+<line x1="100" y1="120" x2="220" y2="120" stroke="#dc2626" stroke-width="2.5"/>
+<line x1="130" y1="80" x2="250" y2="80" stroke="#dc2626" stroke-width="2.5"/>
+<circle cx="40" cy="200" r="4" fill="#dc2626"/>
+<circle cx="100" cy="120" r="4" fill="#dc2626"/>
+<circle cx="130" cy="80" r="4" fill="#dc2626"/>
+<circle cx="220" cy="120" r="4" fill="#dc2626"/>
+<circle cx="250" cy="80" r="4" fill="#dc2626"/>
+<text x="24" y="218" font-family="sans-serif" font-size="15" font-weight="bold">A</text>
+<text x="84" y="114" font-family="sans-serif" font-size="15" font-weight="bold">B</text>
+<text x="114" y="74" font-family="sans-serif" font-size="15" font-weight="bold">D</text>
+<text x="224" y="114" font-family="sans-serif" font-size="15" font-weight="bold">C</text>
+<text x="254" y="74" font-family="sans-serif" font-size="15" font-weight="bold">E</text>
+</svg>
+</div>
+<div class="solution-step"><strong>Шаг 1:</strong> △ABC ~ △ADE по первому признаку (∠A общий, ∠ABC = ∠ADE как соответственные при BC ∥ DE).</div>
+<div class="solution-step"><strong>а)</strong> AD = 22, BD = 8 → AB = AD − BD = 22 − 8 = 14. Коэффициент подобия k = AB/AD = 14/22 = 7/11. Тогда AC/AE = 7/11. AE = AC + CE = AC + 10. Значит AC/(AC + 10) = 7/11 → 11·AC = 7·AC + 70 → 4·AC = 70 → AC = <strong>17,5 см</strong>.</div>
+<div class="solution-step"><strong>б)</strong> AB = 10, AC = 8, BC = 4, CE = 4 → AE = AC + CE = 8 + 4 = 12. Коэффициент подобия k = AC/AE = 8/12 = 2/3. Тогда AB/AD = 2/3 → AD = 10 · 3/2 = 15 → BD = AD − AB = 15 − 10 = <strong>5 см</strong>. И BC/DE = 2/3 → DE = 4 · 3/2 = <strong>6 см</strong>.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> а) AC = 17,5 см; б) BD = 5 см, DE = 6 см.</div>
+</div>
+</details>
+
+<span class="level-badge hard">Продвинутый уровень</span>
+<h3>Задание 10 (№669)</h3>
+<p>Найдите основание равнобедренного треугольника, если центр вписанной в него окружности делит высоту, проведённую к основанию, в отношении 12:5, считая от вершины, а боковая сторона равна 60 см.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="sol-svg">
+<svg viewBox="0 0 280 240" width="280" height="240">
+<polygon points="40,200 240,200 140,40" fill="#f8fafc" stroke="#1e293b" stroke-width="2"/>
+<line x1="140" y1="40" x2="140" y2="200" stroke="#dc2626" stroke-width="2" stroke-dasharray="6,4"/>
+<circle cx="140" cy="160" r="4" fill="#dc2626"/>
+<line x1="140" y1="160" x2="100" y2="200" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="5,4"/>
+<line x1="140" y1="160" x2="180" y2="200" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="5,4"/>
+<path d="M140" y1="148" x2="152" y2="148" fill="none" stroke="#dc2626" stroke-width="2"/>
+<text x="124" y="34" font-family="sans-serif" font-size="15" font-weight="bold">A</text>
+<text x="24" y="218" font-family="sans-serif" font-size="15" font-weight="bold">B</text>
+<text x="244" y="218" font-family="sans-serif" font-size="15" font-weight="bold">C</text>
+<text x="148" y="156" font-family="sans-serif" font-size="15" font-weight="bold" fill="#dc2626">O</text>
+<text x="144" y="100" font-family="sans-serif" font-size="13" fill="#2563eb" font-weight="bold">12x</text>
+<text x="144" y="190" font-family="sans-serif" font-size="13" fill="#2563eb" font-weight="bold">5x</text>
+<text x="80" y="130" font-family="sans-serif" font-size="13" fill="#2563eb" font-weight="bold">60</text>
+<text x="190" y="130" font-family="sans-serif" font-size="13" fill="#2563eb" font-weight="bold">60</text>
+</svg>
+</div>
+<div class="solution-step"><strong>Шаг 1:</strong> Пусть высота AH = 17x (12x + 5x). Центр вписанной окружности O лежит на высоте, OO₁ = 5x — это радиус вписанной окружности r = 5x (так как O равноудалён от основания BC).</div>
+<div class="solution-step"><strong>Шаг 2:</strong> Рассмотрим △ABH: AH — высота, BH = BC/2 (треугольник равнобедренный). По теореме Пифагора: AB² = AH² + BH² → 60² = (17x)² + BH².</div>
+<div class="solution-step"><strong>Шаг 3:</strong> Площадь треугольника: S = ½ · BC · AH = ½ · 2·BH · 17x = 17x · BH.</div>
+<div class="solution-step"><strong>Шаг 4:</strong> Полупериметр: p = (60 + 60 + 2·BH)/2 = 60 + BH.</div>
+<div class="solution-step"><strong>Шаг 5:</strong> Формула радиуса: r = S/p → 5x = 17x · BH / (60 + BH) → 5(60 + BH) = 17·BH → 300 + 5·BH = 17·BH → 300 = 12·BH → BH = 25.</div>
+<div class="solution-step"><strong>Шаг 6:</strong> Основание BC = 2·BH = <strong>50 см</strong>.</div>
+<div class="solution-step"><strong>Шаг 7 (проверка):</strong> AH² = 60² − 25² = 3600 − 625 = 2975 → AH = √2975 = 5√119. Тогда 17x = 5√119 → x = 5√119/17. Радиус r = 5x = 25√119/17 ≈ 16,02. Проверим: S = 25 · 5√119 = 125√119; p = 60 + 25 = 85; r = 125√119/85 = 25√119/17 ✅.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> основание равно <strong>50 см</strong>.</div>
+</div>
+</details>
+
+<span class="level-badge hard">Продвинутый уровень</span>
+<h3>Задание 11 (№670)</h3>
+<p>В треугольнике ABC сторона AB равна a, а высота CH равна h. Найдите сторону квадрата, вписанного в треугольник ABC так, что две соседние вершины квадрата лежат на стороне AB, а две другие — соответственно на сторонах AC и BC.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="sol-svg">
+<svg viewBox="0 0 320 220" width="320" height="220">
+<polygon points="40,200 280,200 160,40" fill="#f8fafc" stroke="#1e293b" stroke-width="2"/>
+<rect x="100" y="140" width="120" height="60" fill="#fef3c7" stroke="#f59e0b" stroke-width="2.5"/>
+<line x1="160" y1="40" x2="160" y2="200" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="6,4"/>
+<text x="24" y="218" font-family="sans-serif" font-size="15" font-weight="bold">A</text>
+<text x="284" y="218" font-family="sans-serif" font-size="15" font-weight="bold">B</text>
+<text x="154" y="34" font-family="sans-serif" font-size="15" font-weight="bold">C</text>
+<text x="90" y="136" font-family="sans-serif" font-size="14" font-weight="bold" fill="#b45309">P</text>
+<text x="224" y="136" font-family="sans-serif" font-size="14" font-weight="bold" fill="#b45309">Q</text>
+<text x="90" y="212" font-family="sans-serif" font-size="14" font-weight="bold" fill="#b45309">M</text>
+<text x="224" y="212" font-family="sans-serif" font-size="14" font-weight="bold" fill="#b45309">N</text>
+<text x="164" y="120" font-family="sans-serif" font-size="13" fill="#dc2626" font-weight="bold">x</text>
+<text x="164" y="180" font-family="sans-serif" font-size="13" fill="#dc2626" font-weight="bold">x</text>
+<text x="164" y="100" font-family="sans-serif" font-size="13" fill="#2563eb" font-weight="bold">h−x</text>
+<text x="150" y="218" font-family="sans-serif" font-size="13" fill="#2563eb" font-weight="bold">a</text>
+</svg>
+</div>
+<div class="solution-step"><strong>Шаг 1:</strong> Пусть сторона квадрата = x. Квадрат PMNQ: M, N на AB; P на AC, Q на BC.</div>
+<div class="solution-step"><strong>Шаг 2:</strong> △CPQ ~ △CAB по первому признаку (∠C — общий, PQ ∥ AB → ∠CPQ = ∠CAB как соответственные).</div>
+<div class="solution-step"><strong>Шаг 3:</strong> Коэффициент подобия: k = (h − x)/h (отношение высот △CPQ и △CAB).</div>
+<div class="solution-step"><strong>Шаг 4:</strong> PQ/AB = k → x/a = (h − x)/h → x·h = a·(h − x) → x·h = a·h − a·x → x·(h + a) = a·h.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> сторона квадрата x = <strong>a·h / (a + h)</strong>.</div>
+</div>
+</details>
+
+<span class="level-badge hard">Продвинутый уровень</span>
+<h3>Задание 12 (№662)</h3>
+<p>Точки M, N и P лежат соответственно на сторонах AB, BC и CA треугольника ABC, причём MN ∥ AC, NP ∥ AB. Найдите стороны четырёхугольника AMNP, если: а) AB = 10 см, AC = 15 см, PN : MN = 2 : 3; б) AM = AP, AB = a, AC = b.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="sol-svg">
+<svg viewBox="0 0 280 220" width="280" height="220">
+<polygon points="40,200 240,200 140,40" fill="#f8fafc" stroke="#1e293b" stroke-width="2"/>
+<line x1="100" y1="120" x2="190" y2="120" stroke="#dc2626" stroke-width="2"/>
+<line x1="100" y1="120" x2="140" y2="200" stroke="#dc2626" stroke-width="2"/>
+<line x1="140" y1="200" x2="190" y2="120" stroke="#dc2626" stroke-width="2"/>
+<circle cx="100" cy="120" r="4" fill="#dc2626"/>
+<circle cx="140" cy="200" r="4" fill="#dc2626"/>
+<circle cx="190" cy="120" r="4" fill="#dc2626"/>
+<text x="24" y="218" font-family="sans-serif" font-size="15" font-weight="bold">A</text>
+<text x="244" y="218" font-family="sans-serif" font-size="15" font-weight="bold">B</text>
+<text x="134" y="34" font-family="sans-serif" font-size="15" font-weight="bold">C</text>
+<text x="84" y="114" font-family="sans-serif" font-size="14" font-weight="bold" fill="#dc2626">M</text>
+<text x="134" y="218" font-family="sans-serif" font-size="14" font-weight="bold" fill="#dc2626">N</text>
+<text x="194" y="114" font-family="sans-serif" font-size="14" font-weight="bold" fill="#dc2626">P</text>
+</svg>
+</div>
+<div class="solution-step"><strong>Шаг 1:</strong> MN ∥ AC → △BMN ~ △BAC. NP ∥ AB → △NPC ~ △ABC.</div>
+<div class="solution-step"><strong>Шаг 2:</strong> Четырёхугольник AMNP — параллелограмм (MN ∥ AP, NP ∥ AM). Значит AM = NP и AP = MN.</div>
+<div class="solution-step"><strong>а)</strong> Пусть BM/BA = t. Тогда MN/AC = t → MN = 15t; BN/BC = t → NP/AC... Нет, △NPC ~ △ABC с коэффициентом (1−t): NP/AB = 1−t → NP = 10(1−t).</div>
+<div class="solution-step"><strong>Шаг 3:</strong> PN : MN = 2 : 3 → 10(1−t) : 15t = 2 : 3 → 30(1−t) = 30t → 1−t = t → t = 1/2.</div>
+<div class="solution-step"><strong>Шаг 4:</strong> Тогда MN = 15·1/2 = 7,5; NP = 10·1/2 = 5. Значит AM = NP = 5, AP = MN = 7,5.</div>
+<div class="solution-step"><strong>б)</strong> AM = AP → параллелограмм AMNP — ромб. Пусть BM/BA = t. MN = b·t, NP = a·(1−t). Условие AM = AP: AM = NP = a(1−t); AP = MN = bt. Значит a(1−t) = bt → a − at = bt → a = t(a + b) → t = a/(a+b).</div>
+<div class="solution-step"><strong>Шаг 5:</strong> AM = a(1 − a/(a+b)) = a·b/(a+b); AP = b·a/(a+b) = ab/(a+b). Все четыре стороны ромба равны <strong>ab/(a+b)</strong>.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> а) AM = 5 см, AP = 7,5 см, MN = 7,5 см, NP = 5 см; б) все стороны равны ab/(a+b).</div>
+</div>
+</details>
+
+<span class="level-badge hard extra-badge">Дополнительная задача</span>
+<h3>Задание 13 (№665)</h3>
+<p>Прямые a и b пересечены параллельными прямыми, причём точки A, B и C лежат на прямой a, а точки A₁, B₁ и C₁ — на прямой b. Докажите, что AB/BC = A₁B₁/B₁C₁.</p>
+<details>
+<summary>Показать доказательство</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Шаг 1:</strong> Проведём через точку B прямую, параллельную AA₁ (и CC₁). Она пересечёт CC₁ в точке D. Тогда ABB₁A₁ — параллелограмм → AB = A₁B₁... Нет, это не так в общем случае.</div>
+<div class="solution-step"><strong>Шаг 2 (правильный путь):</strong> Соединим A с B₁ и C с B₁. △ABB₁ и △CBB₁ имеют общую высоту (из B₁ на прямую a). Значит их площади относятся как основания: S(ABB₁)/S(CBB₁) = AB/BC.</div>
+<div class="solution-step"><strong>Шаг 3:</strong> Аналогично △A₁BB₁ и △C₁BB₁ имеют общую высоту (из B на прямую b) → S(A₁BB₁)/S(C₁BB₁) = A₁B₁/B₁C₁.</div>
+<div class="solution-step"><strong>Шаг 4:</strong> Но △ABB₁ = △A₁BB₁ (общее основание BB₁ и равные высоты — расстояние между параллельными a и b). Аналогично △CBB₁ = △C₁BB₁.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><strong>Вывод:</strong> AB/BC = A₁B₁/B₁C₁. ✅</div>
+</div>
+</details>
+
+<span class="level-badge hard extra-badge">Дополнительная задача</span>
+<h3>Задание 14 (№671)</h3>
+<p>Через точку M, взятую на медиане AD треугольника ABC, и вершину B проведена прямая, пересекающая сторону AC в точке K. Найдите отношение AK : KC, если: а) M — середина AD; б) AM : MD = 2 : 3.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="sol-svg">
+<svg viewBox="0 0 320 220" width="320" height="220">
+<polygon points="40,200 280,200 160,40" fill="#f8fafc" stroke="#1e293b" stroke-width="2"/>
+<line x1="160" y1="40" x2="160" y2="200" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="6,4"/>
+<line x1="40" y1="200" x2="220" y2="100" stroke="#f59e0b" stroke-width="2"/>
+<circle cx="160" cy="120" r="4" fill="#dc2626"/>
+<circle cx="220" cy="100" r="4" fill="#dc2626"/>
+<text x="24" y="218" font-family="sans-serif" font-size="15" font-weight="bold">A</text>
+<text x="284" y="218" font-family="sans-serif" font-size="15" font-weight="bold">C</text>
+<text x="154" y="34" font-family="sans-serif" font-size="15" font-weight="bold">B</text>
+<text x="154" y="218" font-family="sans-serif" font-size="15" font-weight="bold">D</text>
+<text x="168" y="116" font-family="sans-serif" font-size="15" font-weight="bold" fill="#dc2626">M</text>
+<text x="224" y="96" font-family="sans-serif" font-size="15" font-weight="bold" fill="#dc2626">K</text>
+</svg>
+</div>
+<div class="solution-step"><strong>Шаг 1:</strong> Проведём через D прямую DN ∥ BK (N на AC). В △BCK: D — середина BC (медиана!), DN ∥ BK → N — середина KC (по теореме Фалеса).</div>
+<div class="solution-step"><strong>Шаг 2:</strong> В △ADN: M на AD, MK ∥ DN → AK/KN = AM/MD.</div>
+<div class="solution-step"><strong>а)</strong> M — середина AD → AM/MD = 1 → AK = KN. Но KN = NC (N — середина KC). Значит AK = KN = NC → AK : KC = 1 : 2.</div>
+<div class="solution-step"><strong>б)</strong> AM/MD = 2/3 → AK/KN = 2/3. Пусть AK = 2t, KN = 3t. Тогда KC = 2·KN = 6t (так как N — середина KC). Значит AK : KC = 2t : 6t = <strong>1 : 3</strong>.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> а) 1 : 2; б) 1 : 3.</div>
+</div>
+</details>
+
+<h3>⚖️ Задачи на доказательство (идеи)</h3>
+
+<details>
+<summary>№650 — отношение сходственных сторон подобных треугольников равно отношению их высот</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Идея:</strong> △ABC ~ △A₁B₁C₁ с коэффициентом k. AH и A₁H₁ — высоты к сходственным сторонам BC и B₁C₁. Рассмотрим △ABH и △A₁B₁H₁: ∠B = ∠B₁ (по подобию), ∠AHB = ∠A₁H₁B₁ = 90° → △ABH ~ △A₁B₁H₁ по двум углам. Тогда AH/A₁H₁ = AB/A₁B₁ = k.</div>
+</div>
+</details>
+
+<details>
+<summary>№654 — отношение периметров подобных треугольников равно коэффициенту подобия</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Идея:</strong> △ABC ~ △A₁B₁C₁ с коэффициентом k. Тогда AB = k·A₁B₁, BC = k·B₁C₁, CA = k·C₁A₁. Суммируем: P = k·(A₁B₁ + B₁C₁ + C₁A₁) = k·P₁ → P/P₁ = k.</div>
+</div>
+</details>
+
+<details>
+<summary>№658 — на стороне CD параллелограмма отмечена точка E, AE и BC пересекаются в F</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>а)</strong> △FEC ~ △FAB (∠F общий, ∠FEC = ∠FAB как соответственные при EC ∥ AB). k = EC/AB = 4/(8+4) = 4/12 = 1/3. Тогда EF/FA = 1/3 → EF = FA/3. FA = AE + EF = 10 + EF → EF = (10 + EF)/3 → 3·EF = 10 + EF → 2·EF = 10 → EF = 5. FC/BC = 1/3 → FC = BC/3 = 7/3.</div>
+<div class="solution-step"><strong>б)</strong> △FEC ~ △FAB с k = EC/AB = EC/8. FC/(FC + 2) = EC/8 → 8·FC = EC·(FC + 2). Также AD = BC = 5, DE = CD − EC = 8 − EC. Используем подобие △FEC ~ △FAD (∠F общий, ∠FEC = ∠FDA... нет, это не параллельно). Пересмотрим: △FEC ~ △FAB (EC ∥ AB) и △FED ~ △FBC (ED ∥ BC). Из второго: FE/FB = ED/BC = (8−EC)/5. Из первого: FE/FA = EC/8. Решаем систему.</div>
+</div>
+</details>
+</section>
+
+<!-- ================= БЛОК 3: ПРАКТИЧЕСКОЕ ПРИМЕНЕНИЕ ================= -->
+<section class="card practice-box">
+<h2>🏗 Блок 3. Практическое применение</h2>
+<h3>🗺️ Продукт урока: «Геодезист: измерение недоступного расстояния»</h3>
+<p>Ты геодезист. Нужно измерить ширину реки, не переплывая её. На своём берегу ты выбрал дерево A на противоположном берегу и две вехи B и C на своём берегу (BC = 20 м). Затем нашёл точку D на своём берегу такую, что A, D и C лежат на одной прямой, и отмерил DC = 8 м, DB' = 6 м (где B' — точка на прямой DB, причём B', C, A тоже на одной прямой... нет, упростим).</p>
+<p><strong>Задача (классическая):</strong> на одном берегу реки дерево A. На своём берегу ставишь веху B напротив A. От B идёшь вдоль берега 20 м до точки C. От C идёшь перпендикулярно берегу ещё 8 м до точки D. Оказалось, что A, C и D... нет, это другая конструкция.</p>
+<p><strong>Упрощённая задача:</strong> ты стоишь у подножия холма. Тень от тебя (рост 1,7 м) имеет длину 2,5 м. В тот же момент тень от столба имеет длину 10 м. Найди высоту столба.</p>
+<details>
+<summary>Показать решение геодезиста</summary>
+<div class="solution-content">
+<div class="sol-svg">
+<svg viewBox="0 0 360 220" width="360" height="220">
+<line x1="40" y1="200" x2="320" y2="200" stroke="#1e293b" stroke-width="2"/>
+<line x1="80" y1="200" x2="80" y2="100" stroke="#2563eb" stroke-width="3"/>
+<line x1="80" y1="100" x2="150" y2="200" stroke="#dc2626" stroke-width="2" stroke-dasharray="6,4"/>
+<line x1="240" y1="200" x2="240" y2="40" stroke="#2563eb" stroke-width="3"/>
+<line x1="240" y1="40" x2="320" y2="200" stroke="#dc2626" stroke-width="2" stroke-dasharray="6,4"/>
+<circle cx="80" cy="90" r="10" fill="#f59e0b"/>
+<circle cx="240" cy="30" r="10" fill="#f59e0b"/>
+<text x="64" y="160" font-family="sans-serif" font-size="13" fill="#2563eb" font-weight="bold">1,7 м</text>
+<text x="96" y="180" font-family="sans-serif" font-size="13" fill="#dc2626" font-weight="bold">2,5 м</text>
+<text x="248" y="130" font-family="sans-serif" font-size="13" fill="#2563eb" font-weight="bold">H = ?</text>
+<text x="264" y="180" font-family="sans-serif" font-size="13" fill="#dc2626" font-weight="bold">10 м</text>
+<path d="M104,200 A24,24 0 0 0 94.4,180.8" fill="none" stroke="#7c3aed" stroke-width="2"/>
+<path d="M264,200 A24,24 0 0 0 254.4,180.8" fill="none" stroke="#7c3aed" stroke-width="2"/>
+<text x="114" y="192" font-family="sans-serif" font-size="12" fill="#7c3aed" font-weight="bold">α</text>
+<text x="274" y="192" font-family="sans-serif" font-size="12" fill="#7c3aed" font-weight="bold">α</text>
+</svg>
+</div>
+<div class="solution-step"><strong>Шаг 1:</strong> Солнечные лучи параллельны → углы падения одинаковы. Значит два прямоугольных треугольника (человек-тень и столб-тень) подобны по двум углам (прямой угол и угол α).</div>
+<div class="solution-step"><strong>Шаг 2:</strong> Коэффициент подобия: k = 10/2,5 = 4.</div>
+<div class="solution-step"><strong>Шаг 3:</strong> Высота столба H = 1,7 · 4 = <strong>6,8 м</strong>.</div>
+<div class="solution-step" style="border-left-color: var(--warning);"><em>Именно так древние египтяне измеряли высоту пирамид — по тени и подобию треугольников! 🏛️</em></div>
+</div>
+</details>
+</section>
+
+<!-- ================= ИТОГИ ================= -->
+<section class="card summary-box">
+<h2>📝 Главное, что нужно запомнить</h2>
+<ul>
+<li><strong>Первый признак подобия:</strong> по двум углам (∠A = ∠A₁, ∠B = ∠B₁ → △ABC ~ △A₁B₁C₁).</li>
+<li><strong>Второй признак подобия:</strong> по двум сторонам и углу между ними (AB/A₁B₁ = AC/A₁C₁ и ∠A = ∠A₁).</li>
+<li><strong>Третий признак подобия:</strong> по трём сторонам (AB/A₁B₁ = BC/B₁C₁ = CA/C₁A₁).</li>
+<li><strong>Коэффициент подобия k</strong> — отношение сходственных сторон; отношение площадей = k², отношение периметров = k.</li>
+<li><strong>Ключевой приём:</strong> параллельная прямая, пересекающая стороны треугольника, отсекает подобный треугольник — это «рабочая лошадка» большинства задач.</li>
+<li><strong>В задачах на трапецию с пересечением диагоналей:</strong> треугольники при основаниях подобны с k = a/b (отношение оснований).</li>
+<li><strong>В задачах на медиану и точку на ней:</strong> проводим вспомогательную параллельную прямую — получается цепочка подобных треугольников.</li>
+</ul>
+</section>
+
+<!-- ================= МЕТОДИЧЕСКАЯ ПОДСКАЗКА ================= -->
+<div class="teacher-note">
+<h3>💡 Методическая подсказка (для учителя или родителя)</h3>
+<ul style="margin-top: 10px; padding-left: 20px;">
+<li><strong>Главная путаница:</strong> ученики часто пытаются применить признак подобия, не проверив, что стороны именно <em>сходственные</em> (лежат напротив равных углов). Приучайте сначала раскрашивать равные углы одним цветом — тогда сходственные стороны станут очевидны.</li>
+<li><strong>Доказательства признаков:</strong> во всех трёх доказательствах используется одна и та же идея: «вложим» внутрь большего треугольника равный меньшему, а потом докажем параллельность. Обсудите эту общую схему — она универсальна.</li>
+<li><strong>Задача №661 (трапеция и пересечение боковых сторон):</strong> классическая задача на подобие. Ключ — увидеть два подобных треугольника (от точки пересечения и от оснований). Предложите ученику самому найти коэффициент подобии через основания.</li>
+<li><strong>Задача №669 (вписанная окружность):</strong> требует связи формулы r = S/p с подобием. Слабым ученикам напомните: центр вписанной окружности лежит на пересечении биссектрис, а в равнобедренном треугольнике высота к основанию — это и биссектриса, и медиана.</li>
+<li><strong>Задача №670 (квадрат в треугольнике):</strong> красивая задача на «вложенное подобие». Идея: маленький треугольник над квадратом подобен большому. Коэффициент подобия = (h − x)/h.</li>
+<li><strong>Задача №671 (медиана и точка на ней):</strong> приём «провести параллельную через конец медианы» — один из самых мощных в геометрии. Разберите его подробно, он пригодится ещё не раз.</li>
+<li><strong>Сильным ученикам:</strong> предложите доказать, что три медианы треугольника пересекаются в одной точке и делятся ею в отношении 2:1, используя подобие (задача из пункта 73 следующего параграфа — можно дать как опережающее задание).</li>
+</ul>
+</div>
+
+<footer style="text-align: center; color: var(--text-light); margin-top: 30px; font-size: 0.9em; padding-bottom: 20px;">
+<p>📚 Геометрия 8 класс (Атанасян) • Глава VIII, §2, пункты 66–68 • Задачи №657–671</p>
+</footer>
+</div>
+</body>
+</html>

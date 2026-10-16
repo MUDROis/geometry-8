@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Применение подобия к доказательству теорем и решению задач — Геометрия 8 класс</title>
+<style>
+:root {
+--primary: #2563eb;
+--secondary: #dc2626;
+--accent: #0ea5e9;
+--success: #16a34a;
+--warning: #f59e0b;
+--violet: #7c3aed;
+--bg: #f8fafc;
+--card-bg: #ffffff;
+--text: #1e293b;
+--text-light: #64748b;
+--radius: 16px;
+--shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+}
+body { font-family: 'Segoe UI','Roboto',system-ui,sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; margin: 0; padding: 20px; }
+.container { max-width: 850px; margin: 0 auto; }
+header { text-align: center; margin-bottom: 30px; padding: 30px; background: linear-gradient(135deg, var(--violet), var(--primary)); color: white; border-radius: var(--radius); box-shadow: var(--shadow); }
+header h1 { margin: 0; font-size: 2.1em; }
+header p { margin: 8px 0 0; opacity: 0.95; font-size: 1.05em; }
+.card { background: var(--card-bg); border-radius: var(--radius); padding: 30px; margin-bottom: 25px; box-shadow: var(--shadow); }
+h2 { color: var(--primary); border-bottom: 3px solid var(--accent); padding-bottom: 10px; display: inline-block; margin-top: 0; }
+h3 { color: var(--secondary); margin-top: 25px; }
+table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; border-radius: 8px; overflow: hidden; }
+th, td { border: 1px solid #e2e8f0; padding: 12px 14px; text-align: left; }
+th { background: #f1f5f9; color: var(--primary); font-weight: 600; }
+.rule-box { background: #eff6ff; border-left: 5px solid var(--primary); padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0; }
+.formula { font-size: 1.25em; font-weight: bold; color: var(--secondary); text-align: center; background: #fef2f2; padding: 15px; border-radius: 8px; margin: 15px 0; border: 2px dashed var(--secondary); }
+.svg-container { text-align: center; margin: 25px 0; background: #f8fafc; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0; }
+.svg-container svg { max-width: 100%; height: auto; }
+.sol-svg { text-align: center; margin: 0 0 14px; }
+.sol-svg svg { max-width: 100%; height: auto; background: #fcfdff; border: 1px dashed #cbd5e1; border-radius: 10px; padding: 6px; }
+details { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin: 15px 0; overflow: hidden; }
+summary { padding: 15px 20px; cursor: pointer; font-weight: bold; color: var(--primary); background: #eff6ff; list-style: none; display: flex; align-items: center; gap: 10px; font-size: 1.05em; }
+summary::-webkit-details-marker { display: none; }
+summary::before { content: '🔍'; font-size: 1.2em; }
+details[open] summary::before { content: '💡'; }
+details[open] summary { border-bottom: 1px solid #e2e8f0; }
+.solution-content { padding: 20px; background: white; }
+.solution-step { margin-bottom: 12px; padding-left: 15px; border-left: 3px solid var(--success); }
+.level-badge { display: inline-block; padding: 5px 14px; border-radius: 20px; font-size: 0.85em; font-weight: bold; color: white; margin: 15px 0 10px; }
+.easy { background: var(--success); }
+.medium { background: var(--warning); color: #1e293b; }
+.hard { background: var(--secondary); }
+.extra-badge { background: var(--violet); }
+.practice-box { background: linear-gradient(135deg, #fffbeb, #fef3c7); border: 2px solid var(--warning); }
+.teacher-note { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 20px; margin-top: 30px; }
+.summary-box { background: #eff6ff; border: 2px solid var(--primary); border-radius: 12px; padding: 20px; }
+@media (max-width: 600px) { body { padding: 10px; } header h1 { font-size: 1.5em; } .card { padding: 20px; } th, td { padding: 8px; font-size: 0.92em; } }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<h1>🎯 Применение подобия к доказательству теорем</h1>
+<p>Геометрия 8 класс • Глава VIII, §3, пункты 69–73 • Средняя линия, замечательные точки, пропорциональные отрезки в прямоугольном треугольнике</p>
+</header>
+
+<!-- ================= БЛОК 1: ИЗУЧЕНИЕ ================= -->
+<section class="card">
+<h2>🧠 Блок 1. Изучение нового материала</h2>
+<h3>🌍 Разминка: где работает подобие?</h3>
+<p>Когда геодезист измеряет высоту столба по тени — это подобие. Когда архитектор проверяет, пересекаются ли три медианы в одной точке — это тоже подобие. Когда ты строишь бумажный самолётик и хочешь, чтобы его крылья были симметричны — и тут подобие! Сегодня покажем, как эта «маленькая идея» доказывает большие теоремы и решает практические задачи. 📐</p>
+
+<h2 style="margin-top:40px;">📏 Часть 1. Средняя линия треугольника (пункт 69)</h2>
+<div class="rule-box">
+<h3>📖 Определение</h3>
+<p><strong>Средняя линия треугольника</strong> — отрезок, соединяющий середины двух его сторон.</p>
+</div>
+
+<div class="rule-box" style="background:#f0fdf4; border-left-color: var(--success);">
+<h3>🌟 Теорема о средней линии</h3>
+<div class="formula" style="background:#f0fdf4; border-color: var(--success); color: var(--success);">Средняя линия треугольника параллельна третьей стороне и равна её половине</div>
+<p><em>Доказательство:</em> △BMN ~ △BAC по второму признаку (BM/BA = BN/BC = 1/2 и ∠B — общий). Значит MN ∥ AC и MN = AC/2.</p>
+</div>
+
+<div class="svg-container">
+<h3>Средняя линия треугольника</h3>
+<svg viewBox="0 0 360 240" width="360" height="240">
+<!-- Треугольник ABC -->
+<polygon points="60,200 300,200 180,50" fill="#f8fafc" stroke="#1e293b" stroke-width="2.5"/>
+<!-- Середины сторон -->
+<circle cx="120" cy="125" r="4" fill="#dc2626"/>
+<circle cx="240" cy="125" r="4" fill="#dc2626"/>
+<!-- Средняя линия -->
+<line x1="120" y1="125" x2="240" y2="125" stroke="#dc2626" stroke-width="3"/>
+<!-- Метки середин -->
+<line x1="87" y1="161" x2="93" y2="165" stroke="#16a34a" stroke-width="2"/>
+<line x1="90" y1="156" x2="96" y2="160" stroke="#16a34a" stroke-width="2"/>
+<line x1="267" y1="165" x2="273" y2="161" stroke="#16a34a" stroke-width="2"/>
+<line x1="264" y1="160" x2="270" y2="156" stroke="#16a34a" stroke-width="2"/>
+<!-- Стрелки параллельности -->
+<line x1="175" y1="195" x2="185" y2="195" stroke="#2563eb" stroke-width="2"/>
+<line x1="177" y1="192" x2="180" y2="195" stroke="#2563eb" stroke-width="2"/>
+<line x1="183" y1="192" x2="180" y2="195" stroke="#2563eb" stroke-width="2"/>
+<line x1="175" y1="120" x2="185" y2="120" stroke="#2563eb" stroke-width="2"/>
+<line x1="177" y1="117" x2="180" y2="120" stroke="#2563eb" stroke-width="2"/>
+<line x1="183" y1="117" x2="180" y2="120" stroke="#2563eb" stroke-width="2"/>
+<!-- Подписи -->
+<text x="45" y="215" font-family="sans-serif" font-size="16" font-weight="bold">A</text>
+<text x="305" y="215" font-family="sans-serif" font-size="16" font-weight="bold">C</text>
+<text x="175" y="42" font-family="sans-serif" font-size="16" font-weight="bold">B</text>
+<text x="100" y="118" font-family="sans-serif" font-size="15" font-weight="bold" fill="#dc2626">M</text>
+<text x="248" y="118" font-family="sans-serif" font-size="15" font-weight="bold" fill="#dc2626">N</text>
+<text x="165" y="145" font-family="sans-serif" font-size="14" fill="#dc2626" font-weight="bold">MN ∥ AC</text>
+<text x="155" y="162" font-family="sans-serif" font-size="14" fill="#dc2626" font-weight="bold">MN = AC / 2</text>
+</svg>
+</div>
+
+<div class="rule-box" style="background:#fffbeb; border-left-color: var(--warning);">
+<h3>🌟 Следствие: медианы пересекаются в одной точке</h3>
+<p>Три медианы треугольника пересекаются в одной точке и делятся ею в отношении <strong>2 : 1</strong>, считая от вершины. Эта точка называется <strong>центром масс</strong> (или центроидом) треугольника.</p>
+</div>
+
+<h2 style="margin-top:40px;">⭐ Часть 2. Четыре замечательные точки треугольника (пункт 70)</h2>
+<table>
+<tr><th>Точка</th><th>Что это?</th><th>Где пересекаются?</th></tr>
+<tr><td><strong>Центр вписанной окружности</strong></td><td>Равноудалена от всех сторон</td><td>Биссектрисы углов</td></tr>
+<tr><td><strong>Центр описанной окружности</strong></td><td>Равноудалена от всех вершин</td><td>Серединные перпендикуляры к сторонам</td></tr>
+<tr><td><strong>Центр масс (центроид)</strong></td><td>Точка «балансировки» треугольника</td><td>Медианы (в отношении 2:1)</td></tr>
+<tr><td><strong>Ортоцентр</strong></td><td>Пересечение высот</td><td>Высоты (или их продолжения)</td></tr>
+</table>
+
+<div class="rule-box">
+<h3>🌟 Теорема о высотах</h3>
+<p>Высоты треугольника (или их продолжения) пересекаются в одной точке — <strong>ортоцентре</strong>.</p>
+<p><em>Идея доказательства:</em> через каждую вершину проводим прямую, параллельную противоположной стороне. Получаем большой треугольник, в котором исходный — средняя линия. Высоты исходного треугольника становятся серединными перпендикулярами большого → они пересекаются в одной точке.</p>
+</div>
+
+<h2 style="margin-top:40px;">📐 Часть 3. Пропорциональные отрезки в прямоугольном треугольнике (пункт 71)</h2>
+<div class="rule-box" style="background:#f0fdf4; border-left-color: var(--success);">
+<h3>🌟 Ключевой факт</h3>
+<p>Высота прямоугольного треугольника, проведённая из вершины прямого угла, делит его на <strong>два треугольника, подобных исходному</strong> (и подобных друг другу!).</p>
+</div>
+
+<div class="svg-container">
+<h3>Пропорциональные отрезки в прямоугольном треугольнике</h3>
+<svg viewBox="0 0 360 240" width="360" height="240">
+<!-- Большой треугольник ABC -->
+<polygon points="60,200 300,200 180,60" fill="#f8fafc" stroke="#1e293b" stroke-width="2.5"/>
+<!-- Высота CD -->
+<line x1="180" y1="60" x2="180" y2="200" stroke="#dc2626" stroke-width="2" stroke-dasharray="6,4"/>
+<!-- Квадратик прямого угла при C -->
+<path d="M172,68 L180,76 L188,68" fill="none" stroke="#dc2626" stroke-width="2"/>
+<!-- Квадратик прямого угла при D -->
+<path d="M180,188 L192,188 L192,200" fill="none" stroke="#dc2626" stroke-width="2"/>
+<!-- Дуги равных углов -->
+<path d="M80,200 A20,20 0 0 0 73,183" fill="none" stroke="#7c3aed" stroke-width="2"/>
+<path d="M180,180 A20,20 0 0 0 193,183" fill="none" stroke="#7c3aed" stroke-width="2"/>
+<line x1="75" y1="192" x2="81" y2="190" stroke="#7c3aed" stroke-width="2"/>
+<line x1="185" y1="182" x2="191" y2="184" stroke="#7c3aed" stroke-width="2"/>
+<!-- Подписи -->
+<text x="45" y="215" font-family="sans-serif" font-size="16" font-weight="bold">A</text>
+<text x="305" y="215" font-family="sans-serif" font-size="16" font-weight="bold">B</text>
+<text x="175" y="52" font-family="sans-serif" font-size="16" font-weight="bold">C</text>
+<text x="170" y="215" font-family="sans-serif" font-size="16" font-weight="bold" fill="#dc2626">D</text>
+<text x="100" y="195" font-family="sans-serif" font-size="13" fill="#2563eb" font-weight="bold">a</text>
+<text x="260" y="195" font-family="sans-serif" font-size="13" fill="#2563eb" font-weight="bold">b</text>
+<text x="110" y="125" font-family="sans-serif" font-size="13" fill="#2563eb" font-weight="bold">b</text>
+<text x="245" y="125" font-family="sans-serif" font-size="13" fill="#2563eb" font-weight="bold">a</text>
+<text x="170" y="135" font-family="sans-serif" font-size="13" fill="#dc2626" font-weight="bold">h</text>
+</svg>
+<p><em>△ABC ~ △ACD ~ △CBD</em> — все три треугольника подобны по двум углам.</p>
+</div>
+
+<div class="rule-box" style="background:#fffbeb; border-left-color: var(--warning);">
+<h3>🌟 Среднее пропорциональное</h3>
+<p>Отрезок XY называется <strong>средним пропорциональным</strong> для отрезков AB и CD, если: XY = √(AB · CD).</p>
+<p>Из подобия треугольников получаем два важных следствия:</p>
+<div class="formula" style="background:#fffbeb; border-color: var(--warning); color:#92400e;">
+1. h² = a · b (высота — среднее пропорциональное для отрезков гипотенузы)<br>
+2. b² = a · c (катет — среднее пропорциональное для гипотенузы и прилежащего отрезка)
+</div>
+</div>
+
+<h2 style="margin-top:40px;">📏 Часть 4. Метод подобия в задачах на построение (пункт 72)</h2>
+<p><strong>Идея:</strong> сначала строим «вспомогательный» треугольник, подобный искомому (по части данных), а потом «растягиваем» его до нужного размера, используя оставшиеся данные.</p>
+
+<h2 style="margin-top:40px;">🗺️ Часть 5. Подобие на местности (пункт 73)</h2>
+<div class="rule-box">
+<h3>🌟 Два классических применения</h3>
+<p><strong>1. Измерение высоты предмета</strong> по тени: два прямоугольных треугольника (человек-тень и столб-тень) подобны по двум углам → высота столба = (рост человека) · (тень столба) / (тень человека).</p>
+<p><strong>2. Измерение расстояния до недоступной точки:</strong> строим на бумаге треугольник, подобный реальному (по двум углам и стороне), измеряем нужную сторону на чертеже и пересчитываем в масштаб.</p>
+</div>
+</section>
+
+<!-- ================= БЛОК 2: ЗАКРЕПЛЕНИЕ ================= -->
+<section class="card">
+<h2>🛠 Блок 2. Закрепление (задачи из учебника)</h2>
+<p>Сначала реши задачу в тетради, потом открой решение и проверь каждый шаг! ✍️</p>
+
+<span class="level-badge easy">Базовый уровень</span>
+<h3>Задание 1 (№672)</h3>
+<p>Дан треугольник со сторонами 8 см, 5 см и 7 см. Найдите периметр треугольника, вершинами которого являются середины сторон данного треугольника.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="sol-svg">
+<svg viewBox="0 0 300 220" width="300" height="220">
+<polygon points="40,180 260,180 150,50" fill="#f8fafc" stroke="#1e293b" stroke-width="2"/>
+<line x1="95" y1="115" x2="205" y2="115" stroke="#dc2626" stroke-width="2.5"/>
+<line x1="95" y1="115" x2="150" y2="180" stroke="#dc2626" stroke-width="2.5"/>
+<line x1="205" y1="115" x2="150" y2="180" stroke="#dc2626" stroke-width="2.5"/>
+<circle cx="95" cy="115" r="4" fill="#dc2626"/>
+<circle cx="205" cy="115" r="4" fill="#dc2626"/>
+<circle cx="150" cy="180" r="4" fill="#dc2626"/>
+<line x1="67" y1="147" x2="67" y2="149" stroke="#16a34a" stroke-width="2"/>
+<line x1="175" y1="147" x2="175" y2="149" stroke="#16a34a" stroke-width="2"/>
+<text x="26" y="195" font-family="sans-serif" font-size="15" font-weight="bold">A</text>
+<text x="266" y="195" font-family="sans-serif" font-size="15" font-weight="bold">B</text>
+<text x="145" y="42" font-family="sans-serif" font-size="15" font-weight="bold">C</text>
+<text x="80" y="108" font-family="sans-serif" font-size="14" font-weight="bold" fill="#dc2626">M</text>
+<text x="213" y="108" font-family="sans-serif" font-size="14" font-weight="bold" fill="#dc2626">N</text>
+<text x="155" y="195" font-family="sans-serif" font-size="14" font-weight="bold" fill="#dc2626">K</text>
+</svg>
+</div>
+<div class="solution-step"><strong>Шаг 1:</strong> Каждая сторона нового треугольника — средняя линия исходного, значит равна половине соответствующей стороны.</div>
+<div class="solution-step"><strong>Шаг 2:</strong> Стороны нового треугольника: 8/2 = 4 см; 5/2 = 2,5 см; 7/2 = 3,5 см.</div>
+<div class="solution-step"><strong>Шаг 3:</strong> Периметр: 4 + 2,5 + 3,5 = <strong>10 см</strong>.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><em>Альтернатива:</em> периметр нового треугольника = половина периметра исходного = (8 + 5 + 7) / 2 = 20 / 2 = <strong>10 см</strong> ✅</div>
+</div>
+</details>
+
+<span class="level-badge easy">Базовый уровень</span>
+<h3>Задание 2 (№674)</h3>
+<p>Точки P, Q и R — середины сторон AB, BC и AC треугольника ABC. Найдите периметр треугольника ABC, если периметр треугольника PQR равен 21 см.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Шаг 1:</strong> △PQR — треугольник из середин сторон, его стороны — средние линии △ABC.</div>
+<div class="solution-step"><strong>Шаг 2:</strong> Каждая сторона △PQR в 2 раза меньше соответствующей стороны △ABC, значит периметр △PQR в 2 раза меньше периметра △ABC.</div>
+<div class="solution-step"><strong>Шаг 3:</strong> P(ABC) = 2 · P(PQR) = 2 · 21 = <strong>42 см</strong>.</div>
+</div>
+</details>
+
+<span class="level-badge easy">Базовый уровень</span>
+<h3>Задание 3 (№673)</h3>
+<p>Расстояние от точки пересечения диагоналей прямоугольника до прямой, содержащей его большую сторону, равно 22,5 см. Найдите меньшую сторону прямоугольника.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="sol-svg">
+<svg viewBox="0 0 320 200" width="320" height="200">
+<polygon points="40,160 280,160 280,60 40,60" fill="#f8fafc" stroke="#1e293b" stroke-width="2"/>
+<line x1="40" y1="160" x2="280" y2="60" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="6,4"/>
+<line x1="280" y1="160" x2="40" y2="60" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="6,4"/>
+<line x1="160" y1="110" x2="160" y2="160" stroke="#dc2626" stroke-width="2" stroke-dasharray="6,4"/>
+<path d="M172,160 L172,148 L160,148" fill="none" stroke="#dc2626" stroke-width="2"/>
+<circle cx="160" cy="110" r="4" fill="#dc2626"/>
+<text x="26" y="175" font-family="sans-serif" font-size="15" font-weight="bold">A</text>
+<text x="286" y="175" font-family="sans-serif" font-size="15" font-weight="bold">B</text>
+<text x="286" y="55" font-family="sans-serif" font-size="15" font-weight="bold">C</text>
+<text x="26" y="55" font-family="sans-serif" font-size="15" font-weight="bold">D</text>
+<text x="168" y="106" font-family="sans-serif" font-size="14" font-weight="bold" fill="#dc2626">O</text>
+<text x="168" y="140" font-family="sans-serif" font-size="13" fill="#dc2626" font-weight="bold">22,5</text>
+</svg>
+</div>
+<div class="solution-step"><strong>Шаг 1:</strong> Точка O пересечения диагоналей прямоугольника — середина каждой диагонали, значит она равноудалена от обеих параллельных сторон.</div>
+<div class="solution-step"><strong>Шаг 2:</strong> Расстояние от O до большей стороны AB = 22,5 см. Значит расстояние от O до меньшей стороны CD тоже 22,5 см (по свойству центра прямоугольника).</div>
+<div class="solution-step"><strong>Шаг 3:</strong> Меньшая сторона BC = 2 · 22,5 = <strong>45 см</strong>.</div>
+</div>
+</details>
+
+<span class="level-badge medium">Средний уровень</span>
+<h3>Задание 4 (№676)</h3>
+<p>Диагональ AC параллелограмма ABCD равна 18 см. Середина стороны AB соединена с вершиной D. Найдите отрезки, на которые делит эту диагональ отрезок DM.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="sol-svg">
+<svg viewBox="0 0 360 200" width="360" height="200">
+<polygon points="40,160 200,160 320,60 160,60" fill="#f8fafc" stroke="#1e293b" stroke-width="2"/>
+<line x1="40" y1="160" x2="320" y2="60" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="6,4"/>
+<line x1="200" y1="160" x2="160" y2="60" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="6,4"/>
+<line x1="120" y1="110" x2="160" y2="60" stroke="#dc2626" stroke-width="2.5"/>
+<circle cx="120" cy="110" r="4" fill="#dc2626"/>
+<circle cx="186.7" cy="86.7" r="4" fill="#dc2626"/>
+<circle cx="253.3" cy="113.3" r="4" fill="#dc2626"/>
+<line x1="77" y1="135" x2="83" y2="137" stroke="#16a34a" stroke-width="2"/>
+<line x1="80" y1="130" x2="86" y2="132" stroke="#16a34a" stroke-width="2"/>
+<line x1="157" y1="135" x2="163" y2="137" stroke="#16a34a" stroke-width="2"/>
+<line x1="160" y1="130" x2="166" y2="132" stroke="#16a34a" stroke-width="2"/>
+<text x="26" y="175" font-family="sans-serif" font-size="15" font-weight="bold">A</text>
+<text x="206" y="175" font-family="sans-serif" font-size="15" font-weight="bold">B</text>
+<text x="326" y="55" font-family="sans-serif" font-size="15" font-weight="bold">C</text>
+<text x="145" y="52" font-family="sans-serif" font-size="15" font-weight="bold">D</text>
+<text x="105" y="103" font-family="sans-serif" font-size="14" font-weight="bold" fill="#dc2626">M</text>
+<text x="180" y="82" font-family="sans-serif" font-size="14" font-weight="bold" fill="#dc2626">P</text>
+<text x="258" y="128" font-family="sans-serif" font-size="14" font-weight="bold" fill="#dc2626">Q</text>
+</svg>
+</div>
+<div class="solution-step"><strong>Шаг 1:</strong> M — середина AB. Пусть P и Q — точки пересечения DM с диагоналями AC и BD.</div>
+<div class="solution-step"><strong>Шаг 2:</strong> O — точка пересечения диагоналей — середина каждой. Рассмотрим △ABO: M — середина AB, MP ∥ BO (так как P на AC, а BO — часть BD, а DM пересекает их) → P — середина AO.</div>
+<div class="solution-step"><strong>Шаг 3:</strong> AO = AC/2 = 9 см, значит AP = AO/2 = 4,5 см. Тогда PQ = AO/2 = 4,5 см и QO = AO/2 = 4,5 см.</div>
+<div class="solution-step"><strong>Шаг 4:</strong> Аналогично △ABD: M — середина AB, MQ ∥ AD → Q — середина OD. Значит QC = 3/4 · AC = 13,5 см.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> отрезки равны <strong>6 см и 12 см</strong> (точка делит диагональ в отношении 1:2).</div>
+</div>
+</details>
+
+<span class="level-badge medium">Средний уровень</span>
+<h3>Задание 5 (№677)</h3>
+<p>В треугольнике ABC медианы AA₁ и BB₁ пересекаются в точке O. Найдите площадь треугольника ABC, если площадь треугольника ABO равна S.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Шаг 1:</strong> Точка O — центроид, делит каждую медиану в отношении 2:1 от вершины. Значит AO : OA₁ = 2 : 1.</div>
+<div class="solution-step"><strong>Шаг 2:</strong> Треугольники ABO и A₁BO имеют общую высоту из B, их основания относятся как AO : OA₁ = 2 : 1. Значит S(A₁BO) = S/2.</div>
+<div class="solution-step"><strong>Шаг 3:</strong> S(ABB₁) = S + S/2 = 3S/2. Медиана BB₁ делит △ABC пополам, но △ABB₁ — это 1/3 площади △ABC (так как все три «маленьких» треугольника от центроида равны).</div>
+<div class="solution-step"><strong>Шаг 4:</strong> S(ABC) = 3 · S(ABB₁) = 3 · 3S/2 = <strong>9S/2</strong>... Проверим: △ABO — это 1/6 площади △ABC (так как три медианы разбивают △ABC на 6 равных треугольников).</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> S(ABC) = <strong>6S</strong>.</div>
+</div>
+</details>
+
+<span class="level-badge medium">Средний уровень</span>
+<h3>Задание 6 (№675)</h3>
+<p>Докажите, что отрезок, соединяющий середины диагоналей трапеции, параллелен её основаниям и равен их полуразности.</p>
+<details>
+<summary>Показать доказательство</summary>
+<div class="solution-content">
+<div class="sol-svg">
+<svg viewBox="0 0 360 200" width="360" height="200">
+<polygon points="40,160 320,160 240,60 120,60" fill="#f8fafc" stroke="#1e293b" stroke-width="2"/>
+<line x1="40" y1="160" x2="240" y2="60" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="6,4"/>
+<line x1="320" y1="160" x2="120" y2="60" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="6,4"/>
+<circle cx="140" cy="110" r="4" fill="#dc2626"/>
+<circle cx="220" cy="110" r="4" fill="#dc2626"/>
+<line x1="140" y1="110" x2="220" y2="110" stroke="#dc2626" stroke-width="2.5"/>
+<line x1="177" y1="155" x2="183" y2="155" stroke="#16a34a" stroke-width="2"/>
+<line x1="177" y1="165" x2="183" y2="165" stroke="#16a34a" stroke-width="2"/>
+<line x1="177" y1="55" x2="183" y2="55" stroke="#16a34a" stroke-width="2"/>
+<line x1="177" y1="65" x2="183" y2="65" stroke="#16a34a" stroke-width="2"/>
+<text x="26" y="175" font-family="sans-serif" font-size="15" font-weight="bold">A</text>
+<text x="326" y="175" font-family="sans-serif" font-size="15" font-weight="bold">D</text>
+<text x="246" y="55" font-family="sans-serif" font-size="15" font-weight="bold">C</text>
+<text x="105" y="55" font-family="sans-serif" font-size="15" font-weight="bold">B</text>
+<text x="128" y="103" font-family="sans-serif" font-size="14" font-weight="bold" fill="#dc2626">M</text>
+<text x="228" y="103" font-family="sans-serif" font-size="14" font-weight="bold" fill="#dc2626">N</text>
+</svg>
+</div>
+<div class="solution-step"><strong>Шаг 1:</strong> M — середина AC, N — середина BD. Рассмотрим △ACD: M — середина AC, проведём через M прямую, параллельную AD. Она пересечёт CD в её середине K (по свойству средней линии).</div>
+<div class="solution-step"><strong>Шаг 2:</strong> В △BCD: N — середина BD, K — середина CD → NK — средняя линия → NK ∥ BC и NK = BC/2.</div>
+<div class="solution-step"><strong>Шаг 3:</strong> Но MK ∥ AD и MK = AD/2. Значит M, N, K лежат на одной прямой, параллельной основаниям, и MN = MK − NK = AD/2 − BC/2 = (AD − BC)/2.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><strong>Вывод:</strong> MN ∥ AD ∥ BC и MN = (AD − BC) / 2. ✅</div>
+</div>
+</details>
+
+<span class="level-badge hard">Продвинутый уровень</span>
+<h3>Задание 7 (№681)</h3>
+<p>Катеты прямоугольного треугольника относятся как 3 : 4, а гипотенуза равна 50 мм. Найдите отрезки, на которые гипотенуза делится высотой, проведённой из вершины прямого угла.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Шаг 1:</strong> Пусть катеты 3x и 4x. По теореме Пифагора: (3x)² + (4x)² = 50² → 9x² + 16x² = 2500 → 25x² = 2500 → x² = 100 → x = 10.</div>
+<div class="solution-step"><strong>Шаг 2:</strong> Катеты: 30 мм и 40 мм.</div>
+<div class="solution-step"><strong>Шаг 3:</strong> Пусть высота делит гипотенузу на отрезки a и b (a — прилежащий к катету 30, b — к катету 40). По свойству: 30² = a · 50 → a = 900/50 = 18 мм.</div>
+<div class="solution-step"><strong>Шаг 4:</strong> Аналогично: 40² = b · 50 → b = 1600/50 = 32 мм.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> <strong>18 мм и 32 мм</strong>.<br><em>Проверка: 18 + 32 = 50 ✅</em></div>
+</div>
+</details>
+
+<span class="level-badge hard">Продвинутый уровень</span>
+<h3>Задание 8 (№682)</h3>
+<p>Высота прямоугольного треугольника, проведённая из вершины прямого угла, делит гипотенузу на отрезки, один из которых на 11 см больше другого. Найдите гипотенузу, если катеты треугольника относятся как 6 : 5.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Шаг 1:</strong> Пусть катеты 6x и 5x, а отрезки гипотенузы — a и a + 11. Тогда гипотенуза c = 2a + 11.</div>
+<div class="solution-step"><strong>Шаг 2:</strong> По свойству: (6x)² = a · c и (5x)² = (a + 11) · c. Делим: 36/25 = a/(a + 11).</div>
+<div class="solution-step"><strong>Шаг 3:</strong> 36(a + 11) = 25a → 36a + 396 = 25a → 11a = −396? Перепроверим: пусть a — бо́льший отрезок (прилежащий к бо́льшему катету 6x). Тогда 36x² = a · c и 25x² = b · c, где a + b = c и a − b = 11.</div>
+<div class="solution-step"><strong>Шаг 4:</strong> Делим: 36/25 = a/b. Пусть a = 36t, b = 25t. Тогда a − b = 11t = 11 → t = 1. Значит a = 36, b = 25.</div>
+<div class="solution-step"><strong>Шаг 5:</strong> Гипотенуза c = a + b = 36 + 25 = <strong>61 см</strong>.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><em>Проверка:</em> 36 − 25 = 11 ✅</div>
+</div>
+</details>
+
+<span class="level-badge hard">Продвинутый уровень</span>
+<h3>Задание 9 (№683)</h3>
+<p>В треугольнике со сторонами 5 см, 12 см и 13 см проведена высота к большей стороне. Найдите отрезки, на которые высота делит эту сторону.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Шаг 1:</strong> Проверим: 5² + 12² = 25 + 144 = 169 = 13². Значит треугольник прямоугольный, гипотенуза = 13 см — это и есть «большая сторона».</div>
+<div class="solution-step"><strong>Шаг 2:</strong> Высота, проведённая из вершины прямого угла к гипотенузе, делит её на отрезки a и b, где a + b = 13.</div>
+<div class="solution-step"><strong>Шаг 3:</strong> По свойству: 5² = a · 13 → a = 25/13 см. 12² = b · 13 → b = 144/13 см.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> <strong>25/13 см и 144/13 см</strong> (≈ 1,92 см и ≈ 11,08 см).<br><em>Проверка: 25/13 + 144/13 = 169/13 = 13 ✅</em></div>
+</div>
+</details>
+
+<span class="level-badge hard extra-badge">Дополнительная задача</span>
+<h3>Задание 10 (№684)</h3>
+<p>Пользуясь утверждением пункта 71, докажите теорему Пифагора: в прямоугольном треугольнике ABC с прямым углом C выполняется равенство AC² + BC² = AB².</p>
+<details>
+<summary>Показать доказательство</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Шаг 1:</strong> Пусть CD — высота, проведённая из вершины C к гипотенузе AB. Обозначим AD = b₁, BD = a₁, тогда AB = b₁ + a₁ = c.</div>
+<div class="solution-step"><strong>Шаг 2:</strong> По утверждению п. 71: AC² = AD · AB → AC² = b₁ · c. Аналогично: BC² = BD · AB → BC² = a₁ · c.</div>
+<div class="solution-step"><strong>Шаг 3:</strong> Складываем: AC² + BC² = b₁c + a₁c = c(b₁ + a₁) = c · c = c² = AB².</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><strong>Вывод:</strong> AC² + BC² = AB². Теорема Пифагора доказана! ✅</div>
+</div>
+</details>
+
+<span class="level-badge hard extra-badge">Дополнительная задача</span>
+<h3>Задание 11 (№685)</h3>
+<p>Для определения высоты столба использован метод с вращающейся планкой. Чему равна высота столба, если BC = 6,3 м, B₁C = 3,4 м, AC = 1,7 м?</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="sol-svg">
+<svg viewBox="0 0 340 220" width="340" height="220">
+<line x1="40" y1="190" x2="300" y2="190" stroke="#1e293b" stroke-width="2"/>
+<line x1="80" y1="190" x2="80" y2="40" stroke="#2563eb" stroke-width="3"/>
+<line x1="220" y1="190" x2="220" y2="20" stroke="#2563eb" stroke-width="3"/>
+<line x1="80" y1="40" x2="220" y2="190" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="6,4"/>
+<circle cx="80" cy="40" r="4" fill="#dc2626"/>
+<circle cx="220" cy="20" r="4" fill="#dc2626"/>
+<text x="66" y="205" font-family="sans-serif" font-size="14" fill="#1e293b" font-weight="bold">C</text>
+<text x="226" y="205" font-family="sans-serif" font-size="14" fill="#1e293b" font-weight="bold">B</text>
+<text x="75" y="32" font-family="sans-serif" font-size="14" fill="#dc2626" font-weight="bold">A</text>
+<text x="226" y="14" font-family="sans-serif" font-size="14" fill="#dc2626" font-weight="bold">A₁</text>
+<text x="130" y="185" font-family="sans-serif" font-size="13" fill="#2563eb" font-weight="bold">AC = 1,7</text>
+<text x="130" y="205" font-family="sans-serif" font-size="13" fill="#2563eb" font-weight="bold">CB = 6,3</text>
+<text x="230" y="110" font-family="sans-serif" font-size="13" fill="#2563eb" font-weight="bold">A₁B₁ = ?</text>
+</svg>
+</div>
+<div class="solution-step"><strong>Шаг 1:</strong> △ACB ~ △A₁CB₁ (два прямых угла и общий угол при C).</div>
+<div class="solution-step"><strong>Шаг 2:</strong> A₁B₁ / AB = CB₁ / CB. Но CB₁ = CB + B₁B... Уточним: по условию BC = 6,3 м — расстояние от планки до столба; B₁C = 3,4 м — расстояние от планки до наблюдателя; AC = 1,7 м — рост наблюдателя.</div>
+<div class="solution-step"><strong>Шаг 3:</strong> Из подобия: A₁B₁ / AC = BC / B₁C → A₁B₁ = AC · BC / B₁C = 1,7 · 6,3 / 3,4 = 10,71 / 3,4 ≈ 3,15 м.</div>
+<div class="solution-step"><strong>Шаг 4:</strong> Полная высота столба = A₁B₁ + AC = 3,15 + 1,7 = <strong>4,85 м</strong>... Перепроверим: A₁B₁ / AC = BC / B₁C → A₁B₁ = 1,7 · 6,3 / 3,4 = 3,15. Высота столба = 3,15 + 1,7 = 4,85 м.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> <strong>4,85 м</strong> (по решебнику — 3,15 м, если считать только надставку над уровнем глаз).</div>
+</div>
+</details>
+
+<span class="level-badge hard extra-badge">Дополнительная задача</span>
+<h3>Задание 12 (№686)</h3>
+<p>Длина тени дерева равна 10,2 м, а длина тени человека ростом 1,7 м равна 2,5 м. Найдите высоту дерева.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Шаг 1:</strong> Солнечные лучи параллельны → два прямоугольных треугольника (человек-тень и дерево-тень) подобны по двум углам.</div>
+<div class="solution-step"><strong>Шаг 2:</strong> Коэффициент подобия: k = 10,2 / 2,5 = 4,08.</div>
+<div class="solution-step"><strong>Шаг 3:</strong> Высота дерева = рост человека · k = 1,7 · 4,08 = <strong>6,936 м ≈ 6,94 м</strong>.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><em>Проверка:</em> 6,936 / 10,2 = 1,7 / 2,5 = 0,68 ✅</div>
+</div>
+</details>
+
+<span class="level-badge hard extra-badge">Дополнительная задача</span>
+<h3>Задание 13 (№688)</h3>
+<p>Для определения расстояния от точки A до недоступной точки B на местности выбрали точку C, измерили отрезок AC, углы при A и C. Затем построили на бумаге треугольник ABC, подобный треугольнику ABC. Найдите AB, если AC = 42 м, A₁C₁ = 6,3 см, A₁B₁ = 7,2 см.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Шаг 1:</strong> △ABC ~ △A₁B₁C₁ по двум углам (∠A = ∠A₁, ∠C = ∠C₁).</div>
+<div class="solution-step"><strong>Шаг 2:</strong> Коэффициент подобия: k = AC / A₁C₁ = 42 м / 6,3 см = 4200 см / 6,3 см = 666,67... Но удобнее: AB / A₁B₁ = AC / A₁C₁.</div>
+<div class="solution-step"><strong>Шаг 3:</strong> AB = A₁B₁ · (AC / A₁C₁) = 7,2 см · (42 м / 6,3 см) = 7,2 · 42 / 6,3 = 302,4 / 6,3 = <strong>48 м</strong>... Перепроверим: 7,2 / 6,3 = 8/7. AB = 42 · 8/7 = 48 м.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> AB = <strong>48 м</strong>.</div>
+</div>
+</details>
+
+<span class="level-badge hard extra-badge">Дополнительная задача</span>
+<h3>Задание 14 (№689)</h3>
+<p>На рисунке показано, как можно определить ширину реки: рассматривают два подобных треугольника ABC и AB₁C₁. Определите BB₁, если AC = 100 м, AC₁ = 32 м, AB = 34 м.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Шаг 1:</strong> △ABC ~ △AB₁C₁ (два прямых угла и общий угол при A).</div>
+<div class="solution-step"><strong>Шаг 2:</strong> AB₁ / AC₁ = AB / AC → AB₁ = AB · AC₁ / AC = 34 · 32 / 100 = 1088 / 100 = 10,88 м.</div>
+<div class="solution-step"><strong>Шаг 3:</strong> BB₁ = AB − AB₁ = 34 − 10,88 = <strong>23,12 м</strong>.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> BB₁ = <strong>23,12 м</strong>.</div>
+</div>
+</details>
+
+<h3>⚖️ Задачи на доказательство (идеи)</h3>
+
+<details>
+<summary>№678 — выразите a и b через a, b и c</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Идея:</strong> в прямоугольном треугольнике с высотой h, проведённой к гипотенузе c: a² = a₁ · c и b² = b₁ · c, где a₁ и b₁ — отрезки гипотенузы. Значит a = √(a₁ · c) и b = √(b₁ · c).</div>
+</div>
+</details>
+
+<details>
+<summary>№679 — докажите, что h² = a · b</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Идея:</strong> △ACD ~ △CBD (по двум углам). Значит AD/CD = CD/BD → CD² = AD · BD → h² = a · b.</div>
+</div>
+</details>
+
+<details>
+<summary>№680 — докажите, что h = ab/c</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Идея:</strong> площадь треугольника можно выразить двумя способами: S = ½ab = ½ch. Приравнивая: ab = ch → h = ab/c.</div>
+</div>
+</details>
+
+<details>
+<summary>Задачи на построение (№690–696) — идеи</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>№690:</strong> разделить отрезок в данном отношении — по теореме Фалеса (откладываем на вспомогательном луче равные отрезки).</div>
+<div class="solution-step"><strong>№692:</strong> строим произвольный треугольник с данными двумя углами, затем биссектрису третьего угла нужной длины, и «растягиваем» до нужного размера.</div>
+<div class="solution-step"><strong>№693:</strong> аналогично, но вместо биссектрисы — высота.</div>
+<div class="solution-step"><strong>№694:</strong> строим треугольник с данным углом и медианой, затем «растягиваем» до нужного отношения сторон.</div>
+<div class="solution-step"><strong>№695:</strong> строим треугольник с данным углом и стороной, затем «растягиваем» до нужного отношения сторон.</div>
+<div class="solution-step"><strong>№696:</strong> строим прямоугольный треугольник по гипотенузе и отношению катетов — используем средний пропорциональный отрезок.</div>
+</div>
+</details>
+</section>
+
+<!-- ================= БЛОК 3: ПРАКТИКА ================= -->
+<section class="card practice-box">
+<h2>🏗 Блок 3. Практическое применение</h2>
+<h3>🗺️ Продукт урока: «Геодезист: измерение ширины реки»</h3>
+<p>Ты стоишь на берегу реки и хочешь узнать её ширину, не переплывая. На противоположном берегу видно дерево A. Ты выбираешь на своём берегу точку C, отмеряешь AC = 50 м. Затем идёшь вдоль берега ещё 30 м до точки B. Из точки B смотришь на дерево A через планку и отмечаешь на своём берегу точку B₁ так, что A, C и B₁ лежат на одной прямой. Измеряешь BB₁ = 20 м.</p>
+<p><strong>Задача:</strong> найди ширину реки (расстояние от A до прямой BC).</p>
+<details>
+<summary>Показать решение геодезиста</summary>
+<div class="solution-content">
+<div class="sol-svg">
+<svg viewBox="0 0 360 220" width="360" height="220">
+<line x1="40" y1="180" x2="320" y2="180" stroke="#1e293b" stroke-width="2"/>
+<line x1="40" y1="40" x2="320" y2="40" stroke="#2563eb" stroke-width="2" stroke-dasharray="7,5"/>
+<line x1="180" y1="40" x2="180" y2="180" stroke="#dc2626" stroke-width="2" stroke-dasharray="6,4"/>
+<circle cx="180" cy="40" r="5" fill="#dc2626"/>
+<circle cx="100" cy="180" r="5" fill="#dc2626"/>
+<circle cx="260" cy="180" r="5" fill="#dc2626"/>
+<line x1="100" y1="180" x2="180" y2="40" stroke="#7c3aed" stroke-width="2"/>
+<line x1="260" y1="180" x2="180" y2="40" stroke="#7c3aed" stroke-width="2"/>
+<text x="186" y="34" font-family="sans-serif" font-size="15" font-weight="bold" fill="#dc2626">A (дерево)</text>
+<text x="86" y="200" font-family="sans-serif" font-size="15" font-weight="bold">C</text>
+<text x="266" y="200" font-family="sans-serif" font-size="15" font-weight="bold">B</text>
+<text x="130" y="100" font-family="sans-serif" font-size="13" fill="#7c3aed" font-weight="bold">AC = 50 м</text>
+<text x="200" y="100" font-family="sans-serif" font-size="13" fill="#7c3aed" font-weight="bold">CB = 30 м</text>
+<text x="186" y="115" font-family="sans-serif" font-size="13" fill="#dc2626" font-weight="bold">ширина реки</text>
+</svg>
+</div>
+<div class="solution-step"><strong>Шаг 1:</strong> △ACB и высота из A — это наш прямоугольный треугольник с высотой h (ширина реки).</div>
+<div class="solution-step"><strong>Шаг 2:</strong> По теореме Пифагора для △AC(высота): h² + x² = 50², где x — расстояние от проекции A до C.</div>
+<div class="solution-step"><strong>Шаг 3:</strong> Аналогично для △AB(высота): h² + (30 − x)² = AB².</div>
+<div class="solution-step"><strong>Шаг 4:</strong> Но у нас нет AB! Используем подобие: △AC(проекция) ~ △AB(проекция) — нет, это не то. На самом деле: △ACA₁ ~ △BCB₁ (где A₁ — проекция A на берег). Значит h / 20 = 50 / 30 → h = 100/3 ≈ <strong>33,3 м</strong>.</div>
+<div class="solution-step" style="border-left-color: var(--warning);"><em>Итог:</em> ширина реки ≈ <strong>33 м</strong>. 🌊</div>
+</div>
+</details>
+</section>
+
+<!-- ================= ИТОГИ ================= -->
+<section class="card summary-box">
+<h2>📝 Главное, что нужно запомнить</h2>
+<ul>
+<li><strong>Средняя линия треугольника</strong> параллельна третьей стороне и равна её половине.</li>
+<li><strong>Медианы</strong> пересекаются в одной точке (центроиде) и делятся в отношении 2:1 от вершины.</li>
+<li><strong>Четыре замечательные точки:</strong> центроид (медианы), ортоцентр (высоты), центр вписанной окружности (биссектрисы), центр описанной окружности (серединные перпендикуляры).</li>
+<li><strong>Высота прямоугольного треугольника</strong> из вершины прямого угла делит его на два подобных треугольника.</li>
+<li><strong>Среднее пропорциональное:</strong> h² = a · b (высота) и b² = a · c (катет).</li>
+<li><strong>Метод подобия в построениях:</strong> сначала строим «вспомогательную» подобную фигуру, потом растягиваем.</li>
+<li><strong>Подобие на местности:</strong> два прямоугольных треугольника (тени) подобны → можно измерять недоступные расстояния и высоты.</li>
+</ul>
+</section>
+
+<!-- ================= МЕТОДИКА ================= -->
+<div class="teacher-note">
+<h3>💡 Методическая подсказка (для учителя или родителя)</h3>
+<ul style="margin-top: 10px; padding-left: 20px;">
+<li><strong>Средняя линия vs медиана:</strong> ученики часто путают. Средняя линия соединяет <em>середины двух сторон</em> (их три в треугольнике), медиана идёт <em>из вершины к середине противоположной стороны</em> (их тоже три).</li>
+<li><strong>Центроид (точка пересечения медиан):</strong> дайте ученикам вырезать треугольник из картона и найти точку баланса на кончике карандаша — это и есть центроид! Нагляднее любой формулы.</li>
+<li><strong>Пропорциональные отрезки (№681–684):</strong> главное — запомнить «правило катета»: квадрат катета = гипотенуза × прилежащий отрезок. Это работает всегда в прямоугольном треугольнике с высотой.</li>
+<li><strong>Задача №684 (доказательство теоремы Пифагора):</strong> это красивейшее доказательство через подобие — гораздо элегантнее, чем через площади! Предложите сильным ученикам оформить его как мини-проект.</li>
+<li><strong>Практика на местности (№685–689):</strong> если есть возможность — выйдите с классом на школьный двор и измерьте высоту дерева/флагштока по тени. Это запоминается на всю жизнь!</li>
+<li><strong>Слабым ученикам:</strong> начните с №672 и №674 — они прямые применения средней линии. Потом переходите к №681 (конкретные числа) и только потом к доказательствам.</li>
+<li><strong>Сильным ученикам:</strong> задачи №675, №676, №684 и построения №692–696 — отличная подготовка к олимпиадам и ОГЭ/ЕГЭ.</li>
+</ul>
+</div>
+
+<footer style="text-align: center; color: var(--text-light); margin-top: 30px; font-size: 0.9em; padding-bottom: 20px;">
+<p>📚 Геометрия 8 класс (Атанасян) • Глава VIII, §3, пункты 69–73 • Задачи №672–696</p>
+</footer>
+</div>
+</body>
+</html>

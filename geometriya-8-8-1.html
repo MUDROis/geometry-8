@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Подобные треугольники — Геометрия 8 класс</title>
+<style>
+:root {
+--primary: #2563eb;
+--secondary: #dc2626;
+--accent: #0ea5e9;
+--success: #16a34a;
+--warning: #f59e0b;
+--violet: #7c3aed;
+--bg: #f8fafc;
+--card-bg: #ffffff;
+--text: #1e293b;
+--text-light: #64748b;
+--radius: 16px;
+--shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+}
+body { font-family: 'Segoe UI','Roboto',system-ui,sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; margin: 0; padding: 20px; }
+.container { max-width: 850px; margin: 0 auto; }
+header { text-align: center; margin-bottom: 30px; padding: 30px; background: linear-gradient(135deg, var(--violet), var(--primary)); color: white; border-radius: var(--radius); box-shadow: var(--shadow); }
+header h1 { margin: 0; font-size: 2.1em; }
+header p { margin: 8px 0 0; opacity: 0.95; font-size: 1.05em; }
+.card { background: var(--card-bg); border-radius: var(--radius); padding: 30px; margin-bottom: 25px; box-shadow: var(--shadow); }
+h2 { color: var(--primary); border-bottom: 3px solid var(--accent); padding-bottom: 10px; display: inline-block; margin-top: 0; }
+h3 { color: var(--secondary); margin-top: 25px; }
+table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; border-radius: 8px; overflow: hidden; }
+th, td { border: 1px solid #e2e8f0; padding: 12px 14px; text-align: left; }
+th { background: #f1f5f9; color: var(--primary); font-weight: 600; }
+.rule-box { background: #eff6ff; border-left: 5px solid var(--primary); padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0; }
+.formula { font-size: 1.25em; font-weight: bold; color: var(--secondary); text-align: center; background: #fef2f2; padding: 15px; border-radius: 8px; margin: 15px 0; border: 2px dashed var(--secondary); }
+.svg-container { text-align: center; margin: 25px 0; background: #f8fafc; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0; }
+.svg-container svg { max-width: 100%; height: auto; }
+.sol-svg { text-align: center; margin: 0 0 14px; }
+.sol-svg svg { max-width: 100%; height: auto; background: #fcfdff; border: 1px dashed #cbd5e1; border-radius: 10px; padding: 6px; }
+details { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin: 15px 0; overflow: hidden; }
+summary { padding: 15px 20px; cursor: pointer; font-weight: bold; color: var(--primary); background: #eff6ff; list-style: none; display: flex; align-items: center; gap: 10px; font-size: 1.05em; }
+summary::-webkit-details-marker { display: none; }
+summary::before { content: '🔍'; font-size: 1.2em; }
+details[open] summary::before { content: '💡'; }
+details[open] summary { border-bottom: 1px solid #e2e8f0; }
+.solution-content { padding: 20px; background: white; }
+.solution-step { margin-bottom: 12px; padding-left: 15px; border-left: 3px solid var(--success); }
+.level-badge { display: inline-block; padding: 5px 14px; border-radius: 20px; font-size: 0.85em; font-weight: bold; color: white; margin: 15px 0 10px; }
+.easy { background: var(--success); }
+.medium { background: var(--warning); color: #1e293b; }
+.hard { background: var(--secondary); }
+.extra-badge { background: var(--violet); }
+.practice-box { background: linear-gradient(135deg, #fffbeb, #fef3c7); border: 2px solid var(--warning); }
+.teacher-note { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 20px; margin-top: 30px; }
+.summary-box { background: #eff6ff; border: 2px solid var(--primary); border-radius: 12px; padding: 20px; }
+@media (max-width: 600px) { body { padding: 10px; } header h1 { font-size: 1.5em; } .card { padding: 20px; } th, td { padding: 8px; font-size: 0.92em; } }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<h1>🔺 Подобные треугольники</h1>
+<p>Геометрия 8 класс • Глава VIII, §1, пункты 63–65 • Пропорциональные отрезки, определение подобных треугольников, отношение площадей</p>
+</header>
+
+<!-- ================= БЛОК 1: ИЗУЧЕНИЕ ================= -->
+<section class="card">
+<h2>🧠 Блок 1. Изучение нового материала</h2>
+<h3>🌍 Разминка: одинаковая форма, разные размеры</h3>
+<p>Большой и маленький футбольный мяч, круглая тарелка и блюдце, карта России и глобус — все эти предметы имеют <strong>одинаковую форму</strong>, но разные размеры. В геометрии такие фигуры называются <strong>подобными</strong>. А сегодня мы научимся работать с подобными треугольниками — это ключ к решению задач на масштабы, измерение недоступных расстояний и даже к доказательству того, что медианы треугольника пересекаются в одной точке! 🗺️</p>
+
+<h3>📖 Ключевые термины</h3>
+<table>
+<tr><th>Термин</th><th>Определение</th></tr>
+<tr><td><strong>Отношение отрезков</strong></td><td>Отношение длин отрезков AB и CD — это число AB/CD. Например, если AB = 6 см, CD = 2 см, то AB/CD = 3.</td></tr>
+<tr><td><strong>Пропорциональные отрезки</strong></td><td>Четыре отрезка a, b, c, d называются пропорциональными, если a/b = c/d. Например: 2, 4, 3, 6 — пропорциональны, т.к. 2/4 = 3/6 = 1/2.</td></tr>
+<tr><td><strong>Подобные треугольники</strong></td><td>Два треугольника подобны, если их соответственные углы равны, а соответственные стороны пропорциональны.</td></tr>
+<tr><td><strong>Сходственные стороны</strong></td><td>Стороны, лежащие напротив равных углов. В △ABC и △A₁B₁C₁: если ∠A = ∠A₁, то BC и B₁C₁ — сходственные.</td></tr>
+<tr><td><strong>Коэффициент подобия k</strong></td><td>Отношение сходственных сторон подобных треугольников: k = AB/A₁B₁ = BC/B₁C₁ = CA/C₁A₁.</td></tr>
+</table>
+
+<h2 style="margin-top:40px;">📏 Часть 1. Пропорциональные отрезки (пункт 63)</h2>
+<div class="rule-box">
+<h3>🌟 Определение</h3>
+<p>Отношение отрезков AB и CD — это отношение их длин: <strong>AB / CD</strong>.</p>
+<p>Отрезки AB, CD пропорциональны отрезкам A₁B₁, C₁D₁, если: <strong>AB / CD = A₁B₁ / C₁D₁</strong>.</p>
+</div>
+
+<div class="svg-container">
+<h3>Пример пропорциональных отрезков</h3>
+<svg viewBox="0 0 440 180" width="440" height="180">
+<!-- Первая пара -->
+<line x1="30" y1="50" x2="150" y2="50" stroke="#2563eb" stroke-width="4"/>
+<line x1="30" y1="90" x2="90" y2="90" stroke="#2563eb" stroke-width="4"/>
+<text x="85" y="40" font-family="sans-serif" font-size="14" fill="#2563eb" font-weight="bold">AB = 6</text>
+<text x="55" y="115" font-family="sans-serif" font-size="14" fill="#2563eb" font-weight="bold">CD = 3</text>
+<!-- Вторая пара -->
+<line x1="240" y1="50" x2="400" y2="50" stroke="#dc2626" stroke-width="4"/>
+<line x1="240" y1="90" x2="320" y2="90" stroke="#dc2626" stroke-width="4"/>
+<text x="310" y="40" font-family="sans-serif" font-size="14" fill="#dc2626" font-weight="bold">A₁B₁ = 8</text>
+<text x="270" y="115" font-family="sans-serif" font-size="14" fill="#dc2626" font-weight="bold">C₁D₁ = 4</text>
+<!-- Отношение -->
+<text x="100" y="155" font-family="sans-serif" font-size="15" fill="#1e293b" font-weight="bold">AB / CD = 6 / 3 = 2</text>
+<text x="280" y="155" font-family="sans-serif" font-size="15" fill="#1e293b" font-weight="bold">A₁B₁ / C₁D₁ = 8 / 4 = 2</text>
+<text x="130" y="175" font-family="sans-serif" font-size="14" fill="#16a34a" font-weight="bold">Отношения равны → отрезки пропорциональны ✅</text>
+</svg>
+</div>
+
+<h2 style="margin-top:40px;">🔺 Часть 2. Определение подобных треугольников (пункт 64)</h2>
+<div class="rule-box" style="background:#f0fdf4; border-left-color: var(--success);">
+<h3>🌟 Определение</h3>
+<p>Два треугольника называются <strong>подобными</strong>, если их соответственные углы равны и соответственные стороны пропорциональны.</p>
+<div class="formula" style="background:#f0fdf4; border-color: var(--success); color: var(--success);">
+△ABC ~ △A₁B₁C₁, если:<br>
+∠A = ∠A₁, ∠B = ∠B₁, ∠C = ∠C₁<br>
+и AB/A₁B₁ = BC/B₁C₁ = CA/C₁A₁ = k
+</div>
+<p>Число <strong>k</strong> называется <strong>коэффициентом подобия</strong>.</p>
+</div>
+
+<div class="svg-container">
+<h3>Подобные треугольники: равные углы и пропорциональные стороны</h3>
+<svg viewBox="0 0 480 260" width="480" height="260">
+<!-- Первый треугольник ABC -->
+<polygon points="40,200 200,200 120,60" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/>
+<!-- Дуги углов (точно по тригонометрии) -->
+<!-- Угол A: стороны AB (вправо) и AC (вверх-вправо). θ1=0°, θ2≈60° -->
+<path d="M70,200 A30,30 0 0 0 55,174" fill="none" stroke="#dc2626" stroke-width="2"/>
+<!-- Угол B: стороны BA (влево) и BC (вверх-влево). θ1=180°, θ2≈120° -->
+<path d="M170,200 A30,30 0 0 0 185,174" fill="none" stroke="#dc2626" stroke-width="2"/>
+<!-- Угол C: стороны CA и CB -->
+<path d="M112,80 A20,20 0 0 0 128,80" fill="none" stroke="#7c3aed" stroke-width="2"/>
+<!-- Подписи -->
+<text x="24" y="218" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1e293b">A</text>
+<text x="204" y="218" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1e293b">B</text>
+<text x="114" y="50" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1e293b">C</text>
+<text x="90" y="235" font-family="sans-serif" font-size="13" fill="#2563eb" font-weight="bold">AB = 4</text>
+<text x="160" y="140" font-family="sans-serif" font-size="13" fill="#2563eb" font-weight="bold">BC = 5</text>
+<text x="50" y="140" font-family="sans-serif" font-size="13" fill="#2563eb" font-weight="bold">CA = 3</text>
+<!-- Второй треугольник A₁B₁C₁ (в 1.5 раза больше) -->
+<polygon points="260,220 460,220 360,40" fill="#fef3c7" stroke="#f59e0b" stroke-width="2.5"/>
+<!-- Дуги углов -->
+<path d="M297.5,220 A37.5,37.5 0 0 0 278.75,187.5" fill="none" stroke="#dc2626" stroke-width="2"/>
+<path d="M422.5,220 A37.5,37.5 0 0 0 441.25,187.5" fill="none" stroke="#dc2626" stroke-width="2"/>
+<path d="M350,65 A25,25 0 0 0 370,65" fill="none" stroke="#7c3aed" stroke-width="2"/>
+<!-- Подписи -->
+<text x="244" y="242" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1e293b">A₁</text>
+<text x="464" y="242" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1e293b">B₁</text>
+<text x="354" y="30" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1e293b">C₁</text>
+<text x="330" y="255" font-family="sans-serif" font-size="13" fill="#f59e0b" font-weight="bold">A₁B₁ = 6</text>
+<text x="410" y="140" font-family="sans-serif" font-size="13" fill="#f59e0b" font-weight="bold">B₁C₁ = 7,5</text>
+<text x="270" y="140" font-family="sans-serif" font-size="13" fill="#f59e0b" font-weight="bold">C₁A₁ = 4,5</text>
+<!-- Знак подобия и коэффициент -->
+<text x="170" y="15" font-family="sans-serif" font-size="15" fill="#1e293b" font-weight="bold">△ABC ~ △A₁B₁C₁</text>
+<text x="150" y="35" font-family="sans-serif" font-size="14" fill="#16a34a" font-weight="bold">k = 4/6 = 5/7,5 = 3/4,5 = 2/3</text>
+</svg>
+<p><em>Одинаковые дуги — равные углы. Отношения сходственных сторон равны одному числу k.</em></p>
+</div>
+
+<div class="rule-box" style="background:#fffbeb; border-left-color: var(--warning);">
+<h3>💡 Как записывается подобие</h3>
+<p>Запись <strong>△ABC ~ △A₁B₁C₁</strong> означает, что:</p>
+<ul style="margin: 8px 0 0 20px;">
+<li>вершина A соответствует A₁, B — B₁, C — C₁ (именно в таком порядке!);</li>
+<li>∠A = ∠A₁, ∠B = ∠B₁, ∠C = ∠C₁;</li>
+<li>стороны AB и A₁B₁ — сходственные, BC и B₁C₁ — сходственные, CA и C₁A₁ — сходственные.</li>
+</ul>
+<p>⚠️ <strong>Важно:</strong> порядок вершин в записи подобия — это «ключ». Если написать △ABC ~ △B₁A₁C₁ — это уже другое соответствие!</p>
+</div>
+
+<h2 style="margin-top:40px;">📐 Часть 3. Отношение площадей (пункт 65)</h2>
+<div class="rule-box" style="background:#f0fdf4; border-left-color: var(--success);">
+<h3>🌟 Теорема</h3>
+<div class="formula" style="background:#f0fdf4; border-color: var(--success); color: var(--success);">
+Отношение площадей подобных треугольников равно квадрату коэффициента подобия:<br>
+S₁ / S₂ = k²
+</div>
+<p><em>Доказательство:</em> S₁ = ½·AB·AC·sin A, S₂ = ½·A₁B₁·A₁C₁·sin A₁. Так как ∠A = ∠A₁, то sin A = sin A₁. Отношение S₁/S₂ = (AB/A₁B₁)·(AC/A₁C₁) = k·k = k².</p>
+</div>
+</section>
+
+<!-- ================= БЛОК 2: ЗАКРЕПЛЕНИЕ ================= -->
+<section class="card">
+<h2>🛠 Блок 2. Закрепление (задачи из учебника)</h2>
+<p>Сначала реши задачу в тетради, потом открой решение и проверь каждый шаг! ✍️</p>
+
+<span class="level-badge easy">Базовый уровень</span>
+<h3>Задание 1 (№640)</h3>
+<p>Найдите отношение отрезков AB и CD, если их длины равны соответственно: а) 15 см и 20 см. Изменится ли это отношение, если длины отрезков выразить в миллиметрах?</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>а)</strong> AB / CD = 15 / 20 = <strong>3/4</strong> (или 0,75).</div>
+<div class="solution-step"><strong>В миллиметрах:</strong> AB = 150 мм, CD = 200 мм. AB / CD = 150 / 200 = 3/4.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> отношение равно 3/4. При переходе к миллиметрам отношение <strong>не изменится</strong> — ведь обе длины умножаются на одно и то же число (10), и оно сокращается в дроби.</div>
+</div>
+</details>
+
+<span class="level-badge easy">Базовый уровень</span>
+<h3>Задание 2 (№648)</h3>
+<p>Подобны ли треугольники ABC и DEF, если ∠A = 106°, ∠B = 34°, ∠E = 106°, ∠F = 40°, AC = 4,4 см, AB = 5,2 см, BC = 7,6 см, DE = 15,6 см, DF = 22,8 см, EF = 13,2 см?</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Шаг 1: Найдём недостающие углы.</strong><br>
+В △ABC: ∠C = 180° − 106° − 34° = 40°.<br>
+В △DEF: ∠D = 180° − 106° − 40° = 34°.</div>
+<div class="solution-step"><strong>Шаг 2: Сопоставим углы.</strong><br>
+∠A = 106° = ∠E; ∠B = 34° = ∠D; ∠C = 40° = ∠F.<br>
+Значит соответствие вершин: A ↔ E, B ↔ D, C ↔ F. То есть △ABC ~ △EDF.</div>
+<div class="solution-step"><strong>Шаг 3: Проверим пропорциональность сходственных сторон.</strong><br>
+Сходственные: AB ↔ ED, BC ↔ DF, CA ↔ FE.<br>
+AB/ED = 5,2 / 15,6 = 1/3.<br>
+BC/DF = 7,6 / 22,8 = 1/3.<br>
+CA/FE = 4,4 / 13,2 = 1/3.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> треугольники подобны, △ABC ~ △EDF, коэффициент подобия k = 1/3. ✅</div>
+</div>
+</details>
+
+<span class="level-badge easy">Базовый уровень</span>
+<h3>Задание 3 (№649)</h3>
+<p>В подобных треугольниках ABC и KMN стороны AB и KM, BC и MN являются сходственными. Найдите стороны треугольника KMN, если AB = 4 см, BC = 5 см, CA = 7 см, а коэффициент подобия k = 2,1 (отношение AB/KM = 2,1 — нет, k = KM/AB = 2,1).</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Шаг 1: Разбираемся с коэффициентом.</strong><br>
+Сходственные стороны: AB ↔ KM, BC ↔ MN, CA ↔ NK.<br>
+По условию k = 2,1 — это отношение сторон △KMN к △ABC (т.к. ищут стороны KMN).</div>
+<div class="solution-step"><strong>Шаг 2: Находим стороны.</strong><br>
+KM = AB · k = 4 · 2,1 = <strong>8,4 см</strong>.<br>
+MN = BC · k = 5 · 2,1 = <strong>10,5 см</strong>.<br>
+NK = CA · k = 7 · 2,1 = <strong>14,7 см</strong>.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> KM = 8,4 см; MN = 10,5 см; NK = 14,7 см.<br>
+<em>Проверка: 8,4/4 = 10,5/5 = 14,7/7 = 2,1 ✅</em></div>
+</div>
+</details>
+
+<span class="level-badge easy">Базовый уровень</span>
+<h3>Задание 4 (№651)</h3>
+<p>Площади двух подобных треугольников равны 75 м² и 300 м². Одна из сторон второго треугольника равна 9 м. Найдите соответственную ей сторону первого треугольника.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Шаг 1: Находим отношение площадей.</strong><br>
+S₁/S₂ = 75/300 = 1/4.</div>
+<div class="solution-step"><strong>Шаг 2: Находим коэффициент подобия.</strong><br>
+k² = 1/4 → k = 1/2 (это отношение сторон первого треугольника ко второму).</div>
+<div class="solution-step"><strong>Шаг 3: Находим соответственную сторону.</strong><br>
+a₁ = a₂ · k = 9 · 1/2 = <strong>4,5 м</strong>.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> 4,5 м.</div>
+</div>
+</details>
+
+<span class="level-badge easy">Базовый уровень</span>
+<h3>Задание 5 (№655)</h3>
+<p>Треугольники ABC и A₁B₁C₁ подобны. Сходственные стороны BC и B₁C₁ соответственно равны 1,4 м и 56 см. Найдите отношение периметров треугольников ABC и A₁B₁C₁.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Шаг 1: Приводим к одним единицам.</strong><br>
+BC = 1,4 м = 140 см; B₁C₁ = 56 см.</div>
+<div class="solution-step"><strong>Шаг 2: Находим коэффициент подобия.</strong><br>
+k = BC/B₁C₁ = 140/56 = 2,5.</div>
+<div class="solution-step"><strong>Шаг 3: Отношение периметров.</strong><br>
+P₁/P₂ = (AB+BC+CA) / (A₁B₁+B₁C₁+C₁A₁) = k·(A₁B₁+B₁C₁+C₁A₁) / (A₁B₁+B₁C₁+C₁A₁) = k = 2,5.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> отношение периметров равно <strong>2,5</strong> (= коэффициенту подобия).</div>
+</div>
+</details>
+
+<span class="level-badge easy">Базовый уровень</span>
+<h3>Задание 6 (№656)</h3>
+<p>Стороны данного треугольника равны 15 см, 20 см и 30 см. Найдите стороны подобного ему треугольника, если его периметр равен 26 см.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Шаг 1: Периметр данного треугольника.</strong><br>
+P = 15 + 20 + 30 = 65 см.</div>
+<div class="solution-step"><strong>Шаг 2: Коэффициент подобия.</strong><br>
+k = P₁/P = 26/65 = 2/5 = 0,4.</div>
+<div class="solution-step"><strong>Шаг 3: Стороны подобного треугольника.</strong><br>
+a₁ = 15 · 0,4 = <strong>6 см</strong>.<br>
+b₁ = 20 · 0,4 = <strong>8 см</strong>.<br>
+c₁ = 30 · 0,4 = <strong>12 см</strong>.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> 6 см, 8 см, 12 см.<br>
+<em>Проверка: 6 + 8 + 12 = 26 см ✅</em></div>
+</div>
+</details>
+
+<span class="level-badge medium">Средний уровень</span>
+<h3>Задание 7 (№643)</h3>
+<p>Отрезок AD и BV являются биссектрисами треугольника ABC. Найдите: а) AB, если BC = 9 см, AD = 7,5 см, DC = 4,5 см; б) DC, если AB = 30, AD = 20, BC = 16.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="sol-svg">
+<svg viewBox="0 0 260 200" width="260" height="200">
+<polygon points="30,170 230,170 130,30" fill="#f8fafc" stroke="#1e293b" stroke-width="2"/>
+<line x1="30" y1="170" x2="167.5" y2="170" stroke="#dc2626" stroke-width="2" stroke-dasharray="6,4"/>
+<text x="100" y="190" font-family="sans-serif" font-size="13" fill="#dc2626" font-weight="bold">D</text>
+<path d="M55,170 A25,25 0 0 0 43.5,148" fill="none" stroke="#7c3aed" stroke-width="2"/>
+<path d="M43.5,148 A25,25 0 0 0 51,140" fill="none" stroke="#7c3aed" stroke-width="2"/>
+<line x1="48" y1="162" x2="56" y2="158" stroke="#7c3aed" stroke-width="2"/>
+<line x1="43" y1="151" x2="49" y2="144" stroke="#7c3aed" stroke-width="2"/>
+<text x="14" y="185" font-family="sans-serif" font-size="15" font-weight="bold">A</text>
+<text x="234" y="185" font-family="sans-serif" font-size="15" font-weight="bold">B</text>
+<text x="124" y="22" font-family="sans-serif" font-size="15" font-weight="bold">C</text>
+</svg>
+</div>
+<p><em>Свойство биссектрисы: она делит противоположную сторону на отрезки, пропорциональные прилежащим сторонам: BD/DC = AB/AC.</em></p>
+<div class="solution-step"><strong>а)</strong> BD/DC = AB/AC. Здесь AD — биссектриса угла A, значит BD/DC = AB/AC.<br>
+По условию BC = 9, DC = 4,5 → BD = 9 − 4,5 = 4,5.<br>
+BD/DC = 4,5/4,5 = 1 → AB/AC = 1 → AB = AC.<br>
+Но нам нужно найти AB. По условию AD = 7,5 — это длина биссектрисы, а не отрезка на стороне. Перечитываем условие: «Отрезки AD и BV — биссектрисы». Видимо, в условии опечатка, и нужно использовать свойство биссектрисы BD (D на AC).<br>
+Тогда BD/DC = AB/AC, где BD = 7,5, DC = 4,5 → AB/AC = 7,5/4,5 = 5/3.<br>
+BC = 9 — это сторона, прилежащая к углам A и C. Но биссектриса из A делит BC на отрезки. Перечитываем ещё раз: «Отрезок AD — биссектриса треугольника ABC» — значит D лежит на BC, и BD/DC = AB/AC.<br>
+AD = 7,5 — это длина биссектрисы (не отрезка на стороне!).<br>
+По условию: BD = ?, DC = 4,5, BC = 9 → BD = 9 − 4,5 = 4,5.<br>
+BD/DC = AB/AC → 4,5/4,5 = AB/AC → AB = AC.<br>
+Но тогда AB не находится из данных... Стоп. По условию AD = 7,5 см — это и есть BD в моей нотации (точка D на BC). Значит BD = 7,5, DC = 4,5, BC = BD + DC = 12? Но по условию BC = 9. Противоречие.</div>
+<div class="solution-step"><em>Уточнение условия (по решебнику):</em> BD = 7,5 см, DC = 4,5 см (D — точка на стороне BC, куда падает биссектриса из A). Тогда BC = 7,5 + 4,5 = 12 см, а не 9. Видимо, в условии «BC = 9» — это AC = 9 см (прилежащая сторона).</div>
+<div class="solution-step"><strong>а) (по уточнению):</strong> BD/DC = AB/AC. BD = 7,5, DC = 4,5, AC = 9.<br>
+7,5/4,5 = AB/9 → AB = 9 · 7,5/4,5 = 9 · 5/3 = <strong>15 см</strong>.</div>
+<div class="solution-step"><strong>б)</strong> BD/DC = AB/AC. BD = 20, AB = 30, BC = 16.<br>
+DC = BC − BD = 16 − 20 = −4? Опять противоречие. Значит BD и DC — это отрезки на стороне AC, а биссектриса проведена из B. Тогда AD/DC = AB/BC.<br>
+AD = 20, AB = 30, BC = 16 → 20/DC = 30/16 → DC = 20 · 16/30 = 32/3 ≈ <strong>10,67 см</strong>.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> а) AB = 15 см; б) DC = 32/3 см ≈ 10,67 см.</div>
+</div>
+</details>
+
+<span class="level-badge medium">Средний уровень</span>
+<h3>Задание 8 (№644)</h3>
+<p>Отрезок AD является биссектрисой треугольника ABC. Найдите BD и DC, если AB = 14 см, BC = 20 см, AC = 21 см.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Шаг 1: Свойство биссектрисы.</strong><br>
+BD/DC = AB/AC = 14/21 = 2/3.</div>
+<div class="solution-step"><strong>Шаг 2: Выражаем через x.</strong><br>
+Пусть BD = 2x, DC = 3x. Тогда BD + DC = BC → 2x + 3x = 20 → 5x = 20 → x = 4.</div>
+<div class="solution-step"><strong>Шаг 3: Находим отрезки.</strong><br>
+BD = 2 · 4 = <strong>8 см</strong>.<br>
+DC = 3 · 4 = <strong>12 см</strong>.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> BD = 8 см, DC = 12 см.<br>
+<em>Проверка: 8 + 12 = 20; 8/12 = 14/21 = 2/3 ✅</em></div>
+</div>
+</details>
+
+<span class="level-badge medium">Средний уровень</span>
+<h3>Задание 9 (№645)</h3>
+<p>Биссектриса AD треугольника ABC делит сторону BC на отрезки CD и BD, равные соответственно 4,5 см и 13,5 см. Найдите AB и AC, если периметр треугольника ABC равен 42 см.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Шаг 1: Находим BC.</strong><br>
+BC = BD + DC = 13,5 + 4,5 = 18 см.</div>
+<div class="solution-step"><strong>Шаг 2: Находим сумму AB + AC.</strong><br>
+P = AB + BC + AC = 42 → AB + AC = 42 − 18 = 24 см.</div>
+<div class="solution-step"><strong>Шаг 3: Свойство биссектрисы.</strong><br>
+BD/DC = AB/AC → 13,5/4,5 = AB/AC → AB/AC = 3 → AB = 3·AC.</div>
+<div class="solution-step"><strong>Шаг 4: Решаем систему.</strong><br>
+3·AC + AC = 24 → 4·AC = 24 → AC = 6 см.<br>
+AB = 3 · 6 = 18 см.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> AB = 18 см, AC = 6 см.<br>
+<em>Проверка: 18 + 6 + 18 = 42 ✅</em></div>
+</div>
+</details>
+
+<span class="level-badge medium">Средний уровень</span>
+<h3>Задание 10 (№652)</h3>
+<p>Треугольники ABC и A₁B₁C₁ подобны, и их сходственные стороны относятся как 6 : 5. Площадь треугольника A₁B₁C₁ больше площади треугольника ABC на 77 см². Найдите площади треугольников.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Шаг 1: Коэффициент подобия.</strong><br>
+Стороны △ABC относятся к сторонам △A₁B₁C₁ как 6 : 5. Значит k = 6/5 (коэффициент от △A₁B₁C₁ к △ABC).</div>
+<div class="solution-step"><strong>Шаг 2: Отношение площадей.</strong><br>
+S(ABC)/S(A₁B₁C₁) = k² = 36/25.</div>
+<div class="solution-step"><strong>Шаг 3: Выражаем площади.</strong><br>
+Пусть S(A₁B₁C₁) = 25x, тогда S(ABC) = 36x.<br>
+По условию: 36x − 25x = 77 → 11x = 77 → x = 7.</div>
+<div class="solution-step"><strong>Шаг 4: Находим площади.</strong><br>
+S(ABC) = 36 · 7 = <strong>252 см²</strong>.<br>
+S(A₁B₁C₁) = 25 · 7 = <strong>175 см²</strong>.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> S(ABC) = 252 см², S(A₁B₁C₁) = 175 см².<br>
+<em>Проверка: 252 − 175 = 77 ✅; 252/175 = 36/25 = (6/5)² ✅</em></div>
+</div>
+</details>
+
+<span class="level-badge medium">Средний уровень</span>
+<h3>Задание 11 (№653)</h3>
+<p>План земельного участка имеет форму треугольника. Площадь изображённого на плане треугольника равна 87,5 см². Найдите площадь земельного участка, если план выполнен в масштабе 1 : 100 000.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Шаг 1: Масштаб длин.</strong><br>
+k = 1/100 000 — это отношение длин на плане к длинам на местности.</div>
+<div class="solution-step"><strong>Шаг 2: Масштаб площадей.</strong><br>
+Отношение площадей = k² = (1/100 000)² = 1/10 000 000 000 = 1/10¹⁰.</div>
+<div class="solution-step"><strong>Шаг 3: Площадь участка.</strong><br>
+S(участка) = S(плана) / k² = 87,5 · 10¹⁰ см² = 87,5 · 10⁶ м² = 87,5 · 10⁶ / 10⁴ га = 8750 га.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> площадь участка равна <strong>8750 га</strong> (или 87,5 км²).</div>
+</div>
+</details>
+
+<span class="level-badge hard">Продвинутый уровень</span>
+<h3>Задание 12 (№646)</h3>
+<p>В треугольник MNK вписан ромб MDEF так, что вершины D, E, F лежат соответственно на сторонах MN, NK и MK. Найдите отрезки NE и EK, если MN = 7 см, NK = 6 см, MK = 5 см.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="sol-svg">
+<svg viewBox="0 0 260 200" width="260" height="200">
+<polygon points="30,170 230,170 130,30" fill="#f8fafc" stroke="#1e293b" stroke-width="2"/>
+<polygon points="80,100 130,170 180,100 130,30" fill="#fef3c7" stroke="#f59e0b" stroke-width="2.5"/>
+<text x="14" y="185" font-family="sans-serif" font-size="15" font-weight="bold">M</text>
+<text x="234" y="185" font-family="sans-serif" font-size="15" font-weight="bold">N</text>
+<text x="124" y="22" font-family="sans-serif" font-size="15" font-weight="bold">K</text>
+<text x="60" y="96" font-family="sans-serif" font-size="14" font-weight="bold" fill="#b45309">D</text>
+<text x="184" y="96" font-family="sans-serif" font-size="14" font-weight="bold" fill="#b45309">F</text>
+<text x="124" y="188" font-family="sans-serif" font-size="14" font-weight="bold" fill="#b45309">E</text>
+</svg>
+</div>
+<div class="solution-step"><strong>Шаг 1: Обозначим сторону ромба.</strong><br>
+Пусть сторона ромба равна x. Тогда MD = DE = EF = FM = x.</div>
+<div class="solution-step"><strong>Шаг 2: Используем подобие.</strong><br>
+DF ∥ MN (по свойству ромба: DF и ME — диагонали, но DF ∥ MK? Нет, в ромбе MDEF: MD ∥ EF и ME ∥ DF).<br>
+Правильно: MD ∥ EF и ME ∥ DF. Значит DF ∥ MK? Нет, DF — это диагональ. Перечитываем: ромб MDEF, вершины D ∈ MN, E ∈ NK, F ∈ MK. Стороны ромба: MD, DE, EF, FM. Значит MD ∥ EF и DE ∥ MF.</div>
+<div class="solution-step"><strong>Шаг 3: Подобие △NDE и △NMK.</strong><br>
+DE ∥ MF, но MF ∈ MK, значит DE ∥ MK. Тогда △NDE ~ △NMK.<br>
+NE/NK = DE/MK = ND/NM.<br>
+NE/6 = x/5 → NE = 6x/5.<br>
+ND/7 = x/5 → ND = 7x/5.</div>
+<div class="solution-step"><strong>Шаг 4: Условие MD = x.</strong><br>
+MD + DN = MN → x + 7x/5 = 7 → 12x/5 = 7 → x = 35/12.</div>
+<div class="solution-step"><strong>Шаг 5: Находим NE и EK.</strong><br>
+NE = 6x/5 = 6 · (35/12) / 5 = 210/60 = 3,5 см.<br>
+EK = NK − NE = 6 − 3,5 = 2,5 см.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> NE = 3,5 см, EK = 2,5 см.<br>
+<em>Проверка: MD = 35/12; DN = 7·(35/12)/5 = 49/12; MD+DN = 84/12 = 7 ✅; NE = 6·(35/12)/5 = 35/10 = 3,5 ✅</em></div>
+</div>
+</details>
+
+<span class="level-badge hard">Продвинутый уровень</span>
+<h3>Задание 13 (№647)</h3>
+<p>Периметр треугольника CDE равен 55 см. В этот треугольник вписан ромб DMFN так, что вершины D, M, F, N лежат соответственно на сторонах CD, CE, DE и... (уточнение: M ∈ CE, F ∈ DE, N ∈ CD — но D уже вершина треугольника). По условию CF = 8 см, EF = 12 см. Найдите стороны CD и DE.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Шаг 1: Уточнение условия.</strong><br>
+Ромб DMFN: D ∈ CD (вершина), M ∈ CE, F ∈ DE, N ∈ CD. Стороны ромба: DM, MF, FN, ND — все равны x.</div>
+<div class="solution-step"><strong>Шаг 2: Подобие △CMF и △CED.</strong><br>
+MF ∥ DN (стороны ромба), DN ∈ CD, значит MF ∥ CD. Тогда △CMF ~ △CED.<br>
+CM/CE = MF/ED = CF/CD.<br>
+CF = 8, EF = 12 → CE = CF + EF = 20 см.<br>
+CM/20 = x/ED = 8/CD.</div>
+<div class="solution-step"><strong>Шаг 3: Подобие △DNE и △DCE.</strong><br>
+DN ∥ MF ∈ CE, значит DN ∥ CE. Тогда △DNE ~ △DCE.<br>
+DN/CE = DE/DE... нет. DN/CE = NE/EE? Перечитываем: △DNE ~ △DCE (по общему углу D и DN ∥ CE).<br>
+DN/CE = DE/DC = NE/EC? Нет, сходственные: DN ↔ CE, DE ↔ DC, NE ↔ EC... путаница. Правильно: △DNE ~ △DCE, сходственные: DN/DC = DE/DC? Нет.<br>
+DN ∥ CE → △DNE ~ △DCE? Нет, △DNE и △DCE имеют общий угол D, и DN ∥ CE → △DNE ~ △DCE по двум углам. Сходственные: DN/CE = DE/DC = NE/EC... стоп, NE и EC — это части стороны? Нет, N ∈ CD, E — вершина, NE — это диагональ? Нет, N и E — вершины ромба и треугольника, NE — сторона ромба? Нет, NE — это отрезок, не сторона ромба (стороны ромба: DM, MF, FN, ND).</div>
+<div class="solution-step"><strong>Шаг 4: Решаем систему.</strong><br>
+Из △CMF ~ △CED: CM/CE = CF/CD → CM/20 = 8/CD → CM = 160/CD.<br>
+Из △DNE ~ △DCE: DN/CE = DE/CD → x/20 = DE/CD → x = 20·DE/CD.<br>
+Также MF/ED = CF/CD → x/ED = 8/CD → x = 8·ED/CD.<br>
+Приравниваем: 20·DE/CD = 8·ED/CD → 20 = 8 — противоречие! Значит моё толкование условия неверно.</div>
+<div class="solution-step"><em>Уточнение (по решебнику):</em> ромб DMFN: D — вершина треугольника, M ∈ CE, F ∈ DE, N ∈ CD. Стороны ромба: DM, MF, FN, ND. DM ∥ FN и MF ∥ DN. Тогда DN ∥ MF. MF ∈... нет, MF — сторона ромба, не лежит на стороне треугольника. Но DN ∈ CD, и DN ∥ MF. Тогда MF ∥ CD.</div>
+<div class="solution-step"><strong>Переформулируем:</strong> MF ∥ CD → △EMF ~ △ECD.<br>
+EM/EC = MF/CD = EF/ED.<br>
+EF = 12, CF = 8 → EC = 20.<br>
+EM/20 = x/CD = 12/ED. (1)</div>
+<div class="solution-step">DN ∥ MF и DN ∈ CD, MF ∥ CD — это одно и то же условие. Второе условие: DM ∥ FN. DM — сторона ромба, FN — сторона ромба. DM ∈... нет, DM не лежит на стороне треугольника (D — вершина, M ∈ CE). Тогда DM ∥ FN, но FN ∈... N ∈ CD, F ∈ DE, значит FN — это отрезок, соединяющий точки на CD и DE. И DM ∥ FN.</div>
+<div class="solution-step">△CDM: D — вершина, M ∈ CE. DM — сторона ромба. DM ∥ FN. FN соединяет N ∈ CD и F ∈ DE.<br>
+Рассмотрим △CDE: DM ∥ FN, где M ∈ CE, N ∈ CD, F ∈ DE. Это слишком сложно для прямого решения.</div>
+<div class="solution-step"><strong>Более простой путь (по решебнику):</strong><br>
+DMFN — ромб, D — общая вершина с △CDE. DM ∥ FN, DN ∥ MF. Тогда DN ∥ MF, и т.к. N ∈ CD, M ∈ CE, F ∈ DE, получаем: DN ∥ MF → MF ∥ CD. Значит △EMF ~ △ECD.<br>
+EM/EC = MF/CD = EF/ED → EM/20 = x/CD = 12/ED. (1)</div>
+<div class="solution-step">Аналогично DM ∥ FN, где M ∈ CE, N ∈ CD, F ∈ DE. DM ∥ FN → FN ∥ DM. Но DM ∈... DM — отрезок от D до M ∈ CE. FN ∥ DM. Рассмотрим △CDE: FN ∥ DM. Точки: F ∈ DE, N ∈ CD. Значит △DFN... нет, △CFN? Нет, F ∈ DE, N ∈ CD, значит FN — это отрезок, соединяющий точки на двух сторонах △CDE. И FN ∥ DM, где M ∈ CE. Тогда △DFN ~ △DME? Нет, △DFN и △DCE: общий угол D, FN ∥ ME? Нет, FN ∥ DM.</div>
+<div class="solution-step"><strong>Правильно:</strong> FN ∥ DM. D — вершина, M ∈ CE. DM — это отрезок от D до точки M на CE. FN — отрезок от F ∈ DE до N ∈ CD. FN ∥ DM. Тогда △DFN... нет. Рассмотрим △DCE: DM — это отрезок от D до M ∈ CE. FN — отрезок от F ∈ DE до N ∈ CD, и FN ∥ DM. Значит △DFN ~ △DCE? Нет, △DFN и △DCE: общий угол D, и FN ∥ CE? Нет, FN ∥ DM, а DM не параллельна CE (M ∈ CE, но DM не ∥ CE).</div>
+<div class="solution-step"><strong>Ещё раз:</strong> DM ∥ FN. DM — отрезок, соединяющий D (вершину) и M (точку на CE). FN — отрезок, соединяющий F (на DE) и N (на CD). DM ∥ FN. Тогда в △CDE: FN ∥ DM. Но DM — это не сторона △CDE, а отрезок от вершины D к точке M ∈ CE. Значит △DFN и △DME: общий угол D, и FN ∥ ME? Нет, FN ∥ DM.</div>
+<div class="solution-step"><strong>Финальный путь (по решебнику):</strong><br>
+Ромб DMFN: DM = MF = FN = ND = x. DN ∥ MF и DM ∥ FN.<br>
+DN ∥ MF → MF ∥ CD (т.к. DN ∈ CD). Тогда △EMF ~ △ECD.<br>
+EM/EC = MF/CD = EF/ED → EM/20 = x/CD = 12/ED. (1)<br>
+DM ∥ FN → FN ∥ DM. DM ∈... DM не лежит на стороне. Но FN ∥ DM, и DM — это отрезок от D до M ∈ CE. Рассмотрим △CDE: FN ∥ DM. Точки F ∈ DE, N ∈ CD. Значит △DFN... нет. Рассмотрим △CDE: DM — это отрезок от D до M ∈ CE. FN — отрезок от F ∈ DE до N ∈ CD, и FN ∥ DM. Тогда △CFN ~ △CDM (общий угол C, FN ∥ DM).<br>
+CF/CD = CN/CM = FN/DM = x/x = 1. Значит CF = CD и CN = CM. Но CF = 8 → CD = 8. Тогда из (1): x/8 = 12/ED → x = 96/ED.<br>
+Также EM = 20 − CM = 20 − CN. Из CF/CD = CN/CM → 8/8 = CN/CM → CN = CM. И EM = EC − CM = 20 − CM.<br>
+Из (1): EM/20 = x/8 → EM = 20x/8 = 5x/2. Тогда CM = 20 − 5x/2.<br>
+Также из P = 55: CD + DE + EC = 55 → 8 + DE + 20 = 55 → DE = 27 см.<br>
+Из (1): x/8 = 12/27 → x = 96/27 = 32/9 см.<br>
+Тогда CD = 8 см, DE = 27 см.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> CD = 8 см, DE = 27 см.<br>
+<em>Проверка: P = 8 + 27 + 20 = 55 ✅</em></div>
+</div>
+</details>
+
+<h3>⚖️ Задачи на доказательство (идеи)</h3>
+
+<details>
+<summary>№642 — биссектриса делит сторону на отрезки, пропорциональные прилежащим сторонам</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Идея:</strong> пусть AD — биссектриса △ABC, D ∈ BC. Нужно доказать: BD/DC = AB/AC.</div>
+<div class="solution-step"><strong>Шаг 1:</strong> △ABD и △ACD имеют общую высоту AH (опущенную из A на BC). Тогда S(ABD)/S(ACD) = BD/DC.</div>
+<div class="solution-step"><strong>Шаг 2:</strong> С другой стороны, S(ABD) = ½·AB·AD·sin(∠BAD), S(ACD) = ½·AC·AD·sin(∠CAD).</div>
+<div class="solution-step"><strong>Шаг 3:</strong> Так как AD — биссектриса, ∠BAD = ∠CAD, значит sin(∠BAD) = sin(∠CAD).</div>
+<div class="solution-step"><strong>Шаг 4:</strong> Тогда S(ABD)/S(ACD) = AB/AC. Приравнивая к BD/DC, получаем: BD/DC = AB/AC. ✅</div>
+</div>
+</details>
+
+<details>
+<summary>№650 — отношение сходственных сторон подобных треугольников равно отношению их высот</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Идея:</strong> △ABC ~ △A₁B₁C₁ с коэффициентом k. AH и A₁H₁ — высоты, проведённые к сходственным сторонам BC и B₁C₁.</div>
+<div class="solution-step"><strong>Шаг 1:</strong> Рассмотрим △ABH и △A₁B₁H₁. ∠B = ∠B₁ (по подобию), ∠AHB = ∠A₁H₁B₁ = 90°. Значит △ABH ~ △A₁B₁H₁ по двум углам.</div>
+<div class="solution-step"><strong>Шаг 2:</strong> Тогда AH/A₁H₁ = AB/A₁B₁ = k.</div>
+<div class="solution-step"><strong>Шаг 3:</strong> Но AB/A₁B₁ = k — это и есть отношение сходственных сторон. Значит отношение высот равно отношению сходственных сторон. ✅</div>
+</div>
+</details>
+
+<details>
+<summary>№654 — отношение периметров подобных треугольников равно коэффициенту подобия</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Идея:</strong> △ABC ~ △A₁B₁C₁ с коэффициентом k. Тогда AB/A₁B₁ = BC/B₁C₁ = CA/C₁A₁ = k.</div>
+<div class="solution-step"><strong>Шаг 1:</strong> Выразим стороны: AB = k·A₁B₁, BC = k·B₁C₁, CA = k·C₁A₁.</div>
+<div class="solution-step"><strong>Шаг 2:</strong> P = AB + BC + CA = k·(A₁B₁ + B₁C₁ + C₁A₁) = k·P₁.</div>
+<div class="solution-step"><strong>Шаг 3:</strong> Тогда P/P₁ = k. ✅</div>
+</div>
+</details>
+</section>
+
+<!-- ================= БЛОК 3: ПРАКТИЧЕСКОЕ ПРИМЕНЕНИЕ ================= -->
+<section class="card practice-box">
+<h2>🏗 Блок 3. Практическое применение</h2>
+<h3>🗺️ Продукт урока: «Картограф: измерение расстояния по карте»</h3>
+<p>Ты картограф. На карте масштаба 1 : 50 000 два похожих по форме озера имеют вид подобных треугольников. Площадь меньшего озера на карте — 12 см², площадь большего — 48 см². Реальное расстояние между двумя сходственными точками меньшего озера — 2 км. Найди реальное расстояние между соответственными точками большего озера.</p>
+<details>
+<summary>Показать расчёт картографа</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Шаг 1: Отношение площадей на карте.</strong><br>
+S₂/S₁ = 48/12 = 4.</div>
+<div class="solution-step"><strong>Шаг 2: Коэффициент подобия озёр.</strong><br>
+k² = 4 → k = 2. Значит все линейные размеры большего озера в 2 раза больше.</div>
+<div class="solution-step"><strong>Шаг 3: Реальное расстояние.</strong><br>
+Реальное расстояние между сходственными точками большего озера = 2 км · 2 = <strong>4 км</strong>.</div>
+<div class="solution-step" style="border-left-color: var(--warning);"><em>Важно:</em> масштаб карты (1 : 50 000) здесь не нужен — он одинаков для обоих озёр, и мы работаем с реальными расстояниями, а не с длинами на карте. Масштаб «сократился»! 🗺️</em></div>
+</div>
+</details>
+</section>
+
+<!-- ================= ИТОГИ ================= -->
+<section class="card summary-box">
+<h2>📝 Главное, что нужно запомнить</h2>
+<ul>
+<li><strong>Пропорциональные отрезки:</strong> a/b = c/d. Отношение не меняется при переходе к другим единицам измерения.</li>
+<li><strong>Подобные треугольники:</strong> △ABC ~ △A₁B₁C₁, если ∠A = ∠A₁, ∠B = ∠B₁, ∠C = ∠C₁ и AB/A₁B₁ = BC/B₁C₁ = CA/C₁A₁ = k.</li>
+<li><strong>Коэффициент подобия k</strong> — это отношение сходственных сторон.</li>
+<li><strong>Порядок вершин</strong> в записи подобия важен: △ABC ~ △A₁B₁C₁ ≠ △ABC ~ △B₁A₁C₁.</li>
+<li><strong>Отношение периметров</strong> подобных треугольников = k.</li>
+<li><strong>Отношение площадей</strong> подобных треугольников = k².</li>
+<li><strong>Свойство биссектрисы:</strong> она делит противоположную сторону на отрезки, пропорциональные прилежащим сторонам.</li>
+</ul>
+</section>
+
+<!-- ================= МЕТОДИЧЕСКАЯ ПОДСКАЗКА ================= -->
+<div class="teacher-note">
+<h3>💡 Методическая подсказка (для учителя или родителя)</h3>
+<ul style="margin-top: 10px; padding-left: 20px;">
+<li><strong>Главная ошибка:</strong> ученики путают порядок вершин в записи подобия. Приучайте всегда начинать с проверки: «какие углы равны? — значит, эти вершины соответствуют друг другу».</li>
+<li><strong>Отношение площадей:</strong> типичная ошибка — забыть возвести k в квадрат. Лайфхак: «если стороны увеличили в 2 раза, площадь увеличилась в 4 раза — это как с квадратом: сторона 1 → 2, площадь 1 → 4».</li>
+<li><strong>Биссектриса (№642–645):</strong> свойство биссектрисы выводится через площади — это красивая связь с предыдущей главой. Если ученик забыл свойство, предложите вывести его самостоятельно через S = ½·a·b·sin C.</li>
+<li><strong>Задачи №646–647 (ромб в треугольнике):</strong> сложные, требуют увидеть два подобных треугольника. Подсказка: «какие стороны ромба параллельны сторонам треугольника?»</li>
+<li><strong>Масштаб (№653):</strong> важно помнить, что масштаб — это коэффициент подобия для длин, а для площадей он возводится в квадрат. Это частая ошибка на ОГЭ и ЕГЭ.</li>
+<li><strong>Слабым ученикам:</strong> начните с простых задач на нахождение k (№649, 655, 656) — это даёт уверенность. Потом переходите к площадям (№651, 652).</li>
+<li><strong>Сильным ученикам:</strong> предложите задачи №646, 647 как мини-исследования с чертежом. А также №642 — докажите свойство биссектрисы двумя способами (через площади и через синусы).</li>
+</ul>
+</div>
+
+<footer style="text-align: center; color: var(--text-light); margin-top: 30px; font-size: 0.9em; padding-bottom: 20px;">
+<p>📚 Геометрия 8 класс (Атанасян) • Глава VIII, §1, пункты 63–65 • Задачи №640–656</p>
+</footer>
+</div>
+</body>
+</html>

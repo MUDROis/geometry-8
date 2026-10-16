@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вписанная и описанная окружности — Геометрия 8 класс</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #dc2626;
+            --accent: #0ea5e9;
+            --success: #16a34a;
+            --warning: #f59e0b;
+            --violet: #7c3aed;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #1e293b;
+            --text-light: #64748b;
+            --radius: 16px;
+            --shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+        }
+        body { font-family: 'Segoe UI','Roboto',system-ui,sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; margin: 0; padding: 20px; }
+        .container { max-width: 850px; margin: 0 auto; }
+        header { text-align: center; margin-bottom: 30px; padding: 30px; background: linear-gradient(135deg, var(--violet), var(--accent)); color: white; border-radius: var(--radius); box-shadow: var(--shadow); }
+        header h1 { margin: 0; font-size: 2.1em; }
+        header p { margin: 8px 0 0; opacity: 0.95; font-size: 1.05em; }
+        .card { background: var(--card-bg); border-radius: var(--radius); padding: 30px; margin-bottom: 25px; box-shadow: var(--shadow); }
+        h2 { color: var(--primary); border-bottom: 3px solid var(--accent); padding-bottom: 10px; display: inline-block; margin-top: 0; }
+        h3 { color: var(--secondary); margin-top: 25px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; border-radius: 8px; overflow: hidden; }
+        th, td { border: 1px solid #e2e8f0; padding: 12px 14px; text-align: left; }
+        th { background: #f1f5f9; color: var(--primary); font-weight: 600; }
+        .rule-box { background: #eff6ff; border-left: 5px solid var(--primary); padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0; }
+        .formula { font-size: 1.25em; font-weight: bold; color: var(--secondary); text-align: center; background: #fef2f2; padding: 15px; border-radius: 8px; margin: 15px 0; border: 2px dashed var(--secondary); }
+        .svg-container { text-align: center; margin: 25px 0; background: #f8fafc; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0; }
+        .svg-container svg { max-width: 100%; height: auto; }
+        .sol-svg { text-align: center; margin: 0 0 14px; }
+        .sol-svg svg { max-width: 100%; height: auto; background: #fcfdff; border: 1px dashed #cbd5e1; border-radius: 10px; padding: 6px; }
+        details { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin: 15px 0; overflow: hidden; }
+        summary { padding: 15px 20px; cursor: pointer; font-weight: bold; color: var(--primary); background: #eff6ff; list-style: none; display: flex; align-items: center; gap: 10px; font-size: 1.05em; }
+        summary::-webkit-details-marker { display: none; }
+        summary::before { content: '🔍'; font-size: 1.2em; }
+        details[open] summary::before { content: '💡'; }
+        details[open] summary { border-bottom: 1px solid #e2e8f0; }
+        .solution-content { padding: 20px; background: white; }
+        .solution-step { margin-bottom: 12px; padding-left: 15px; border-left: 3px solid var(--success); }
+        .level-badge { display: inline-block; padding: 5px 14px; border-radius: 20px; font-size: 0.85em; font-weight: bold; color: white; margin: 15px 0 10px; }
+        .easy { background: var(--success); }
+        .medium { background: var(--warning); color: #1e293b; }
+        .hard { background: var(--secondary); }
+        .extra-badge { background: var(--violet); }
+        .practice-box { background: linear-gradient(135deg, #fffbeb, #fef3c7); border: 2px solid var(--warning); }
+        .teacher-note { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 20px; margin-top: 30px; }
+        .summary-box { background: #eff6ff; border: 2px solid var(--primary); border-radius: 12px; padding: 20px; }
+        @media (max-width: 600px) { body { padding: 10px; } header h1 { font-size: 1.5em; } .card { padding: 20px; } th, td { padding: 8px; font-size: 0.92em; } }
+    </style>
+</head>
+<body>
+<div class="container">
+<header>
+    <h1>⭕ Вписанная и описанная окружности</h1>
+    <p>Геометрия 8 класс • Глава IX, §3, пункты 82–83 • Вписанная окружность треугольника, описанная окружность треугольника</p>
+</header>
+
+<section class="card">
+<h2>🧠 Блок 1. Изучение нового материала</h2>
+<h3>🌍 Разминка: окружности в треугольнике</h3>
+<p>Можно ли вписать окружность в любой треугольник так, чтобы она касалась всех трёх сторон? А можно ли описать окружность вокруг любого треугольника так, чтобы она проходила через все три вершины? Сегодня докажем, что ответ на оба вопроса — да! ⭕🔺</p>
+
+<h3>📖 Ключевые термины</h3>
+<table>
+<tr><th>Термин</th><th>Определение</th></tr>
+<tr><td><strong>Вписанная окружность</strong></td><td>Окружность, касающаяся всех сторон многоугольника.</td></tr>
+<tr><td><strong>Описанная окружность</strong></td><td>Окружность, проходящая через все вершины многоугольника.</td></tr>
+<tr><td><strong>Центр вписанной окружности (инцентр)</strong></td><td>Точка пересечения биссектрис углов треугольника.</td></tr>
+<tr><td>Центр описанной окружности (центр описанной)</td><td>Точка пересечения серединных перпендикуляров к сторонам треугольника.</td></tr>
+</table>
+
+<h2 style="margin-top:40px;">📐 Часть 1. Вписанная окружность (пункт 82)</h2>
+<div class="rule-box">
+<h3>🌟 Теорема о вписанной окружности</h3>
+<p><em>В любой треугольник можно вписать окружность, причём только одну.</em></p>
+<p>Центр вписанной окружности — точка пересечения <strong>биссектрис</strong> углов треугольника.</p>
+<p>Радиус вписанной окружности — расстояние от центра до стороны (перпендикуляр).</p>
+</div>
+
+<div class="svg-container">
+<h3>Вписанная окружность треугольника</h3>
+<svg viewBox="0 0 350 250" width="350" height="250">
+<polygon points="175,30 50,220 300,220" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+<circle cx="175" cy="160" r="50" fill="none" stroke="#dc2626" stroke-width="2.5"/>
+<circle cx="175" cy="160" r="3" fill="#dc2626"/>
+<text x="160" y="155" font-family="sans-serif" font-size="12" fill="#dc2626">I</text>
+<!-- Касательные точки -->
+<circle cx="175" cy="220" r="3" fill="#16a34a"/>
+<circle cx="115" cy="197" r="3" fill="#16a34a"/>
+<circle cx="220" cy="135" r="3" fill="#16a34a"/>
+<!-- Биссектрисы -->
+<line x1="175" y1="30" x2="175" y2="160" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="4,3"/>
+<line x1="50" y1="220" x2="175" y2="160" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="4,3"/>
+<line x1="300" y1="220" x2="175" y2="160" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="4,3"/>
+<text x="175" y="245" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1e293b">I — инцентр (пересечение биссектрис)</text>
+</svg>
+</div>
+
+<div class="rule-box" style="background:#f0fdf4; border-left-color: var(--success);">
+<h3>💡 Свойства вписанной окружности</h3>
+<p><strong>1.</strong> Центр равноудалён от всех сторон треугольника.</p>
+<p><strong>2.</strong> Отрезки касательных, проведённых из одной точки к окружности, равны.</p>
+<p><strong>3.</strong> Площадь треугольника: S = r × p, где r — радиус вписанной окружности, p — полупериметр.</p>
+</div>
+
+<h2 style="margin-top:40px;">📐 Часть 2. Описанная окружность (пункт 83)</h2>
+<div class="rule-box" style="background:#fffbeb; border-left-color: var(--warning);">
+<h3>🌟 Теорема о описанной окружности</h3>
+<p><em>Около любого треугольника можно описать окружность, причём только одну.</em></p>
+<p>Центр описанной окружности — точка пересечения <strong>серединных перпендикуляров</strong> к сторонам треугольника.</p>
+<p>Радиус описанной окружности — расстояние от центра до вершины.</p>
+</div>
+
+<div class="svg-container">
+<h3>Описанная окружность треугольника</h3>
+<svg viewBox="0 0 350 250" width="350" height="250">
+<polygon points="175,30 50,220 300,220" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+<circle cx="175" cy="130" r="100" fill="none" stroke="#dc2626" stroke-width="2.5"/>
+<circle cx="175" cy="130" r="3" fill="#dc2626"/>
+<text x="160" y="125" font-family="sans-serif" font-size="12" fill="#dc2626">O</text>
+<!-- Серединные перпендикуляры -->
+<line x1="175" y1="30" x2="175" y2="230" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="4,3"/>
+<line x1="25" y1="120" x2="325" y2="120" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="4,3"/>
+<text x="175" y="245" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1e293b">O — центр описанной окружности</text>
+</svg>
+</div>
+
+<div class="rule-box" style="background:#f5f3ff; border-left-color: var(--violet);">
+<h3>💡 Особые случаи</h3>
+<p><strong>Прямоугольный треугольник:</strong> центр описанной окружности — середина гипотенузы.</p>
+<p><strong>Равносторонний треугольник:</strong> инцентр и центр описанной окружности совпадают.</p>
+<p><strong>Тупоугольный треугольник:</strong> центр описанной окружности лежит вне треугольника.</p>
+</div>
+</section>
+
+<section class="card">
+<h2>🛠 Блок 2. Закрепление (задачи из учебника)</h2>
+<p>Сначала реши задачу в тетради, потом открой решение и проверь каждый шаг по чертежу! ✍️</p>
+
+<span class="level-badge easy">Базовый уровень</span>
+<h3>Задание 1 (№778)</h3>
+<p>Докажите, что центр вписанной окружности треугольника равноудалён от его сторон.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Дано:</center> треугольник ABC, I — пересечение биссектрис.</div>
+<div class="solution-step"><strong>Доказать:</strong> I равноудалён от сторон AB, BC, AC.</div>
+<div class="solution-step"><strong>Доказательство:</strong> точка на биссектрисе угла равноудалена от сторон угла. Точка I лежит на биссектрисе ∠A → равноудалена от AB и AC. Аналогично для ∠B и ∠C. Значит, I равноудалена от всех трёх сторон. ✅</div>
+</div>
+</details>
+
+<span class="level-badge easy">Базовый уровень</span>
+<h3>Задание 2 (№779)</h3>
+<p>Докажите, что отрезки касательных, проведённых из одной точки к окружности, равны.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Дано:</strong> окружность с центром O, точка P вне окружности, PA и PB — касательные.</div>
+<div class="solution-step"><strong>Доказать:</strong> PA = PB.</div>
+<div class="solution-step"><strong>Доказательство:</strong> OA ⊥ PA, OB ⊥ PB (свойство касательной). OA = OB (радиусы). OP — общая гипотенуза. Треугольники OAP и OBP равны по катету и гипотенузе. Следовательно, PA = PB. ✅</div>
+</div>
+</details>
+
+<span class="level-badge medium">Средний уровень</span>
+<h3>Задание 3 (№782)</h3>
+<p>В прямоугольном треугольнике катеты равны 6 см и 8 см. Найдите радиус вписанной окружности.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Шаг 1:</strong> Гипотенуза: c = √(6² + 8²) = √(36 + 64) = √100 = 10 см.</div>
+<div class="solution-step"><strong>Шаг 2:</strong> Полупериметр: p = (6 + 8 + 10) : 2 = 12 см.</div>
+<div class="solution-step"><strong>Шаг 3:</strong> Площадь: S = ½ × 6 × 8 = 24 см².</div>
+<div class="solution-step"><strong>Шаг 4:</strong> Радиус: r = S : p = 24 : 12 = <strong>2 см</strong>.</div>
+</div>
+</details>
+
+<span class="level-badge medium">Средний уровень</span>
+<h3>Задание 4 (№783)</h3>
+<p>В прямоугольном треугольнике катеты равны 5 см и 12 см. Найдите радиус описанной окружности.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Шаг 1:</strong> Гипотенуза: c = √(5² + 12²) = √(25 + 144) = √169 = 13 см.</div>
+<div class="solution-step"><strong>Шаг 2:</strong> Для прямоугольного треугольника центр описанной окружности — середина гипотенузы.</div>
+<div class="solution-step"><strong>Шаг 3:</strong> Радиус: R = c : 2 = 13 : 2 = <strong>6,5 см</strong>.</div>
+</div>
+</details>
+
+<span class="level-badge hard">Продвинутый уровень</span>
+<h3>Задание 5 (№785)</h3>
+<p>В треугольнике стороны равны 13 см, 14 см и 15 см. Найдите радиус вписанной окружности.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Шаг 1:</strong> Полупериметр: p = (13 + 14 + 15) : 2 = 21 см.</div>
+<div class="solution-step"><strong>Шаг 2:</strong> Площадь по Герону: S = √(21 × 8 × 7 × 6) = √7056 = 84 см².</div>
+<div class="solution-step"><strong>Шаг 3:</strong> Радиус: r = S : p = 84 : 21 = <strong>4 см</strong>.</div>
+</div>
+</details>
+
+<span class="level-badge hard">Продвинутый уровень</span>
+<h3>Задание 6 (№786)</h3>
+<p>Докажите, что в равностороннем треугольнике радиус описанной окружности в два раза больше радиуса вписанной.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Дано:</strong> равносторонний треугольник со стороной a.</div>
+<div class="solution-step><strong>Вписанная окружность:</strong> r = (a√3) : 6.</div>
+<div class="solution-step"><strong>Описанная окружность:</strong> R = (a√3) : 3.</div>
+<div class="solution-step"><strong>Отношение:</strong> R : r = (a√3/3) : (a√3/6) = 2 : 1. ✅</div>
+</div>
+</details>
+</section>
+
+<section class="card practice-box">
+<h2>🏗 Блок 3. Практическое применение</h2>
+<h3>🎨 Продукт урока: «Дизайнер медальона»</h3>
+<p>Ты создаёшь круглый медальон с равносторонним треугольником внутри. Сторона треугольника 6 см. Нужно определить радиус медальона (описанной окружности) и радиус вписанной окружности треугольника.</p>
+<p><strong>Задача:</strong> найди оба радиуса.</p>
+<details>
+<summary>Показать расчёт дизайнера</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Шаг 1:</strong> Для равностороннего треугольника со стороной a = 6 см:</div>
+<div class="solution-step"><strong>Шаг 2:</strong> Радиус описанной окружности: R = a : √3 = 6 : √3 = <strong>2√3 ≈ 3,46 см</strong>.</div>
+<div class="solution-step"><strong>Шаг 3:</strong> Радиус вписанной окружности: r = a : (2√3) = 6 : (2√3) = <strong>√3 ≈ 1,73 см</strong>.</div>
+<div class="solution-step" style="border-left-color: var(--warning);"><em>Медальон должен иметь радиус около 3,46 см, чтобы треугольник поместился внутри! 🏅</em></div>
+</div>
+</details>
+</section>
+
+<section class="card summary-box">
+<h2>📝 Главное, что нужно запомнить</h2>
+<ul>
+<li><strong>Вписанная окружность:</strong> центр — пересечение биссектрис, радиус ⊥ стороне.</li>
+<li><strong>Описанная окружность:</strong> центр — пересечение серединных перпендикуляров.</li>
+<li><strong>Площадь через вписанную:</strong> S = r × p (p — полупериметр).</li>
+<li><strong>Прямоугольный треугольник:</strong> центр описанной — середина гипотенузы.</li>
+<li><strong>Равносторонний треугольник:</strong> R = 2r (радиус описанной в два раза больше вписанной).</li>
+</ul>
+</section>
+
+<div class="teacher-note">
+<h3>💡 Методическая подсказка (для учителя или родителя)</h3>
+<ul style="margin-top: 10px; padding-left: 20px;">
+<li><strong>Вписанная окружность:</strong> начните с построения биссектрис. Убедитесь, что ученики понимают: точка на биссектрисе равноудалена от сторон угла — это ключевое свойство.</li>
+<li><strong>Описанная окружность:</strong> используйте серединные перпендикуляры. Покажите, что центр равноудалён от вершин — это определение описанной окружности.</li>
+<li><strong>Прямоугольный треугольник:</strong> центр описанной окружности — середина гипотенузы. Это частный случай, который стоит запомнить отдельно.</li>
+<li><strong>Задача про медальон:</strong> покажите, что в равностороннем треугольнике инцентр и центр описанной совпадают. Это помогает визуализировать соотношение R = 2r.</li>
+</ul>
+</div>
+
+<footer style="text-align: center; color: var(--text-light); margin-top: 30px; font-size: 0.9em; padding-bottom: 20px;">
+<p>📚 Геометрия 8 класс (Атанасян) • Глава IX, §3, пункты 82–83 • Задачи №778–786</p>
+</footer>
+</div>
+</body>
+</html>
