@@ -1,0 +1,44 @@
+/* Общие стили курса «Геометрия 8 класс» */
+.katex{white-space:nowrap;}
+.course-logo{display:inline-block;height:52px;width:auto;max-width:100%;vertical-align:middle;border-radius:10px;}
+
+#course-search{
+  width:100%;max-width:600px;display:block;margin:0 auto 4px;
+  padding:12px 16px;font-family:inherit;font-size:1em;
+  border:2px solid #2563eb;border-radius:10px;background:#fff;outline:none;
+}
+#course-search:focus{box-shadow:0 0 0 3px rgba(37,99,235,.2);}
+.para.hidden{display:none !important;}
+
+.check-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:10px;}
+.check-input{flex:1 1 160px;padding:7px 12px;font-family:inherit;font-size:.95em;border:2px solid #cbd5e1;border-radius:8px;background:#fff;outline:none;}
+.check-input:focus{border-color:#2563eb;}
+.check-btn{font-family:inherit;font-size:.9em;font-weight:700;cursor:pointer;background:#fff;color:#1e293b;border:2px solid #1e293b;border-radius:8px;padding:6px 14px;box-shadow:2px 2px 0 #1e293b;}
+.check-btn:active{transform:translate(2px,2px);box-shadow:0 0 0 #1e293b;}
+.check-feedback{font-weight:700;}
+.check-feedback.ok{color:#16a34a;}
+.check-feedback.bad{color:#dc2626;}
+
+h2[id]{scroll-margin-top:16px;}
+@media (min-width:1150px){
+  .toc-sidebar{
+    position:fixed;top:24px;right:18px;width:220px;max-height:80vh;overflow-y:auto;
+    background:#fff;border:1px solid #e2e8f0;border-radius:10px;
+    box-shadow:0 2px 10px rgba(0,0,0,.07);padding:12px 14px;font-size:.9em;
+  }
+  .toc-sidebar h3{margin:0 0 8px;font-size:.85em;text-transform:uppercase;letter-spacing:.5px;color:#64748b;}
+  .toc-sidebar a{display:block;padding:4px 8px;margin:2px 0;color:#1e293b;text-decoration:none;border-left:3px solid transparent;border-radius:0 6px 6px 0;}
+  .toc-sidebar a:hover{background:#e0f2fe;}
+  .toc-sidebar a.active{background:#e0f2fe;border-left-color:#2563eb;font-weight:700;}
+  .toc-sidebar details{border-top:1px solid #e2e8f0;margin-top:6px;}
+  .toc-sidebar summary{cursor:pointer;font-weight:700;font-size:.85rem;padding:4px 0;color:#1e293b;list-style:none;}
+  .toc-sidebar summary::-webkit-details-marker{display:none;}
+}
+
+@media print{
+  .quick-nav,#course-search,.toc-sidebar,.course-logo,.btn,.check-row{display:none !important;}
+  .card,header,footer,.chapter{box-shadow:none !important;border:1px solid #ccc !important;page-break-inside:avoid;}
+  details{display:block !important;}
+  body{background:#fff !important;padding:0 !important;}
+  .container{max-width:100% !important;}
+}
