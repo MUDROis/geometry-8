@@ -127,7 +127,6 @@
   window.Course = {
     init: function () {
       renderKatexIfPresent();
-      initContentsSidebar();
       initSearch();
       initToc();
       initSelfCheck();
