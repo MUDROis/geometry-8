@@ -110,14 +110,14 @@ footer .legal { font-size: 0.85em; color: #95a5a6; }
 <tr><td><strong>Гипотенуза</strong></td><td>Самая длинная сторона прямоугольного треугольника, лежит напротив прямого угла.</td></tr>
 <tr><td><strong>Катет</strong></td><td>Одна из двух сторон, образующих прямой угол.</td></tr>
 <tr><td><strong>Пифагоров треугольник</strong></td><td>Прямоугольный треугольник, у которого длины всех трёх сторон — натуральные числа.</td></tr>
-<tr><td><strong>Пифагорова тройка</strong></td><td>Три натуральных числа (a, b, c), удовлетворяющие равенству a² + b² = c².</td></tr>
+<tr><td><strong>Пифагорова тройка</strong></td><td>Три натуральных числа (a, b, c), удовлетворяющие равенству \(a^2 + b^2 = c^2\).</td></tr>
 <tr><td><strong>Полупериметр</strong></td><td>Половина периметра: p = (a + b + c) / 2.</td></tr>
 </table>
 
 <h2 style="margin-top:40px;">📏 Часть 1. Теорема Пифагора (пункт 60)</h2>
 <div class="rule-box">
 <h3>🌟 Теорема Пифагора</h3>
-<div class="formula">В прямоугольном треугольнике квадрат гипотенузы равен сумме квадратов катетов: c² = a² + b²</div>
+<div class="formula">В прямоугольном треугольнике квадрат гипотенузы равен сумме квадратов катетов: \(c^2 = a^2 + b^2\)</div>
 </div>
 
 <div class="svg-container">
@@ -126,27 +126,27 @@ footer .legal { font-size: 0.85em; color: #95a5a6; }
 <!-- Большой квадрат (a+b)×(a+b) -->
 <rect x="60" y="40" width="240" height="240" fill="#f8fafc" stroke="#1e293b" stroke-width="2.5"/>
 <!-- 4 прямоугольных треугольника -->
-<polygon points="60,40 200,40 60,160" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<polygon points="60,40 200,40 60,140" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
 <polygon points="200,40 300,40 300,180" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
 <polygon points="300,180 300,280 160,280" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
-<polygon points="60,160 60,280 160,280" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<polygon points="60,140 60,280 160,280" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
 <!-- Внутренний квадрат c² -->
-<polygon points="200,40 300,180 160,280 60,160" fill="#fef3c7" stroke="#f59e0b" stroke-width="3"/>
+<polygon points="200,40 300,180 160,280 60,140" fill="#fef3c7" stroke="#f59e0b" stroke-width="3"/>
 <!-- Подписи сторон -->
-<text x="120" y="30" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2563eb">a</text>
+<text x="130" y="30" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2563eb">a</text>
 <text x="250" y="30" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2563eb">b</text>
-<text x="305" y="115" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2563eb">a</text>
-<text x="240" y="295" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2563eb">b</text>
-<text x="40" y="105" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2563eb">b</text>
-<text x="40" y="225" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2563eb">a</text>
-<text x="115" y="295" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2563eb">a</text>
+<text x="305" y="110" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2563eb">a</text>
+<text x="240" y="295" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2563eb">a</text>
+<text x="40" y="90" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2563eb">b</text>
+<text x="40" y="210" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2563eb">a</text>
+<text x="115" y="295" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2563eb">b</text>
 <!-- Подпись c² внутри -->
-<text x="170" y="165" font-family="sans-serif" font-size="22" font-weight="bold" fill="#92400e">c²</text>
+<text x="180" y="160" text-anchor="middle" font-family="sans-serif" font-size="22" font-weight="bold" fill="#92400e">c²</text>
 <!-- Квадратики прямого угла в 4 треугольниках -->
 <path d="M72,40 L72,52 L60,52" fill="none" stroke="#dc2626" stroke-width="2"/>
 <path d="M288,40 L288,52 L300,52" fill="none" stroke="#dc2626" stroke-width="2"/>
-<path d="M288,268 L288,280 L300,280" fill="none" stroke="#dc2626" stroke-width="2"/>
-<path d="M72,268 L72,280 L60,280" fill="none" stroke="#dc2626" stroke-width="2"/>
+<path d="M288,280 L288,268 L300,268" fill="none" stroke="#dc2626" stroke-width="2"/>
+<path d="M72,280 L72,268 L60,268" fill="none" stroke="#dc2626" stroke-width="2"/>
 <!-- Формулы справа -->
 <text x="330" y="60" font-family="sans-serif" font-size="13" fill="#1e293b" font-weight="bold">Площадь большого</text>
 <text x="330" y="78" font-family="sans-serif" font-size="13" fill="#1e293b" font-weight="bold">квадрата:</text>
@@ -164,7 +164,7 @@ footer .legal { font-size: 0.85em; color: #95a5a6; }
 
 <div class="rule-box" style="background:#f0fdf4; border-left-color: var(--success);">
 <h3>💡 Историческая справка</h3>
-<p>Теорема была известна вавилонянам ещё за 1000 лет до Пифагора (около 2000 лет до н.э.), но именно <strong>Пифагор</strong> (VI век до н.э.) дал её строгое доказательство. Сейчас известно более <strong>400 различных доказательств</strong> этой теоремы — через площади, подобие, векторы и даже дифференциальные уравнения!</p>
+<p>Теорема была известна вавилонянам ещё примерно за 1500 лет до Пифагора (около 2000 лет до н.э.), но именно <strong>Пифагор</strong> (VI век до н.э.) дал её строгое доказательство. Сейчас известно более <strong>400 различных доказательств</strong> этой теоремы — через площади, подобие, векторы и даже дифференциальные уравнения!</p>
 </div>
 
 <h2 style="margin-top:40px;">🔄 Часть 2. Теорема, обратная теореме Пифагора (пункт 61)</h2>
@@ -202,15 +202,15 @@ footer .legal { font-size: 0.85em; color: #95a5a6; }
 <p>Самые известные тройки (a, b, c):</p>
 <p><strong>3, 4, 5</strong> • <strong>5, 12, 13</strong> • <strong>8, 15, 17</strong> • <strong>7, 24, 25</strong></p>
 <p>💡 Любую тройку можно умножить на натуральное число k — получится новая тройка. Например, 3-4-5 × 2 = 6-8-10.</p>
-<p>🔎 Общая формула: a = 2k·m·n, b = k·(m² − n²), c = k·(m² + n²), где m &gt; n — любые натуральные числа.</p>
+<p>🔎 Общая формула: \(a = 2kmn,\; b = k(m^2 - n^2),\; c = k(m^2 + n^2)\), где \(m > n\) — любые натуральные числа.</p>
 </div>
 
 <h2 style="margin-top:40px;">📐 Часть 3. Формула Герона (пункт 62)</h2>
 <div class="rule-box" style="background:#fffbeb; border-left-color: var(--warning);">
 <h3>🌟 Формула Герона</h3>
-<div class="formula" style="background:#fffbeb; border-color: var(--warning); color:#92400e;">S = √(p · (p − a) · (p − b) · (p − c))</div>
+<div class="formula" style="background:#fffbeb; border-color: var(--warning); color:#92400e;">\(S = \sqrt{p(p-a)(p-b)(p-c)}\)</div>
 <p>где p = (a + b + c) / 2 — полупериметр треугольника.</p>
-<p><em>Доказательство</em> опирается на теорему Пифагора: проводим высоту, выражаем её через стороны через два прямоугольных треугольника и подставляем в S = ½ · основание · высота.</p>
+<p><em>Доказательство</em> опирается на теорему Пифагора: проводим высоту, выражаем её через стороны через два прямоугольных треугольника и подставляем в \(S = \frac12 \cdot \text{основание} \cdot \text{высота}\).</p>
 <p>💡 Формула названа по имени древнегреческого математика <strong>Герона Александрийского</strong> (I век н.э.), хотя, возможно, она была известна и раньше.</p>
 </div>
 </section>
@@ -235,12 +235,12 @@ footer .legal { font-size: 0.85em; color: #95a5a6; }
 <text x="115" y="85" font-family="sans-serif" font-size="14" font-weight="bold" fill="#dc2626">c</text>
 </svg>
 </div>
-<div class="solution-step"><strong>Формула:</strong> c = √(a² + b²)</div>
-<div class="solution-step"><strong>а)</strong> c = √(36 + 64) = √100 = <strong>10</strong></div>
-<div class="solution-step"><strong>б)</strong> c = √(25 + 36) = √61 ≈ <strong>7,81</strong></div>
-<div class="solution-step"><strong>в)</strong> c = √((5/12)² + (1/4)²) = √(25/144 + 1/16) = √(25/144 + 9/144) = √(34/144) = <strong>√34 / 12</strong></div>
-<div class="solution-step"><strong>г)</strong> c = √(64 + 192) = √256 = <strong>16</strong></div>
-<div class="solution-step" style="border-left-color: var(--primary);"><em>Проверка а): 10² = 100 = 6² + 8² ✅</em></div>
+<div class="solution-step"><strong>Формула:</strong> \(c = \sqrt{a^2 + b^2}\)</div>
+<div class="solution-step"><strong>а)</strong> \(c = \sqrt{36+64} = \sqrt{100}\) = <strong>10</strong></div>
+<div class="solution-step"><strong>б)</strong> \(c = \sqrt{25+36} = \sqrt{61} \approx 7{,}81\)</div>
+<div class="solution-step"><strong>в)</strong> \(c = \sqrt{(5/12)^2 + (1/4)^2} = \sqrt{\frac{25}{144} + \frac{1}{16}} = \sqrt{\frac{25}{144} + \frac{9}{144}} = \sqrt{\frac{34}{144}}\) = <strong>\(\frac{\sqrt{34}}{12}\)</strong></div>
+<div class="solution-step"><strong>г)</strong> \(c = \sqrt{64+192} = \sqrt{256}\) = <strong>16</strong></div>
+<div class="solution-step" style="border-left-color: var(--primary);"><em>Проверка а): \(10^2 = 100 = 6^2 + 8^2\) ✅</em></div>
 </div>
 </details>
 
@@ -250,13 +250,13 @@ footer .legal { font-size: 0.85em; color: #95a5a6; }
 <details>
 <summary>Показать подробное решение</summary>
 <div class="solution-content">
-<div class="solution-step"><strong>Формула:</strong> b = √(c² − a²)</div>
-<div class="solution-step"><strong>а)</strong> b = √(169 − 144) = √25 = <strong>5</strong></div>
-<div class="solution-step"><strong>б)</strong> b = √(81 − 49) = √32 = <strong>4√2</strong></div>
-<div class="solution-step"><strong>в)</strong> a = 12, c = 2b → 144 + b² = 4b² → 3b² = 144 → b² = 48 → b = <strong>4√3</strong></div>
-<div class="solution-step"><strong>г)</strong> a = 2√3, c = 2b → 12 + b² = 4b² → 3b² = 12 → b² = 4 → b = <strong>2</strong></div>
-<div class="solution-step"><strong>д)</strong> a = 3b, c = 2√10 → 9b² + b² = 40 → 10b² = 40 → b² = 4 → b = <strong>2</strong></div>
-<div class="solution-step" style="border-left-color: var(--primary);"><em>Проверка в): (4√3)² + 12² = 48 + 144 = 192 = (8√3)² ✅</em></div>
+<div class="solution-step"><strong>Формула:</strong> \(b = \sqrt{c^2 - a^2}\)</div>
+<div class="solution-step"><strong>а)</strong> \(b = \sqrt{169-144} = \sqrt{25}\) = <strong>5</strong></div>
+<div class="solution-step"><strong>б)</strong> \(b = \sqrt{81-49} = \sqrt{32}\) = <strong>\(4\sqrt{2}\)</strong></div>
+<div class="solution-step"><strong>в)</strong> a = 12, c = 2b → \(144 + b^2 = 4b^2 \to 3b^2 = 144 \to b^2 = 48 \to b = 4\sqrt{3}\)</div>
+<div class="solution-step"><strong>г)</strong> a = 2√3, c = 2b → \(12 + b^2 = 4b^2 \to 3b^2 = 12 \to b^2 = 4 \to b = 2\)</div>
+<div class="solution-step"><strong>д)</strong> a = 3b, c = 2√10 → \(9b^2 + b^2 = 40 \to 10b^2 = 40 \to b^2 = 4 \to b = 2\)</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><em>Проверка в): \((4\sqrt{3})^2 + 12^2 = 48 + 144 = 192 = (8\sqrt{3})^2\) ✅</em></div>
 </div>
 </details>
 
@@ -266,14 +266,14 @@ footer .legal { font-size: 0.85em; color: #95a5a6; }
 <details>
 <summary>Показать подробное решение</summary>
 <div class="solution-content">
-<div class="solution-step"><strong>Идея:</strong> по обратной теореме Пифагора: если a² + b² = c² (где c — наибольшая сторона), то треугольник прямоугольный.</div>
-<div class="solution-step"><strong>а)</strong> 6² + 8² = 36 + 64 = 100 = 10² ✅ <strong>прямоугольный</strong></div>
-<div class="solution-step"><strong>б)</strong> 5² + 6² = 25 + 36 = 61 ≠ 49 = 7² ❌ <strong>не прямоугольный</strong></div>
-<div class="solution-step"><strong>в)</strong> 9² + 12² = 81 + 144 = 225 = 15² ✅ <strong>прямоугольный</strong> (это 3-4-5 × 3)</div>
-<div class="solution-step"><strong>г)</strong> 10² + 24² = 100 + 576 = 676 = 26² ✅ <strong>прямоугольный</strong> (это 5-12-13 × 2)</div>
-<div class="solution-step"><strong>д)</strong> 3² + 4² = 9 + 16 = 25 ≠ 36 = 6² ❌ <strong>не прямоугольный</strong> (тупоугольный, т.к. 25 &lt; 36)</div>
-<div class="solution-step"><strong>е)</strong> 9² + 11² = 81 + 121 = 202 ≠ 169 = 13² ❌ <strong>не прямоугольный</strong> (остроугольный, т.к. 202 &gt; 169)</div>
-<div class="solution-step"><strong>ж)</strong> 15² + 20² = 225 + 400 = 625 = 25² ✅ <strong>прямоугольный</strong> (это 3-4-5 × 5)</div>
+<div class="solution-step"><strong>Идея:</strong> по обратной теореме Пифагора: если \(a^2 + b^2 = c^2\) (где c — наибольшая сторона), то треугольник прямоугольный.</div>
+<div class="solution-step"><strong>а)</strong> \(6^2 + 8^2 = 36 + 64 = 100 = 10^2\) ✅ <strong>прямоугольный</strong></div>
+<div class="solution-step"><strong>б)</strong> \(5^2 + 6^2 = 25 + 36 = 61 \ne 49 = 7^2\) ❌ <strong>не прямоугольный</strong></div>
+<div class="solution-step"><strong>в)</strong> \(9^2 + 12^2 = 81 + 144 = 225 = 15^2\) ✅ <strong>прямоугольный</strong> (это 3-4-5 × 3)</div>
+<div class="solution-step"><strong>г)</strong> \(10^2 + 24^2 = 100 + 576 = 676 = 26^2\) ✅ <strong>прямоугольный</strong> (это 5-12-13 × 2)</div>
+<div class="solution-step"><strong>д)</strong> \(3^2 + 4^2 = 9 + 16 = 25 \ne 36 = 6^2\) ❌ <strong>не прямоугольный</strong> (тупоугольный, т.к. \(25 < 36\))</div>
+<div class="solution-step"><strong>е)</strong> \(9^2 + 11^2 = 81 + 121 = 202 \ne 169 = 13^2\) ❌ <strong>не прямоугольный</strong> (остроугольный, т.к. \(202 > 169\))</div>
+<div class="solution-step"><strong>ж)</strong> \(15^2 + 20^2 = 225 + 400 = 625 = 25^2\) ✅ <strong>прямоугольный</strong> (это 3-4-5 × 5)</div>
 </div>
 </details>
 
@@ -294,11 +294,11 @@ footer .legal { font-size: 0.85em; color: #95a5a6; }
 <text x="125" y="85" font-family="sans-serif" font-size="14" font-weight="bold" fill="#dc2626">c</text>
 </svg>
 </div>
-<div class="solution-step"><strong>Шаг 1:</strong> Второй острый угол: 90° − 60° = 30°.</div>
-<div class="solution-step"><strong>Шаг 2:</strong> Катет, лежащий против угла 30° (это b), равен половине гипотенузы: b = c / 2.</div>
-<div class="solution-step"><strong>Шаг 3:</strong> По теореме Пифагора: a = √(c² − b²) = √(c² − c²/4) = √(3c²/4) = <strong>c√3 / 2</strong>.</div>
+<div class="solution-step"><strong>Шаг 1:</strong> Второй острый угол: \(90^\circ - 60^\circ = 30^\circ\).</div>
+<div class="solution-step"><strong>Шаг 2:</strong> Катет, лежащий против угла 30° (это b), равен половине гипотенузы: \(b = \dfrac{c}{2}\).</div>
+<div class="solution-step"><strong>Шаг 3:</strong> По теореме Пифагора: \(a = \sqrt{c^2 - b^2} = \sqrt{c^2 - \frac{c^2}{4}} = \sqrt{\frac{3c^2}{4}}\) = <strong>\(\frac{c\sqrt{3}}{2}\)</strong>.</div>
 <div class="check-row"><input class="check-input" type="text" placeholder="Введи ответ" data-answer="b = c/2, a = c√3/2"><button class="check-btn" type="button">Проверить</button><span class="check-feedback"></span></div>
-<div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> b = c/2, a = c√3/2.<br><em>Проверка: (c/2)² + (c√3/2)² = c²/4 + 3c²/4 = c² ✅</em></div>
+<div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> \(b = c/2,\; a = c\sqrt{3}/2\).<br><em>Проверка: \((c/2)^2 + (c\sqrt{3}/2)^2 = c^2/4 + 3c^2/4 = c^2\) ✅</em></div>
 </div>
 </details>
 
@@ -316,17 +316,17 @@ footer .legal { font-size: 0.85em; color: #95a5a6; }
 <text x="110" y="160" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2563eb">AB</text>
 <text x="20" y="95" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2563eb">AD</text>
 <text x="125" y="85" font-family="sans-serif" font-size="14" font-weight="bold" fill="#f59e0b">AC</text>
-<text x="26" y="34" font-family="sans-serif" font-size="15" font-weight="bold">A</text>
-<text x="206" y="34" font-family="sans-serif" font-size="15" font-weight="bold">B</text>
-<text x="206" y="158" font-family="sans-serif" font-size="15" font-weight="bold">C</text>
-<text x="20" y="158" font-family="sans-serif" font-size="15" font-weight="bold">D</text>
+<text x="33" y="157" font-family="sans-serif" font-size="15" font-weight="bold">A</text>
+<text x="205" y="157" font-family="sans-serif" font-size="15" font-weight="bold">B</text>
+<text x="205" y="33" font-family="sans-serif" font-size="15" font-weight="bold">C</text>
+<text x="29" y="33" font-family="sans-serif" font-size="15" font-weight="bold">D</text>
 </svg>
 </div>
 <div class="solution-step"><strong>Идея:</strong> диагональ прямоугольника — гипотенуза прямоугольного треугольника, образованного двумя сторонами.</div>
-<div class="solution-step"><strong>а)</strong> AD = √(AC² − AB²) = √(169 − 25) = √144 = <strong>12</strong></div>
-<div class="solution-step"><strong>б)</strong> BC = AD (противоположные стороны). BC = √(AC² − AB²) = √(2,5² − 1,5²) = √(6,25 − 2,25) = √4 = <strong>2</strong></div>
-<div class="solution-step"><strong>в)</strong> CD = √(BD² − BC²) = √(289 − 225) = √64 = <strong>8</strong></div>
-<div class="solution-step" style="border-left-color: var(--primary);"><em>Проверка а): 5² + 12² = 25 + 144 = 169 = 13² ✅</em></div>
+<div class="solution-step"><strong>а)</strong> \(AD = \sqrt{AC^2 - AB^2} = \sqrt{169-25} = \sqrt{144}\) = <strong>12</strong></div>
+<div class="solution-step"><strong>б)</strong> BC = AD (противоположные стороны). \(BC = \sqrt{AC^2 - CD^2} = \sqrt{2{,}5^2 - 1{,}5^2} = \sqrt{6{,}25 - 2{,}25} = \sqrt{4}\) = <strong>2</strong></div>
+<div class="solution-step"><strong>в)</strong> \(CD = \sqrt{BD^2 - BC^2} = \sqrt{289-225} = \sqrt{64}\) = <strong>8</strong></div>
+<div class="solution-step" style="border-left-color: var(--primary);"><em>Проверка а): \(5^2 + 12^2 = 25 + 144 = 169 = 13^2\) ✅</em></div>
 </div>
 </details>
 
@@ -352,8 +352,8 @@ footer .legal { font-size: 0.85em; color: #95a5a6; }
 </svg>
 </div>
 <div class="solution-step"><strong>Шаг 1:</strong> В равнобедренном треугольнике высота к основанию является медианой, значит делит основание пополам: 16 / 2 = 8 см.</div>
-<div class="solution-step"><strong>Шаг 2:</strong> В прямоугольном треугольнике с гипотенузой 17 и катетом 8: h = √(17² − 8²) = √(289 − 64) = √225 = <strong>15 см</strong>.</div>
-<div class="solution-step" style="border-left-color: var(--primary);"><em>Проверка: 8² + 15² = 64 + 225 = 289 = 17² ✅ (это пифагорова тройка 8-15-17)</em></div>
+<div class="solution-step"><strong>Шаг 2:</strong> В прямоугольном треугольнике с гипотенузой 17 и катетом 8: \(h = \sqrt{17^2 - 8^2} = \sqrt{289-64} = \sqrt{225}\) = <strong>15 см</strong>.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><em>Проверка: \(8^2 + 15^2 = 64 + 225 = 289 = 17^2\) ✅ (это пифагорова тройка 8-15-17)</em></div>
 </div>
 </details>
 
@@ -363,10 +363,10 @@ footer .legal { font-size: 0.85em; color: #95a5a6; }
 <details>
 <summary>Показать подробное решение</summary>
 <div class="solution-content">
-<div class="solution-step"><strong>Идея:</strong> площадь треугольника можно выразить двумя способами: S = ½·a·b = ½·c·h, откуда h = ab/c.</div>
-<div class="solution-step"><strong>а)</strong> c = √(25 + 144) = √169 = 13. h = 5·12/13 = <strong>60/13 ≈ 4,62</strong></div>
-<div class="solution-step"><strong>б)</strong> c = √(144 + 256) = √400 = 20. h = 12·16/20 = 192/20 = <strong>48/5 = 9,6</strong></div>
-<div class="solution-step" style="border-left-color: var(--primary);"><em>Проверка а): ½·5·12 = 30; ½·13·(60/13) = 30 ✅</em></div>
+<div class="solution-step"><strong>Идея:</strong> площадь треугольника можно выразить двумя способами: \(S = \frac{1}{2}ab = \frac{1}{2}ch\), откуда \(h = \dfrac{ab}{c}\).</div>
+<div class="solution-step"><strong>а)</strong> \(c = \sqrt{25+144} = \sqrt{169} = 13\). \(h = 5\cdot12/13\) = <strong>\(60/13 \approx 4{,}62\)</strong></div>
+<div class="solution-step"><strong>б)</strong> \(c = \sqrt{144+256} = \sqrt{400} = 20\). \(h = 12\cdot16/20 = 192/20\) = <strong>\(48/5 = 9{,}6\)</strong></div>
+<div class="solution-step" style="border-left-color: var(--primary);"><em>Проверка а): \(\frac12\cdot5\cdot12 = 30\); \(\frac12\cdot13\cdot(60/13) = 30\) ✅</em></div>
 </div>
 </details>
 
@@ -376,12 +376,12 @@ footer .legal { font-size: 0.85em; color: #95a5a6; }
 <details>
 <summary>Показать подробное решение</summary>
 <div class="solution-content">
-<div class="solution-step"><strong>Шаг 1:</strong> По формуле Герона: p = (10 + 10 + 12) / 2 = 16.</div>
-<div class="solution-step"><strong>Шаг 2:</strong> S = √(16 · 6 · 6 · 4) = √(2304) = 48 см².</div>
-<div class="solution-step"><strong>Шаг 3:</strong> Высота к стороне 10: h₁ = 2S / 10 = 96 / 10 = <strong>9,6 см</strong>.</div>
-<div class="solution-step"><strong>Шаг 4:</strong> Высота к стороне 12: h₂ = 2S / 12 = 96 / 12 = <strong>8 см</strong>.</div>
+<div class="solution-step"><strong>Шаг 1:</strong> По формуле Герона: \(p = (10 + 10 + 12)/2 = 16\).</div>
+<div class="solution-step"><strong>Шаг 2:</strong> \(S = \sqrt{16\cdot6\cdot6\cdot4} = \sqrt{2304} = 48\) см².</div>
+<div class="solution-step"><strong>Шаг 3:</strong> Высота к стороне 10: \(h_1 = 2S/10 = 96/10\) = <strong>9,6 см</strong>.</div>
+<div class="solution-step"><strong>Шаг 4:</strong> Высота к стороне 12: \(h_2 = 2S/12 = 96/12\) = <strong>8 см</strong>.</div>
 <div class="check-row"><input class="check-input" type="text" placeholder="Введи ответ" data-answer="две высоты по 9,6 см (к равным сторонам) и одна 8 см (к основанию)"><button class="check-btn" type="button">Проверить</button><span class="check-feedback"></span></div>
-<div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> две высоты по 9,6 см (к равным сторонам) и одна 8 см (к основанию).<br><em>Проверка: ½ · 12 · 8 = 48 ✅</em></div>
+<div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> две высоты по 9,6 см (к равным сторонам) и одна 8 см (к основанию).<br><em>Проверка: \(\frac12\cdot12\cdot8 = 48\) ✅</em></div>
 </div>
 </details>
 
@@ -405,8 +405,8 @@ footer .legal { font-size: 0.85em; color: #95a5a6; }
 </svg>
 </div>
 <div class="solution-step"><strong>Шаг 1:</strong> Диагонали ромба делятся пополам и перпендикулярны. Половины: 5 см и 12 см.</div>
-<div class="solution-step"><strong>Шаг 2:</strong> Сторона ромба — гипотенуза прямоугольного треугольника с катетами 5 и 12: a = √(25 + 144) = √169 = <strong>13 см</strong>.</div>
-<div class="solution-step"><strong>Шаг 3:</strong> Площадь ромба: S = d₁·d₂/2 = 10·24/2 = <strong>120 см²</strong>.</div>
+<div class="solution-step"><strong>Шаг 2:</strong> Сторона ромба — гипотенуза прямоугольного треугольника с катетами 5 и 12: \(a = \sqrt{25+144} = \sqrt{169}\) = <strong>13 см</strong>.</div>
+<div class="solution-step"><strong>Шаг 3:</strong> Площадь ромба: \(S = d_1 d_2/2 = 10\cdot24/2\) = <strong>120 см²</strong>.</div>
 <div class="solution-step" style="border-left-color: var(--primary);"><em>Проверка: 5-12-13 — пифагорова тройка ✅</em></div>
 </div>
 </details>
@@ -433,9 +433,9 @@ footer .legal { font-size: 0.85em; color: #95a5a6; }
 </svg>
 </div>
 <div class="solution-step"><strong>Шаг 1:</strong> Это равнобедренная трапеция (BC = DA = 13). Проведём две высоты — они отсекут по прямоугольному треугольник у краёв.</div>
-<div class="solution-step"><strong>Шаг 2:</strong> Горизонтальный катет каждого треугольника: (20 − 10) / 2 = 5 см.</div>
-<div class="solution-step"><strong>Шаг 3:</strong> Высота: h = √(13² − 5²) = √(169 − 25) = √144 = 12 см.</div>
-<div class="solution-step"><strong>Шаг 4:</strong> Площадь: S = (10 + 20) · 12 / 2 = <strong>180 см²</strong>.</div>
+<div class="solution-step"><strong>Шаг 2:</strong> Горизонтальный катет каждого треугольника: \((20 - 10)/2 = 5\) см.</div>
+<div class="solution-step"><strong>Шаг 3:</strong> Высота: \(h = \sqrt{13^2 - 5^2} = \sqrt{169-25} = \sqrt{144} = 12\) см.</div>
+<div class="solution-step"><strong>Шаг 4:</strong> Площадь: \(S = (10 + 20)\cdot12/2\) = <strong>180 см²</strong>.</div>
 <div class="solution-step" style="border-left-color: var(--primary);"><em>Проверка: 5-12-13 — пифагорова тройка ✅</em></div>
 </div>
 </details>
@@ -456,9 +456,9 @@ footer .legal { font-size: 0.85em; color: #95a5a6; }
 <text x="130" y="95" font-family="sans-serif" font-size="14" font-weight="bold" fill="#dc2626">d</text>
 </svg>
 </div>
-<div class="solution-step"><strong>Шаг 1:</strong> P = 2(a + b) = 50 → a + b = 25. Разность a − b = 1. Решаем систему: a = 13, b = 12.</div>
+<div class="solution-step"><strong>Шаг 1:</strong> \(P = 2(a+b) = 50 \to a + b = 25\). Разность \(a - b = 1\). Решаем систему: a = 13, b = 12.</div>
 <div class="solution-step"><strong>Шаг 2:</strong> Диагональ — высота, значит она перпендикулярна стороне b. В прямоугольном треугольнике: гипотенуза a = 13, катет b = 12.</div>
-<div class="solution-step"><strong>Шаг 3:</strong> Диагональ d = √(13² − 12²) = √(169 − 144) = √25 = <strong>5 см</strong>.</div>
+<div class="solution-step"><strong>Шаг 3:</strong> Диагональ \(d = \sqrt{13^2 - 12^2} = \sqrt{169-144} = \sqrt{25}\) = <strong>5 см</strong>.</div>
 <div class="solution-step" style="border-left-color: var(--primary);"><em>Проверка: 5-12-13 — пифагорова тройка ✅</em></div>
 </div>
 </details>
@@ -479,7 +479,7 @@ footer .legal { font-size: 0.85em; color: #95a5a6; }
 <text x="245" y="168" font-family="sans-serif" font-size="12" fill="#2563eb" text-anchor="middle">800 × 2000</text>
 </svg>
 </div>
-<div class="solution-step"><strong>Шаг 1:</strong> Диагональ окна: d = √(600² + 600²) = 600√2 ≈ 849 мм.</div>
+<div class="solution-step"><strong>Шаг 1:</strong> Диагональ окна: \(d = \sqrt{600^2 + 600^2} = 600\sqrt{2} \approx 849\) мм.</div>
 <div class="solution-step"><strong>Шаг 2:</strong> Ширина листа 800 мм &lt; 849 мм — значит лист можно пронести по диагонали окна!</div>
 <div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> да, смогут — лист пройдёт по диагонали окна. ✅</div>
 </div>
@@ -491,11 +491,11 @@ footer .legal { font-size: 0.85em; color: #95a5a6; }
 <details>
 <summary>Показать подробное решение</summary>
 <div class="solution-content">
-<div class="solution-step"><strong>Шаг 1:</strong> Диагональ в см: 31,5 · 2,54 = 80,01 см.</div>
-                <div class="solution-step"><strong>Шаг 2:</strong> Пусть стороны 16x и 9x. По теореме Пифагора: (16x)² + (9x)² = 80,01² → 337x² = 6401,6 → x² ≈ 19 → x ≈ 4,36.</div>
-                <div class="solution-step"><strong>Шаг 3:</strong> Ширина телевизора: 16 · 4,36 ≈ 69,7 см — меньше 74 см ✅. Высота: 9 · 4,36 ≈ 39,2 см — тоже меньше 74 см ✅.</div>
-                <div class="solution-step"><strong>Шаг 4:</strong> Глубина подставки 25 см меньше глубины ниши 35 см ✅.</div>
-                <div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> да, получится — телевизор поместится в нишу. ✅</div>
+<div class="solution-step"><strong>Шаг 1:</strong> Диагональ в см: \(31{,}5 \cdot 2{,}54 = 80{,}01\) см.</div>
+<div class="solution-step"><strong>Шаг 2:</strong> Пусть стороны 16x и 9x. По теореме Пифагора: \((16x)^2 + (9x)^2 = 80{,}01^2 \to 337x^2 = 6401{,}6 \to x^2 \approx 19 \to x \approx 4{,}36\).</div>
+<div class="solution-step"><strong>Шаг 3:</strong> Ширина телевизора: \(16 \cdot 4{,}36 \approx 69{,}7\) см — меньше 74 см ✅. Высота: \(9 \cdot 4{,}36 \approx 39{,}2\) см — тоже меньше 74 см ✅.</div>
+<div class="solution-step"><strong>Шаг 4:</strong> Глубина подставки 25 см меньше глубины ниши 35 см ✅.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> да, получится — телевизор поместится в нишу. ✅</div>
 </div>
 </details>
 
@@ -505,11 +505,11 @@ footer .legal { font-size: 0.85em; color: #95a5a6; }
 <details>
 <summary>Показать подробное решение</summary>
 <div class="solution-content">
-<div class="solution-step"><strong>Шаг 1:</strong> Высота к основанию: h = √(13² − 5²) = √144 = 12 см.</div>
-<div class="solution-step"><strong>Шаг 2:</strong> Площадь: S = 10 · 12 / 2 = 60 см².</div>
-<div class="solution-step"><strong>Шаг 3:</strong> Полупериметр: p = (10 + 13 + 13) / 2 = 18 см.</div>
-<div class="solution-step"><strong>Шаг 4:</strong> Радиус вписанной окружности: r = S / p = 60 / 18 = <strong>10/3 ≈ 3,33 см</strong>.</div>
-<div class="solution-step" style="border-left-color: var(--primary);"><em>Проверка: 10/3 · 18 = 60 ✅</em></div>
+<div class="solution-step"><strong>Шаг 1:</strong> Высота к основанию: \(h = \sqrt{13^2 - 5^2} = \sqrt{144} = 12\) см.</div>
+<div class="solution-step"><strong>Шаг 2:</strong> Площадь: \(S = 10\cdot12/2 = 60\) см².</div>
+<div class="solution-step"><strong>Шаг 3:</strong> Полупериметр: \(p = (10 + 13 + 13)/2 = 18\) см.</div>
+<div class="solution-step"><strong>Шаг 4:</strong> Радиус вписанной окружности: \(r = S/p = 60/18\) = <strong>\(10/3 \approx 3{,}33\) см</strong>.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><em>Проверка: \(10/3\cdot18 = 60\) ✅</em></div>
 </div>
 </details>
 
@@ -518,21 +518,21 @@ footer .legal { font-size: 0.85em; color: #95a5a6; }
 <details>
 <summary>№587 — площадь равностороннего треугольника</summary>
 <div class="solution-content">
-<div class="solution-step"><strong>Идея:</strong> высота равностороннего треугольника со стороной a равна a√3/2 (через теорему Пифагора: h² + (a/2)² = a²). Тогда S = ½ · a · h = ½ · a · a√3/2 = <strong>a²√3/4</strong>.</div>
+<div class="solution-step"><strong>Идея:</strong> высота равностороннего треугольника со стороной a равна \(a\sqrt{3}/2\) (через теорему Пифагора: \(h^2 + (a/2)^2 = a^2\)). Тогда \(S = \frac12 ah = \frac12 \cdot a \cdot \frac{a\sqrt{3}}{2}\) = <strong>\(a^2\sqrt{3}/4\)</strong>.</div>
 </div>
 </details>
 
 <details>
 <summary>№600 — радиус описанной окружности прямоугольного треугольника</summary>
 <div class="solution-content">
-<div class="solution-step"><strong>Идея:</strong> центр описанной около прямоугольного треугольника окружности лежит в середине гипотенузы (это следует из того, что медиана к гипотенузе равна её половине — доказывается через достройку до прямоугольника). Значит R = c / 2.</div>
+<div class="solution-step"><strong>Идея:</strong> центр описанной около прямоугольного треугольника окружности лежит в середине гипотенузы (это следует из того, что медиана к гипотенузе равна её половине — доказывается через достройку до прямоугольника). Значит \(R = c/2\).</div>
 </div>
 </details>
 
 <details>
 <summary>№597 — меньшая высота треугольника</summary>
 <div class="solution-content">
-<div class="solution-step"><strong>Идея:</strong> S = ½ · a · hₐ = ½ · b · h_b = ½ · c · h_c. Чем больше сторона, тем меньше высота к ней. Значит меньшая высота — это высота к большей стороне. Для треугольника 24-25-7: 7²+24²=25² — прямоугольный, значит гипотенуза 25 — наибольшая сторона. Меньшая высота h = 7·24/25 = <strong>6,72 см</strong>.</div>
+<div class="solution-step"><strong>Идея:</strong> \(S = \frac12 a h_a = \frac12 b h_b = \frac12 c h_c\). Чем больше сторона, тем меньше высота к ней. Значит меньшая высота — это высота к большей стороне. Для треугольника 24-25-7: \(7^2 + 24^2 = 25^2\) — прямоугольный, значит гипотенуза 25 — наибольшая сторона. Меньшая высота \(h = 7\cdot24/25\) = <strong>6,72 см</strong>.</div>
 </div>
 </details>
 </section>
@@ -555,8 +555,8 @@ footer .legal { font-size: 0.85em; color: #95a5a6; }
 <text x="115" y="100" font-family="sans-serif" font-size="14" font-weight="bold" fill="#dc2626">L = ?</text>
 </svg>
 </div>
-<div class="solution-step"><strong>Шаг 1:</strong> Горизонтальная длина: 3 · 1,2 = 3,6 м.</div>
-<div class="solution-step"><strong>Шаг 2:</strong> По теореме Пифагора: L = √(3² + 3,6²) = √(9 + 12,96) = √21,96 ≈ <strong>4,69 м</strong>.</div>
+<div class="solution-step"><strong>Шаг 1:</strong> Горизонтальная длина: \(3\cdot1{,}2 = 3{,}6\) м.</div>
+<div class="solution-step"><strong>Шаг 2:</strong> По теореме Пифагора: \(L = \sqrt{3^2 + 3{,}6^2} = \sqrt{9 + 12{,}96} = \sqrt{21{,}96} \approx 4{,}69\) м.</div>
 <div class="solution-step" style="border-left-color: var(--warning);"><em>Итог: лестничный марш длиной около 4,7 м обеспечит безопасный подъём на 3 м. Если хочется покороче — нужно увеличить угол, но это уже нарушение норм! 🏗️</em></div>
 </div>
 </details>
@@ -566,11 +566,11 @@ footer .legal { font-size: 0.85em; color: #95a5a6; }
 <section class="card summary-box">
 <h2>📝 Главное, что нужно запомнить</h2>
 <ul>
-<li><strong>Теорема Пифагора:</strong> c² = a² + b² (в прямоугольном треугольнике).</li>
-<li><strong>Обратная теорема:</strong> если a² + b² = c², то треугольник прямоугольный — это способ проверить прямой угол без транспортира!</li>
+<li><strong>Теорема Пифагора:</strong> \(c^2 = a^2 + b^2\) (в прямоугольном треугольнике).</li>
+<li><strong>Обратная теорема:</strong> если \(a^2 + b^2 = c^2\), то треугольник прямоугольный — это способ проверить прямой угол без транспортира!</li>
 <li><strong>Пифагоровы тройки:</strong> 3-4-5, 5-12-13, 8-15-17, 7-24-25 — выучи наизусть, они экономят время на контрольной.</li>
-<li><strong>Формула Герона:</strong> S = √(p(p−a)(p−b)(p−c)) — площадь треугольника по трём сторонам.</li>
-<li><strong>Высота прямоугольного треугольника к гипотенузе:</strong> h = ab/c (через два выражения площади).</li>
+<li><strong>Формула Герона:</strong> \(S = \sqrt{p(p-a)(p-b)(p-c)}\) — площадь треугольника по трём сторонам.</li>
+<li><strong>Высота прямоугольного треугольника к гипотенузе:</strong> \(h = \dfrac{ab}{c}\) (через два выражения площади).</li>
 <li><strong>Медиана к гипотенузе</strong> равна половине гипотенузы (это докажем позже, но помни!).</li>
 <li><strong>В задачах:</strong> сначала определи, где гипотенуза (самая длинная сторона, напротив прямого угла), — от этого зависит формула.</li>
 </ul>
@@ -582,12 +582,12 @@ footer .legal { font-size: 0.85em; color: #95a5a6; }
 <ul style="margin-top: 10px; padding-left: 20px;">
 <li><strong>Доказательство теоремы:</strong> метод достройки до квадрата — самый наглядный. Вырежьте из бумаги 4 одинаковых прямоугольных треугольника и сложите из них квадрат со стороной (a + b) — внутри останется квадрат со стороной c. Ученик сам увидит равенство площадей!</li>
 <li><strong>Пифагоровы тройки:</strong> предложите ученику «охоту за тройками» — перебрать числа от 1 до 20 и найти все тройки. Это развивает вычислительный навык и даёт интуицию.</li>
-<li><strong>Главная ошибка:</strong> ученики путают, где гипотенуза, и применяют формулу a² + b² = c², подставляя в c не самую длинную сторону. Правило-подсказка: «гипотенуза — царь, она всегда самая большая и всегда напротив прямого угла».</li>
+<li><strong>Главная ошибка:</strong> ученики путают, где гипотенуза, и применяют формулу \(a^2 + b^2 = c^2\), подставляя в c не самую длинную сторону. Правило-подсказка: «гипотенуза — царь, она всегда самая большая и всегда напротив прямого угла».</li>
 <li><strong>Задача №583 (катеты через угол 60°):</strong> в 8 классе тригонометрии ещё нет! Решение идёт через свойство угла 30° (из 7 класса) + теорему Пифагора. Это отличная задача на межтемные связи.</li>
 <li><strong>Задача №588в:</strong> «прямоугольный треугольник, высота к гипотенузе 7» — задача с недостаточными данными, если не указано, что треугольник равнобедренный. Обсудите с учеником, почему так.</li>
 <li><strong>Формула Герона (№590):</strong> удобна, когда даны все три стороны, но высоты не известны. Однако она громоздкая — ученики часто ошибаются в арифметике. Предложите сначала проверить, не является ли треугольник прямоугольным (по обратной теореме) — тогда площадь считается проще.</li>
 <li><strong>Практические задачи (№603, №604):</strong> отличный повод обсудить, как математика работает в реальной жизни — от строительства до покупки телевизора.</li>
-<li><strong>Сильным ученикам:</strong> предложите найти все пифагоровы тройки с c ≤ 50 по формуле a = 2mn, b = m² − n², c = m² + n². Это мини-исследование на несколько вечеров.</li>
+<li><strong>Сильным ученикам:</strong> предложите найти все пифагоровы тройки с \(c \le 50\) по формуле \(a = 2mn,\; b = m^2 - n^2,\; c = m^2 + n^2\). Это мини-исследование на несколько вечеров.</li>
 </ul>
 </div>
 
