@@ -3,7 +3,7 @@
   'use strict';
 
   function renderKatexIfPresent() {
-    if (window.renderMathInElement && document.querySelector('.math')) {
+    if (window.renderMathInElement && document.body.innerHTML.indexOf('\\(') !== -1) {
       try {
         window.renderMathInElement(document.body, {
           delimiters: [{ left: '\\(', right: '\\)', display: false }],
