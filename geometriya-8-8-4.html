@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Соотношения между сторонами и углами прямоугольного треугольника — Геометрия 8 класс</title>
+<style>
+:root {
+--primary: #2563eb;
+--secondary: #dc2626;
+--accent: #0ea5e9;
+--success: #16a34a;
+--warning: #f59e0b;
+--violet: #7c3aed;
+--bg: #f8fafc;
+--card-bg: #ffffff;
+--text: #1e293b;
+--text-light: #64748b;
+--radius: 16px;
+--shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+}
+body { font-family: 'Segoe UI','Roboto',system-ui,sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; margin: 0; padding: 20px; }
+.container { max-width: 850px; margin: 0 auto; }
+header { text-align: center; margin-bottom: 30px; padding: 30px; background: linear-gradient(135deg, var(--violet), var(--primary)); color: white; border-radius: var(--radius); box-shadow: var(--shadow); }
+header h1 { margin: 0; font-size: 2.1em; }
+header p { margin: 8px 0 0; opacity: 0.95; font-size: 1.05em; }
+.card { background: var(--card-bg); border-radius: var(--radius); padding: 30px; margin-bottom: 25px; box-shadow: var(--shadow); }
+h2 { color: var(--primary); border-bottom: 3px solid var(--accent); padding-bottom: 10px; display: inline-block; margin-top: 0; }
+h3 { color: var(--secondary); margin-top: 25px; }
+table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; border-radius: 8px; overflow: hidden; }
+th, td { border: 1px solid #e2e8f0; padding: 12px 14px; text-align: center; }
+th { background: #f1f5f9; color: var(--primary); font-weight: 600; }
+.rule-box { background: #eff6ff; border-left: 5px solid var(--primary); padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0; }
+.formula { font-size: 1.25em; font-weight: bold; color: var(--secondary); text-align: center; background: #fef2f2; padding: 15px; border-radius: 8px; margin: 15px 0; border: 2px dashed var(--secondary); }
+.svg-container { text-align: center; margin: 25px 0; background: #f8fafc; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0; }
+.svg-container svg { max-width: 100%; height: auto; }
+.sol-svg { text-align: center; margin: 0 0 14px; }
+.sol-svg svg { max-width: 100%; height: auto; background: #fcfdff; border: 1px dashed #cbd5e1; border-radius: 10px; padding: 6px; }
+details { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin: 15px 0; overflow: hidden; }
+summary { padding: 15px 20px; cursor: pointer; font-weight: bold; color: var(--primary); background: #eff6ff; list-style: none; display: flex; align-items: center; gap: 10px; font-size: 1.05em; }
+summary::-webkit-details-marker { display: none; }
+summary::before { content: '🔍'; font-size: 1.2em; }
+details[open] summary::before { content: '💡'; }
+details[open] summary { border-bottom: 1px solid #e2e8f0; }
+.solution-content { padding: 20px; background: white; }
+.solution-step { margin-bottom: 12px; padding-left: 15px; border-left: 3px solid var(--success); }
+.level-badge { display: inline-block; padding: 5px 14px; border-radius: 20px; font-size: 0.85em; font-weight: bold; color: white; margin: 15px 0 10px; }
+.easy { background: var(--success); }
+.medium { background: var(--warning); color: #1e293b; }
+.hard { background: var(--secondary); }
+.extra-badge { background: var(--violet); }
+.practice-box { background: linear-gradient(135deg, #fffbeb, #fef3c7); border: 2px solid var(--warning); border-radius: 12px; padding: 20px; }
+.teacher-note { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 20px; margin-top: 30px; }
+.summary-box { background: #eff6ff; border: 2px solid var(--primary); border-radius: 12px; padding: 20px; }
+.summary-box ul, .teacher-note ul, .rule-box ul, .rule-box ol { padding-left: 20px; }
+.summary-box li, .teacher-note li { margin-bottom: 8px; }
+@media (max-width: 600px) { body { padding: 10px; } header h1 { font-size: 1.5em; } .card { padding: 20px; } th, td { padding: 8px; font-size: 0.92em; } }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="assets/course.css">
+<meta name="description" content="Соотношения между сторонами и углами прямоугольного треугольника — Геометрия 8 класс">
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+<link rel="apple-touch-icon" href="assets/logo.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Геометрия 8 класс">
+<meta property="og:title" content="Соотношения между сторонами и углами прямоугольного треугольника — Геометрия 8 класс">
+<meta property="og:description" content="Синус, косинус, тангенс острого угла; значения для 30°, 45°, 60°. Задачи №697–715.">
+<meta property="og:image" content="https://интерактивнаяшкола.рф/geometry-8/assets/logo.png">
+<meta property="og:url" content="https://интерактивнаяшкола.рф/geometry-8/geometriya-8-8-4.html">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Соотношения между сторонами и углами прямоугольного треугольника — Геометрия 8 класс">
+<meta name="twitter:description" content="Синус, косинус, тангенс острого угла; значения для 30°, 45°, 60°. Задачи №697–715.">
+<meta name="twitter:image" content="https://интерактивнаяшкола.рф/geometry-8/assets/logo.png">
+<link rel="canonical" href="https://интерактивнаяшкола.рф/geometry-8/geometriya-8-8-4.html">
+</head>
+<body>
+<div class="container">
+<header>
+<h1>📐 Соотношения между сторонами и углами прямоугольного треугольника</h1>
+<p>Геометрия 8 класс • Глава VIII, §4, пункты 74–75 • Синус, косинус, тангенс, значения для 30°, 45°, 60°</p>
+</header>
+
+<style>
+.lesson-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:0 0 26px;}
+.lesson-nav-link{text-decoration:none;font-weight:600;padding:10px 18px;border-radius:12px;transition:all .2s;font-size:.95em;display:inline-block;}
+.lesson-nav-link.prev{background:#eff6ff;color:#2563eb;border:2px solid #bfdbfe;}
+.lesson-nav-link.index{background:#f1f5f9;color:#475569;border:2px solid #cbd5e1;}
+.lesson-nav-link.next{background:linear-gradient(135deg,#16a34a,#22c55e);color:#fff;box-shadow:0 3px 8px rgba(22,163,74,.35);}
+.lesson-nav-link:hover{transform:translateY(-2px);filter:brightness(.97);}
+.lesson-nav-link.disabled{opacity:.45;cursor:not-allowed;pointer-events:none;}
+@media(max-width:600px){.lesson-nav{justify-content:center;}}
+</style>
+
+<nav class="lesson-nav">
+<a class="lesson-nav-link prev" href="geometriya-8-8-3.html">← Предыдущий урок</a>
+<a class="lesson-nav-link index" href="index.html">📚 Все уроки</a>
+<a class="lesson-nav-link next" href="geometriya-8-9-1.html">Следующий урок →</a>
+</nav>
+
+<!-- ================= БЛОК 1: ИЗУЧЕНИЕ ================= -->
+<section class="card">
+<h2>🧠 Блок 1. Изучение нового материала</h2>
+<h3>🌍 Разминка: где работают синус, косинус и тангенс?</h3>
+<p>Представь, что ты проектируешь пандус для входа в здание. Нужно понять, какой длины он должен быть при заданной высоте и угле наклона, чтобы подъём был безопасным. Или ты рассчитываешь угол отскока шара в бильярде. Во всех этих случаях на помощь приходят точные <em>соотношения</em> между сторонами и углами — синус, косинус и тангенс!</p>
+
+<h2 style="margin-top:40px;">📖 Основные определения (пункт 74)</h2>
+<div class="rule-box">
+<p><strong>Прямоугольный треугольник ABC с прямым углом C.</strong> Для острого угла A:</p>
+<ul style="margin-top: 8px;">
+<li><strong>Синусом</strong> (sin) называется отношение <em>противолежащего</em> катета к гипотенузе.</li>
+<li><strong>Косинусом</strong> (cos) называется отношение <em>прилежащего</em> катета к гипотенузе.</li>
+<li><strong>Тангенсом</strong> (tg) называется отношение <em>противолежащего</em> катета к <em>прилежащему</em>.</li>
+</ul>
+</div>
+
+<div class="svg-container">
+<h3>Прямоугольный треугольник ABC (∠C = 90°)</h3>
+<svg width="400" height="280" viewBox="0 0 400 280">
+<!-- Треугольник ABC: C=(100,200), A=(300,200), B=(100,84.53) -->
+<!-- AC = 200, BC = 115.47, AB = 230.94, угол A = 30° (все координаты рассчитаны) -->
+<polygon points="100,200 300,200 100,84.53" fill="none" stroke="#1e293b" stroke-width="2.5"/>
+
+<!-- Прямой угол в C -->
+<polyline points="112,200 112,188 100,188" fill="none" stroke="#1e293b" stroke-width="2"/>
+
+<!-- Дуга угла A (30°): от 150° до 180°, r=30 -->
+<polyline points="274.02,185 271.81,189.74 270.46,194.79 270,200" fill="none" stroke="#2563eb" stroke-width="2"/>
+<text x="244" y="180" fill="#2563eb" font-size="14" font-weight="bold">30°</text>
+
+<!-- Подписи сторон -->
+<text x="200" y="225" fill="#1e293b" font-size="16" text-anchor="middle">b (прилежащий)</text>
+<text x="70" y="145" fill="#1e293b" font-size="16" text-anchor="middle">a (противолежащий)</text>
+<text x="215" y="135" fill="#1e293b" font-size="16" text-anchor="middle">c (гипотенуза)</text>
+
+<!-- Вершины -->
+<text x="315" y="205" fill="#1e293b" font-size="18" font-weight="bold">A</text>
+<text x="85" y="75" fill="#1e293b" font-size="18" font-weight="bold">B</text>
+<text x="85" y="220" fill="#1e293b" font-size="18" font-weight="bold">C</text>
+</svg>
+</div>
+
+<div class="formula">sin A = a / c &nbsp;&nbsp;&nbsp; cos A = b / c &nbsp;&nbsp;&nbsp; tg A = a / b</div>
+
+<div class="rule-box">
+<p><strong>Важные следствия из подобия:</strong></p>
+<ol style="margin-top: 8px;">
+<li>Если острые углы двух прямоугольных треугольников равны, то синусы, косинусы и тангенсы этих углов равны (треугольники подобны, а отношения сторон сохраняются).</li>
+<li>Тангенс можно выразить через синус и косинус: <strong>tg A = sin A / cos A</strong>.</li>
+</ol>
+</div>
+
+<h2 style="margin-top:40px;">🌟 Основное тригонометрическое тождество</h2>
+<p>Докажем, что для любого острого угла α выполняется равенство:</p>
+<div class="formula">sin²α + cos²α = 1</div>
+<p><strong>Доказательство.</strong> Пусть в прямоугольном треугольнике катеты равны a и b, гипотенуза равна c. Тогда sin α = a/c, cos α = b/c.<br>
+Сложим их квадраты: sin²α + cos²α = (a/c)² + (b/c)² = (a² + b²) / c².<br>
+По теореме Пифагора a² + b² = c². Значит, (a² + b²) / c² = c² / c² = 1. Что и требовалось доказать. ✅</p>
+
+<h2 style="margin-top:40px;">📐 Значения для углов 30°, 45° и 60° (пункт 75)</h2>
+<div class="svg-container">
+<h3>Треугольник 30°–60°–90°</h3>
+<svg width="400" height="280" viewBox="0 0 400 280">
+<!-- Треугольник 30-60-90: C=(100,250), A=(273.2,250), B=(100,150) -->
+<!-- AC = 173.2 = a√3, BC = 100 = a, AB = 200 = 2a (все координаты рассчитаны) -->
+<polygon points="100,250 273.2,250 100,150" fill="none" stroke="#1e293b" stroke-width="2.5"/>
+
+<!-- Прямой угол в C -->
+<polyline points="112,250 112,238 100,238" fill="none" stroke="#1e293b" stroke-width="2"/>
+
+<!-- Дуга угла A (30°): от 150° до 180°, r=30 -->
+<polyline points="247.22,235 245.01,239.74 243.66,244.79 243.2,250" fill="none" stroke="#2563eb" stroke-width="2"/>
+<text x="225" y="232" fill="#2563eb" font-size="14" font-weight="bold">30°</text>
+
+<!-- Дуга угла B (60°): от -30° до -90°, r=30 -->
+<polyline points="125.98,165 121.21,171.21 115,175.98 100,180" fill="none" stroke="#dc2626" stroke-width="2"/>
+<text x="118" y="162" fill="#dc2626" font-size="14" font-weight="bold">60°</text>
+
+<!-- Подписи -->
+<text x="186" y="270" fill="#1e293b" font-size="15" text-anchor="middle">a√3</text>
+<text x="75" y="205" fill="#1e293b" font-size="15" text-anchor="middle">a</text>
+<text x="200" y="190" fill="#1e293b" font-size="15" text-anchor="middle">2a</text>
+
+<text x="288" y="255" fill="#1e293b" font-size="16" font-weight="bold">A</text>
+<text x="85" y="140" fill="#1e293b" font-size="16" font-weight="bold">B</text>
+<text x="85" y="270" fill="#1e293b" font-size="16" font-weight="bold">C</text>
+</svg>
+</div>
+
+<table>
+<thead>
+<tr><th>Угол α</th><th>30°</th><th>45°</th><th>60°</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>sin α</strong></td><td>1/2</td><td>√2 / 2</td><td>√3 / 2</td></tr>
+<tr><td><strong>cos α</strong></td><td>√3 / 2</td><td>√2 / 2</td><td>1/2</td></tr>
+<tr><td><strong>tg α</strong></td><td>√3 / 3</td><td>1</td><td>√3</td></tr>
+</tbody>
+</table>
+<p>💡 <strong>Подсказка:</strong> заметь, что sin 30° = cos 60°, а sin 60° = cos 30°. Это общее правило: синус угла равен косинусу его дополнения до 90°.</p>
+</section>
+
+<!-- ================= БЛОК 2: ЗАКРЕПЛЕНИЕ ================= -->
+<section class="card">
+<h2>🛠 Блок 2. Закрепление (задачи из учебника)</h2>
+<p>Сначала реши задачу в тетради, потом открой решение и проверь каждый шаг!</p>
+
+<span class="level-badge easy">Базовый уровень</span>
+<h3>Задание 1 (№697, а, б)</h3>
+<p>Найдите синус, косинус и тангенс острых углов треугольника ABC с прямым углом C, если: а) BC = 8, AB = 17; б) BC = 21, AC = 20.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Шаг 1 (случай а):</strong> Дано: BC = 8 (противолежащий катет для угла A), AB = 17 (гипотенуза).<br>
+По теореме Пифагора найдём AC: AC = √(AB² − BC²) = √(17² − 8²) = √(289 − 64) = √225 = 15.</div>
+<div class="solution-step"><strong>Шаг 2:</strong> Вычисляем соотношения для угла A:<br>
+sin A = BC / AB = 8/17;<br>
+cos A = AC / AB = 15/17;<br>
+tg A = BC / AC = 8/15.</div>
+<div class="solution-step"><strong>Шаг 3 (для угла B):</strong> Катеты меняются ролями (BC теперь прилежащий, AC — противолежащий):<br>
+sin B = AC / AB = 15/17;<br>
+cos B = BC / AB = 8/17;<br>
+tg B = AC / BC = 15/8.</div>
+<div class="solution-step"><strong>Шаг 4 (случай б):</strong> Дано: BC = 21, AC = 20.<br>
+AB = √(21² + 20²) = √(441 + 400) = √841 = 29.<br>
+sin A = 21/29, cos A = 20/29, tg A = 21/20.<br>
+sin B = 20/29, cos B = 21/29, tg B = 20/21.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> а) sin A = 8/17, cos A = 15/17, tg A = 8/15; sin B = 15/17, cos B = 8/17, tg B = 15/8. б) sin A = 21/29, cos A = 20/29, tg A = 21/20; sin B = 20/29, cos B = 21/29, tg B = 20/21.</div>
+<div class="solution-step"><strong>✅ Проверка:</strong> tg A должен быть равен sin A / cos A. В случае а: (8/17) / (15/17) = 8/15. Совпадает!</div>
+</div>
+</details>
+
+<span class="level-badge easy">Базовый уровень</span>
+<h3>Задание 2 (№699, а, б)</h3>
+<p>Найдите sin α и tg α, если: а) cos α = 1/2; б) cos α = √3 / 2.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Шаг 1 (случай а):</strong> Используем основное тригонометрическое тождество: sin²α = 1 − cos²α.<br>
+sin²α = 1 − (1/2)² = 1 − 1/4 = 3/4.<br>
+Так как α — острый угол, sin α &gt; 0, значит sin α = √3 / 2.</div>
+<div class="solution-step"><strong>Шаг 2:</strong> tg α = sin α / cos α = (√3 / 2) / (1/2) = √3.</div>
+<div class="solution-step"><strong>Шаг 3 (случай б):</strong> cos α = √3 / 2.<br>
+sin²α = 1 − (√3 / 2)² = 1 − 3/4 = 1/4. Значит sin α = 1/2.<br>
+tg α = (1/2) / (√3 / 2) = 1 / √3 = √3 / 3.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> а) sin α = √3 / 2, tg α = √3; б) sin α = 1/2, tg α = √3 / 3.</div>
+<div class="solution-step"><strong>✅ Проверка по таблице:</strong> при cos α = 1/2 угол α = 60°, sin 60° = √3/2, tg 60° = √3. При cos α = √3/2 угол α = 30°, sin 30° = 1/2, tg 30° = √3/3. Всё верно!</div>
+</div>
+</details>
+
+<span class="level-badge medium">Средний уровень</span>
+<h3>Задание 3 (№704)</h3>
+<p>Найдите площадь равнобедренного треугольника с углом при основании α, если: а) боковая сторона равна b; б) основание равно a.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="sol-svg">
+<svg width="360" height="260" viewBox="0 0 360 260">
+<!-- Равнобедренный △ABC: A=(60,220), B=(180,70), C=(300,220); высота BD к основанию AC -->
+<polygon points="60,220 180,70 300,220" fill="#ffffff" stroke="#1e293b" stroke-width="2.5"/>
+
+<!-- Высота BD (пунктир) -->
+<line x1="180" y1="70" x2="180" y2="220" stroke="#dc2626" stroke-width="2" stroke-dasharray="6,4"/>
+
+<!-- Прямой угол в D=(180,220) -->
+<polyline points="190,220 190,210 180,210" fill="none" stroke="#1e293b" stroke-width="2"/>
+
+<!-- Дуга угла A (≈51°): от 0° до 51.3°, r=26 -->
+<polyline points="86,220 85.6,215.5 84.4,211.1 82.5,207 79.9,203.3 76.7,200.1 76.3,199.7" fill="none" stroke="#2563eb" stroke-width="2"/>
+<text x="98" y="200" fill="#2563eb" font-size="15" font-weight="bold">α</text>
+
+<!-- Подписи сторон -->
+<text x="108" y="136" fill="#1e293b" font-size="16" font-weight="bold">b</text>
+<text x="246" y="136" fill="#1e293b" font-size="16" font-weight="bold">b</text>
+<text x="180" y="238" fill="#1e293b" font-size="16" text-anchor="middle">a</text>
+<text x="157" y="145" fill="#dc2626" font-size="15">h</text>
+
+<!-- Вершины -->
+<text x="42" y="226" fill="#1e293b" font-size="17" font-weight="bold">A</text>
+<text x="185" y="62" fill="#1e293b" font-size="17" font-weight="bold">B</text>
+<text x="306" y="226" fill="#1e293b" font-size="17" font-weight="bold">C</text>
+<text x="166" y="226" fill="#1e293b" font-size="15">D</text>
+</svg>
+</div>
+<div class="solution-step"><strong>Шаг 1 (случай а):</strong> Пусть дан △ABC с основанием AC и боковыми сторонами AB = BC = b. Угол при основании ∠A = α.<br>
+Проведём высоту BD к основанию AC. В прямоугольном △ABD (∠D = 90°):<br>
+высота BD = AB · sin α = b · sin α;<br>
+отрезок AD = AB · cos α = b · cos α.</div>
+<div class="solution-step"><strong>Шаг 2:</strong> Так как треугольник равнобедренный, высота BD является и медианой, поэтому AC = 2 · AD = 2b · cos α.<br>
+Площадь S = ½ · AC · BD = ½ · (2b · cos α) · (b · sin α) = <strong>b² · sin α · cos α</strong>.</div>
+<div class="solution-step"><strong>Шаг 3 (случай б):</strong> Дано основание AC = a. Тогда AD = a / 2.<br>
+Из △ABD: высота BD = AD · tg α = (a / 2) · tg α.<br>
+Площадь S = ½ · AC · BD = ½ · a · ((a / 2) · tg α) = <strong>(a² / 4) · tg α</strong>.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> а) S = b² · sin α · cos α; б) S = (a² / 4) · tg α.</div>
+</div>
+</details>
+
+<span class="level-badge medium">Средний уровень</span>
+<h3>Задание 4 (№708)</h3>
+<p>Стороны прямоугольника равны 13 см и 13√3 см. Найдите углы, которые образует диагональ со сторонами прямоугольника.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Шаг 1:</strong> Пусть стороны прямоугольника ABCD: AB = 13√3 см, BC = 13 см. Диагональ AC делит прямоугольник на два прямоугольных треугольника.</div>
+<div class="solution-step"><strong>Шаг 2:</strong> Рассмотрим △ABC (∠B = 90°). Найдём тангенс угла BAC:<br>
+tg(∠BAC) = BC / AB = 13 / (13√3) = 1 / √3 = √3 / 3.</div>
+<div class="solution-step"><strong>Шаг 3:</strong> По таблице значений, если tg α = √3 / 3, то α = 30°. Значит, ∠BAC = 30°.<br>
+Второй острый угол ∠BCA = 90° − 30° = 60°.</div>
+<div class="check-row"><input class="check-input" type="text" placeholder="Введи ответ, например: 30° и 60°" data-answer="30° и 60°."><button class="check-btn" type="button">Проверить</button><span class="check-feedback"></span></div>
+<div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> диагональ образует со сторонами углы <strong>30° и 60°</strong>.</div>
+<div class="solution-step"><strong>✅ Проверка:</strong> гипотенуза AC = √(13² + (13√3)²) = √(169 + 507) = √676 = 26. Тогда sin(∠BAC) = BC / AC = 13/26 = 1/2, что соответствует sin 30°. Всё сходится!</div>
+</div>
+</details>
+
+<span class="level-badge hard">Продвинутый уровень</span>
+<h3>Задание 5 (№706)</h3>
+<p>Насыпь шоссейной дороги имеет в верхней части ширину 60 м. Какова ширина насыпи в её нижней части, если угол наклона откосов равен 60°, а высота насыпи равна 12 м?</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Шаг 1:</strong> Представим поперечное сечение насыпи как равнобедренную трапецию ABCD с основаниями BC (верх) и AD (низ). BC = 60 м. Высота BH = CK = 12 м, угол наклона ∠A = ∠D = 60°.</div>
+<div class="solution-step"><strong>Шаг 2:</strong> Рассмотрим прямоугольный △ABH (H = 90°). Известен катет BH = 12 м и угол A = 60°. Нужно найти катет AH:<br>
+tg A = BH / AH ⇒ AH = BH / tg 60° = 12 / √3 = 4√3 м.</div>
+<div class="solution-step"><strong>Шаг 3:</strong> Аналогично в △CKD катет KD = 4√3 м.<br>
+Отрезок HK равен верхнему основанию BC: HK = 60 м.<br>
+Нижнее основание AD = AH + HK + KD = 4√3 + 60 + 4√3 = 60 + 8√3 м.</div>
+<div class="solution-step"><strong>Шаг 4:</strong> Приближённое значение: √3 ≈ 1,732, значит AD ≈ 60 + 8 · 1,732 = 60 + 13,856 = 73,856 ≈ <strong>73,9 м</strong>.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> 60 + 8√3 м (или приблизительно 73,9 м).</div>
+</div>
+</details>
+
+<span class="level-badge hard">Продвинутый уровень</span>
+<h3>Задание 6 (№713)</h3>
+<p>Основание равнобедренного треугольника относится к боковой стороне как 4 : 3, а высота, проведённая к основанию, равна 30 см. Найдите отрезки, на которые эту высоту делит биссектриса угла при основании.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Шаг 1:</strong> Пусть дан △ABC с основанием AC, AB = BC. Высота BD = 30 см. По условию AC : AB = 4 : 3.<br>
+Пусть коэффициент пропорциональности равен x: AC = 4x, AB = 3x.</div>
+<div class="solution-step"><strong>Шаг 2:</strong> Высота BD в равнобедренном треугольнике является медианой, поэтому AD = AC / 2 = 2x.<br>
+Рассмотрим прямоугольный △ABD. По теореме Пифагора: AB² = AD² + BD².<br>
+(3x)² = (2x)² + 30² ⇒ 9x² = 4x² + 900 ⇒ 5x² = 900 ⇒ x² = 180 ⇒ x = √180 = 6√5.</div>
+<div class="solution-step"><strong>Шаг 3:</strong> Найдём длины сторон △ABD: AD = 2x = 12√5 см, AB = 3x = 18√5 см.<br>
+Пусть биссектриса угла A пересекает высоту BD в точке L. По свойству биссектрисы треугольника она делит противоположную сторону (BD) на отрезки, пропорциональные прилежащим сторонам:<br>
+BL / LD = AB / AD.</div>
+<div class="solution-step"><strong>Шаг 4:</strong> Найдём отношение: AB / AD = 18√5 / 12√5 = 18 / 12 = 3 / 2.<br>
+Значит, BL : LD = 3 : 2. Всего частей 3 + 2 = 5, длина BD = 30 см. Одна часть = 30 : 5 = 6 см.<br>
+BL = 3 · 6 = 18 см; LD = 2 · 6 = 12 см.</div>
+<div class="check-row"><input class="check-input" type="text" placeholder="Введи ответ, например: 18 см и 12 см" data-answer="18 см и 12 см."><button class="check-btn" type="button">Проверить</button><span class="check-feedback"></span></div>
+<div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> <strong>18 см и 12 см</strong>.</div>
+<div class="solution-step"><strong>✅ Проверка:</strong> 18 + 12 = 30 см — вся высота. 18 / 12 = 1,5 и AB / AD = 18√5 / 12√5 = 1,5. Свойство биссектрисы выполняется!</div>
+</div>
+</details>
+
+<span class="level-badge extra-badge">Дополнительная задача</span>
+<h3>Задание 7 (№710)</h3>
+<p>Треугольники ABC и A₁B₁C₁ подобны, AB = 6 см, BC = 9 см, CA = 10 см. Наибольшая сторона треугольника A₁B₁C₁ равна 7,5 см. Найдите две другие стороны треугольника A₁B₁C₁.</p>
+<details>
+<summary>Показать подробное решение</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Шаг 1:</strong> В △ABC наибольшая сторона — это CA = 10 см. Ей соответствует наибольшая сторона C₁A₁ = 7,5 см в подобном треугольнике.</div>
+<div class="solution-step"><strong>Шаг 2:</strong> Найдём коэффициент подобия k = C₁A₁ / CA = 7,5 / 10 = 0,75.</div>
+<div class="solution-step"><strong>Шаг 3:</strong> Остальные стороны △A₁B₁C₁ равны соответствующим сторонам △ABC, умноженным на k:<br>
+A₁B₁ = AB · k = 6 · 0,75 = 4,5 см.<br>
+B₁C₁ = BC · k = 9 · 0,75 = 6,75 см.</div>
+<div class="check-row"><input class="check-input" type="text" placeholder="Введи ответ, например: 4,5 см и 6,75 см" data-answer="4,5 см и 6,75 см."><button class="check-btn" type="button">Проверить</button><span class="check-feedback"></span></div>
+<div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> <strong>4,5 см и 6,75 см</strong>.</div>
+</div>
+</details>
+
+<span class="level-badge extra-badge">Дополнительная задача</span>
+<h3>Задание 8 (№715)</h3>
+<p>На стороне BC треугольника ABC взята точка D так, что BD/DC = AB/AC. Докажите, что AD — биссектриса треугольника ABC.</p>
+<details>
+<summary>Показать идею доказательства</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Шаг 1:</strong> Проведём через точку C прямую, параллельную AD, и продолжим сторону BA за точку A до пересечения с этой прямой в точке E.</div>
+<div class="solution-step"><strong>Шаг 2:</strong> Так как AD ∥ CE, по теореме Фалеса (или из подобия △ABD и △EBC): BD / DC = BA / AE.</div>
+<div class="solution-step"><strong>Шаг 3:</strong> По условию BD / DC = AB / AC. Приравниваем правые части: AB / AE = AB / AC, отсюда AE = AC.</div>
+<div class="solution-step"><strong>Шаг 4:</strong> Треугольник ACE равнобедренный (AE = AC), значит ∠AEC = ∠ACE.<br>
+Поскольку AD ∥ CE, накрест лежащие углы равны: ∠DAC = ∠ACE, а соответственные углы равны: ∠BAD = ∠AEC.<br>
+Следовательно, ∠BAD = ∠DAC — AD делит угол BAC пополам.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><strong>Вывод:</strong> AD является биссектрисой угла A. Что и требовалось доказать. ✅</div>
+</div>
+</details>
+</section>
+
+<!-- ================= БЛОК 3: ПРАКТИЧЕСКОЕ ПРИМЕНЕНИЕ ================= -->
+<section class="card">
+<h2>🚧 Блок 3. Практическое применение</h2>
+<div class="practice-box">
+<h3>🗺️ Продукт-задача: «Безопасный пандус»</h3>
+<p>Ты помогаешь спроектировать пандус для входа в здание. По нормативам максимальный угол наклона пандуса не должен превышать 5°. Высота порога составляет 40 см. Какой минимальной длины должна быть горизонтальная проекция пандуса, чтобы соблюсти норму?</p>
+<details>
+<summary>Показать решение инженера</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Шаг 1:</strong> Модель — прямоугольный треугольник: высота h = 40 см = 0,4 м — противолежащий катет, горизонтальная проекция L — прилежащий катет. Угол α = 5°.</div>
+<div class="solution-step"><strong>Шаг 2:</strong> Используем определение тангенса: tg α = h / L, откуда L = h / tg α.</div>
+<div class="solution-step"><strong>Шаг 3:</strong> По таблицам или калькулятору tg 5° ≈ 0,0875.<br>
+L = 0,4 / 0,0875 ≈ 4,57 м.</div>
+<div class="check-row"><input class="check-input" type="text" placeholder="Введи длину в метрах, например: 4,6" data-answer="4,6 м."><button class="check-btn" type="button">Проверить</button><span class="check-feedback"></span></div>
+<div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> минимальная длина горизонтальной проекции пандуса — около <strong>4,6 метра</strong>.</div>
+<div class="solution-step"><strong>✅ Проверка смысла:</strong> при маленьком угле (5°) длина должна быть заметно больше высоты (примерно в 11–12 раз). 4,57 / 0,4 ≈ 11,4. Логично!</div>
+</div>
+</details>
+</div>
+</section>
+
+<!-- ================= ИТОГИ ================= -->
+<section class="card">
+<h2>⭐ Главное, что нужно запомнить</h2>
+<div class="summary-box">
+<ul>
+<li><strong>Синус</strong> острого угла = противолежащий катет / гипотенуза.</li>
+<li><strong>Косинус</strong> острого угла = прилежащий катет / гипотенуза.</li>
+<li><strong>Тангенс</strong> острого угла = противолежащий катет / прилежащий катет = sin / cos.</li>
+<li><strong>Основное тригонометрическое тождество:</strong> sin²α + cos²α = 1 (следствие из теоремы Пифагора).</li>
+<li>Значения для 30°, 45°, 60° нужно знать наизусть или уметь быстро выводить из равностороннего и равнобедренного прямоугольного треугольников.</li>
+<li>Если углы равны, то их тригонометрические функции равны (свойство подобия треугольников).</li>
+</ul>
+</div>
+</section>
+
+<!-- ================= МЕТОДИКА ================= -->
+<div class="teacher-note">
+<h3>💡 Методическая подсказка (для учителя или родителя)</h3>
+<ul>
+<li><strong>Типичная ошибка:</strong> ученики путают, какой катет «прилежащий», а какой «противолежащий». <em>Лайфхак:</em> «противолежащий» лежит <strong>напротив</strong> угла (враг), а «прилежащий» <strong>прижимается</strong> к углу (друг).</li>
+<li><strong>Для слабых учеников:</strong> начните с задач №697 и №699 — здесь нужно просто подставить числа в формулы и воспользоваться таблицей. Обязательно прорисуйте треугольник и подпишите «противолежащий» и «прилежащий» относительно конкретного угла.</li>
+<li><strong>Про значение «3/2»:</strong> напомните, что синус и косинус всегда не больше 1, поэтому «cos α = 3/2» сразу выдаёт ошибку в условии. Это хороший тест на внимательность.</li>
+<li><strong>Для сильных учеников:</strong> задачи №713 и №715 отлично развивают комбинирование свойств (биссектриса + тригонометрия + подобие). Предложите самостоятельно доказать тождество tg α = sin α / cos α, не заглядывая в учебник.</li>
+</ul>
+</div>
+
+<nav class="lesson-nav" style="margin-top:30px">
+<a class="lesson-nav-link prev" href="geometriya-8-8-3.html">← Предыдущий урок</a>
+<a class="lesson-nav-link index" href="index.html">📚 Все уроки</a>
+<a class="lesson-nav-link next" href="geometriya-8-9-1.html">Следующий урок →</a>
+</nav>
+
+<footer style="text-align: center; color: var(--text-light); margin-top: 30px; font-size: 0.9em; padding-bottom: 20px;">
+<p>📚 Геометрия 8 класс (Атанасян) • Глава VIII, §4, пункты 74–75 • Задачи №697–715</p>
+<p class="legal">© 2019–2026 ИП Громова Анна Александровна, ОГРНИП: 319237500156762, ИНН: 236507001744</p>
+<p class="legal">Лицензия № Л035-01218-23/01091451 <a href="https://xn--80aaagnrcpdkofpu2ae0iuf.xn--p1ai/" target="_blank" rel="noopener">Интерактивная школа «МУДРО»</a></p>
+</footer>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script defer src="assets/axis-math.js"></script>
+<script defer src="assets/answer-core.js"></script>
+<script defer src="assets/course.js"></script>
+</body>
+</html>
