@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Задачи повышенной трудности к главе VIII — Геометрия 8 класс</title>
+<style>
+:root {
+--primary: #2563eb;
+--secondary: #dc2626;
+--accent: #0ea5e9;
+--success: #16a34a;
+--warning: #f59e0b;
+--violet: #7c3aed;
+--bg: #f8fafc;
+--card-bg: #ffffff;
+--text: #1e293b;
+--text-light: #64748b;
+--radius: 16px;
+--shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+}
+body { font-family: 'Segoe UI','Roboto',system-ui,sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; margin: 0; padding: 20px; }
+.container { max-width: 850px; margin: 0 auto; }
+header { text-align: center; margin-bottom: 30px; padding: 30px; background: linear-gradient(135deg, var(--violet), var(--primary)); color: white; border-radius: var(--radius); box-shadow: var(--shadow); }
+header h1 { margin: 0; font-size: 2.1em; }
+header p { margin: 8px 0 0; opacity: 0.95; font-size: 1.05em; }
+.card { background: var(--card-bg); border-radius: var(--radius); padding: 30px; margin-bottom: 25px; box-shadow: var(--shadow); }
+h2 { color: var(--primary); border-bottom: 3px solid var(--accent); padding-bottom: 10px; display: inline-block; margin-top: 0; }
+h3 { color: var(--secondary); margin-top: 25px; }
+table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; border-radius: 8px; overflow: hidden; }
+th, td { border: 1px solid #e2e8f0; padding: 12px 14px; text-align: left; }
+th { background: #f1f5f9; color: var(--primary); font-weight: 600; }
+.rule-box { background: #eff6ff; border-left: 5px solid var(--primary); padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0; }
+.formula { font-size: 1.25em; font-weight: bold; color: var(--secondary); text-align: center; background: #fef2f2; padding: 15px; border-radius: 8px; margin: 15px 0; border: 2px dashed var(--secondary); }
+.svg-container { text-align: center; margin: 25px 0; background: #f8fafc; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0; }
+.svg-container svg { max-width: 100%; height: auto; }
+.sol-svg { text-align: center; margin: 0 0 14px; }
+.sol-svg svg { max-width: 100%; height: auto; background: #fcfdff; border: 1px dashed #cbd5e1; border-radius: 10px; padding: 6px; }
+details { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin: 15px 0; overflow: hidden; }
+summary { padding: 15px 20px; cursor: pointer; font-weight: bold; color: var(--primary); background: #eff6ff; list-style: none; display: flex; align-items: center; gap: 10px; font-size: 1.05em; }
+summary::-webkit-details-marker { display: none; }
+summary::before { content: '🔍'; font-size: 1.2em; }
+details[open] summary::before { content: '💡'; }
+details[open] summary { border-bottom: 1px solid #e2e8f0; }
+.solution-content { padding: 20px; background: white; }
+.solution-step { margin-bottom: 12px; padding-left: 15px; border-left: 3px solid var(--success); }
+.level-badge { display: inline-block; padding: 5px 14px; border-radius: 20px; font-size: 0.85em; font-weight: bold; color: white; margin: 15px 0 10px; }
+.easy { background: var(--success); }
+.medium { background: var(--warning); color: #1e293b; }
+.hard { background: var(--secondary); }
+.extra-badge { background: var(--violet); }
+.practice-box { background: linear-gradient(135deg, #fffbeb, #fef3c7); border: 2px solid var(--warning); border-radius: 12px; padding: 20px; }
+.teacher-note { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 20px; margin-top: 30px; }
+.summary-box { background: #eff6ff; border: 2px solid var(--primary); border-radius: 12px; padding: 20px; }
+.summary-box ul, .teacher-note ul, .rule-box ul, .rule-box ol { padding-left: 20px; }
+.summary-box li, .teacher-note li { margin-bottom: 8px; }
+@media (max-width: 600px) { body { padding: 10px; } header h1 { font-size: 1.5em; } .card { padding: 20px; } th, td { padding: 8px; font-size: 0.92em; } }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="assets/course.css">
+<meta name="description" content="Задачи повышенной трудности к главе VIII «Подобные треугольники». Задачи №863–905.">
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+<link rel="apple-touch-icon" href="assets/logo.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Геометрия 8 класс">
+<meta property="og:title" content="Задачи повышенной трудности к главе VIII — Геометрия 8 класс">
+<meta property="og:description" content="Разбор задач повышенной трудности к главе VIII «Подобные треугольники»: подобие, биссектрисы, замечательные точки.">
+<meta property="og:image" content="https://интерактивнаяшкола.рф/geometry-8/assets/logo.png">
+<meta property="og:url" content="https://интерактивнаяшкола.рф/geometry-8/geometriya-8-8-zadachi.html">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Задачи повышенной трудности к главе VIII — Геометрия 8 класс">
+<meta name="twitter:description" content="Разбор задач повышенной трудности к главе VIII.">
+<meta name="twitter:image" content="https://интерактивнаяшкола.рф/geometry-8/assets/logo.png">
+<link rel="canonical" href="https://интерактивнаяшкола.рф/geometry-8/geometriya-8-8-zadachi.html">
+</head>
+<body>
+<div class="container">
+<header>
+<h1>🏆 Задачи повышенной трудности</h1>
+<p>Геометрия 8 класс • Глава VIII, «Подобные треугольники» • Задачи №863–905</p>
+</header>
+
+<style>
+.lesson-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:0 0 26px;}
+.lesson-nav-link{text-decoration:none;font-weight:600;padding:10px 18px;border-radius:12px;transition:all .2s;font-size:.95em;display:inline-block;}
+.lesson-nav-link.prev{background:#eff6ff;color:#2563eb;border:2px solid #bfdbfe;}
+.lesson-nav-link.index{background:#f1f5f9;color:#475569;border:2px solid #cbd5e1;}
+.lesson-nav-link.next{background:linear-gradient(135deg,#16a34a,#22c55e);color:#fff;box-shadow:0 3px 8px rgba(22,163,74,.35);}
+.lesson-nav-link:hover{transform:translateY(-2px);filter:brightness(.97);}
+.lesson-nav-link.disabled{opacity:.45;cursor:not-allowed;pointer-events:none;}
+@media(max-width:600px){.lesson-nav{justify-content:center;}}
+</style>
+
+<nav class="lesson-nav">
+<a class="lesson-nav-link prev" href="geometriya-8-8-4.html">← Предыдущий урок</a>
+<a class="lesson-nav-link index" href="index.html">📚 Все уроки</a>
+<a class="lesson-nav-link next" href="geometriya-8-9-1.html">Следующий урок →</a>
+</nav>
+
+<!-- ================= БЛОК 1: ИЗУЧЕНИЕ ================= -->
+<section class="card">
+<h2>🧠 Блок 1. С чего начать</h2>
+<h3>🌍 Разминка</h3>
+<p>Задачи к главе VIII — о подобии: искать пары подобных треугольников, записывать пропорции и «переворачивать» их удобным способом. Полезно помнить и про замечательные точки: медианы, биссектрисы и высоты пересекаются в одной точке каждая.</p>
+
+<h2 style="margin-top:40px;">🧰 Напоминалка: факты главы VIII</h2>
+<ul style="padding-left:20px;">
+<li><strong>Признаки подобия:</strong> по двум углам; по двум пропорциональным сторонам и углу между ними; по трём сторонам.</li>
+<li><strong>Средняя линия</strong> треугольника параллельна стороне и равна её половине.</li>
+<li><strong>Медианы</strong> пересекаются в одной точке и делятся ею в отношении 2:1, считая от вершины.</li>
+<li><strong>Биссектриса</strong> угла делит противоположную сторону на отрезки, пропорциональные прилежащим сторонам.</li>
+<li><strong>Метрические соотношения</strong> в прямоугольном треугольнике: квадрат катета равен произведению гипотенузы на прилежащий отрезок.</li>
+<li>В прямоугольном треугольнике высота к гипотенузе разбивает его на два подобных треугольника.</li>
+</ul>
+</section>
+
+<!-- ================= БЛОК 2: ЗАДАЧИ ================= -->
+<section class="card">
+<h2>🛠 Блок 2. Задачи повышенной трудности (№863–905)</h2>
+<p>Разбор самых показательных задач к главе VIII. Сначала реши сам — потом сверься.</p>
+
+<span class="level-badge hard">Продвинутый уровень</span>
+<h3>Задание 1 (№861)</h3>
+<p>В треугольнике ABC (AB ≠ AC) через середину M стороны BC проведена прямая, параллельная биссектрисе угла A. Она пересекает прямые AB и AC в точках D и E. Докажите, что BD = CE.</p>
+<details>
+<summary>Показать решение</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Шаг 1:</strong> Выберем координаты: A = (0;0), точка C = (b;0) на оси x, B = (c·cos 2α; c·sin 2α), где b = AC, c = AB, α = ½∠BAC. Единичный вектор биссектрисы угла A: e = (cos α; sin α).</div>
+<div class="solution-step"><strong>Шаг 2:</strong> M = (B + C)/2. Прямая через M с направлением e задаётся уравнением M + t·e. Точка E лежит на прямой AC, то есть имеет вид (x;0). Из условия y = 0:<br>
+c·sin 2α/2 + t·sin α = 0 ⇒ t = −c·sin 2α/(2 sin α) = −c·cos α.<br>
+Тогда x_E = (b + c·cos 2α)/2 + t·cos α = (b + c·cos 2α)/2 − c·cos²α = (b − c)/2.<br>
+Значит CE = |b − (b − c)/2| = (b + c)/2.</div>
+<div class="solution-step"><strong>Шаг 3:</strong> Аналогично точка D лежит на прямой AB: D = λ·B, где λ = AD/AB. Так как D лежит на прямой M + t·e, из сравнения координат получаем линейное уравнение относительно λ:<br>
+(b + c·cos 2α)/2 + 2c·cos²α·(λ − 1/2) = λ·c·cos 2α.<br>
+После упрощения (cos 2α − 2cos²α = −1) находим λ = (c − b)/(2c).</div>
+<div class="solution-step"><strong>Шаг 4:</strong> Тогда BD = |1 − λ|·c = (1 − (c − b)/(2c))·c = (b + c)/2. Значит BD = CE. Что и требовалось доказать. ✅</div>
+<div class="solution-step"><strong>✅ Проверка на примере:</strong> треугольник с A = (0;0), B = (6;0), C = (0;4): b = 4, c = 6, α = 45°. M = (3;2), прямая y = x − 1 пересекает AB в D = (1;0), а AC — в E = (0;−1) (на продолжении). BD = 5, CE = 5 = (4 + 6)/2. ✅</div>
+</div>
+</details>
+
+<span class="level-badge hard">Продвинутый уровень</span>
+<h3>Задание 2 (№897)</h3>
+<p>Докажите, что каждая биссектриса треугольника делится точкой пересечения биссектрис в отношении суммы прилежащих сторон к противолежащей, считая от вершины.</p>
+<details>
+<summary>Показать решение</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Шаг 1:</strong> Рассмотрим треугольник ABC и биссектрису AD угла A. Пусть O — точка пересечения биссектрис, r — радиус вписанной окружности.</div>
+<div class="solution-step"><strong>Шаг 2:</strong> Треугольники ABO и BDO имеют общую высоту, опущенную из B на прямую AD. Значит [ABO]/[BDO] = AO/OD. Аналогично [ACO]/[CDO] = AO/OD.</div>
+<div class="solution-step"><strong>Шаг 3:</strong> Сложим: ([ABO] + [ACO])/([BDO] + [CDO]) = AO/OD. Но [BDO] + [CDO] = [BOC].</div>
+<div class="solution-step"><strong>Шаг 4:</strong> С другой стороны, [ABO] = ½·AB·r, [ACO] = ½·AC·r, [BOC] = ½·BC·r. Поэтому:<br>
+AO/OD = (½r·(AB + AC))/(½r·BC) = (AB + AC)/BC.</div>
+<div class="solution-step" style="border-left-color: var(--primary);"><strong>Вывод:</strong> AO/OD = (AB + AC)/BC. Что и требовалось доказать. ✅</div>
+</div>
+</details>
+
+<h3>📋 Остальные задачи главы VIII — для самостоятельной тренировки</h3>
+<p>Задачи №863–876, 878–896, 898–909 решаются теми же приёмами. Пробуй сам и сверяй ответы в учебнике.</p>
+</section>
+
+<!-- ================= БЛОК 3: ПРАКТИЧЕСКОЕ ПРИМЕНЕНИЕ ================= -->
+<section class="card">
+<h2>🚧 Блок 3. Практическое применение</h2>
+<div class="practice-box">
+<h3>🗺️ Продукт-задача: «Спортивная площадка»</h3>
+<p>Строители размечают треугольную площадку со сторонами 5 м, 6 м и 7 м. В точке пересечения медиан будет установлена опора для осветительной мачты. Найдите расстояние от вершины B (угол между сторонами 5 м и 7 м) до этой точки.</p>
+<details>
+<summary>Показать решение инженера</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Шаг 1:</strong> Обозначим стороны: BC = 5 м, CA = 6 м, AB = 7 м. Медиана из вершины B: m_b = ½·√(2·BC² + 2·AB² − CA²).</div>
+<div class="solution-step"><strong>Шаг 2:</strong> Считаем: m_b = ½·√(2·25 + 2·49 − 36) = ½·√112 = √28 ≈ 5,292 м.</div>
+<div class="solution-step"><strong>Шаг 3:</strong> Точка пересечения медиан делит медиану в отношении 2:1, считая от вершины. Значит расстояние от B до точки пересечения: (2/3)·m_b = (2/3)·5,292 ≈ 3,53 м.</div>
+<div class="check-row"><input class="check-input" type="text" placeholder="Введи расстояние в метрах" data-answer="3,53"><button class="check-btn" type="button">Проверить</button><span class="check-feedback"></span></div>
+<div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> ≈ <strong>3,53 м</strong>.</div>
+<div class="solution-step"><strong>✅ Проверка:</strong> m_b = √28 ≈ 5,2915; (2/3)·5,2915 ≈ 3,528 ≈ 3,53. ✅</div>
+</div>
+</details>
+</div>
+</section>
+
+<!-- ================= ИТОГИ ================= -->
+<section class="card">
+<h2>⭐ Главное, что нужно запомнить</h2>
+<div class="summary-box">
+<ul>
+<li>Подобие ищется по парам углов: общие, вертикальные, накрест лежащие, вписанные.</li>
+<li>Медианы пересекаются в отношении 2:1 — это помогает находить расстояния до центроида.</li>
+<li>Биссектриса делится точкой пересечения биссектрис в отношении суммы прилежащих сторон к противолежащей.</li>
+<li>Прямая, параллельная биссектрисе, часто «переводит» задачу в координаты или пропорции.</li>
+<li>Всегда проверяй ответ: подставь число обратно или сопоставь с рисунком.</li>
+</ul>
+</div>
+</section>
+
+<!-- ================= МЕТОДИКА ================= -->
+<div class="teacher-note">
+<h3>💡 Методическая подсказка (для учителя или родителя)</h3>
+<ul>
+<li><strong>Для слабых учеников:</strong> повторите признаки подобия и свойство медиан; задача №897 — отличный тренажёр по методу площадей.</li>
+<li><strong>Для сильных учеников:</strong> №861 развивает умение строить модель (координаты) и аккуратно работать с формулами.</li>
+<li><strong>Типичная ошибка:</strong> в №897 путают, к какой стороне относится «сумма прилежащих сторон». Рисуйте треугольник и подписывайте стороны.</li>
+</ul>
+</div>
+
+<nav class="lesson-nav" style="margin-top:30px">
+<a class="lesson-nav-link prev" href="geometriya-8-8-4.html">← Предыдущий урок</a>
+<a class="lesson-nav-link index" href="index.html">📚 Все уроки</a>
+<a class="lesson-nav-link next" href="geometriya-8-9-1.html">Следующий урок →</a>
+</nav>
+
+<footer style="text-align: center; color: var(--text-light); margin-top: 30px; font-size: 0.9em; padding-bottom: 20px;">
+<p>📚 Геометрия 8 класс (Атанасян) • Глава VIII, «Подобные треугольники» • Задачи повышенной трудности №863–905</p>
+<p class="legal">© 2019–2026 ИП Громова Анна Александровна, ОГРНИП: 319237500156762, ИНН: 236507001744</p>
+<p class="legal">Лицензия № Л035-01218-23/01091451 <a href="https://xn--80aaagnrcpdkofpu2ae0iuf.xn--p1ai/" target="_blank" rel="noopener">Интерактивная школа «МУДРО»</a></p>
+</footer>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script defer src="assets/axis-math.js"></script>
+<script defer src="assets/answer-core.js"></script>
+<script defer src="assets/course.js"></script>
+</body>
+</html>

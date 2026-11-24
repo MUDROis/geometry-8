@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Задачи повышенной трудности к главе VII — Геометрия 8 класс</title>
+<style>
+:root {
+--primary: #2563eb;
+--secondary: #dc2626;
+--accent: #0ea5e9;
+--success: #16a34a;
+--warning: #f59e0b;
+--violet: #7c3aed;
+--bg: #f8fafc;
+--card-bg: #ffffff;
+--text: #1e293b;
+--text-light: #64748b;
+--radius: 16px;
+--shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+}
+body { font-family: 'Segoe UI','Roboto',system-ui,sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; margin: 0; padding: 20px; }
+.container { max-width: 850px; margin: 0 auto; }
+header { text-align: center; margin-bottom: 30px; padding: 30px; background: linear-gradient(135deg, var(--violet), var(--primary)); color: white; border-radius: var(--radius); box-shadow: var(--shadow); }
+header h1 { margin: 0; font-size: 2.1em; }
+header p { margin: 8px 0 0; opacity: 0.95; font-size: 1.05em; }
+.card { background: var(--card-bg); border-radius: var(--radius); padding: 30px; margin-bottom: 25px; box-shadow: var(--shadow); }
+h2 { color: var(--primary); border-bottom: 3px solid var(--accent); padding-bottom: 10px; display: inline-block; margin-top: 0; }
+h3 { color: var(--secondary); margin-top: 25px; }
+table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; border-radius: 8px; overflow: hidden; }
+th, td { border: 1px solid #e2e8f0; padding: 12px 14px; text-align: left; }
+th { background: #f1f5f9; color: var(--primary); font-weight: 600; }
+.rule-box { background: #eff6ff; border-left: 5px solid var(--primary); padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0; }
+.formula { font-size: 1.25em; font-weight: bold; color: var(--secondary); text-align: center; background: #fef2f2; padding: 15px; border-radius: 8px; margin: 15px 0; border: 2px dashed var(--secondary); }
+.svg-container { text-align: center; margin: 25px 0; background: #f8fafc; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0; }
+.svg-container svg { max-width: 100%; height: auto; }
+.sol-svg { text-align: center; margin: 0 0 14px; }
+.sol-svg svg { max-width: 100%; height: auto; background: #fcfdff; border: 1px dashed #cbd5e1; border-radius: 10px; padding: 6px; }
+details { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin: 15px 0; overflow: hidden; }
+summary { padding: 15px 20px; cursor: pointer; font-weight: bold; color: var(--primary); background: #eff6ff; list-style: none; display: flex; align-items: center; gap: 10px; font-size: 1.05em; }
+summary::-webkit-details-marker { display: none; }
+summary::before { content: '🔍'; font-size: 1.2em; }
+details[open] summary::before { content: '💡'; }
+details[open] summary { border-bottom: 1px solid #e2e8f0; }
+.solution-content { padding: 20px; background: white; }
+.solution-step { margin-bottom: 12px; padding-left: 15px; border-left: 3px solid var(--success); }
+.level-badge { display: inline-block; padding: 5px 14px; border-radius: 20px; font-size: 0.85em; font-weight: bold; color: white; margin: 15px 0 10px; }
+.easy { background: var(--success); }
+.medium { background: var(--warning); color: #1e293b; }
+.hard { background: var(--secondary); }
+.extra-badge { background: var(--violet); }
+.practice-box { background: linear-gradient(135deg, #fffbeb, #fef3c7); border: 2px solid var(--warning); border-radius: 12px; padding: 20px; }
+.teacher-note { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 20px; margin-top: 30px; }
+.summary-box { background: #eff6ff; border: 2px solid var(--primary); border-radius: 12px; padding: 20px; }
+.summary-box ul, .teacher-note ul, .rule-box ul, .rule-box ol { padding-left: 20px; }
+.summary-box li, .teacher-note li { margin-bottom: 8px; }
+@media (max-width: 600px) { body { padding: 10px; } header h1 { font-size: 1.5em; } .card { padding: 20px; } th, td { padding: 8px; font-size: 0.92em; } }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="assets/course.css">
+<meta name="description" content="Задачи повышенной трудности к главе VII «Площадь». Задачи №842–862.">
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+<link rel="apple-touch-icon" href="assets/logo.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Геометрия 8 класс">
+<meta property="og:title" content="Задачи повышенной трудности к главе VII — Геометрия 8 класс">
+<meta property="og:description" content="Разбор задач повышенной трудности к главе VII «Площадь»: метод площадей, трапеция, площадь треугольника.">
+<meta property="og:image" content="https://интерактивнаяшкола.рф/geometry-8/assets/logo.png">
+<meta property="og:url" content="https://интерактивнаяшкола.рф/geometry-8/geometriya-8-7-zadachi.html">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Задачи повышенной трудности к главе VII — Геометрия 8 класс">
+<meta name="twitter:description" content="Разбор задач повышенной трудности к главе VII.">
+<meta name="twitter:image" content="https://интерактивнаяшкола.рф/geometry-8/assets/logo.png">
+<link rel="canonical" href="https://интерактивнаяшкола.рф/geometry-8/geometriya-8-7-zadachi.html">
+</head>
+<body>
+<div class="container">
+<header>
+<h1>🏆 Задачи повышенной трудности</h1>
+<p>Геометрия 8 класс • Глава VII, «Площадь» • Задачи №842–862</p>
+</header>
+
+<style>
+.lesson-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:0 0 26px;}
+.lesson-nav-link{text-decoration:none;font-weight:600;padding:10px 18px;border-radius:12px;transition:all .2s;font-size:.95em;display:inline-block;}
+.lesson-nav-link.prev{background:#eff6ff;color:#2563eb;border:2px solid #bfdbfe;}
+.lesson-nav-link.index{background:#f1f5f9;color:#475569;border:2px solid #cbd5e1;}
+.lesson-nav-link.next{background:linear-gradient(135deg,#16a34a,#22c55e);color:#fff;box-shadow:0 3px 8px rgba(22,163,74,.35);}
+.lesson-nav-link:hover{transform:translateY(-2px);filter:brightness(.97);}
+.lesson-nav-link.disabled{opacity:.45;cursor:not-allowed;pointer-events:none;}
+@media(max-width:600px){.lesson-nav{justify-content:center;}}
+</style>
+
+<nav class="lesson-nav">
+<a class="lesson-nav-link prev" href="geometriya-8-7-3.html">← Предыдущий урок</a>
+<a class="lesson-nav-link index" href="index.html">📚 Все уроки</a>
+<a class="lesson-nav-link next" href="geometriya-8-8-1.html">Следующий урок →</a>
+</nav>
+
+<!-- ================= БЛОК 1: ИЗУЧЕНИЕ ================= -->
+<section class="card">
+<h2>🧠 Блок 1. С чего начать</h2>
+<h3>🌍 Разминка</h3>
+<p>Задачи к главе VII — это прежде всего <strong>метод площадей</strong>: одна и та же площадь, записанная разными способами, даёт отношения отрезков. Освоив этот приём, ты сможешь решать задачи, которые на первый взгляд вообще не про площади.</p>
+
+<h2 style="margin-top:40px;">🧰 Напоминалка: факты главы VII</h2>
+<ul style="padding-left:20px;">
+<li>Площадь треугольника: S = ½·a·h — половина произведения стороны на высоту к ней.</li>
+<li>Медиана делит треугольник на два равновеликих треугольника.</li>
+<li>Если треугольники имеют общую высоту, их площади относятся как основания.</li>
+<li>Площадь трапеции: S = (a + b)·h/2; диагонали делят её на четыре треугольника, площади при боковых сторонах равны.</li>
+<li>В трапеции треугольники у оснований (образованные диагоналями) подобны: S = (√S₁ + √S₂)².</li>
+<li>Теорема Пифагора и формула Герона — главные вычислительные инструменты.</li>
+</ul>
+</section>
+
+<!-- ================= БЛОК 2: ЗАДАЧИ ================= -->
+<section class="card">
+<h2>🛠 Блок 2. Задачи повышенной трудности (№842–862)</h2>
+<p>Разбор самых показательных задач к главе VII. Сначала реши сам — потом сверься.</p>
+
+<span class="level-badge hard">Продвинутый уровень</span>
+<h3>Задание 1 (№843)</h3>
+<p>На сторонах AC и BC треугольника ABC взяты соответственно точки M и K. Отрезки AK и BM пересекаются в точке O. Найдите площадь треугольника CMK, если площади треугольников OMA, OAB и OBK равны соответственно S₁, S₂, S₃.</p>
+<details>
+<summary>Показать решение</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Шаг 1:</strong> Положим [OAB] = S₂ и введём отношения u = [OCA]/[OAB], v = [OBC]/[OAB]. Тогда [OCA] = u·S₂, [OBC] = v·S₂.</div>
+<div class="solution-step"><strong>Шаг 2:</strong> Прямая BO пересекает AC в точке M, поэтому в треугольнике OCA высоты из A и C к прямой BO относятся как AM : MC. Отсюда [OMA]/[OCA] = AM/AC = 1/(v + 1). Значит S₁ = u·S₂/(v + 1). Аналогично S₃ = v·S₂/(u + 1).</div>
+<div class="solution-step"><strong>Шаг 3:</strong> Площадь всего треугольника: [ABC] = S₁ + S₂ + S₃ + [OMC] + [OKC]. Но [OMC] = [OCA] − [OMA] = u·S₂·v/(v + 1), а [OKC] = [OBC] − [OBK] = v·S₂·u/(u + 1). Упрощая, получаем [ABC] = S₂·(1 + u + v).</div>
+<div class="solution-step"><strong>Шаг 4:</strong> Искомая площадь: S = [CMK] = [ABC] · (CM/CA) · (CK/CB). Но CM/CA = v/(v + 1), CK/CB = u/(u + 1). Значит S = S₂·(1 + u + v)·uv/((u + 1)(v + 1)).</div>
+<div class="solution-step"><strong>Шаг 5:</strong> Выразим u и v через x = S₁/S₂, y = S₃/S₂: u = y(x + 1)/(1 − xy), v = x(y + 1)/(1 − xy). После подстановки и упрощения:<br>
+S = S₂ · xy(1 + x)(1 + y) / (1 − xy).</div>
+<div class="solution-step"><strong>Шаг 6:</strong> Возвращаясь к S₁, S₂, S₃, получаем окончательную формулу:<br>
+S = S₁·S₃·(S₁ + S₂)·(S₃ + S₂) / (S₂·(S₂² − S₁·S₃)).</div>
+<div class="check-row"><input class="check-input" type="text" placeholder="Проверь: S₁=4, S₂=8, S₃=4 → S = ?" data-answer="6"><button class="check-btn" type="button">Проверить</button><span class="check-feedback"></span></div>
+<div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> S = S₁·S₃·(S₁ + S₂)·(S₃ + S₂) / (S₂·(S₂² − S₁·S₃)).</div>
+<div class="solution-step"><strong>✅ Проверка:</strong> при S₁ = S₃ = 4, S₂ = 8: S = 4·4·12·12/(8·(64 − 16)) = 2304/384 = 6. Совпадает с прямым вычислением по координатам. ✅</div>
+</div>
+</details>
+
+<span class="level-badge hard">Продвинутый уровень</span>
+<h3>Задание 2 (№847)</h3>
+<p>Диагонали трапеции ABCD с основаниями BC и AD пересекаются в точке O. Площади треугольников BOC и AOD равны S₁ и S₂. Найдите площадь трапеции.</p>
+<details>
+<summary>Показать решение</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Шаг 1:</strong> Треугольники BOC и AOD подобны (∠BOC = ∠AOD — вертикальные, ∠BCO = ∠DAO — накрест лежащие при параллельных BC и AD).</div>
+<div class="solution-step"><strong>Шаг 2:</strong> Коэффициент подобия: k = BC/AD = √(S₁/S₂). Высоты h₁ и h₂ этих треугольников относятся так же: h₁/h₂ = √(S₁/S₂).</div>
+<div class="solution-step"><strong>Шаг 3:</strong> Высота трапеции H = h₁ + h₂. Выразим h₁ = H·√S₁/(√S₁ + √S₂), h₂ = H·√S₂/(√S₁ + √S₂).</div>
+<div class="solution-step"><strong>Шаг 4:</strong> S₁ = ½·BC·h₁ = ½·k·AD·H·√S₁/(√S₁ + √S₂), S₂ = ½·AD·H·√S₂/(√S₁ + √S₂). Сложим: S₁ + S₂ = ½·H·(BC·√S₁ + AD·√S₂)/(√S₁ + √S₂).</div>
+<div class="solution-step"><strong>Шаг 5:</strong> Так как BC = k·AD, после подстановки и упрощения получаем площадь трапеции:<br>
+S = (AD + BC)·H/2 = (√S₁ + √S₂)².</div>
+<div class="check-row"><input class="check-input" type="text" placeholder="Проверь: S₁=25, S₂=81 → S = ?" data-answer="196"><button class="check-btn" type="button">Проверить</button><span class="check-feedback"></span></div>
+<div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> S = (√S₁ + √S₂)².</div>
+<div class="solution-step"><strong>✅ Проверка:</strong> при S₁ = 25, S₂ = 81: S = (5 + 9)² = 196. ✅</div>
+</div>
+</details>
+
+<span class="level-badge hard">Продвинутый уровень</span>
+<h3>Задание 3 (№853)</h3>
+<p>Точка A лежит внутри угла, равного 60°. Расстояния от точки A до сторон угла равны a и b. Найдите расстояние от точки A до вершины угла.</p>
+<details>
+<summary>Показать решение</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Шаг 1:</strong> Расположим угол в координатах: одна сторона — ось x, вторая — луч под углом 60° к ней. Пусть A = (x; a) (расстояние до первой стороны равно a).</div>
+<div class="solution-step"><strong>Шаг 2:</strong> Расстояние от точки (x; y) до второй стороны (прямой под 60°): |x·sin 60° − y·cos 60°| = |(√3/2)x − a/2|. По условию оно равно b. Так как точка внутри угла, (√3/2)x − a/2 = b, откуда x = (a + 2b)/√3.</div>
+<div class="solution-step"><strong>Шаг 3:</strong> Расстояние до вершины угла (точки O = (0;0)):<br>
+AO = √(x² + a²) = √((a + 2b)²/3 + a²) = √((a² + 4ab + 4b² + 3a²)/3) = √((4a² + 4ab + 4b²)/3).</div>
+<div class="solution-step"><strong>Шаг 4:</strong> Выносим корень: AO = (2/√3)·√(a² + ab + b²).</div>
+<div class="check-row"><input class="check-input" type="text" placeholder="Проверь: a=3, b=5 → AO ≈ ?" data-answer="8,08"><button class="check-btn" type="button">Проверить</button><span class="check-feedback"></span></div>
+<div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> AO = (2/√3)·√(a² + ab + b²).</div>
+<div class="solution-step"><strong>✅ Проверка:</strong> при a = b = d точка лежит на биссектрисе, и AO = 2d (так как d = AO·sin 30°). Формула даёт 2√(3d²)/√3 = 2d. ✅</div>
+</div>
+</details>
+
+<span class="level-badge hard">Продвинутый уровень</span>
+<h3>Задание 4 (№857)</h3>
+<p>Внутри прямоугольника ABCD взята точка M. Известно, что MB = a, MC = b, MD = c. Найдите длину отрезка MA.</p>
+<details>
+<summary>Показать решение</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Шаг 1:</strong> Пусть O — точка пересечения диагоналей прямоугольника. Отрезок MO — медиана в треугольниках AMC и BMD.</div>
+<div class="solution-step"><strong>Шаг 2:</strong> По формуле медианы: MO² = (MA² + MC²)/2 − (AC/2)² и MO² = (MB² + MD²)/2 − (BD/2)².</div>
+<div class="solution-step"><strong>Шаг 3:</strong> Диагонали прямоугольника равны: AC = BD. Приравниваем правые части:<br>
+(MA² + MC²)/2 − AC²/4 = (MB² + MD²)/2 − BD²/4, откуда MA² + MC² = MB² + MD².</div>
+<div class="solution-step"><strong>Шаг 4:</strong> Отсюда MA² = MB² + MD² − MC² = a² + c² − b². Значит MA = √(a² + c² − b²).</div>
+<div class="check-row"><input class="check-input" type="text" placeholder="Проверь: a=5, b=8, c=7 → MA ≈ ?" data-answer="3,16"><button class="check-btn" type="button">Проверить</button><span class="check-feedback"></span></div>
+<div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> MA = √(a² + c² − b²).</div>
+<div class="solution-step"><strong>✅ Проверка:</strong> при a = 5, b = 8, c = 7: MA = √(25 + 49 − 64) = √10 ≈ 3,16. ✅</div>
+</div>
+</details>
+
+<span class="level-badge hard">Продвинутый уровень</span>
+<h3>Задание 5 (№859)</h3>
+<p>Внутри прямоугольного треугольника ABC с прямым углом C взята точка O так, что S(OAB) = S(OAC) = S(OBC). Докажите, что OA² + OB² = 5·OC².</p>
+<details>
+<summary>Показать решение</summary>
+<div class="solution-content">
+<div class="sol-svg">
+<svg width="360" height="240" viewBox="0 0 360 240">
+<!-- Прямоугольный треугольник: C=(40,200), A=(280,200), B=(40,40) (катеты 240) -->
+<polygon points="40,200 280,200 40,40" fill="#f8fafc" stroke="#1e293b" stroke-width="2.5"/>
+<!-- Прямой угол в C -->
+<polyline points="52,200 52,188 40,188" fill="none" stroke="#1e293b" stroke-width="2"/>
+<!-- Точка O = (120,120): катеты делятся в отношении 1:3 от C -->
+<circle cx="120" cy="120" r="4" fill="#dc2626"/>
+<line x1="120" y1="120" x2="280" y2="200" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="6,4"/>
+<line x1="120" y1="120" x2="40" y2="40" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="6,4"/>
+<line x1="120" y1="120" x2="40" y2="200" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="6,4"/>
+<text x="295" y="205" font-family="sans-serif" font-size="17" font-weight="bold">A</text>
+<text x="30" y="35" font-family="sans-serif" font-size="17" font-weight="bold">B</text>
+<text x="25" y="218" font-family="sans-serif" font-size="17" font-weight="bold">C</text>
+<text x="116" y="113" font-family="sans-serif" font-size="15" font-weight="bold" fill="#dc2626">O</text>
+</svg>
+</div>
+<div class="solution-step"><strong>Шаг 1:</strong> Поместим треугольник в координаты: C = (0;0), A = (p;0), B = (0;q). Тогда площадь [ABC] = pq/2, а каждая из равных площадей равна pq/6.</div>
+<div class="solution-step"><strong>Шаг 2:</strong> Пусть O = (x;y). Площадь [OAC] = p·y/2 = pq/6, откуда y = q/3. Площадь [OBC] = q·x/2 = pq/6, откуда x = p/3. Значит O = (p/3; q/3).</div>
+<div class="solution-step"><strong>Шаг 3:</strong> Считаем квадраты расстояний:<br>
+OA² = (p − p/3)² + (0 − q/3)² = (4p² + q²)/9;<br>
+OB² = (p/3)² + (q − q/3)² = (p² + 4q²)/9;<br>
+OC² = (p/3)² + (q/3)² = (p² + q²)/9.</div>
+<div class="solution-step"><strong>Шаг 4:</strong> Складываем: OA² + OB² = (5p² + 5q²)/9 = 5·(p² + q²)/9 = 5·OC². Что и требовалось доказать. ✅</div>
+</div>
+</details>
+
+<h3>📋 Остальные задачи главы VII — для самостоятельной тренировки</h3>
+<p>Задачи №842, 844–846, 848–852, 854–856, 858, 860, 862 решаются теми же приёмами. Пробуй сам и сверяй ответы в учебнике.</p>
+</section>
+
+<!-- ================= БЛОК 3: ПРАКТИЧЕСКОЕ ПРИМЕНЕНИЕ ================= -->
+<section class="card">
+<h2>🚧 Блок 3. Практическое применение</h2>
+<div class="practice-box">
+<h3>🗺️ Продукт-задача: «Кадастровый инженер»</h3>
+<p>Участок имеет форму трапеции ABCD (основания BC и AD). Для расчёта кадастровой стоимости нужно знать его площадь, но измерить сразу всю трапецию трудно. Зато геодезисты нашли площади двух треугольников, на которые диагонали делят трапецию: площадь треугольника у верхнего основания равна 25 м², а у нижнего — 81 м². Чему равна площадь всего участка?</p>
+<details>
+<summary>Показать решение инженера</summary>
+<div class="solution-content">
+<div class="solution-step"><strong>Шаг 1:</strong> Это ровно задача №847: S₁ = 25 м², S₂ = 81 м².</div>
+<div class="solution-step"><strong>Шаг 2:</strong> Площадь трапеции: S = (√S₁ + √S₂)² = (√25 + √81)² = (5 + 9)² = 196.</div>
+<div class="check-row"><input class="check-input" type="text" placeholder="Введи площадь в м²" data-answer="196"><button class="check-btn" type="button">Проверить</button><span class="check-feedback"></span></div>
+<div class="solution-step" style="border-left-color: var(--primary);"><strong>Ответ:</strong> площадь участка — <strong>196 м²</strong>.</div>
+<div class="solution-step"><strong>✅ Проверка:</strong> (√25 + √81)² = (5 + 9)² = 14² = 196. ✅</div>
+</div>
+</details>
+</div>
+</section>
+
+<!-- ================= ИТОГИ ================= -->
+<section class="card">
+<h2>⭐ Главное, что нужно запомнить</h2>
+<div class="summary-box">
+<ul>
+<li><strong>Метод площадей</strong> — главный ключ задач главы VII: одна и та же площадь, записанная двумя способами, даёт пропорцию отрезков.</li>
+<li>В трапеции площади треугольников у оснований связаны: S = (√S₁ + √S₂)².</li>
+<li>Для прямоугольника и точки внутри: MA² + MC² = MB² + MD².</li>
+<li>Если точка внутри прямоугольного треугольника делит его на три равновеликие части, то она — «центр тяжести» с координатами (p/3; q/3).</li>
+<li>Всегда приводи сначала к одним единицам, потом считай; в конце делай проверку смысла.</li>
+</ul>
+</div>
+</section>
+
+<!-- ================= МЕТОДИКА ================= -->
+<div class="teacher-note">
+<h3>💡 Методическая подсказка (для учителя или родителя)</h3>
+<ul>
+<li><strong>Для слабых учеников:</strong> начните с №847 (формула (√S₁ + √S₂)²) и №857 (простая формула) — они короткие и наглядные.</li>
+<li><strong>Для сильных учеников:</strong> №843 — олимпиадная задача на метод площадей с красивой формулой; №859 — координатный метод.</li>
+<li><strong>Типичная ошибка:</strong> в №853 ученики путают, к какой стороне угла относится расстояние a, а к какой — b. Работайте с чертежом.</li>
+</ul>
+</div>
+
+<nav class="lesson-nav" style="margin-top:30px">
+<a class="lesson-nav-link prev" href="geometriya-8-7-3.html">← Предыдущий урок</a>
+<a class="lesson-nav-link index" href="index.html">📚 Все уроки</a>
+<a class="lesson-nav-link next" href="geometriya-8-8-1.html">Следующий урок →</a>
+</nav>
+
+<footer style="text-align: center; color: var(--text-light); margin-top: 30px; font-size: 0.9em; padding-bottom: 20px;">
+<p>📚 Геометрия 8 класс (Атанасян) • Глава VII, «Площадь» • Задачи повышенной трудности №842–862</p>
+<p class="legal">© 2019–2026 ИП Громова Анна Александровна, ОГРНИП: 319237500156762, ИНН: 236507001744</p>
+<p class="legal">Лицензия № Л035-01218-23/01091451 <a href="https://xn--80aaagnrcpdkofpu2ae0iuf.xn--p1ai/" target="_blank" rel="noopener">Интерактивная школа «МУДРО»</a></p>
+</footer>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script defer src="assets/axis-math.js"></script>
+<script defer src="assets/answer-core.js"></script>
+<script defer src="assets/course.js"></script>
+</body>
+</html>
